@@ -2,7 +2,9 @@ import React from 'react';
 
 const MainMenuBrowser = () => {
     return(
-        <input className="basketContainer__inputSearchProduct align-self-center" type="text" placeholder="Wyszukaj produkt" id="productsBrowser"/>    
+        <div className="browser-container">
+            <input type="text" placeholder="Wyszukaj produkt" className="browser-container__browser"/>
+        </div>
     )
 }
 

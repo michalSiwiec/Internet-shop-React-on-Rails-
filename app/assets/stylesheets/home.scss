@@ -1,8 +1,44 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body{
-    background-color: red;
+    width: 90%;
+    margin: 100px auto;
+    background-color: lightgray;
+    color: black;
+
+    li{
+        list-style: none;
+        border-bottom: 2px solid white;
+    }
+    
+    a{
+        text-decoration: none;
+        color: black;
+        border-bottom: 3px solid white;
+
+        &:hover
+        {
+            border-bottom: 3px solid red;
+        }
+    }
+
+    input{
+        &:focus{
+            outline: none;
+            border: 2px solid red;
+        }
+    }
+
+    button{
+        background-color: red;
+        color: white;
+        outline: none;
+        border: none;
+    }
 }
+
+

@@ -1,5 +1,45 @@
 .main-content-container{
-    width: 80%;
-    height: 100px;
-    background-color: forestgreen;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+
+    .products-menu-container{
+        @media only screen and(max-width: 549px){
+            flex-basis: 35%;
+        }
+        @media only screen and(max-width: 1024px) and (min-width: 551px){
+            flex-basis: 25%;
+        }
+        @media only screen and(min-width: 1025px){
+            flex-basis: 15%;
+        }
+        border: 2px solid black;
+    }
+
+    .order-area-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        @media only screen and(max-width: 549px){
+            flex-basis: 65%;
+        }
+        @media only screen and(max-width: 1024px) and (min-width: 551px){
+            flex-basis: 75%;
+        }
+        @media only screen and(min-width: 1025px){
+            flex-basis: 60%;
+        }
+        // border: 2px solid black;
+        // background-color: red;
+    }
+
+    .advertisement-container{
+        @media only screen and(max-width: 1024px){
+            flex-basis: 100%;
+        }
+        @media only screen and(min-width: 1025px){
+            flex-basis: 25%;
+        }
+        border: 2px solid black;
+    }
 }

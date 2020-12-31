@@ -1,42 +1,35 @@
 import React, {useState} from 'react'
-import {connect} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
 import actions from '../../redux/movies/duck/actions'
 
-const ActorsContainer = ({name, listName, add, reset}) => {
+const ActorsContainer = () => {
+
+    // const movies = useSelector(state => state.moviesReducers.movies)
+    const movies = useSelector(state => state.moviesReducers)
+    const dispatch = useDispatch()
+
+    console.log(movies)
 
     const [title, setTitle] = useState('')
-
-    // console.log(add())
-    // console.log(reset())
 
     return(
         <>
             <div>
                 <ul>
-                    {name.map(movie => <li>{movie}</li>)}
+                    {/* {movies.map(movie => <li>{movie}</li>)} */}
                 </ul>
             </div>
 
             <div>
                 <input onChange={(e) => setTitle(e.target.value)}/>
-                <button onClick={() => add(title)}>Dodaj film</button>
+                <button onClick={() => dispatch(actions.addMovie(title))}>Dodaj film</button>
             </div>
 
             <div>
-                <button onClick={() => reset()}>Reset</button>
+                <button onClick={() => dispatch(actions.resetMovies())}>Reset</button>
             </div>
         </>
     )
 }
 
-const mapStateToProps = (state) => ({
-    name: state.moviesReducers.movies,
-    listName: state.moviesReducers.listName
-})
-
-const mapDispatchToProps = dispatch => ({
-    add: (movie) => dispatch(actions.addMovie(movie)),
-    reset: () => dispatch(actions.resetMovies())
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(ActorsContainer)
+export default ActorsContainer

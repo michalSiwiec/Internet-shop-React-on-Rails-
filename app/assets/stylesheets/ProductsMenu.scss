@@ -1,0 +1,13 @@
+.products-menu-container{
+    padding: 15px 0px 15px 15px;
+
+    .menu-option-list{
+        display: flex;
+        flex-direction: column;
+
+        &__item{
+            margin: 7px;
+            font-size: 17px;
+        }
+    }
+}
