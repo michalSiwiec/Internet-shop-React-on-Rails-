@@ -38,9 +38,6 @@
     
                 &:hover{
                     cursor: pointer;
-                    // background-color: white;
-                    // color: red;
-                    // border: 3px solid red;
                 }
             }
         
@@ -57,10 +54,12 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-bottom: 30px;
 
     .switch{
         font-size: 20px;
-        padding: 3px 5px;
+        margin: 0px 7px;
+
         &:hover{
             cursor: pointer;
         }

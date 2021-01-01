@@ -26,11 +26,18 @@ const Products:FC<Props> = ({products}) => {
             if(index % 6 == 0)
                 secondaryProductsPartsVisibility.push("inVisibly")
         })
-        secondaryProductsPartsVisibility[secondaryProductsPartsVisibility.length - 1] = "flex-container"
+        secondaryProductsPartsVisibility[0] = "flex-container"
         setProductsPartsVisibility(secondaryProductsPartsVisibility)
     },[])
 
-    console.log(typeof Switch)
+    const changeProductsContainer = (e:Event) => {
+        let id = (e.target as HTMLInputElement).id.slice(6)
+        const copyProductsPartsVisibility = productsPartsVisibility.map(element => element = "inVisibly")
+
+        copyProductsPartsVisibility[id] = "flex-container"
+
+        setProductsPartsVisibility(copyProductsPartsVisibility)
+    }
 
     const divideOnSubparts = () => {
         const partsContainers:Array<object> = []
@@ -41,11 +48,18 @@ const Products:FC<Props> = ({products}) => {
         products.forEach((product, index) => {
             partsProducts.push(product)
 
-            if(index % 6 === 0){
-                switchesProductsContainers.push(<span className="switch" key={`switch${counter}`}>{counter+1}</span>)
+            if(index % 6 === 5 || index === products.length-1){
+                switchesProductsContainers.push(
+                    <Switch 
+                        value={counter + 1}
+                        changeProductsContainer={(e) => changeProductsContainer(e)}
+                        key={`counter${counter}`}
+                        id={`switch${counter}`}
+                    />
+                )
 
                 partsContainers.push(
-                    <div className={`products-part-container ${productsPartsVisibility[counter]}`} key={`Prosduscts part${product.id}`}>
+                    <div className={`products-part-container ${productsPartsVisibility[counter]}`} key={`Prosdsquscts part${product.id}`}>
                         {partsProducts.map((product) => <Product product={product} key={product.id}/>)}
                     </div>
                 )
