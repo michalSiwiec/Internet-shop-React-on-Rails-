@@ -19,6 +19,7 @@ Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/092/292092/S
 Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/145/293145/ShotType1_225x225.jpg', product_type: "fishes", description: 'Pikling wędzony', price: 10.90, key_word: '')
 Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/068/296068/ShotType1_225x225.jpg', product_type: "fishes", description: 'Śledź solony', price: 12.90, key_word: '')
 Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/061/296061/ShotType1_225.jpg', product_type: "fishes", description: 'Dorsz atlantycki', price: 16.90, key_word: '')
+
 Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/867/0000020205867/ShotType1_225x225.jpg', product_type: "fruits_and_vegetables", description: 'Banan', price: 4.90, key_word: '')
 Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/127/5903034455127/ShotType1_225x225.jpg', product_type: "fruits_and_vegetables", description: 'Limonka', price: 3.49, key_word: '')
 Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/869/295869/ShotType1_225x225.jpg', product_type: "fruits_and_vegetables", description: 'Ananas', price: 4.95, key_word: '')

@@ -11,10 +11,10 @@ const MainMenuOptions:FC<Props> = ({isInvisibility}) => {
     return(
         <div className={`option-menu-container ${isInvisibility ? "invisible" : ""}`}>
             <ul className="list">
-                <MainMenuOption value="Oferta" path="/Offer"/> 
-                <MainMenuOption value="Gazeta reklamowa" path="/Newspaper"/>
-                <MainMenuOption value="Przepisy" path="/Recipies"/>
-                <MainMenuOption value="Aplikacje klienckie" path="/ClientsApp"/> 
+                <MainMenuOption value="Oferta" path="/home/Offer/"/> 
+                <MainMenuOption value="Gazeta reklamowa" path="/home/Newspaper/"/>
+                <MainMenuOption value="Przepisy" path="/home/Recipies/"/>
+                <MainMenuOption value="Aplikacje klienckie" path="/home/ClientsApp/"/> 
             </ul>
         </div>
     )

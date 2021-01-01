@@ -5,6 +5,7 @@ import Switch from './Switch/Switch'
 
 interface Props{
     products: Array<IProduct>
+    selectedType: string
 }
 
 interface IProduct{
@@ -13,12 +14,22 @@ interface IProduct{
     description: string
     price: number
     key_word: string
+    product_type: string
 }
 
-const Products:FC<Props> = ({products}) => {
+const Products:FC<Props> = ({products, selectedType}) => {
 
     const [productsPartsVisibility, setProductsPartsVisibility] = useState<Array<string>>([])
 
+    const changeProductsContainer = (e:Event) => {
+        let id = (e.target as HTMLInputElement).id.slice(6)
+        const copyProductsPartsVisibility = productsPartsVisibility.map(element => element = "inVisibly")
+
+        copyProductsPartsVisibility[id] = "flex-container"
+
+        setProductsPartsVisibility(copyProductsPartsVisibility)
+    }
+    
     useEffect(() => {     
         const secondaryProductsPartsVisibility:Array<string> = []
 
@@ -29,15 +40,6 @@ const Products:FC<Props> = ({products}) => {
         secondaryProductsPartsVisibility[0] = "flex-container"
         setProductsPartsVisibility(secondaryProductsPartsVisibility)
     },[])
-
-    const changeProductsContainer = (e:Event) => {
-        let id = (e.target as HTMLInputElement).id.slice(6)
-        const copyProductsPartsVisibility = productsPartsVisibility.map(element => element = "inVisibly")
-
-        copyProductsPartsVisibility[id] = "flex-container"
-
-        setProductsPartsVisibility(copyProductsPartsVisibility)
-    }
 
     const divideOnSubparts = () => {
         const partsContainers:Array<object> = []
