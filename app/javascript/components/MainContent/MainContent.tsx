@@ -53,13 +53,14 @@ const MainContent = () => {
         }
     }
 
-    // useEffect(() => {
-    //     // setTimeout(() => {
-    //         fetch('/products')
-    //         .then(response => response.json())
-    //         .then(data => setProducts(data))
-    //     // },3000)
-    // },[])
+    useEffect(() => {
+        // setTimeout(() => {
+            fetch('/products.json')
+            .then(response => response.text())
+            // .then(data => setProducts(data))
+            .then(text => console.log(text))
+        // },3000)
+    },[])
 
     return(
         <Switch>

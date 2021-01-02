@@ -9,16 +9,16 @@ class HomeController < ApplicationController
     render json: products
   end
 
-  def product
-    product = Product.find(params[:id])
-    render json: {data: product}
-  end
+  # def product
+  #   product = Product.find(params[:id])
+  #   render json: {data: product}
+  # end
 
-  def destroy
-    Product.destroy!(params[:id])
-  end
+  # def destroy
+  #   Product.destroy!(params[:id])
+  # end
 
-  def create
-    Product.create(source: "source", description: "desc", price: 10.99, key_word: "key")
-  end
+  # def create
+  #   Product.create(source: "source", description: "desc", price: 10.99, key_word: "key")
+  # end
 end

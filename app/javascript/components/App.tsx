@@ -28,7 +28,7 @@ const App = () => {
                 </Route>
 
                 <Route>
-                    <p>Nie ma takiej podstrony</p>
+                    <p>Nie ma takiej podaaaqstrony</p>
                 </Route>
             </Switch>
         </div>
