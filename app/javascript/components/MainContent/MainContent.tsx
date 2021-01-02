@@ -55,11 +55,11 @@ const MainContent = () => {
 
     useEffect(() => {
         // setTimeout(() => {
-            fetch('/products.json')
-            .then(response => response.text())
-            // .then(data => setProducts(data))
-            .then(text => console.log(text))
-        // },3000)
+            fetch('http://localhost:3000/api/v1/products.json')
+            .then(response => response.json())
+            .then(data => setProducts(data))
+            .catch(e => console.log(e))
+        // },5000)
     },[])
 
     return(

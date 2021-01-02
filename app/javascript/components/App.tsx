@@ -24,11 +24,11 @@ const App = () => {
                 </Route>
 
                 <Route path="/admin/" exact>
-                    <p>Admin panel</p>
+                    <p>Admin panael</p>
                 </Route>
 
                 <Route>
-                    <p>Nie ma takiej podaaaqstrony</p>
+                    <p>Naaie ma takqaaiej podaaaaqstrony</p>
                 </Route>
             </Switch>
         </div>
