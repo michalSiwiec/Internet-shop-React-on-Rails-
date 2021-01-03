@@ -7,8 +7,13 @@ import AdvertisementSlider from './AdvertisementSlider/AdvertisementSlider'
 import MainContent from './MainContent/MainContent';
 import MainFooter from './MainFooter/MainFooter';
 
+import store from '../../redux/store'
+
 
 const App = () => {
+    
+    console.log(store.getState())
+
     return(
         <div> 
             <Switch>

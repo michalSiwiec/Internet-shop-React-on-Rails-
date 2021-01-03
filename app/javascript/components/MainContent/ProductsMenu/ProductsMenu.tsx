@@ -1,12 +1,48 @@
-import React, {FC} from 'react'
+import React from 'react'
+
+import {useDispatch} from 'react-redux'
+import actions from '../../../../redux/products/duck/actions'
 
 import ProductMenuOption from './ProductsMenuOption/ProductMenuOption' 
 
-interface Props {
-    setType(id:string):void
-}
 
-const ProductsMenu: FC<Props> = ({setType}) => {
+const ProductsMenu = () => {
+
+    const dispatch = useDispatch()
+
+    const setType = (id:string) => {
+        const {setType} = actions
+        
+        switch (id) {
+            case 'meats-menu-option':
+                dispatch(setType('meats'))
+                break
+            case 'fishes-menu-option':
+                dispatch(setType('fishes'))
+                break
+            case 'fruit_and_vegetables-menu-option':
+                dispatch(setType('fruits_and_vegetables'))
+                break
+            case 'frozen':
+                dispatch(setType('frozens'))
+                break
+            case 'dairy-menu-option':
+                dispatch(setType('dairy'))
+                break
+            case 'coffe_and_tea-menu-option':
+                dispatch(setType('coffes'))
+                break
+            case 'sweets-menu-option':
+                dispatch(setType('sweets'))
+                break
+            case 'all-menu-option':
+                dispatch(setType('all'))
+                break
+            default:
+                break;
+        }
+    }
+
     return (
         <div className="products-menu-container">
             <h2 className="header">Kategorie</h2>

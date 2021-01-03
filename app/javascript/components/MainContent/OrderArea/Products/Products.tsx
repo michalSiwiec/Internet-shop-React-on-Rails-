@@ -5,7 +5,6 @@ import Switch from './Switch/Switch'
 
 interface Props{
     products: Array<IProduct>
-    selectedType: string
 }
 
 interface IProduct{
@@ -17,19 +16,10 @@ interface IProduct{
     product_type: string
 }
 
-const Products:FC<Props> = ({products, selectedType}) => {
+const Products:FC<Props> = ({products}) => {
 
     const [productsPartsVisibility, setProductsPartsVisibility] = useState<Array<string>>([])
 
-    const changeProductsContainer = (e:Event) => {
-        let id = (e.target as HTMLInputElement).id.slice(6)
-        const copyProductsPartsVisibility = productsPartsVisibility.map(element => element = "inVisibly")
-
-        copyProductsPartsVisibility[id] = "flex-container"
-
-        setProductsPartsVisibility(copyProductsPartsVisibility)
-    }
-    
     useEffect(() => {     
         const secondaryProductsPartsVisibility:Array<string> = []
 
@@ -41,13 +31,25 @@ const Products:FC<Props> = ({products, selectedType}) => {
         setProductsPartsVisibility(secondaryProductsPartsVisibility)
     },[])
 
+    // console.log('Transmitted Products: ', products)
+    console.log('Classes: ', productsPartsVisibility)
+
+    const changeProductsContainer = (e:Event) => {
+        let id = (e.target as HTMLInputElement).id.slice(6)
+        const copyProductsPartsVisibility = productsPartsVisibility.map(element => element = "inVisibly")
+
+        copyProductsPartsVisibility[id] = "flex-container"
+
+        setProductsPartsVisibility(copyProductsPartsVisibility)
+    }
+    
     const divideOnSubparts = () => {
         const partsContainers:Array<object> = []
         const partsProducts:Array<IProduct> = []
         const switchesProductsContainers:Array<object> = []
         let counter = 0;
 
-        products.forEach((product, index) => {
+        products.forEach((product, index) => {            
             partsProducts.push(product)
 
             if(index % 6 === 5 || index === products.length-1){
@@ -61,7 +63,7 @@ const Products:FC<Props> = ({products, selectedType}) => {
                 )
 
                 partsContainers.push(
-                    <div className={`products-part-container ${productsPartsVisibility[counter]}`} key={`Prosdsquscts part${product.id}`}>
+                    <div className={`products-part-container ${productsPartsVisibility[counter]}`} key={`Products part${product.id}`}>
                         {partsProducts.map((product) => <Product product={product} key={product.id}/>)}
                     </div>
                 )
