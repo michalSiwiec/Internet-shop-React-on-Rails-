@@ -1,10 +1,14 @@
 import React, {FC, useState, useEffect} from 'react'
 
+import {useDispatch} from 'react-redux'
+import productsActions from '../../../../../redux/products/duck/actions'
+
 import Product from './Product/Product'
 import Switch from './Switch/Switch'
 
 interface Props{
     products: Array<IProduct>
+    productsPartsVisibility: Array<string>
 }
 
 interface IProduct{
@@ -16,11 +20,11 @@ interface IProduct{
     product_type: string
 }
 
-const Products:FC<Props> = ({products}) => {
+const Products:FC<Props> = ({products, productsPartsVisibility}) => {
 
-    const [productsPartsVisibility, setProductsPartsVisibility] = useState<Array<string>>([])
+    const dispatch = useDispatch()
 
-    useEffect(() => {     
+    useEffect(() => {  
         const secondaryProductsPartsVisibility:Array<string> = []
 
         products.forEach((product, index) => {
@@ -28,19 +32,16 @@ const Products:FC<Props> = ({products}) => {
                 secondaryProductsPartsVisibility.push("inVisibly")
         })
         secondaryProductsPartsVisibility[0] = "flex-container"
-        setProductsPartsVisibility(secondaryProductsPartsVisibility)
-    },[])
 
-    // console.log('Transmitted Products: ', products)
-    console.log('Classes: ', productsPartsVisibility)
+        dispatch(productsActions.setProductsPartsVisibility(secondaryProductsPartsVisibility))
+    },[products.length])   
 
     const changeProductsContainer = (e:Event) => {
         let id = (e.target as HTMLInputElement).id.slice(6)
-        const copyProductsPartsVisibility = productsPartsVisibility.map(element => element = "inVisibly")
+        const secondaryProductsPartsVisibility = productsPartsVisibility.map(element => element = "inVisibly")
 
-        copyProductsPartsVisibility[id] = "flex-container"
-
-        setProductsPartsVisibility(copyProductsPartsVisibility)
+        secondaryProductsPartsVisibility[id] = "flex-container"
+        dispatch(productsActions.setProductsPartsVisibility(secondaryProductsPartsVisibility))
     }
     
     const divideOnSubparts = () => {

@@ -12,6 +12,7 @@ const OrderArea = () => {
 
     const products = useSelector(state => state.productsReducer.products)
     const productsType = useSelector(state => state.productsReducer.productType)
+    const productsPartsVisibility = useSelector(state => state.productsReducer.productsPartsVisibility)
     const dispatch = useDispatch()
     let selectedProducts = [...products]
 
@@ -27,14 +28,14 @@ const OrderArea = () => {
                 else
                     throw Error(response.statusText);
             })
-            .then(data => dispatch(productsActions.setProduct(data, "all")))
+            .then(data => dispatch(productsActions.setProduct(data, "meats")))
             .catch(err => console.error(err))
         },500)
     },[])
 
     return (
         <div className="order-area-container">
-            {products.length ? <Products products={selectedProducts}/> : <DownloadingData />}
+            {products.length ? <Products products={selectedProducts} productsPartsVisibility={productsPartsVisibility}/> : <DownloadingData />}
         </div>
     )         
 }

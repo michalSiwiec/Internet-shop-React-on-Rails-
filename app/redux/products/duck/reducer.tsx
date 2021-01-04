@@ -2,7 +2,8 @@ import types from './types'
 
 const initialState = {
     products: [],
-    productType: ""
+    productType: "",
+    productsPartsVisibility: []
 }
 
 const productsReducer = (state = initialState, action) => {
@@ -11,6 +12,8 @@ const productsReducer = (state = initialState, action) => {
             return {...state, products: action.products, productType: action.productType}
         case types.SET_TYPE:
             return {...state, productType: action.productType}
+        case types.SET_PRODUCTS_VISIBILITY:
+            return {...state, productsPartsVisibility: action.productsPartsVisibility}
         default:
             return state
     }
