@@ -6,6 +6,8 @@ import ProductsMenu from './ProductsMenu/ProductsMenu'
 import Advertisement from './Advertisement/Advertisement'
 import OrderArea from './OrderArea/OrderArea'
 
+import BasketSummary from './BasketSummary/BasketSummary'
+
 import '../../../assets/stylesheets/mainContent.scss'
 
 
@@ -34,6 +36,10 @@ const MainContent = () => {
 
             <Route path="/home/ClientsApp/">
                 <p>ClientsApp</p>
+            </Route>
+
+            <Route path="/home/BasketSummary">
+                <BasketSummary />
             </Route>
 
             <Route>Nie ma takiej podstrony!</Route>

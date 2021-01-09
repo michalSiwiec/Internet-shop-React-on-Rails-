@@ -17,7 +17,7 @@ const MainMenu = () => {
     })
 
     if(window.innerWidth > 768 && isInvisibility)
-    setIsInvisibilty(false)
+        setIsInvisibilty(false)
 
     return(
         <div className="main-menu-container">

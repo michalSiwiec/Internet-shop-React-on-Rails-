@@ -1,12 +1,14 @@
 import React from 'react'
 
-const Logo = require('../../../../assets/images/Kaufland_Logo.png')
+import {Link} from 'react-router-dom';
 
 
 const MainMenuLogo = () => {
+    const Logo = require('../../../../assets/images/Kaufland_Logo.png')
+
     return (
         <div className="logo-container">
-            <img src={Logo} alt="Logo" className="logo-container__logo"/>
+            <Link to="/home"><img src={Logo} alt="Logo" className="logo-container__logo"/></Link>
         </div>
     )
 }

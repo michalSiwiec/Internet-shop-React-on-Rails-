@@ -10,9 +10,9 @@ import Products from './Products/Products'
 
 const OrderArea = () => {
 
-    const products = useSelector(state => state.productsReducer.products)
-    const productsType = useSelector(state => state.productsReducer.productType)
-    const productsPartsVisibility = useSelector(state => state.productsReducer.productsPartsVisibility)
+    const products = useSelector((state:any) => state.productsReducer.products)
+    const productsType = useSelector((state:any) => state.productsReducer.productType)
+    const productsPartsVisibility = useSelector((state:any) => state.productsReducer.productsPartsVisibility)
     const dispatch = useDispatch()
     let selectedProducts = [...products]
 

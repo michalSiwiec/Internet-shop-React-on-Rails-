@@ -1,0 +1,46 @@
+.basket-summary-container{
+    width: 100%;
+    padding: 50px 0px;
+    background-color: white;
+
+    .product-flex-container{
+        display: flex;
+
+        .picture-container{
+            flex-basis: 20%;
+            border: 2px solid black;
+            text-align: center;
+
+            &__remove-product{
+                font-size: 20px;
+
+                &:hover{
+                    cursor: pointer;
+                    color: red;
+                }
+            }
+        }
+
+        .description-container{
+            flex-basis: 40%;
+            border: 2px solid black;
+            text-align: center;
+        }
+
+        .change-quantity-container{
+            flex-basis: 40%;
+            border: 2px solid black;
+            text-align: center;
+
+            .summary-price-container{
+                &__price{
+                    color: red;
+                }
+
+                &__ornament{
+                    border-bottom: 3px solid red;
+                }
+            }
+        }
+    }
+}

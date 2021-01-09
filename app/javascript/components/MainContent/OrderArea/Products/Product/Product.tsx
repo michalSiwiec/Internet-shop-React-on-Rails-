@@ -30,7 +30,7 @@ const Product:FC<Props> = ({product}) => {
     }
 
     const fetchProduct = (productID:number) => {
-        const URL = `/api/v1/products/showw?productID=${productID}`
+        const URL = `/api/v1/products/show?productID=${productID}`
         const OPTIONS = {method: 'GET'}
         
         fetch(URL,OPTIONS)
