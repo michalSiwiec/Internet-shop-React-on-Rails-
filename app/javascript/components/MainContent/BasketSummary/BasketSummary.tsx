@@ -24,7 +24,7 @@ const BasketSummary = () => {
                 throw Error(response.statusText);
         })
         .then(products => setProductsFullVersion(products))
-    },[productsInBasket])
+    }, [productsInBasket])
 
     const removeProductFromBasket = (id:number, quantity:number) => {
         const URL = `/api/v1/products/show?productID=${id}`
@@ -43,8 +43,26 @@ const BasketSummary = () => {
         })
     }
 
-    const updateQuantityProduct = (id:number, value:string) => {
-        console.log(id, value)
+    const updateQuantityProduct = (id:number, quantity:string) => {
+        const URL = `/api/v1/products/show?productID=${id}`
+        const OPTIONS = {method: 'GET'}
+        
+        // debugger
+
+        fetch(URL,OPTIONS)
+        .then(response => {
+            if(response.ok)
+                return response.json()
+            else
+                throw Error(response.statusText);
+        })
+        .then(product => {
+            const price = product.price
+            const presentProductQuantity = productsInBasket.find(product => product.id === id).quantity
+            const quantityAddedOrSubstractedProduct = parseInt(quantity) - presentProductQuantity
+
+            dispatch(actions.changeProductQuantity(id, quantityAddedOrSubstractedProduct, price))
+        })
     }
 
     return (

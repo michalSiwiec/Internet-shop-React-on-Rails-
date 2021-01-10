@@ -1,5 +1,7 @@
 import types from './types'
 
+// I should do here every methods to fetch products, not into components.
+
 const addProductToBasket = (productsID: number, quantity:number, price: number) => ({
     type: types.ADD_PRODUCT,
     id: productsID,
@@ -14,7 +16,15 @@ const removeProductFromBasket = (productID:number, productQuantity, price: numbe
     price
 })
 
+const changeProductQuantity = (productID:number, quantityAddedOrSubstractedProduct:number, price: number) => ({
+    type: types.CHANGE_PRODUCT_QUANTITY,
+    productID,
+    quantityAddedOrSubstractedProduct,
+    price
+})
+
 export default {
     addProductToBasket,
-    removeProductFromBasket
+    removeProductFromBasket,
+    changeProductQuantity
 }

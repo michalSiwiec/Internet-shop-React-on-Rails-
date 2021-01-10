@@ -9,7 +9,7 @@ const MainMenuBasket = () => {
 
     return (
         <div className='basket-container'>
-            <Link to='/home/BasketSummary'> <p>{wholePrice} zpsqsqsł</p> </Link>
+            <Link to='/home/BasketSummary'> <p>{wholePrice} zpeesqsvqsł</p> </Link>
         </div> 
     )
 }
