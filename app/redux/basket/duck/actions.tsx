@@ -7,7 +7,12 @@ const addProductToBasket = (productsID: number, quantity:number, price: number) 
     price: price
 })
 
-const removeProductFromBasket = () => ({type: types.REMOVE_PRODUCT})
+const removeProductFromBasket = (productID:number, productQuantity, price: number) => ({
+    type: types.REMOVE_PRODUCT,
+    id: productID,
+    quantity: productQuantity,
+    price
+})
 
 export default {
     addProductToBasket,

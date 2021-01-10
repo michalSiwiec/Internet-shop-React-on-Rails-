@@ -24,7 +24,6 @@ const Product:FC<Props> = ({product}) => {
 
     const addProductToBasket = () => {
         const productID = product.id
-        const quantity = parseInt(quantityInput.current.value)
 
         fetchProduct(productID)
     }

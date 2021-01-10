@@ -16,7 +16,7 @@ const basketReducer = (state = initialState, action) => {
     switch(action.type){
         case types.ADD_PRODUCT:
             return produce(state, draftState => {
-                const index = draftState.products.findIndex(product => product.id === action.id) // Checking if product is already in to basket
+                const index = draftState.products.findIndex(product => product.id === action.id)
     
                 if(index !== -1)
                     draftState.products[index].quantity += action.quantity
@@ -25,8 +25,16 @@ const basketReducer = (state = initialState, action) => {
 
                 draftState.wholePrice += (action.quantity * action.price)
             })
+
         case types.REMOVE_PRODUCT:
-            return{...state}
+            return produce(state, draftState => {
+                const id = action.id
+                const quantity = action.quantity
+
+                draftState.products = draftState.products.filter(product => product.id !== id)
+                draftState.wholePrice -= (quantity * action.price)
+            })
+
         default:
              return state
     }
