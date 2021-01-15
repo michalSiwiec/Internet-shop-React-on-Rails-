@@ -5,6 +5,8 @@ import {Route, Switch, Redirect} from 'react-router-dom'
 import ProductsMenu from './ProductsMenu/ProductsMenu'
 import Advertisement from './Advertisement/Advertisement'
 import OrderArea from './OrderArea/OrderArea'
+import OrderForm from './OrderForm/OrderForm'
+import ShoppingOption from './ShoppingOption/ShoppingOption'
 
 import BasketSummary from './BasketSummary/BasketSummary'
 
@@ -40,6 +42,14 @@ const MainContent = () => {
 
             <Route path="/home/BasketSummary">
                 <BasketSummary />
+            </Route>
+
+            <Route path="/home/ShoppingOption">
+                <ShoppingOption />
+            </Route>
+
+            <Route path='/home/OrderForm'>
+                <OrderForm />
             </Route>
 
             <Route>Nie ma takiej podstrony!</Route>

@@ -1,0 +1,125 @@
+.shopping-options-container{
+    border: 2px solid black;
+    display: flex;
+    flex-wrap: wrap;
+
+    .header-container{
+        flex-basis: 100%;
+
+        .header{
+            color: red;
+            font-size: 45px;
+            padding-left: 35px;
+            letter-spacing: 1px;
+        }
+    }
+    
+    .sing-in-container{
+        flex-basis: 33.3%;
+        border: 2px solid black;
+        padding: 20px 10px;
+        background-color: beige;
+
+        .ornament{
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            border-bottom: 2px solid black;
+        }
+
+        .fileds-container{
+            width: 80%;
+            margin: 0 auto;
+
+            & > div{
+                margin: 20px 0px;
+
+                input[type="text"],
+                .log-in-btn{
+                    width: 100%;
+                    font-size: 17px;
+                    padding: 3px 15px;
+                }
+
+                .prompt{
+                    font-size: 15px;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+
+                .log-in-btn:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .rejestration-container{
+        flex-basis: 33.3%;
+        border: 2px solid black;
+        padding: 20px 10px;
+
+        .ornament{
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            border-bottom: 2px solid black;
+        }
+
+        .fileds-container{
+            width: 80%;
+            margin: 0 auto;
+
+            & > div{
+                margin: 50px 0px;
+
+                .rejestration-btn{
+                    width: 100%;
+                    font-size: 17px;
+                    padding: 3px 15px;
+
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    .shopping-without-rejestration-container{
+        flex-basis: 33.3%;
+        border: 2px solid black;
+        padding: 20px 10px;
+
+        .ornament{
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            border-bottom: 2px solid black;
+        }
+
+        .fileds-container{
+            width: 80%;
+            margin: 0 auto;
+
+            & > div{
+                margin: 20px 0px;
+
+                .text{
+                    text-indent: 20px;
+                }
+
+                .shopping-without-rejestration-btn{
+                    width: 100%;
+                    font-size: 17px;
+                    padding: 3px 15px;
+
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

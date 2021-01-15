@@ -1,0 +1,37 @@
+.order-form-container{
+    min-height: 100px;
+    padding: 30px 0px;
+    background-color: rebeccapurple;
+
+    .part-container{
+        margin: 20px 0px;
+
+        .header-container{
+            width: 80%;
+            margin: 0 auto;
+            border-bottom: 2px solid black;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+    
+        .data-container{
+            width: 80%;
+            margin: 0 auto;
+            margin-bottom: 30px;
+    
+            &__value-input{
+                width: 100%;
+                padding: 3px 15px;
+                font-size: 20px;
+    
+                &:focus{
+                    border: 2px solid red;
+                }
+            }
+        }
+    }
+
+    .invisible{
+        display: none;
+    }
+}

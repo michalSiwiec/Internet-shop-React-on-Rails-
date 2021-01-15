@@ -42,7 +42,7 @@ const basketReducer = (state = initialState, action) => {
                 updatedProduct.quantity += action.quantityAddedOrSubstractedProduct
                 draftState.wholePrice += (action.quantityAddedOrSubstractedProduct * action.price)
             })
-
+            
         default:
              return state
     }

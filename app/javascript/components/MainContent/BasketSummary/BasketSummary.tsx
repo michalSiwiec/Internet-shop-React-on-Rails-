@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
 
-import {useSelector} from 'react-redux'
-import {useDispatch} from 'react-redux'
+import {Link} from 'react-router-dom'
 
+import {useSelector, useDispatch} from 'react-redux'
 import actions from '../../../../redux/basket/duck/actions'
 
 
@@ -47,8 +47,6 @@ const BasketSummary = () => {
         const URL = `/api/v1/products/show?productID=${id}`
         const OPTIONS = {method: 'GET'}
         
-        // debugger
-
         fetch(URL,OPTIONS)
         .then(response => {
             if(response.ok)
@@ -129,7 +127,8 @@ const BasketSummary = () => {
                             </div>
 
                             <div className="subcontainer">
-                                <input type="button" value="Przejdź dalej" className="subcontainer__continue-shopping-btn" />
+                               {/* <Link to='/home/OrderForm'> <input type="button" value="Przejdź dalej" className="subcontainer__continue-shopping-btn" /> </Link> */}
+                               <Link to='/home/ShoppingOption'> <input type="button" value="Przejdź dalej" className="subcontainer__continue-shopping-btn" /> </Link>
                             </div>
                         </div>
                     </>
