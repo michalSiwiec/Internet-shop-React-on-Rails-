@@ -17,6 +17,9 @@ const RejestrationForm = () => {
     const [postalCode, setPostalCode] = useState({value: '', setted: false})
     const [houseNumber, setHouseNumber] = useState({value: '', setted: false})
 
+    const [provinces, setProvinces]:Array<any> = useState([])
+    const [cities, setCities]:Array<any> = useState([])
+
     const registerUser = () => {
 
     }
@@ -76,17 +79,42 @@ const RejestrationForm = () => {
     const validateHouseNumber = (value:string) => {
         console.log(value)
     }
-    
-    // I have to turn on this method only after changing province so 
-    // [province] because postal code will be associated with city so I don't need to refer to API
 
     useEffect(() => {
-        console.log('useEffect')
-        console.log(province)
-        console.log(city)
-    }, [province])
+        let secondaryProvince:any; 
+        let secondaryCities:any; 
 
-   
+        fetch('/api/v1/provinces',{method: 'GET'})
+        .then(response => {
+            if(response.ok)
+                return response.json()
+            else
+                throw Error(response.statusText);
+        })
+        .then(data => secondaryProvince = data)
+        .then(() => {
+            return(
+                new Promise((resolve, reject) => {
+                    fetch('/api/v1/cities',{method: 'GET'})
+                    .then(response => {
+                        if(response.ok)
+                            resolve(response.json())
+                        else
+                            throw Error(response.statusText);
+                    })
+                })
+            )
+        })
+        .then((data) => secondaryCities = data)
+        .then(() => {
+            setProvinces(secondaryProvince)
+            setCities(secondaryCities)
+        })
+        .catch(err => console.error(err))
+    },[])
+
+    const demandProvince = provinces.find(province_ => province_.name === province)
+    const selectedCities = cities.filter(city_ => city_.province_id === demandProvince.id)
 
     return (
         <div className="rejestration-form-container">
@@ -136,44 +164,18 @@ const RejestrationForm = () => {
 
                     <div>
                         <select onChange={(e) => setProvince(e.target.value)}>
-                            <option value="Śląskie">Śląskie</option>
-                            <option value="Dolnośląskie">Dolnośląskie</option>
-                            <option value="Kujawsko-pomorskie">Kujawsko-pomorskie</option>
-                            <option value="Lubelskie">Lubelskie</option>
-                            <option value="Lubuskie">Lubuskie</option>
-                            <option value="Łódzkie">Łódzkie</option>
-                            <option value="Małopolskie">Małopolskie</option>
-                            <option value="Mazowieckie">Mazowieckie</option>
-                            <option value="Opolskie">Opolskie</option>
-                            <option value="Podkarpackie">Podkarpackie</option>
-                            <option value="Podlaskie">Podlaskie</option>
-                            <option value="Pomorskie">Pomorskie</option>
-                            <option value="Świętokrzyskie">Świętokrzyskie</option>
-                            <option value="Warmińsko-mazurskie">Warmińsko-mazurskie</option>
-                            <option value="Wielkopolskie">Wielkopolskie</option>
-                            <option value="Zachodniopomorskie">Zachodniopomorskie</option>
+                            {provinces.map(province => <option key={`province${province.id}`}>{province.name}</option>)}
                         </select>
                     </div>
 
                     <div>
                         <select onChange={(e) => setCity(e.target.value)}>
-                            <option value="Kraków">Kraków</option>
-                            <option value="Warszawa">Warszawa</option>
-                            <option value="Poznań">Poznań</option>
-                            <option value="Gdańsk">Gdańsk</option>
-                            <option value="Łódz">Łódz</option>
-                            <option value="Bielsko-biała">Bielsko-biała</option>
-                            <option value="Żywiec">Żywiec</option>
-                            <option value="Gliwice">Gliwice</option>
+                            {selectedCities.map(city => <option key={`city${city.id}`}>{city.name} {city.postal_code}</option>)}
                         </select>
                     </div>
 
                     <div>
                         <input type="text" placeholder="Ulica" onChange={(e) => validateStreet(e.target.value)}/>
-                    </div>
-
-                    <div>
-                        <input type="text" placeholder="Kod pocztowy np. 34 - 300" onChange={(e) => validatePostalCode(e.target.value)}/>
                     </div>
 
                     <div>

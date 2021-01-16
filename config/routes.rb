@@ -6,6 +6,10 @@ Rails.application.routes.draw do
       get 'products', to: 'products#index'
       get 'products/show', to: 'products#show'
       get 'products/show_selected', to: 'products#show_selected'
+
+      get 'provinces', to: 'provinces#index'
+
+      get 'cities', to: 'cities#index'
     end
   end
 
