@@ -3,55 +3,19 @@ import React, {useState, useEffect} from 'react'
 import '../../../../assets/stylesheets/RejestrationForm.scss'
 
 const RejestrationForm = () => {
-    const [formData, setFormData] = useState({
-        login: {
-            value: '',
-            setted: false
-        },
-        password: {
-            value: '',
-            setted: false
-        },
-        passwordConfirmation: {
-            value: '',
-            setted: false
-        },
-        name: {
-            value: '',
-            setted: false
-        },
-        surname: {
-            value: '',
-            setted: false
-        },
-        email: {
-            value: '',
-            setted: false
-        },
-        phoneNumber: {
-            value: '',
-            setted: false
-        },
-        province: {
-            value: '',
-            setted: false
-        },
-        street: {
-            value: '',
-            setted: false
-        },
-        postalCode: {
-            value: '',
-            setted: false
-        },
-        houseNumber: {
-            value: '',
-            setted: false
-        }
-    })
 
-    // const [mistakeInformation, setMistakeInformation] = useState([]) 
-    const [provinces, setProvinces] = useState([''])
+    const [login, setLogin] = useState({value: '', setted: false})
+    const [password, setPassword] = useState({value: '', setted: false})
+    const [passwordConfirmation, setPasswordConfirmation] = useState({value: '', setted: false})
+    const [name, setName] = useState({value: '', setted: false})
+    const [surname, setSurname] = useState({value: '', setted: false})
+    const [email, setEmail] = useState({value: '', setted: false})
+    const [phoneNumber, setPhoneNumber] = useState({value: '', setted: false})
+    const [province, setProvince] = useState('Śląskie')
+    const [city, setCity] = useState('Gliwice')
+    const [street, setStreet] = useState({value: '', setted: false})
+    const [postalCode, setPostalCode] = useState({value: '', setted: false})
+    const [houseNumber, setHouseNumber] = useState({value: '', setted: false})
 
     const registerUser = () => {
 
@@ -65,16 +29,16 @@ const RejestrationForm = () => {
 
     const checkLogin = (email:string) => {
         const req = /^[a-zA-Z0-9]{3,}/
-        const copyPresentState = {...formData}
+        // const copyPresentState = {...formData}
 
-        copyPresentState.email.value = email
+        // copyPresentState.email.value = email
 
-        if(req.test(email))
-            copyPresentState.email.setted = true
-        else
-            copyPresentState.email.setted = false
+        // if(req.test(email))
+        //     copyPresentState.email.setted = true
+        // else
+        //     copyPresentState.email.setted = false
 
-        setFormData(copyPresentState)
+        // setFormData(copyPresentState)
     }
 
     const checkPassword = (value:string) => {
@@ -112,14 +76,17 @@ const RejestrationForm = () => {
     const validateHouseNumber = (value:string) => {
         console.log(value)
     }
+    
+    // I have to turn on this method only after changing province so 
+    // [province] because postal code will be associated with city so I don't need to refer to API
 
     useEffect(() => {
         console.log('useEffect')
+        console.log(province)
+        console.log(city)
+    }, [province])
 
-        setProvinces(['Hello'])
-    }, [])
-
-    // console.log(provinces)
+   
 
     return (
         <div className="rejestration-form-container">
@@ -168,7 +135,8 @@ const RejestrationForm = () => {
                     </div>
 
                     <div>
-                        <select>
+                        <select onChange={(e) => setProvince(e.target.value)}>
+                            <option value="Śląskie">Śląskie</option>
                             <option value="Dolnośląskie">Dolnośląskie</option>
                             <option value="Kujawsko-pomorskie">Kujawsko-pomorskie</option>
                             <option value="Lubelskie">Lubelskie</option>
@@ -180,7 +148,6 @@ const RejestrationForm = () => {
                             <option value="Podkarpackie">Podkarpackie</option>
                             <option value="Podlaskie">Podlaskie</option>
                             <option value="Pomorskie">Pomorskie</option>
-                            <option value="Śląskie">Śląskie</option>
                             <option value="Świętokrzyskie">Świętokrzyskie</option>
                             <option value="Warmińsko-mazurskie">Warmińsko-mazurskie</option>
                             <option value="Wielkopolskie">Wielkopolskie</option>
@@ -189,7 +156,7 @@ const RejestrationForm = () => {
                     </div>
 
                     <div>
-                        <select>
+                        <select onChange={(e) => setCity(e.target.value)}>
                             <option value="Kraków">Kraków</option>
                             <option value="Warszawa">Warszawa</option>
                             <option value="Poznań">Poznań</option>
