@@ -17,6 +17,12 @@
         & > div{
             margin: 15px;
 
+            .mistake-information-container{
+                margin-top: 5px;
+                padding-left: 3px;
+                color: red;
+            }
+
             input[type="text"],
             input[type="number"],
             select{
