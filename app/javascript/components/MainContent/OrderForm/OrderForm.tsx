@@ -21,7 +21,7 @@ const OrderForm = () => {
         name: {
             value: '',
             setted: false
-        },
+        },  
         surname: {
             value: '',
             setted: false
@@ -129,10 +129,6 @@ const OrderForm = () => {
         setFormData(copyPresentState)
     }
 
-    // console.log(`${formData.name.value} ${formData.name.setted}`)
-    // console.log(`${formData.surname.value} ${formData.surname.setted}`)
-    // // console.log(`${formData.name.value} ${formData.name.setted}`)
-
     return (
         <div className="order-form-container">
             <div className={`part-container ${partsVisibilities[0]}`}>
@@ -198,7 +194,7 @@ const OrderForm = () => {
 
                 <div className="data-container">
                     <label> Miasto
-                        <select>
+                        <select className="city-select">
                             <option>Żywiec</option>
                             <option>Kraków</option>
                             <option>Pozań</option>
@@ -214,6 +210,13 @@ const OrderForm = () => {
                         className='data-container__value-input'
                         onChange={(e) => checkDataForm(checkStreet,e.target.value)}
                     />
+                </div>
+
+                <div className="data-container">
+                    <label>
+                        Numer domu / mieszkania
+                        <input type="number" value="1" className="flat-number"/>
+                    </label>
                 </div>
             </div>
             

@@ -9,7 +9,9 @@ interface Props {
         source: string
         description: string
         price: number
-        key_word: string
+        key_word: string,
+        product_type: string,
+        quantity_available: number
     }
 }
 
@@ -56,7 +58,16 @@ const Product:FC<Props> = ({product}) => {
             
             <div className="flex-container">
                 <button className="add-to-basket-button" onClick={addProductToBasket}>Do koszyka</button>
-                <input ref={quantityInput} type="number" className="select_quantity_product" onChange={(e) => updateQuantity(e.target.value)} placeholder="Ilossść" min="1" value={quantity}/>
+                <input ref={quantityInput}
+                    type="number"
+                    className="select_quantity_product"
+                    onChange={(e) => updateQuantity(e.target.value)}
+                    min="1"
+                    value={quantity}
+                    max={product.quantity_available}
+                    onKeyPress={(e) => e.preventDefault()}
+                    onKeyDown={(e) => e.preventDefault()}
+                />
             </div>
         </div>
     )

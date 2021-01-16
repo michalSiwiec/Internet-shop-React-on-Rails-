@@ -1,7 +1,7 @@
 .order-form-container{
     min-height: 100px;
     padding: 30px 0px;
-    background-color: rebeccapurple;
+    background-color: beige;
 
     .part-container{
         margin: 20px 0px;
@@ -26,6 +26,22 @@
     
                 &:focus{
                     border: 2px solid red;
+                }
+            }
+
+            label{
+                font-size: 23px;
+
+                select{
+                    margin-left: 20px;
+                    padding: 3px 10px;
+                    font-size: 20px;
+                }
+
+                .flat-number{
+                    padding: 3px 10px;
+                    font-size: 20px;
+                    margin-left: 20px;
                 }
             }
         }

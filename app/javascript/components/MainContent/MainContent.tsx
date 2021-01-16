@@ -7,8 +7,8 @@ import Advertisement from './Advertisement/Advertisement'
 import OrderArea from './OrderArea/OrderArea'
 import OrderForm from './OrderForm/OrderForm'
 import ShoppingOption from './ShoppingOption/ShoppingOption'
-
 import BasketSummary from './BasketSummary/BasketSummary'
+import RejestrationForm from './RejestrationForm/RejestrationForm'
 
 import '../../../assets/stylesheets/mainContent.scss'
 
@@ -50,6 +50,10 @@ const MainContent = () => {
 
             <Route path='/home/OrderForm'>
                 <OrderForm />
+            </Route>
+
+            <Route path="/home/rejestrationForm"> 
+                <RejestrationForm />
             </Route>
 
             <Route>Nie ma takiej podstrony!</Route>

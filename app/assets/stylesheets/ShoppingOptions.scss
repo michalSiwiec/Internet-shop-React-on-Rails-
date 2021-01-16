@@ -59,6 +59,7 @@
         flex-basis: 33.3%;
         border: 2px solid black;
         padding: 20px 10px;
+        background-color: beige;
 
         .ornament{
             width: 80%;
@@ -78,6 +79,7 @@
                     width: 100%;
                     font-size: 17px;
                     padding: 3px 15px;
+                    background-color: rgb(158, 8, 8);
 
                     &:hover{
                         cursor: pointer;

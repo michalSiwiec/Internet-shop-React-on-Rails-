@@ -41,7 +41,7 @@ const ShoppingOption = () => {
 
                 <div className="fileds-container">
                     <div>
-                        <Link to=""><button className="rejestration-btn">Zarejestruj się</button></Link>
+                        <Link to="/home/rejestrationForm"><button className="rejestration-btn">Zarejestruj się</button></Link>
                     </div>
                 </div>
             </div>
