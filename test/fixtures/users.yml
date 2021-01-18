@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sing_in_data: 1
+  personal_data: 1
+  delivery_address: 1
+
+two:
+  sing_in_data: 1
+  personal_data: 1
+  delivery_address: 1

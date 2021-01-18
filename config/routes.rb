@@ -8,8 +8,12 @@ Rails.application.routes.draw do
       get 'products/show_selected', to: 'products#show_selected'
 
       get 'provinces', to: 'provinces#index'
+      get 'provinces/show', to: 'provinces#show'
 
       get 'cities', to: 'cities#index'
+      get 'cities/show', to: 'cities#show'
+
+      post 'addUser', to: 'user#add_user'
     end
   end
 

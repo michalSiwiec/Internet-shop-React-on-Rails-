@@ -1,0 +1,2 @@
+class SingInDatum < ApplicationRecord
+end
