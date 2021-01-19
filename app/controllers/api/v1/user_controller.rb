@@ -19,15 +19,23 @@ module Api
                 street = params[:street]
                 house_number = params[:house_number]
 
-                SingInDatum.create(login: login, password: password)
-                PersonalDatum.create(name: name, surname: surname, email: email, phone_number: phone_number)
-                DeliveryAddress.create(country: country, province: province, city: city, postal_code: postal_code, street: street, house_number: house_number)
+                user = User.create()
+                DataLogin.create(login: login, password: password, user_id: user.id)
+                DataPerson.create(name: name, surname: surname, email: email, phone_number: phone_number, user_id: user.id)
+                DeliveryAddress.create(country: country, province: province, city: city, postal_code: postal_code, street: street, house_number: house_number, user_id: user.id)
+            end
 
-                singInDataLastRecordID = SingInDatum.last.id
-                personalDatumLastRecordID = PersonalDatum.last.id
-                deliveryAddressLastRecordID = DeliveryAddress.last.id
+            def log_in_user
+                login = params[:login]
+                password = params[:password]    
 
-                User.create(sing_in_data: singInDataLastRecordID, personal_data: personalDatumLastRecordID, delivery_address: deliveryAddressLastRecordID)
+                user = User.joins(:dataLogin).where('data_logins.login = ? AND data_logins.password = ?', "#{login}", "#{password}")
+
+                if user.present?
+                    render json: user
+                else
+                    render json: {info: 'User with such data doesnt exist'}
+                end
             end
         end
     end

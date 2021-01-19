@@ -1,2 +1,0 @@
-class PersonalDatum < ApplicationRecord
-end

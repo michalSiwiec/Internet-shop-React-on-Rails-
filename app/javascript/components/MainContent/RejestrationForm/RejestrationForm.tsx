@@ -81,21 +81,13 @@ const RejestrationForm = () => {
             country: 'Polska'
         }
 
-        console.log(formData)
-
-        fetch("/api/v1/addUser", {
+        fetch("/api/v1/users/addUser", {
             method: "post",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(formData)
         })
-        // .then(response => {
-        //     if(response.ok)
-        //         return response.json()
-        //     else
-        //         throw Error(response.statusText);
-        // })
     }
 
     const checkDataForm = (e:any) => {

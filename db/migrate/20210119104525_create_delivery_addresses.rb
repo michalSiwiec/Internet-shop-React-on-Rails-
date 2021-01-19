@@ -7,6 +7,7 @@ class CreateDeliveryAddresses < ActiveRecord::Migration[6.0]
       t.string :postal_code
       t.string :street
       t.integer :house_number
+      t.integer :user_id
 
       t.timestamps
     end

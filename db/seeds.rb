@@ -238,5 +238,3 @@ City.create(name: 'Kamień Pomorski', province_id: zachodniopomorskie.id, postal
 
 
 
-
-

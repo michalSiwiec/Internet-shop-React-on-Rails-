@@ -18,6 +18,7 @@ interface IProduct{
     price: number
     key_word: string
     product_type: string
+    quantity_available: number
 }
 
 const Products:FC<Props> = ({products, productsPartsVisibility}) => {

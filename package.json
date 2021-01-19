@@ -32,6 +32,11 @@
   "version": "0.1.0",
   "devDependencies": {
     "@types/rx": "^4.1.2",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.2"
+  },
+  "scripts": {
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production",
+    "serve": "webpack-dev-server --inline --hot"
   }
 }

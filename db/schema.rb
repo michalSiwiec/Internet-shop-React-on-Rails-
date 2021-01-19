@@ -10,10 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_18_150711) do
+ActiveRecord::Schema.define(version: 2021_01_19_220739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admins", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "cities", force: :cascade do |t|
     t.text "name"
@@ -23,6 +28,32 @@ ActiveRecord::Schema.define(version: 2021_01_18_150711) do
     t.string "postal_code"
   end
 
+  create_table "data_logins", force: :cascade do |t|
+    t.string "login"
+    t.string "password"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "admin_id"
+  end
+
+  create_table "data_people", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone_number"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "data_sing_ins", force: :cascade do |t|
+    t.string "login"
+    t.string "password"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "delivery_addresses", force: :cascade do |t|
     t.string "country"
     t.string "province"
@@ -30,15 +61,7 @@ ActiveRecord::Schema.define(version: 2021_01_18_150711) do
     t.string "postal_code"
     t.string "street"
     t.integer "house_number"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "personal_data", force: :cascade do |t|
-    t.string "name"
-    t.string "surname"
-    t.string "email"
-    t.string "phone_number"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -60,17 +83,7 @@ ActiveRecord::Schema.define(version: 2021_01_18_150711) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "sing_in_data", force: :cascade do |t|
-    t.string "login"
-    t.string "password"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "users", force: :cascade do |t|
-    t.integer "sing_in_data"
-    t.integer "personal_data"
-    t.integer "delivery_address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

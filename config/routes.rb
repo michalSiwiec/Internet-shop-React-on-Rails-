@@ -13,7 +13,10 @@ Rails.application.routes.draw do
       get 'cities', to: 'cities#index'
       get 'cities/show', to: 'cities#show'
 
-      post 'addUser', to: 'user#add_user'
+      post 'users/addUser', to: 'user#add_user'
+      get 'users/logInUser', to: 'user#log_in_user'
+
+      get 'admins/log_in_admin', to: 'admin#log_in_admin'
     end
   end
 

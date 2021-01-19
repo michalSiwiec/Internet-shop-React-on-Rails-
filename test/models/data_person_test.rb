@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SingInDatumTest < ActiveSupport::TestCase
+class DataPersonTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

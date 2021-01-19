@@ -7,6 +7,7 @@ one:
   postal_code: MyString
   street: MyString
   house_number: 1
+  user_id: 1
 
 two:
   country: MyString
@@ -15,3 +16,4 @@ two:
   postal_code: MyString
   street: MyString
   house_number: 1
+  user_id: 1

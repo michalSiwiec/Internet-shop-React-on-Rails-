@@ -2,6 +2,8 @@ import React from 'react'
 
 import {Route, Switch, Redirect} from 'react-router-dom'
 
+import AdminPanel from './Admin/AdminPanel'
+
 import MainMenu from './MainMenu/MainMenu';
 import AdvertisementSlider from './AdvertisementSlider/AdvertisementSlider'
 import MainContent from './MainContent/MainContent';
@@ -29,7 +31,7 @@ const App = () => {
                 </Route>
 
                 <Route path="/admin/" exact>
-                    <p>Admin panael</p>
+                    <AdminPanel />
                 </Route>
 
                 <Route>
