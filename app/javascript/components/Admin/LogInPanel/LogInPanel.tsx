@@ -1,12 +1,18 @@
 import React, {useState} from 'react'
 
+import actions from '../../../../redux/admin/actions'
+import {useDispatch} from 'react-redux'
+
 import '../../../assets/stylesheets/logInPanel.scss'
 
 const LogInPanel = () => {
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
 
-    const LogIn = (e) => {
+    const dispatch = useDispatch()
+
+    
+    const LogIn = (e:any) => {
         e.preventDefault()
 
         if(login !== '' && password !== '')
@@ -26,12 +32,19 @@ const LogInPanel = () => {
             else
                 throw Error(response.statusText);
         })
-        .then((data) => console.log(data))
+        .then((data) => {
+            const adminID = data[0].id
+
+            if(adminID !== 0)
+                dispatch(actions.logInAdmin(adminID))
+            else
+                console.log('Admin doessanqqqqqt exist!')
+        })
     }
 
     return (
         <div className="log-in-panel-container">
-            <form action="">
+            <form>
                 <h1>Zaloguję</h1>
 
                 <div className="input-container">
@@ -43,7 +56,8 @@ const LogInPanel = () => {
                 </div>
 
                 <div className="input-container">
-                    <input type="submit" value="Zaloguj" onClick={(e) => LogIn(e)}/>
+                    {/* <input type="submit" value="Zaloguj" onClick={(e) => LogIn(e)}/> */}
+                    <button onClick={(e) => LogIn(e)}>Zaloguj</button>
                 </div>
             </form>
         </div>

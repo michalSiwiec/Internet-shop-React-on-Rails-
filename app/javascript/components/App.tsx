@@ -2,14 +2,14 @@ import React from 'react'
 
 import {Route, Switch, Redirect} from 'react-router-dom'
 
-import AdminPanel from './Admin/AdminPanel'
+import AdminDashBoard from './Admin/AdminDashBoard'
 
 import MainMenu from './MainMenu/MainMenu';
 import AdvertisementSlider from './AdvertisementSlider/AdvertisementSlider'
 import MainContent from './MainContent/MainContent';
 import MainFooter from './MainFooter/MainFooter';
 
-import store from '../../redux/store'
+// import store from '../../redux/store'
 
 
 const App = () => {
@@ -30,8 +30,8 @@ const App = () => {
                     <MainFooter/>
                 </Route>
 
-                <Route path="/admin/" exact>
-                    <AdminPanel />
+                <Route path="/admin/">
+                    <AdminDashBoard />
                 </Route>
 
                 <Route>
