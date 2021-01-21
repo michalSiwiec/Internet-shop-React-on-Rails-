@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       get 'products/show', to: 'products#show'
       get 'products/show_selected', to: 'products#show_selected'
       put 'products/remove_product', to: 'products#remove_product'
+      put 'products/edit_product', to: 'products#edit_product'
 
       get 'provinces', to: 'provinces#index'
       get 'provinces/show', to: 'provinces#show'

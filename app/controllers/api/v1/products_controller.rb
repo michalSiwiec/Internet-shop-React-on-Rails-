@@ -37,6 +37,20 @@ module Api
 
                 render json: products
             end
+
+            def edit_product
+                product = Product.find(params[:productID])
+                product.update_attributes(edit_params)
+
+                products = Product.all
+                render json: products.sort_by {|product| product.id}
+            end
+
+            private
+
+            def edit_params
+                params.require(:formData).permit(:source, :description, :price, :quantity_available, :type, :key_word)
+            end
         end
     end
 end

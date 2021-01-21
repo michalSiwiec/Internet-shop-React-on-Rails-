@@ -56,7 +56,6 @@ const LogInPanel = () => {
                 </div>
 
                 <div className="input-container">
-                    {/* <input type="submit" value="Zaloguj" onClick={(e) => LogIn(e)}/> */}
                     <button onClick={(e) => LogIn(e)}>Zaloguj</button>
                 </div>
             </form>

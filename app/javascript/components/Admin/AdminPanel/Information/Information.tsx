@@ -1,6 +1,12 @@
 import React, {FC} from 'react'
 
 import Products from './Products/Products'
+import OrdersDiagrams from './Orders/OrdersDiagrams'
+import OrdersList from './Orders/OrdersList'
+import Clients from './Clients/Clients'
+import Statistics from './Statistics/Statistics'
+import Complaints from './Complaints/Complaints'
+import Opinions from './Opinions/Opinions'
 
 interface Props{
     informationParts: {
@@ -17,32 +23,14 @@ interface Props{
 const Information:FC<Props> = ({informationParts}) => {
     return (
         <div className="information-container">
-            <div className="orders-diagram-container" ref={informationParts.ordersDiagram}>
-                <h2>Orders Diagram</h2>
-            </div>
-
-            <div className="order-list-container" ref={informationParts.ordersList}>
-                <h2>Orders List</h2>
-            </div>
-
+            <OrdersDiagrams informationPart={informationParts.ordersDiagram}/>
+            <OrdersList informationPart={informationParts.ordersList}/>
             <Products refElement={informationParts.productsList} />
-
-            <div className="clients-list-container" ref={informationParts.clientsList}>
-                <h2>Clinets list container</h2>
-            </div>
-
-            <div className="statistics-container" ref={informationParts.statisticDiagrams}>
-                <h2>Statistic digrams</h2>
-            </div>
-
-            <div className="complaints-container" ref={informationParts.complaintsList}>
-                <h2>Complaints list</h2>
-            </div>
-
-            <div className="opinion-container" id="opinion-container" ref={informationParts.opinionsList}>
-                <h2>Opinions list</h2>
-            </div>
-    </div>
+            <Clients clientsList={informationParts.clientsList}/>
+            <Statistics statisticDiagrams={informationParts.statisticDiagrams}/>
+            <Complaints complaintsList={informationParts.complaintsList}/>
+            <Opinions opinionsList={informationParts.opinionsList}/>
+        </div>
     )
 }
 

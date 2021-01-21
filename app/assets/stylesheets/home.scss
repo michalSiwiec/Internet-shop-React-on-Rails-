@@ -18,18 +18,11 @@ body{
     a{
         text-decoration: none;
         color: black;
-        // border-bottom: 3px solid white;
-
-        // &:hover
-        // {
-        //     border-bottom: 3px solid red;
-        // }
     }
 
     input{
         &:focus{
             outline: none;
-            // border: 2px solid red;
         }
     }
 
