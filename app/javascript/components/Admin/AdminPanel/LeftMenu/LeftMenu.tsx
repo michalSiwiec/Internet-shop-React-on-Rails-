@@ -19,7 +19,7 @@ const LeftMenu:FC<Props> = ({informationParts}) => {
     
     const moveToElement = (element:any) => {
         if(element)
-            element.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
+            element.current.scrollIntoView({ behavior: 'smooth'})
     }
     
     return (

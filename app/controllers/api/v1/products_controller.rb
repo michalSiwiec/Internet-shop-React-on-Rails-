@@ -1,6 +1,8 @@
 module Api
     module V1
         class ProductsController < ApplicationController
+            skip_before_action :verify_authenticity_token
+
             def index 
                 products = Product.all
                 render json: products
@@ -24,6 +26,16 @@ module Api
                 end
 
                 render json: products_to_render
+            end
+
+            def remove_product
+                product_id = params[:productID]
+                product = Product.find(product_id)
+
+                product.destroy
+                products = Product.all
+
+                render json: products
             end
         end
     end
