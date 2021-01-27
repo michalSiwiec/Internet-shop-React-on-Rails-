@@ -102,21 +102,21 @@ const EditClient:FC<Props> = () => {
             <div className="edit-user-form">
                 <form>
                     <Header value="Dane osobowe" />
-                    <Name name={name} setName={setName}/>
-                    <Surname surname={surname} setSurname={setSurname}/>
-                    <Email email={email} setEmail={setEmail}/>
-                    <PhoneNumber phoneNumber={phoneNumber} setPhoneNumber={setPhoneNumber}/>
+                    <Name name={name} setName={setName} />
+                    <Surname surname={surname} setSurname={setSurname} />
+                    <Email email={email} setEmail={setEmail} />
+                    <PhoneNumber phoneNumber={phoneNumber} setPhoneNumber={setPhoneNumber} />
                     <Header value="Dane dostawcze" />
                     <Country country={country} setCountry={setCountry}/>
-                    <Province province={province} setProvince={setProvince}/>
-                    <City city={city} setCity={setCity}/>
-                    <PostalCode postalCode={postalCode} setPostalCode={setPostalCode}/>
-                    <Street street={street} setStreet={setStreet}/>
-                    <HouseNumber houseNumber={houseNumber} setHouseNumber={setHouseNumber}/>
+                    <Province province={province} setProvince={setProvince} />
+                    <City city={city} setCity={setCity} />
+                    <PostalCode postalCode={postalCode} setPostalCode={setPostalCode} />
+                    <Street street={street} setStreet={setStreet} />
+                    <HouseNumber houseNumber={houseNumber} setHouseNumber={setHouseNumber} />
                     <Header value="Dane logowania" />
-                    <Login login={login} setLogin ={setLogin}/>
-                    <Password password={password} setPassword={setPassword}/>
-                    <Buttons editUser={editUser}/>
+                    <Login login={login} setLogin ={setLogin} />
+                    <Password password={password} setPassword={setPassword} />
+                    <Buttons editUser={editUser} />
                 </form>
             </div>
         </div>

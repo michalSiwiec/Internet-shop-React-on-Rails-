@@ -25,7 +25,7 @@ const Clients:FC<Props> = ({clientsList}) => {
                 <EditClient />
             </Route>
 
-            <Route path="/admin/removeUser" exact>
+            <Route path="/admin/removeUser/:userID" exact>
                 <RemoveClient />
             </Route>
         </>

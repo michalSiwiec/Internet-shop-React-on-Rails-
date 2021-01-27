@@ -94,6 +94,25 @@ module Api
                     phone_number: user_data[:phoneNumber],
                 )     
             end
+
+            def get_user_person_data
+                user_id = params[:userID]
+                user_personal_data = DataPerson.find_by(user_id: user_id)
+                
+                user_person_data = {name: user_personal_data.name, surname: user_personal_data.surname}
+
+                render json: user_person_data
+            end
+
+            def remove_user
+                user_id = params[:userID]
+                # puts(user_id)
+
+                DeliveryAddress.find_by(user_id: user_id).destroy
+                DataLogin.find_by(user_id: user_id).destroy
+                DataPerson.find_by(user_id: user_id).destroy
+                User.find(user_id).destroy
+            end
         end
     end
 end

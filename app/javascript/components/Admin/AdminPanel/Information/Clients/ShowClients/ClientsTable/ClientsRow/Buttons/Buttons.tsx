@@ -12,7 +12,7 @@ interface Props{
 const Buttons:FC<Props> = ({userID}) => {
     return (
         <td>
-            <RemoveUserButton />
+            <RemoveUserButton userID={userID}/>
             <EditUserButton userID={userID} />
         </td>
     )

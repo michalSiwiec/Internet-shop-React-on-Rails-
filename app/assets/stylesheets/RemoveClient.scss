@@ -5,9 +5,31 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
     background-image: url("../../assets/images/Kaufland-background.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    color: white;
+
+    .overlay{
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        opacity: 0.84;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .remove-user-form{
+        width: 40vw;
+        height: 40vh;
+        background-color: brown;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
+
