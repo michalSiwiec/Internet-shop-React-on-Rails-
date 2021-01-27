@@ -15,7 +15,7 @@ interface Props{
 
 const TableRow:FC<Props> = ({product}) => {
     return (
-        <tr key={`product ${product.id}`}>
+        <tr>
             <SourceColumn source={product.source}/>
             <DescriptionColumn description={product.description}/>
             <PriceColumn price={product.price}/>

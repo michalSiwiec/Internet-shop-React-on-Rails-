@@ -1,0 +1,61 @@
+.edit-user-container{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-image: url("../../assets/images/Kaufland-background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .overlay{
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        opacity: 0.84;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .edit-user-form{
+        width: 40vw;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        div{
+            margin: 10px 0px;
+            text-align: center;
+
+            input{
+                width: 70%;
+                padding: 3px 15px;
+                font-size: 17px;
+            }
+
+            button{
+                padding: 5px 25px;
+                margin: 10px 10px;
+                font-size: 17px;
+
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+
+        h2{
+            color: white;
+            margin: 20px 0px;
+            text-align: center;
+        }
+
+        
+    }
+}

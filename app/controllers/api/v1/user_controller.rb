@@ -37,6 +37,63 @@ module Api
                     render json: {info: 'User with such data doesnt exist'}
                 end
             end
+
+            def all_users
+                users = User.all
+                users_data = []
+
+                users.each do |user|
+                    user_delivery_addresses = DeliveryAddress.where(user_id: user.id)
+                    user_data_logins = DataLogin.where(user_id: user.id)
+                    user_personal_data = DataPerson.where(user_id: user.id)
+
+                    users_data.push({user_id: user.id, user_delivery_addres: user_delivery_addresses, data_login: user_data_logins, personal_data: user_personal_data})
+                end
+
+                render json: users_data
+            end
+
+            def get_user
+                user_id = params[:userID]
+
+                user_delivery_addresses = DeliveryAddress.where(user_id: user_id)
+                user_data_logins = DataLogin.where(user_id: user_id)
+                user_personal_data = DataPerson.where(user_id: user_id)
+
+                user_data = {delivery_addresses: user_delivery_addresses, data_logins: user_data_logins, personal_data: user_personal_data}
+
+                render json: user_data
+            end
+
+            def edit_user
+                user_id = params[:userID]
+                user_data = params[:newClientData]
+
+                user_delivery_addresses = DeliveryAddress.find_by(user_id: user_id)
+                user_data_logins = DataLogin.find_by(user_id: user_id)
+                user_personal_data = DataPerson.find_by(user_id: user_id)
+
+                user_delivery_addresses.update_attributes(
+                    country: user_data[:country],
+                    province: user_data[:province],
+                    city: user_data[:city],
+                    postal_code: user_data[:postalCode],
+                    street: user_data[:street],
+                    house_number: user_data[:houseNumber]
+                )
+
+                user_data_logins.update_attributes(
+                    login: user_data[:login],
+                    password: user_data[:password]
+                )
+
+                user_personal_data.update_attributes(
+                    name: user_data[:name],
+                    surname: user_data[:surname],
+                    email: user_data[:email],
+                    phone_number: user_data[:phoneNumber],
+                )     
+            end
         end
     end
 end

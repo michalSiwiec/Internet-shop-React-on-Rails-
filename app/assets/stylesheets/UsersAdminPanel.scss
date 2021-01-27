@@ -1,0 +1,36 @@
+.clients-list-container{
+
+    .clients-table-container{
+
+        table{
+            width: 100%;
+
+            th{
+                height: 70px;
+                font-weight: bold;
+                font-size: 20px;
+                border: 2px solid black;
+                padding: 0px 5px;
+            }
+
+            td,tr{
+               border: 2px solid black;
+               text-align: center;
+
+               button{
+                   padding: 3px 10px;
+                   margin: 5px 10px;
+                   font-size: 17px;
+
+                   .remove-user-button{
+                       background-color: red;
+                   }
+                   
+                   .edit-user-button {
+                       background-color: green;
+                   }
+               }
+            }
+        }
+    }
+}

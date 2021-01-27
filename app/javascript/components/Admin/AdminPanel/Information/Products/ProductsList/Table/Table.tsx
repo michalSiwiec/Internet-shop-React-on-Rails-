@@ -26,26 +26,24 @@ const Table = () => {
     }, [])
 
     return (
-        <div className="header-container">
-            <div className="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <TableHeader columnName="Prezentacja produktu"/>
-                            <TableHeader columnName="Nazwa produktu"/>
-                            <TableHeader columnName="Cena"/>
-                            <TableHeader columnName="Ilość na magazynie"/>
-                            <TableHeader columnName="Typ produktu"/>
-                            <TableHeader columnName="Słowa kluczowe"/>
-                            <TableHeader columnName="Akcje"/>
-                        </tr>
-                    </thead>
+        <div className="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <TableHeader columnName="Prezentacja produktu"/>
+                        <TableHeader columnName="Nazwa produktu"/>
+                        <TableHeader columnName="Cena"/>
+                        <TableHeader columnName="Ilość na magazynie"/>
+                        <TableHeader columnName="Typ produktu"/>
+                        <TableHeader columnName="Słowa kluczowe"/>
+                        <TableHeader columnName="Akcje"/>
+                    </tr>
+                </thead>
 
-                    <tbody>
-                        {products.map(product => <TableRow product={product} />)}
-                    </tbody>
-                </table>
-            </div>
+                <tbody>
+                    {products.map(product => <TableRow product={product} key={`products ${product.id}`}/>)}
+                </tbody>
+            </table>
         </div>
     )
 }

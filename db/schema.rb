@@ -48,13 +48,6 @@ ActiveRecord::Schema.define(version: 2021_01_20_110010) do
     t.integer "admin_id"
   end
 
-  create_table "data_sing_ins", force: :cascade do |t|
-    t.string "login"
-    t.string "password"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "delivery_addresses", force: :cascade do |t|
     t.string "country"
     t.string "province"

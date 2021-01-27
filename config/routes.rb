@@ -17,6 +17,9 @@ Rails.application.routes.draw do
 
       post 'users/addUser', to: 'user#add_user'
       get 'users/logInUser', to: 'user#log_in_user'
+      get 'users/all_users', to: 'user#all_users'
+      get 'users/get_user', to: 'user#get_user'
+      put 'users/edit_user', to: 'user#edit_user'
 
       get 'admins/log_in_admin', to: 'admin#log_in_admin'
     end
