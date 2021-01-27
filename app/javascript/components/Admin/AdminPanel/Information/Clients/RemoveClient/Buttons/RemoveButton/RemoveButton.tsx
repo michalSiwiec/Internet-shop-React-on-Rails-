@@ -9,7 +9,6 @@ interface Props{
 const RemoveButton:FC<Props> = ({userID}) => {
 
     const removeUser = () => {
-        alert(`removing user ${userID}`)
         fetch(`/api/v1/users/remove_user?userID=${userID}`, {method: 'DELETE'})
         .then(response => {
             if(response.ok)

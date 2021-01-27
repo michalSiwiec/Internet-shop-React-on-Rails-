@@ -5,6 +5,7 @@ import {Route} from 'react-router-dom'
 import ShowClients from './ShowClients/ShowClients'
 import RemoveClient from './RemoveClient/RemoveClient'
 import EditClient from './EditClient/EditClient'
+import AddClient from './AddClient/AddClient'
 
 import '../../../../../../assets/stylesheets/UsersAdminPanel.scss'
 
@@ -27,6 +28,10 @@ const Clients:FC<Props> = ({clientsList}) => {
 
             <Route path="/admin/removeUser/:userID" exact>
                 <RemoveClient />
+            </Route>
+
+            <Route path="/admin/addUser" exact>
+                <AddClient />
             </Route>
         </>
     )

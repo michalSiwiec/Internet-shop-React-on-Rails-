@@ -62,13 +62,6 @@ const EditClient:FC<Props> = () => {
                 newClientData
             })
         })
-        // .then(response => {
-        //     if(response.ok)
-        //         return response.json()
-        //     else
-        //         throw Error(response.statusText);
-        // })
-        // .then(result => alert(result))
     }
 
     useEffect(() => {

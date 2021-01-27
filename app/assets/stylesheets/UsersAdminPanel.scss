@@ -1,7 +1,24 @@
 .clients-list-container{
 
-    .clients-table-container{
+    .top-part{
+        display: flex;
+        align-items: center;
 
+        .add-client-button{
+            padding: 3px 15px;
+            font-size: 19px;
+            flex-grow: 1;
+        }
+
+        h1{
+            flex-grow: 3;
+            text-align: center;
+        }
+    }
+
+    
+
+    .clients-table-container{
         table{
             width: 100%;
 
