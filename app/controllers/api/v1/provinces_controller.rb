@@ -6,7 +6,7 @@ module Api
                 render json: provinces
             end
 
-            def show
+            def show # It shouldn't be here. I shoud create city controller to return such value
                 name = params[:name]
                 province = Province.find_by({name: name})
 

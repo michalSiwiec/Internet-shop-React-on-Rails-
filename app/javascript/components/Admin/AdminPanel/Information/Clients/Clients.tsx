@@ -14,8 +14,6 @@ interface Props{
 }
 
 const Clients:FC<Props> = ({clientsList}) => {
-    console.log('Clients render')
-
     return (
         <>
             <Route path="/admin" exact>

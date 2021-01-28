@@ -9,7 +9,6 @@ interface Props {
 }
 
 const ShowClients:FC<Props> = ({clientsList}) => {
-    console.log('Render showClients')
     return (
         <div className="clients-list-container" ref={clientsList}>
             <div className="top-part">

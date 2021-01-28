@@ -29,10 +29,10 @@ const AddClient = () => {
     const [login, setlogin] = useState('')
     const [password, setPassword] = useState('')
     const [passwordConfirmation, setPasswordConfirmation] = useState('')
-    const [country, setCountry] = useState('')
-    const [province, setProvince] = useState('')
-    const [city, setCity] = useState('')
-    const [postalCode, setPostalCode] = useState('')
+    const [country, setCountry] = useState('Polska')
+    const [province, setProvince] = useState('Śląskie')
+    const [city, setCity] = useState('Gliwice')
+    const [postalCode, setPostalCode] = useState('44 - 119')
     const [street, setStreet] = useState('')
     const [houseNumber, setHouseNumber] = useState('')
 
@@ -61,6 +61,8 @@ const AddClient = () => {
         })
     }
 
+    // console.log(province, city, postalCode)
+
     return (
         <div className="add-client-container">
             <div className="overlay"></div>
@@ -84,9 +86,9 @@ const AddClient = () => {
 
                     <div className="delivery-address-container">
                         <Country country={country} setCountry={setCountry} />
-                        <Province province={province} setProvince={setProvince} />
-                        <City city={city} setCity={setCity} />
-                        <PostalCode postalCode={postalCode} setPostalCode={setPostalCode} />
+                        <Province setProvince={setProvince} setCity={setCity} />
+                        <City setCity={setCity} province={province}/>
+                        <PostalCode postalCode={postalCode} setPostalCode={setPostalCode} city={city}/>
                         <Street street={street} setStreet={setStreet} />
                         <HouseNumber houseNumber={houseNumber} setHouseNumber={setHouseNumber} />
                     </div>

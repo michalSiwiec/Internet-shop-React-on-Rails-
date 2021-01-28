@@ -1,14 +1,29 @@
-import React, {FC} from 'react'
+import React, {FC, useState, useEffect} from 'react'
 
 interface Props {
-    city: string,
-    setCity: any
+    setCity: any,
+    province: string
 }
 
-const City:FC<Props> = ({city, setCity}) => {
+const City:FC<Props> = ({setCity, province}) => {
+    const [cities, setCities]:any = useState([])
+
+    useEffect(() => {
+        fetch(`/api/v1/cities?province_name=${province}`, {method: 'GET'})
+        .then(response => {
+            if(response.ok)
+                return response.json()
+            else
+                throw Error(response.statusText);
+        })
+        .then(cities_ => setCities(cities_))
+    }, [province])
+
     return (
         <div>
-            <input type="text" placeholder="Miasto" value={city} onChange={(e) => setCity(e.target.value)} />
+            <select onChange={(e) => setCity(e.target.value) }>
+                {cities.map(city => <option key={`city${city.name}`}>{city.name}</option>)}
+            </select>
         </div>
     )
 }
