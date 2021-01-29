@@ -1,4 +1,4 @@
-import React, {FC, useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 
 import {useParams} from 'react-router-dom'
 
@@ -19,23 +19,49 @@ import Login from './Login/Login'
 import Password from './Password/Password'
 import Buttons from './Buttons/Buttons'
 
-interface Props {}
-
-const EditClient:FC<Props> = () => {
+const EditClient = () => {
     const {userID} = useParams()
-    const [name, setName] = useState('')
-    const [surname, setSurname] = useState('')
-    const [email, setEmail] = useState('')
-    const [phoneNumber, setPhoneNumber] = useState('')
+    const [name, setName] = useState({
+        value: '',
+        setted: false,
+        mistakeInformation: []
+    })
+    const [surname, setSurname] = useState({
+        value: '',
+        setted: false,
+        mistakeInformation: []
+    })
+    const [email, setEmail] = useState({
+        value: '',
+        setted: false,
+        mistakeInformation: []
+    })
+    const [phoneNumber, setPhoneNumber] = useState({
+        value: '',
+        setted: false,
+        mistakeInformation: []
+    })
+    const [street, setStreet] = useState({
+        value: '',
+        setted: false,
+        mistakeInformation: []
+    })
+    const [login, setLogin] = useState({
+        value: '',
+        setted: true,
+        mistakeInformation: []
+    })
+    const [password, setPassword] = useState({
+        value: '',
+        setted: false,
+        mistakeInformation: []
+    })
     const [country, setCountry] = useState('')
     const [province, setProvince] = useState('')
     const [city, setCity] = useState('')
     const [postalCode, setPostalCode] = useState('')
-    const [street, setStreet] = useState('')
-    const [houseNumber, setHouseNumber] = useState('')
-    const [login, setLogin] = useState('')
-    const [password, setPassword] = useState('')
-
+    const [houseNumber, setHouseNumber] = useState('1')
+    
     const editUser = () => {
         const newClientData  = {
             name,
@@ -73,18 +99,46 @@ const EditClient:FC<Props> = () => {
                 throw Error(response.statusText);
         })
         .then(user => {
-            setName(user.personal_data[0].name)
-            setSurname(user.personal_data[0].surname)
-            setEmail(user.personal_data[0].email)
-            setPhoneNumber(user.personal_data[0].phone_number)
+            setName({
+                value: user.personal_data[0].name,
+                setted: true,
+                mistakeInformation: []
+            })
+            setSurname({
+                value: user.personal_data[0].surname,
+                setted: true,
+                mistakeInformation: []
+            })
+            setEmail({
+                value: user.personal_data[0].email,
+                setted: true,
+                mistakeInformation: []
+            })
+            setPhoneNumber({
+                value: user.personal_data[0].phone_number,
+                setted: true,
+                mistakeInformation: []
+            })
+            setLogin({
+                value: user.data_logins[0].login,
+                setted: true,
+                mistakeInformation: []
+            })
+            setPassword({
+                value: user.data_logins[0].password,
+                setted: true,
+                mistakeInformation: []
+            })
+            setStreet({
+                value: user.delivery_addresses[0].street,
+                setted: true,
+                mistakeInformation: []
+            })
             setCountry(user.delivery_addresses[0].country)
             setProvince(user.delivery_addresses[0].province)
             setCity(user.delivery_addresses[0].city)
             setPostalCode(user.delivery_addresses[0].postal_code)
-            setStreet(user.delivery_addresses[0].street)
             setHouseNumber(user.delivery_addresses[0].house_number)
-            setLogin(user.data_logins[0].login)
-            setPassword(user.data_logins[0].password)
         })
     }, [])
 

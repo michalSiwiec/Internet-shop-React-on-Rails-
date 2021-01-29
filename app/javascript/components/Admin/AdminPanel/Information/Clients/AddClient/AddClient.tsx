@@ -22,19 +22,47 @@ import Buttons from './Buttons/Buttons'
 import '../../../../../../../assets/stylesheets/AddClient.scss'
 
 const AddClient = () => {
-    const [name, setName] = useState('')
-    const [surname, setSurname] = useState('')
-    const [email, setEmail] = useState('')
-    const [phoneNumber, setPhoneNumber] = useState('')
-    const [login, setlogin] = useState('')
-    const [password, setPassword] = useState('')
+    const [name, setName] = useState({
+        value: '',
+        setted: false,
+        mistakeInformation: []
+    })
+    const [surname, setSurname] = useState({
+        value: '',
+        setted: false,
+        mistakeInformation: []
+    })
+    const [email, setEmail] = useState({
+        value: '',
+        setted: false,
+        mistakeInformation: []
+    })
+    const [phoneNumber, setPhoneNumber] = useState({
+        value: '',
+        setted: false,
+        mistakeInformation: []
+    })
+    const [login, setlogin] = useState({
+        value: '',
+        setted: false,
+        mistakeInformation: []
+    })
+    const [password, setPassword] = useState({
+        value: '',
+        setted: false,
+        mistakeInformation: []
+    })
+    const [street, setStreet] = useState({
+        value: '',
+        setted: false,
+        mistakeInformation: []
+    })
     const [passwordConfirmation, setPasswordConfirmation] = useState('')
     const [country, setCountry] = useState('Polska')
     const [province, setProvince] = useState('Śląskie')
     const [city, setCity] = useState('Gliwice')
     const [postalCode, setPostalCode] = useState('44 - 119')
-    const [street, setStreet] = useState('')
-    const [houseNumber, setHouseNumber] = useState('')
+    const [houseNumber, setHouseNumber] = useState('1')
 
     const addUser = () => {
         const formData = {

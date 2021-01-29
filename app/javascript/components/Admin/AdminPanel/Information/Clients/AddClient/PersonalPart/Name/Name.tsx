@@ -1,14 +1,24 @@
 import React, {FC} from 'react'
 
+import {validateName} from '../../../../../../../../Helpers/Users/Users'
+
 interface Props {
-    name: string,
+    name: {
+        value: string,
+        setted: boolean,
+        mistakeInformation: Array<string>
+    },
     setName: any
 }
 
-const Name = ({name, setName}) => {
+const Name:FC<Props> = ({name, setName}) => {
     return (
         <div>
-            <input type="text" placeholder="Imię" value={name} onChange={(e) => setName(e.target.value)} />
+            <input type="text" placeholder="Imię" value={name.value} onChange={(e) => validateName(e.target.value, setName, name)} />
+
+            <div className="mistake-info-container">
+                {name.mistakeInformation.map(info => <span key={`key${info}`}>{info}</span>)}
+            </div>
         </div>
     )
 }
