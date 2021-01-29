@@ -13,7 +13,7 @@ import {useDispatch}  from 'react-redux'
 
 import {useParams} from 'react-router-dom'
 
-const ProductEditForm = () => {
+const EditProduct = () => {
     const {productID} = useParams()
     const dispatch = useDispatch()
     const [source, setSource] = useState({
@@ -109,4 +109,4 @@ const ProductEditForm = () => {
     )
 }
 
-export default ProductEditForm
+export default EditProduct

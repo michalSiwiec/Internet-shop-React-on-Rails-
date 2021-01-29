@@ -1,7 +1,9 @@
 import React, {FC} from 'react'
 
-import ProductsList from './ProductsList/ProductsList'
-import ProductEditForm from './ProductEditForm/ProductEditForm'
+import AddProduct from './AddProduct/AddProduct'
+import ShowProduct from './ShowProduct/ShowProduct'
+import EditProduct from './EditProduct/EditProduct'
+import RemoveProduct from './RemoveProduct/RemoveProduct'
 
 import {Route} from 'react-router-dom'
 
@@ -15,11 +17,19 @@ const Products:FC<Props> = ({refElement}) => {
     return (
         <>
             <Route path="/admin" exact>
-                <ProductsList productListElement={refElement}/>
+                <ShowProduct productListElement={refElement} />
+            </Route>
+
+            <Route path="/admin/addProduct/" exact>
+                <AddProduct />
             </Route>
 
             <Route path="/admin/editProduct/:productID" exact>
-                <ProductEditForm />
+                <EditProduct />
+            </Route>
+
+            <Route path="/admin/removeProduct/:productID" exact>
+                <RemoveProduct />
             </Route>
         </>
     )

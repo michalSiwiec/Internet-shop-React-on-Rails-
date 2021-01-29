@@ -46,9 +46,17 @@ module Api
                 render json: products.sort_by {|product| product.id}
             end
 
+            def add_product
+                Product.create(add_product_params)
+            end
+
             private
 
             def edit_params
+                params.require(:formData).permit(:source, :description, :price, :quantity_available, :type, :key_word)
+            end
+
+            def add_product_params
                 params.require(:formData).permit(:source, :description, :price, :quantity_available, :type, :key_word)
             end
         end

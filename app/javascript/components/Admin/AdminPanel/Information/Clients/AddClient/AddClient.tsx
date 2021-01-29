@@ -60,9 +60,7 @@ const AddClient = () => {
             body: JSON.stringify(formData)
         })
     }
-
-    // console.log(province, city, postalCode)
-
+    
     return (
         <div className="add-client-container">
             <div className="overlay"></div>

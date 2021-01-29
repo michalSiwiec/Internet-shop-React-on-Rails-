@@ -1,0 +1,34 @@
+.remove-product-container{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    background-image: url("../../assets/images/Kaufland-background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .overlay{
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        opacity: 0.84;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .remove-user-form-container{
+        width: 40vw;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        text-align: center;
+    }
+}
