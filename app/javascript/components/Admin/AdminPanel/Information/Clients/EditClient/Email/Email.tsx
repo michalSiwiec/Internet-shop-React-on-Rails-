@@ -17,7 +17,7 @@ const Email:FC<Props> = ({email, setEmail}) => {
             <input type="text" placeholder="E-mail" value={email.value} onChange={(e) => validateEmail(e.target.value, setEmail, email)} />
 
             <div className="mistake-info-container">
-                {email.mistakeInformation.map(info => <span>{info}</span>)}
+                {email.mistakeInformation.map(info => <span key={`info${info}`}>{info}</span>)}
             </div>
         </div>
     )

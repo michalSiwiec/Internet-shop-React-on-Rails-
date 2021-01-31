@@ -41,7 +41,7 @@ const Table = () => {
                 </thead>
 
                 <tbody>
-                    {products.map(product => <TableRow product={product} key={`products ${product.id}`}/>)}
+                    {/* {products.map(product => <TableRow product={product} key={`products ${product.id}`}/>)} */}
                 </tbody>
             </table>
         </div>

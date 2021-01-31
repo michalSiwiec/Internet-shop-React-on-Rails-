@@ -38,6 +38,27 @@ export const validatePassword = (value: string, setPassword: any, password: any)
     setPassword(copyPassword)
 }
 
+export const validatePasswordConfirmation = (value: string, setPasswordConfirmation: any, passwordConfirmation: any, password: string) => {
+    const req = /(?=.*[0-9])(?=.*[A-Z])(?=.{8,})/
+    const copyPasswordConfirmation = {...passwordConfirmation}
+
+    copyPasswordConfirmation.value = value
+
+    if(req.test(value) && value === password){
+        copyPasswordConfirmation.setted = true
+        copyPasswordConfirmation.mistakeInformation = []
+    } else{
+        copyPasswordConfirmation.setted = false
+        copyPasswordConfirmation.mistakeInformation = [
+            '* Hasło powinien mieć minimum 7 znaki!',
+            '* Powinno składać się z min. jednej duzej litery oraz cyfry',
+            '* Musi być identyczne do hasła'
+        ]
+    }
+
+    setPasswordConfirmation(copyPasswordConfirmation)
+}
+
 export const validateName = (value: string, setName: any, name: any) => {
     const req = /^[A-Z]{1}[a-z]{2,}$/
         const copyName = {...name}
@@ -139,6 +160,16 @@ export const validateStreet = (value: string, setStreet: any, street: any) => {
         setStreet(copyStreet)
 }
 
-export const checkDataForm = () => {
-    console.log('Check whole datas')
+export const checkDataForm = (datasToCheck:any) => {
+    let allFieldsSetted = true
+
+    datasToCheck.forEach(data => {
+        if(!data)
+            allFieldsSetted = false
+    })
+
+    if(allFieldsSetted)
+        return true
+    else
+        return false
 }

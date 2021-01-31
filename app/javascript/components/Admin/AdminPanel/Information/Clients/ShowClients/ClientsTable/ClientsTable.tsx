@@ -5,26 +5,28 @@ import ClientsRow from './ClientsRow/ClientsRow'
 
 const ClientsTable = () => {
     const [usersData, setUsersData]:any = useState([{
-        user_delivery_addres: [{
+        user_delivery_addres: {
             country: '',
             city: '',
             house_number: '',
             postal_code: ''
-        }],
-        data_login: [{
+        },
+        data_login: {
             login: ' ',
             password: ''
-        }],
-        personal_data: [{
+        },
+        personal_data: {
             name: '',
             surname: '',
             email: '',
             phone_number: ''
-        }]
+        }
     }])
 
     useEffect(() => {
-        fetch('/api/v1/users/all_users', {method: 'GET'})
+        console.log('useEffect clientsTable')
+
+        fetch('/api/v1/users', {method: 'GET'})
         .then(response => {
             if(response.ok)
                 return response.json()
@@ -47,8 +49,13 @@ const ClientsTable = () => {
                     </tr>
                 </thead>
 
+                {/* 
+                    When I have empty dataBase and I try add record I get error. I haven't got such mistake when my dataBase isn't hollow
+                    Sometimes when I create record ones or more propeties from record is null - so I got an error. I think that it is associated with async. 
+                */}
+
                 <tbody>
-                    {usersData.map(data => <ClientsRow userData={data} key={`clientRow${data.data_login[0].login}`} />)}
+                    {usersData.map(data => <ClientsRow userData={data} key={`clientRow${data.data_login.login}`} />)}
                 </tbody>
             </table>
         </div>

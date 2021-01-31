@@ -38,16 +38,16 @@ module Api
                 end
             end
 
-            def all_users
+            def index
                 users = User.all
                 users_data = []
 
                 users.each do |user|
-                    user_delivery_addresses = DeliveryAddress.where(user_id: user.id)
-                    user_data_logins = DataLogin.where(user_id: user.id)
-                    user_personal_data = DataPerson.where(user_id: user.id)
+                    delivery_address = user.deliveryAddress
+                    data_login = user.dataLogin
+                    personal_data = user.dataPerson
 
-                    users_data.push({user_id: user.id, user_delivery_addres: user_delivery_addresses, data_login: user_data_logins, personal_data: user_personal_data})
+                    users_data.push({user_id: user.id, user_delivery_addres: delivery_address, data_login: data_login, personal_data: personal_data})
                 end
 
                 render json: users_data
@@ -106,12 +106,16 @@ module Api
 
             def remove_user
                 user_id = params[:userID]
-                # puts(user_id)
 
-                DeliveryAddress.find_by(user_id: user_id).destroy
-                DataLogin.find_by(user_id: user_id).destroy
-                DataPerson.find_by(user_id: user_id).destroy
-                User.find(user_id).destroy
+                DeliveryAddress.find_by(user_id: user_id).delete
+                DataLogin.find_by(user_id: user_id).delete
+                DataPerson.find_by(user_id: user_id).delete
+                User.find(user_id).delete
+
+                # DeliveryAddress.find_by(user_id: user_id).delete
+                # DataLogin.find_by(user_id: user_id).delete
+                # DataPerson.find_by(user_id: user_id).delete
+                # User.find(user_id).delete
             end
         end
     end

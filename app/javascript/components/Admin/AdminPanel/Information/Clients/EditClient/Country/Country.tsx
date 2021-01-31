@@ -1,14 +1,11 @@
-import React, {FC} from 'react'
+import React from 'react'
 
-interface Props {
-    country: string,
-    setCountry: any
-}
-
-const Country:FC<Props> = ({country, setCountry}) => {
+const Country = () => {
     return (
         <div>
-            <input type="text" placeholder="Kraj" value={country} onChange={(e) => setCountry(e.target.value)} />
+            <select disabled>
+                <option>Polska</option>
+            </select>
         </div>
     )
 }

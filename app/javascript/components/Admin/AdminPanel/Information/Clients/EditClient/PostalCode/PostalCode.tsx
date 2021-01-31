@@ -1,15 +1,30 @@
-import React, {FC} from 'react'
+import React, {FC, useEffect} from 'react'
 
 interface Props {
     postalCode: string,
-    setPostalCode: any
+    setPostalCode: any,
+    city: string
 }
 
-const PostalCode:FC<Props> = ({postalCode, setPostalCode}) => {
+const PostalCode:FC<Props> = ({postalCode, setPostalCode, city}) => {
+
+    useEffect(() => {
+        fetch(`/api/v1/cities/show?city_name=${city}`,{method: 'GET'})
+        .then(response => {
+            if(response.ok)
+                return response.text()
+            else
+                throw Error(response.statusText);
+        })
+        .then(postalCode_ => setPostalCode(postalCode_))
+    }, [city])
+
     return (
         <div>
-            <input type="text" placeholder="Kod pocztowy" value={postalCode} onChange={(e) => setPostalCode(e.target.value)}/>
-        </div>  
+            <select disabled>
+                <option>{postalCode}</option>
+            </select>
+        </div>
     )
 }
 

@@ -2,6 +2,7 @@ module Api
     module V1
         class CitiesController < ApplicationController
             def index 
+                # puts(params[:province_name])
                 province_name = params[:province_name]
                 province = Province.find_by({name: province_name})
 

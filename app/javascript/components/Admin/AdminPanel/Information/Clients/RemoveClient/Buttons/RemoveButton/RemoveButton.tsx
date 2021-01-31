@@ -10,17 +10,17 @@ const RemoveButton:FC<Props> = ({userID}) => {
 
     const removeUser = () => {
         fetch(`/api/v1/users/remove_user?userID=${userID}`, {method: 'DELETE'})
-        .then(response => {
-            if(response.ok)
-                return response.text()
-            else
-                throw Error(response.statusText);
-        })
+        // .then(response => {
+        //     if(response.ok)
+        //         return response.text()
+        //     else
+        //         throw Error(response.statusText);
+        // })
     }
 
     return(
         <Link to="/admin/">
-            <button onClick={removeUser}>Usuń uzytkownika</button>
+            <button onClick={removeUser}>Usuńs uzytkownika</button>
         </Link>
     )
 }

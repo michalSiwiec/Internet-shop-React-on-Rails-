@@ -9,7 +9,7 @@ interface Props {
 const EditButton:FC<Props> = ({editUser}) => {
     return (
         <Link to="/admin">
-            <button onClick={editUser}>Edytuj</button>
+            <button onClick={(e) => editUser(e)}>Edytuj</button>
         </Link>
     )
 }

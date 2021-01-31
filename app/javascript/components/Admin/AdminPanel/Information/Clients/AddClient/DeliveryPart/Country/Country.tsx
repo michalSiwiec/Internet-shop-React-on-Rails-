@@ -1,11 +1,6 @@
-import React, {FC} from 'react'
+import React from 'react'
 
-interface Props {
-    country: string,
-    setCountry: any
-}
-
-const Country:FC<Props> = ({country, setCountry}) => {
+const Country= () => {
     return (
         <div>
             <select disabled>

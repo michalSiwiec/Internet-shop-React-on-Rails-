@@ -9,7 +9,7 @@ interface Props{
 const AddUserButton:FC<Props> = ({addUser}) => {
     return (
         <Link to="/admin/">
-            <button onClick={addUser}>Dodaj</button>
+            <button onClick={(e) => addUser(e)}>Dodaj</button>
         </Link>
     )
 }

@@ -1,23 +1,22 @@
 import React, {useState} from 'react'
 
 import Header from './Header/Header'
-
 import City from './DeliveryPart/City/City'
 import Country from './DeliveryPart/Country/Country'
 import HouseNumber from './DeliveryPart/HouseNumber/HouseNumber'
 import PostalCode from './DeliveryPart/PostalCode/PostalCode'
 import Province from './DeliveryPart/Province/Province'
 import Street from './DeliveryPart/Street/Street'
-
 import Login from './LogInPart/Login/Login'
 import Password from './LogInPart/Password/Password'
 import PasswordConfirmation from './LogInPart/PasswordConfirmation/PasswordConfirmation'
-
 import Name from './PersonalPart/Name/Name'
 import Surname from './PersonalPart/Surname/Surname'
 import Email from './PersonalPart/Email/Email'
 import PhoneNumber from './PersonalPart/PhoneNumber/PhoneNumber'
 import Buttons from './Buttons/Buttons'
+
+import {checkDataForm} from '../../../../../../Helpers/Users/Users'
 
 import '../../../../../../../assets/stylesheets/AddClient.scss'
 
@@ -57,36 +56,53 @@ const AddClient = () => {
         setted: false,
         mistakeInformation: []
     })
-    const [passwordConfirmation, setPasswordConfirmation] = useState('')
-    const [country, setCountry] = useState('Polska')
+    const [passwordConfirmation, setPasswordConfirmation] = useState({
+        value: '',
+        setted: false,
+        mistakeInformation: []
+    })
     const [province, setProvince] = useState('Śląskie')
     const [city, setCity] = useState('Gliwice')
     const [postalCode, setPostalCode] = useState('44 - 119')
     const [houseNumber, setHouseNumber] = useState('1')
 
-    const addUser = () => {
-        const formData = {
-            login,
-            password,
-            name,
-            surname,
-            phone_number: phoneNumber,
-            email,
-            street,
-            province,
-            city,
-            house_number: houseNumber,
-            postal_code: postalCode,
-            country
-        }
+    const addUser = (e: any) => {
+        const dataToCheck = [
+            login.setted,
+            password.setted,
+            passwordConfirmation.setted,
+            name.setted,
+            surname.setted,
+            phoneNumber.setted,
+            email.setted,
+            street.setted
+        ]
 
-        fetch("/api/v1/users/addUser", {
-            method: "post",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(formData)
-        })
+        if(checkDataForm(dataToCheck)){
+            const formData = {
+                login: login.value,
+                password: password.value,
+                name: name.value,
+                surname: surname.value,
+                phone_number: phoneNumber.value,
+                email: email.value,
+                street: street.value,
+                province,
+                city,
+                house_number: houseNumber,
+                postal_code: postalCode,
+                country: "Polska"
+            }
+
+            fetch("/api/v1/users/addUser", {
+                method: "post",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            })
+        } else
+            e.preventDefault()
     }
     
     return (
@@ -107,11 +123,11 @@ const AddClient = () => {
                     <div className="log-in-container">
                         <Login login={login} setLogin={setlogin} />
                         <Password password={password} setPassword={setPassword} />
-                        <PasswordConfirmation passwordConfirmation={passwordConfirmation} setPasswordConfirmation={setPasswordConfirmation} />
+                        <PasswordConfirmation passwordConfirmation={passwordConfirmation} setPasswordConfirmation={setPasswordConfirmation} password={password.value} />
                     </div>
 
                     <div className="delivery-address-container">
-                        <Country country={country} setCountry={setCountry} />
+                        <Country />
                         <Province setProvince={setProvince} setCity={setCity} />
                         <City setCity={setCity} province={province}/>
                         <PostalCode postalCode={postalCode} setPostalCode={setPostalCode} city={city}/>
