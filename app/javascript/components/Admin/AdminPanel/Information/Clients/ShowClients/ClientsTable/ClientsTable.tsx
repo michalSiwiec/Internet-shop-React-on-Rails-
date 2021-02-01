@@ -24,8 +24,6 @@ const ClientsTable = () => {
     }])
 
     useEffect(() => {
-        console.log('useEffect clientsTable')
-
         fetch('/api/v1/users', {method: 'GET'})
         .then(response => {
             if(response.ok)

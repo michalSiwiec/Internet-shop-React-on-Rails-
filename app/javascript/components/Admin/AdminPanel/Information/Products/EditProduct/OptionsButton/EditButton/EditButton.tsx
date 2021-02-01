@@ -6,6 +6,12 @@ interface Props{
     editProduct: any
 }
 
-const EditButton:FC<Props> = ({editProduct}) => <Link to="/admin/"> <button onClick={editProduct}>Edytuj</button> </Link>
+const EditButton:FC<Props> = ({editProduct}) => {
+    return(
+        <Link to="/admin/">
+            <button onClick={(e) => editProduct(e)}>Edytuj</button>
+        </Link>
+    )
+}
 
 export default EditButton

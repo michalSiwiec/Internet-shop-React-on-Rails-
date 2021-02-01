@@ -11,8 +11,8 @@ const AdminDashBoard = () => {
 
     return (
         <div>
-            {/* { adminLogIn ? <AdminPanel /> : <LogInPanel /> } */}
-            <AdminPanel />
+            { adminLogIn ? <AdminPanel /> : <LogInPanel /> }
+            {/* <AdminPanel /> */}
         </div>
     )
 }

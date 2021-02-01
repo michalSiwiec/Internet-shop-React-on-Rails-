@@ -25,6 +25,8 @@ Rails.application.routes.draw do
       delete 'users/remove_user', to: 'user#remove_user'
 
       get 'admins/log_in_admin', to: 'admin#log_in_admin'
+      get 'admin/get_admin', to: 'admin#get_admin'
+      put 'admin/editAdmin', to: 'admin#edit_admin'
     end
   end
 

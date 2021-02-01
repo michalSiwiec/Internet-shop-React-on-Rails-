@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 import actions from '../../../../redux/admin/actions'
 import {useDispatch} from 'react-redux'
 
-import '../../../assets/stylesheets/logInPanel.scss'
+import '../../../../assets/stylesheets/logInPanel.scss'
 
 const LogInPanel = () => {
     const [login, setLogin] = useState('')

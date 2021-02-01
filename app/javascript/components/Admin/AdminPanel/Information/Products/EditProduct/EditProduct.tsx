@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react'
 
+import {checkDataForm} from '../../../../../../Helpers/Products/ProductsHelper'
+
 import ProductType from './ProductType/ProductType'
 import ProductQuantityAvailable from './ProductQuantityAvailable/ProductQuantityAvailable'
 import ProductPrice from './ProductPrice/ProductPrice'
@@ -16,58 +18,59 @@ import {useParams} from 'react-router-dom'
 const EditProduct = () => {
     const {productID} = useParams()
     const dispatch = useDispatch()
+
     const [source, setSource] = useState({
         value: '',
         setted: true
     })
     const [description, setDescription] = useState({
         value: '',
-        setted: true
-    })
-    const [price, setPrice] = useState({
-        value: '',
-        setted: true
-    })
-    const [quantityAvailable, setQuantityAvailable]= useState({
-        value: '',
-        setted: true
-    })
-    const [type, setType] = useState({
-        value: '',
-        setted: true
+        setted: true,
+        mistakeInformation: []
     })
     const [keyWord, setKeyWord] = useState({
         value: '',
         setted: true
     })
+    const [type, setType] = useState('dairy')
+    const [price, setPrice] = useState(1)
+    const [quantityAvailable, setQuantityAvailable] = useState(1)
 
-    const editProduct = () => {
-        const formData = {
-            source: source.value,
-            description: description.value,
-            price: price.value,
-            quantity_available: quantityAvailable.value,
-            product_type: type.value,
-            key_word: keyWord.value,
-        }
+    const editProduct = (e: any) => {
+        const dataToCheck = [
+            description.setted
+        ]
 
-        fetch(`/api/v1/products/edit_product`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                formData: formData,
-                productID: productID
+        if(checkDataForm(dataToCheck)){
+            const formData = {
+                source: source.value,
+                description: description.value,
+                price,
+                quantity_available: quantityAvailable,
+                product_type: type,
+                key_word: keyWord.value,
+            }
+
+            fetch(`/api/v1/products/edit_product`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    formData: formData,
+                    productID: productID
+                })
             })
-        })
-        .then(response => {
-            if(response.ok)
-                return response.json()
-            else
-                throw Error(response.statusText);
-        })
-        .then(products => dispatch(actions.setProduct(products, 'all')))
+            .then(response => {
+                if(response.ok)
+                    return response.json()
+                else
+                    throw Error(response.statusText);
+            })
+            .then(products => dispatch(actions.setProduct(products, 'all')))
+
+        } else 
+            e.preventDefault()
     }
 
     useEffect(() => {
@@ -80,11 +83,11 @@ const EditProduct = () => {
         })
         .then(product => {
             setSource({value: product.source, setted: true})
-            setDescription({value: product.description, setted: true})
-            setPrice({value: product.price, setted: true})
-            setQuantityAvailable({value: product.quantity_available, setted: true})
-            setType({value: product.product_type, setted: true})
+            setDescription({value: product.description, setted: true, mistakeInformation: []})
             setKeyWord({value: product.key_word, setted: true})
+            setPrice(product.price)
+            setQuantityAvailable(product.quantity_available)
+            setType(product.product_type)
         })
     },[])
 
@@ -99,7 +102,7 @@ const EditProduct = () => {
                     <ProductPicture setSource={setSource} source={source}/>
                     <ProductDescription description={description} setDescription={setDescription} />
                     <ProductPrice price={price} setPrice={setPrice} />
-                    <ProductQuantityAvailable quantityAvailable={quantityAvailable} setQuantityAvailable={setQuantityAvailable}/>
+                    <ProductQuantityAvailable quantityAvailable={quantityAvailable} setQuantityAvailable={setQuantityAvailable} />
                     <ProductType type={type} setType={setType}/>
                     <ProductKeyWord keyWord={keyWord} setKeyWord={setKeyWord} />
                     <OptionsButton editProduct={editProduct} />

@@ -1,7 +1,7 @@
 import React, {FC} from 'react'
 
 interface Props {
-    price:any,
+    price: number,
     setPrice: any
 }
 
@@ -10,7 +10,14 @@ const ProductPrice:FC<Props> = ({price, setPrice}) => {
     return (
         <div className="input-container">
             <label>Cena
-                <input type="text" value={price.value} onChange={(e) => setPrice({value: e.target.value, setted: true})}/>
+                <input type="number"
+                    min="0.1"
+                    step="0.1"
+                    value={price}
+                    onChange={(e) => setPrice(e.target.value)}
+                    onKeyPress={(e) => e.preventDefault()}
+                    onKeyDown={(e) => e.preventDefault()}
+                />
             </label>
         </div>
     )
