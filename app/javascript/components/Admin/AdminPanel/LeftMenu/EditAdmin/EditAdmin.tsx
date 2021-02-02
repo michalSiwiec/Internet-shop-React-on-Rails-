@@ -11,39 +11,75 @@ import Login from './Login/Login'
 import Email from './Email/Email'
 import Buttons from './Buttons/Buttons'
 
+import {checkDataForm} from '../../../../../Helpers/Admins/Admins'
+
 import '../../../../../../assets/stylesheets/AdminPanel/LeftMenu/EditAdmin/EditAdmin.scss'
 
 const EditAdmin = () => {
     const {adminID} = useParams()
-    const [name, setName] = useState('')
-    const [surname, setSurname] = useState('')
-    const [email, setEmail] = useState('')
-    const [phoneNumber, setPhoneNumber] = useState('')
-    const [login, setLogin] = useState('')
-    const [password, setPassword] = useState('')
+    const [name, setName] = useState({
+        value: '',
+        setted: false,
+        mistakeInformation: []
+    })
+    const [surname, setSurname] = useState({
+        value: '',
+        setted: false,
+        mistakeInformation: []
+    })
+    const [email, setEmail] = useState({
+        value: '',
+        setted: false,
+        mistakeInformation: []
+    })
+    const [phoneNumber, setPhoneNumber] = useState({
+        value: '',
+        setted: false,
+        mistakeInformation: []
+    })
+    const [login, setLogin] = useState({
+        value: '',
+        setted: false,
+        mistakeInformation: []
+    })
+    const [password, setPassword] = useState({
+        value: '',
+        setted: false,
+        mistakeInformation: []
+    })
 
     const editAdmin = (e) => {
-        console.log('edit admin')
+        const dataToCheck = [
+            name.setted,
+            surname.setted,
+            email.setted,
+            phoneNumber.setted,
+            login.setted,
+            password.setted
+        ]
 
-        const newAdminData = {
-            name,
-            surname,
-            email,
-            phone_number: phoneNumber,
-            login,
-            password
-        }
+        if(checkDataForm(dataToCheck)){
+            const newAdminData = {
+                name: name.value,
+                surname: surname.value,
+                email: email.value,
+                phone_number: phoneNumber.value,
+                login: login.value,
+                password: password.value
+            }
 
-        fetch(`/api/v1/admin/editAdmin?adminID=${adminID}`, {
-            method: 'PUT',
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                adminID,
-                newAdminData
+            fetch(`/api/v1/admin/editAdmin?adminID=${adminID}`, {
+                method: 'PUT',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    adminID,
+                    newAdminData
+                })
             })
-        })
+        } else
+            e.preventDefault() 
     }
 
     useEffect(() => {
@@ -55,12 +91,36 @@ const EditAdmin = () => {
                 throw Error(response.statusText);
         })
         .then(admin => {
-            setName(admin.name)
-            setSurname(admin.surname)
-            setEmail(admin.email)
-            setPhoneNumber(admin.phone_number)
-            setLogin(admin.login)
-            setPassword(admin.password)
+            setName({
+                value: admin.name,
+                setted: true,
+                mistakeInformation: []
+            })
+            setSurname({
+                value: admin.surname,
+                setted: true,
+                mistakeInformation: []
+            })
+            setEmail({
+                value: admin.email,
+                setted: true,
+                mistakeInformation: []
+            })
+            setPhoneNumber({
+                value: admin.phone_number,
+                setted: true,
+                mistakeInformation: []
+            })
+            setLogin({
+                value: admin.login,
+                setted: true,
+                mistakeInformation: []
+            })
+            setPassword({
+                value: admin.password,
+                setted: true,
+                mistakeInformation: []
+            })
         })
     }, [])
 
