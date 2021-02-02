@@ -40,10 +40,6 @@ export const validateSurname = (value: string, setSurname: any, surname: any) =>
     setSurname(copySurname)
 }
 
-// export const validateEmail= () => {
-//     console.log('validateEmail')
-// }
-
 export const validateEmail = (value: string, setEmail: any, email: any) => {
     const req = /^[a-zA-Z0-9]{3,}\.[a-zA-Z0-9]{3,}@[a-zA-Z]{2,}\.[a-zA-Z]{2,}/
     const copyMail = {...email}

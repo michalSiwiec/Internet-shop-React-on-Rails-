@@ -1,0 +1,39 @@
+.edit-form-container{
+    width: 40vw;
+    height: 50vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .input-container{
+        margin: 10px 0px;
+
+        label{
+            color: white;
+            font-size: 20px;
+            margin-bottom: 3px;
+        }
+
+        input,
+        select{
+            width: 100%;
+            font-size: 18px;
+            padding: 3px 15px;
+            margin-top: 10px;
+        }
+
+        .mistake-info-container{
+            color: red;
+        }
+    }
+
+    .button-container{
+        button{
+            width: 40%;
+            font-size: 18px;
+            padding: 3px 15px;
+            margin: 0px 30px;
+        }
+    }
+}

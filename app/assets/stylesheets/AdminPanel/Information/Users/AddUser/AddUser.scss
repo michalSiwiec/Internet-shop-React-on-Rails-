@@ -1,0 +1,66 @@
+.add-client-container{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+
+    background-image: url("../../../../../images/Kaufland-background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .overlay{
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        opacity: 0.84;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .form-container{
+        width: 40vw;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+        h1{
+            margin-bottom: 25px;
+            color: white;
+        }
+
+        .personal-part-container,
+        .log-in-container,
+        .delivery-address-container,
+        .button-options-container{
+            margin: 10px 0px;
+
+            div{
+                margin: 5px;
+
+                input,
+                select{
+                    width: 40%;
+                    font-size: 17px;
+                }
+
+                button{
+                    padding: 5px 15px;
+                    margin: 0px 10px;
+                    font-size: 17px;
+                }
+            }
+
+            div.mistake-info-container{
+                color: red;
+            }
+        }
+    }
+}
