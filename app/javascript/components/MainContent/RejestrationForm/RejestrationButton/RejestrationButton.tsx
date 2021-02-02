@@ -1,13 +1,13 @@
 import React, {FC} from 'react'
 
 interface Props {
-    checkDataForm: any,
+    registerUser: any,
 }
 
-const RejestrationButton:FC<Props> = ({checkDataForm}) => {
+const RejestrationButton:FC<Props> = ({registerUser}) => {
     return (
         <div className="submit-container">
-            <button onClick={(e) => checkDataForm(e)}>Załóz konto</button>
+            <button onClick={(e) => registerUser(e)}>Załóz konto</button>
         </div>
     )
 }

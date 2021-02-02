@@ -38,13 +38,13 @@ export const validatePassword = (value: string, setPassword: any, password: any)
     setPassword(copyPassword)
 }
 
-export const validatePasswordConfirmation = (value: string, setPasswordConfirmation: any, passwordConfirmation: any, password: string) => {
+export const validatePasswordConfirmation = (value: string, setPasswordConfirmation: any, passwordConfirmation: any, password: any) => {
     const req = /(?=.*[0-9])(?=.*[A-Z])(?=.{8,})/
     const copyPasswordConfirmation = {...passwordConfirmation}
 
     copyPasswordConfirmation.value = value
 
-    if(req.test(value) && value === password){
+    if(req.test(value) && value === password.value){
         copyPasswordConfirmation.setted = true
         copyPasswordConfirmation.mistakeInformation = []
     } else{

@@ -1,20 +1,22 @@
 import React, {useState} from 'react'
 
-import FormHeader from './FormHeader'
-import Login from './Login'
-import Password from './Password'
-import PasswordConfirmation from './PasswordConfirmation'
-import Name from './Name'
-import Surname from './Surname'
-import Email from './EmailAddress'
-import PhoneNumber from './PhoneNumber'
-import Country from './Country'
-import Street from './Street'
-import HouseNumber from './HouseNumber'
-import RejestrationButton from './RejestrationButton'
-import Province from './Province'
-import City from './City'
-import PostalCode from './PostalCode'
+import {checkDataForm} from '../../../Helpers/Users/Users'
+
+import FormHeader from './Header/FormHeader'
+import Login from './Login/Login'
+import Password from './Password/Password'
+import PasswordConfirmation from './PasswordConfirmation/PasswordConfirmation'
+import Name from './Name/Name'
+import Surname from './Surname/Surname'
+import Email from './EmailAddress/EmailAddress'
+import PhoneNumber from './PhoneNumber/PhoneNumber'
+import Country from './Country/Country'
+import Street from './Street/Street'
+import HouseNumber from './HouseNumber/HouseNumber'
+import RejestrationButton from './RejestrationButton/RejestrationButton'
+import Province from './Province/Province'
+import City from './City/City'
+import PostalCode from './PostalCode/PostalCode'
 
 import '../../../../assets/stylesheets/RejestrationForm.scss'
 
@@ -65,46 +67,41 @@ const RejestrationForm = () => {
     const [postalCode, setPostalCode] = useState('44 - 119')
 
 
-    const registerUser = () => {
-        const formData = {
-            login: login.value,
-            password: password.value,
-            name: name.value,
-            surname: surname.value,
-            phone_number: phoneNumber.value,
-            email: email.value,
-            street: street.value,
-            province: province,
-            city: city,
-            house_number: houseNumber,
-            postal_code: postalCode,
-            country: 'Polska'
-        }
+    const registerUser = (e: any) => {
+        const dataToCheck = [
+            login.setted,
+            password.setted,
+            surname.setted,
+            phoneNumber.setted,
+            email.setted,
+            street.setted,
+        ]
 
-        fetch("/api/v1/users/addUser", {
-            method: "post",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(formData)
-        })
-    }
+        if(checkDataForm(dataToCheck)){
+            const formData = {
+                login: login.value,
+                password: password.value,
+                name: name.value,
+                surname: surname.value,
+                phone_number: phoneNumber.value,
+                email: email.value,
+                street: street.value,
+                province: province,
+                city: city,
+                house_number: houseNumber,
+                postal_code: postalCode,
+                country: 'Polska'
+            }
 
-    const checkDataForm = (e:any) => {
-        const fields = [login, password, passwordConfirmation, name, surname, phoneNumber, street, email]
-        let allFieldsSetted = true
-
-        fields.forEach(field => {
-            if(!field.setted)
-                allFieldsSetted = false
-        })
-
-        e.preventDefault()
-
-        if(allFieldsSetted)
-            registerUser()
-        else 
-            alert('Proszę wypełnić wszystkie pola!')
+            fetch("/api/v1/users/addUser", {
+                method: "post",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            })
+        } else
+            e.preventDefault()     
     }
 
     return (
@@ -113,7 +110,7 @@ const RejestrationForm = () => {
                 <FormHeader />
 
                 <div className="fields-container">
-                    <Login login={login} setLogin={setLogin}/>
+                    <Login login={login} setLogin={setLogin} />
                     <Password password={password} setPassword={setPassword}/>
                     <PasswordConfirmation passwordConfirmation={passwordConfirmation} password={password} setPasswordConfirmation={setPasswordConfirmation} />
                 </div>
@@ -134,7 +131,7 @@ const RejestrationForm = () => {
                     <HouseNumber houseNumber={houseNumber} setHouseNumber={setHouseNumber}/>
                 </div>
 
-                <RejestrationButton checkDataForm={checkDataForm}/>
+                <RejestrationButton registerUser={registerUser}/>
             </form>
         </div>
     )
