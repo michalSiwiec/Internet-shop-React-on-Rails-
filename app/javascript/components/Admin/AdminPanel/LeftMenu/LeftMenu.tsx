@@ -45,7 +45,7 @@ const LeftMenu:FC<Props> = ({informationParts}) => {
                 </div>
             </Route>
 
-            <Route path="/admin/editAdmin/:adminID" exact>
+            <Route path="/admin/editAdmin" exact>
                 <EditAdmin />
             </Route>
         </div>

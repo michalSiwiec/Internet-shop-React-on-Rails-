@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 
-import {useParams} from 'react-router-dom'
+import {useSelector} from 'react-redux'
 
 import Header from './Header/Header'
 import Surname from './Surname/Surname'
@@ -16,7 +16,8 @@ import {checkDataForm} from '../../../../../Helpers/Admins/Admins'
 import '../../../../../../assets/stylesheets/AdminPanel/LeftMenu/EditAdmin/EditAdmin.scss'
 
 const EditAdmin = () => {
-    const {adminID} = useParams()
+    const adminID = useSelector((state: any) => state.adminsReducer.admin.id)
+
     const [name, setName] = useState({
         value: '',
         setted: false,

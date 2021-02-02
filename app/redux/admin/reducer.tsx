@@ -16,6 +16,11 @@ const adminsReducer = (state = initialState, action) => {
                 draftState.admin.id = action.adminID
                 draftState.admin.logIn = true
             })
+        case types.LOG_OUT:
+            return produce(state, draftState => {
+                draftState.admin.id = 0
+                draftState.admin.logIn = false
+            })
         default:
             return state
     }
