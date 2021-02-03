@@ -2,9 +2,6 @@ import React, {useState, useEffect} from 'react'
 
 import {useParams} from 'react-router-dom'
 
-// import '../../../../../../../assets/stylesheets/EditClient.scss'
-import '../../../../../../../../assets/stylesheets/AdminPanel/Information/Users/EditUser/EditUser.scss'
-
 import {checkDataForm} from '../../../../../../../Helpers/Users/Users'
 
 import Header from './Header/Header'
@@ -20,7 +17,10 @@ import Street from './Street/Street'
 import HouseNumber from './HouseNumber/HouseNumber'
 import Login from './Login/Login'
 import Password from './Password/Password'
+import PasswordConfirmation from './PasswordConfirmation/PasswordConfirmation'
 import Buttons from './Buttons/Buttons'
+
+import '../../../../../../../../assets/stylesheets/AdminPanel/Information/Users/EditUser/EditUser.scss'
 
 const EditClient = () => {
     const {userID} = useParams()
@@ -59,6 +59,11 @@ const EditClient = () => {
         setted: false,
         mistakeInformation: []
     })
+    const [passwordConfirmation, setPasswordConfirmation] = useState({
+        value: '',
+        setted: false,
+        mistakeInformation: []
+    })
     const [province, setProvince] = useState('Śląskie')
     const [city, setCity] = useState('Gliwice')
     const [postalCode, setPostalCode] = useState('44 - 119')
@@ -72,7 +77,8 @@ const EditClient = () => {
             phoneNumber.setted,
             street.setted,
             login.setted,
-            password.setted
+            password.setted,
+            passwordConfirmation.setted
         ]
 
         if(checkDataForm(dataToCheck)){
@@ -177,6 +183,7 @@ const EditClient = () => {
                     <Header value="Dane logowania" />
                     <Login login={login} setLogin ={setLogin} />
                     <Password password={password} setPassword={setPassword} />
+                    <PasswordConfirmation passwordConfirmation={passwordConfirmation} setPasswordConfirmation={setPasswordConfirmation} password={password.value} />
                     <Buttons editUser={editUser} />
                 </form>
             </div>

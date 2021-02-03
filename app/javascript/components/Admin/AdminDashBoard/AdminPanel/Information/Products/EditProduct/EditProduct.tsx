@@ -6,7 +6,6 @@ import ProductType from './ProductType/ProductType'
 import ProductQuantityAvailable from './ProductQuantityAvailable/ProductQuantityAvailable'
 import ProductPrice from './ProductPrice/ProductPrice'
 import ProductPicture from './ProductPicture/ProductPicture'
-import ProductKeyWord from './ProductKeyWord/ProductKeyWord'
 import ProductDescription from './ProductDescription/ProductDescription'
 import OptionsButton from './OptionsButton/OptionsButton'
 
@@ -28,10 +27,6 @@ const EditProduct = () => {
         setted: true,
         mistakeInformation: []
     })
-    const [keyWord, setKeyWord] = useState({
-        value: '',
-        setted: true
-    })
     const [type, setType] = useState('dairy')
     const [price, setPrice] = useState(1)
     const [quantityAvailable, setQuantityAvailable] = useState(1)
@@ -48,7 +43,6 @@ const EditProduct = () => {
                 price,
                 quantity_available: quantityAvailable,
                 product_type: type,
-                key_word: keyWord.value,
             }
 
             fetch(`/api/v1/products/edit_product`, {
@@ -84,7 +78,6 @@ const EditProduct = () => {
         .then(product => {
             setSource({value: product.source, setted: true})
             setDescription({value: product.description, setted: true, mistakeInformation: []})
-            setKeyWord({value: product.key_word, setted: true})
             setPrice(product.price)
             setQuantityAvailable(product.quantity_available)
             setType(product.product_type)
@@ -104,7 +97,6 @@ const EditProduct = () => {
                     <ProductPrice price={price} setPrice={setPrice} />
                     <ProductQuantityAvailable quantityAvailable={quantityAvailable} setQuantityAvailable={setQuantityAvailable} />
                     <ProductType type={type} setType={setType}/>
-                    <ProductKeyWord keyWord={keyWord} setKeyWord={setKeyWord} />
                     <OptionsButton editProduct={editProduct} />
                 </form>
             </div> 

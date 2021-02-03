@@ -8,34 +8,47 @@ import Price from './Price/Price'
 import Description from './Description/Description'
 import Buttons from './Buttons/Buttons'
 
+import {checkDataForm} from '../../../../../../../Helpers/Products/ProductsHelper'
+
 import '../../../../../../../../assets/stylesheets/AdminPanel/Information/Products/AddProduct/AddProduct.scss'
 
 const AddProduct = () => {
     const [source, setSource] = useState('')
-    const [description, setDescription] = useState('')
-    const [price, setPrice] = useState('')
-    const [type, setType] = useState('')
-    const [quantityAvailable, setQuantityAvailable] = useState('')
+    const [description, setDescription] = useState({
+        value: '',
+        setted: false,
+        mistakeInformation: []
+    })
+    const [price, setPrice] = useState(1)
+    const [type, setType] = useState('meats')
+    const [quantityAvailable, setQuantityAvailable] = useState(1)
 
-    const addProduct = () => {
-        const formData = {
-            source,
-            description,
-            price,
-            key_word: '',
-            product_type: type,
-            quantity_available: quantityAvailable
-        }
+    const addProduct = (e: any) => {
+        const dataToCheck = [
+            description.setted
+        ]
 
-        fetch("/api/v1/products/add_product", {
-            method: "post",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                formData
+        if(checkDataForm(dataToCheck)){
+            const formData = {
+                source,
+                description: description.value,
+                price,
+                key_word: '',
+                product_type: type,
+                quantity_available: quantityAvailable
+            }
+
+            fetch("/api/v1/products/add_product", {
+                method: "post",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    formData
+                })
             })
-        })
+        } else
+            e.preventDefault()   
     }
 
     return (

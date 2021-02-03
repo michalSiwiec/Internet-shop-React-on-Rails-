@@ -53,11 +53,11 @@ module Api
             private
 
             def edit_params
-                params.require(:formData).permit(:source, :description, :price, :quantity_available, :type, :key_word)
+                params.require(:formData).permit(:source, :description, :price, :quantity_available, :type)
             end
 
             def add_product_params
-                params.require(:formData).permit(:source, :description, :price, :quantity_available, :type, :key_word)
+                params.require(:formData).permit(:source, :description, :price, :quantity_available, :type)
             end
         end
     end

@@ -112,7 +112,7 @@ const RejestrationForm = () => {
                 <div className="fields-container">
                     <Login login={login} setLogin={setLogin} />
                     <Password password={password} setPassword={setPassword}/>
-                    <PasswordConfirmation passwordConfirmation={passwordConfirmation} password={password} setPasswordConfirmation={setPasswordConfirmation} />
+                    <PasswordConfirmation passwordConfirmation={passwordConfirmation} password={password.value} setPasswordConfirmation={setPasswordConfirmation} />
                 </div>
 
                 <div className="fields-container">

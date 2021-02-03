@@ -47,13 +47,8 @@ const ClientsTable = () => {
                     </tr>
                 </thead>
 
-                {/* 
-                    When I have empty dataBase and I try add record I get error. I haven't got such mistake when my dataBase isn't hollow
-                    Sometimes when I create record ones or more propeties from record is null - so I got an error. I think that it is associated with async. 
-                */}
-
                 <tbody>
-                    {usersData.map(data => <ClientsRow userData={data} key={`clientRow${data.data_login.login}`} />)}
+                    {usersData.map(data => <ClientsRow userData={data} key={`clientRow${data.data_login.login} ${Math.random()}`} />)}
                 </tbody>
             </table>
         </div>

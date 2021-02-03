@@ -39,7 +39,8 @@
         div{
             margin: 10px 0px;
 
-            input{
+            input,
+            select{
                 width: 100%;
                 padding: 3px 12px;
                 font-size: 17px;
@@ -49,6 +50,10 @@
                 padding: 5px 15px;
                 font-size: 17px;
                 margin: 0px 15px;
+            }
+
+            .mistake-info-container{
+                color: red;
             }
         }
     }

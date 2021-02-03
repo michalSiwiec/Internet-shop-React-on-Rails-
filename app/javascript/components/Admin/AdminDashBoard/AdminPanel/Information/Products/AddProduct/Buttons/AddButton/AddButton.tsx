@@ -9,7 +9,7 @@ interface Props {
 const AddButton = ({addProduct}) => {
     return (
         <Link to="/admin/">
-            <button onClick={addProduct}>Dodaj</button>
+            <button onClick={(e) => addProduct(e)}>Dodaj</button>
         </Link>
     )
 }

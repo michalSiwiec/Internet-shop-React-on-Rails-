@@ -1,31 +1,42 @@
 import React, {useState} from 'react'
 
-import {Link} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
+
+import {useDispatch, useSelector} from 'react-redux'
+import actions from '../../../../../redux/user/duck/actions'
 
 const SingIn = () =>  {
-
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
+    const userID = useSelector((state: any) => state.userReducer.user.userID)
+    const dispatch = useDispatch()
 
-    const LogIn = (e:any) => {
-        e.preventDefault()
-
+    const LogIn = () => {
         if(login !== '' && password !== ''){
             fetch(`/api/v1/users/logInUser?login=${login}&password=${password}`,{method: 'GET'})
             .then(response => {
                 if(response.ok)
-                    return response.text()
+                    return response.json()
                 else
                     throw Error(response.statusText);
             })
-            .then(data => console.log(data))
+            .then(user => {
+                if(user.userID !== 0)
+                    dispatch(actions.singInUser(user.userID))
+                else
+                    alert('Nie ma takiego usera')
+            })
         }
-        else
-            alert('Proszę wypełnić wszystkie pola!')
     }
 
+    console.log(userID)
+
     return (
-        <div className="sing-in-container">
+        <>
+            {/*  I have to do it here, I can't use Link to because it movves me to form event when user isn't loggged - e.preventDefault() doesn't work */}
+            {userID !== 0 ? <Redirect to="/home/OrderForm"/> : null} 
+
+            <div className="sing-in-container">
                 <div className="ornament">
                     <p>Logowanie</p>
                 </div>
@@ -44,10 +55,12 @@ const SingIn = () =>  {
                     </div>
 
                     <div>
-                        <Link to=""><button onClick={(e) => LogIn(e)} className="log-in-btn">Zaloqqqguj się</button></Link>
+                        <button onClick={LogIn} className="log-in-btn">Zaloguj się</button>
                     </div>
                 </div>
             </div>
+        </>
+        
     )
 }
 

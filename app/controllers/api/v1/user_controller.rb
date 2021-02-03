@@ -32,9 +32,9 @@ module Api
                 user = User.joins(:dataLogin).where('data_logins.login = ? AND data_logins.password = ?', "#{login}", "#{password}")
 
                 if user.present?
-                    render json: user
+                    render json: {userID: user[0].id}
                 else
-                    render json: {info: 'User with such data doesnt exist'}
+                    render json: {userID: 0}
                 end
             end
 

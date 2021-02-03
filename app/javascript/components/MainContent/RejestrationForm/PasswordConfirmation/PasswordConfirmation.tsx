@@ -2,19 +2,13 @@ import React, {FC} from 'react'
 
 import {validatePasswordConfirmation} from '../../../../Helpers/Users/Users'
 
-// Something doesn't work here
-
 interface Props {
     passwordConfirmation: {
         value: string,
         setted: boolean,
         mistakeInformation: Array<string>
     },
-    password: {
-        value: string,
-        setted: boolean,
-        mistakeInformation: Array<string>
-    }
+    password: string
     setPasswordConfirmation:any,
 }
 

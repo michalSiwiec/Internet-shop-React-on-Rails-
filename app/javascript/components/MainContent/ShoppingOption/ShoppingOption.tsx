@@ -1,9 +1,9 @@
 import React from 'react'
 
-import Header from './Header'
-import CommonShopping from './CommonShopping'
-import Rejestration from './Rejestration'
-import SingIn from './SingIn'
+import Header from './Header/Header'
+import CommonShopping from './CommonShopping/CommonShopping'
+import Rejestration from './Rejestration/Rejestration'
+import SingIn from './SingIn/SingIn'
 
 import '../../../../assets/stylesheets/ShoppingOptions.scss'
 
