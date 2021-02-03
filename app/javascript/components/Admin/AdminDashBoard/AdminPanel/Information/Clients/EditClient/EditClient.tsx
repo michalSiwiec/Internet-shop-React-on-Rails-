@@ -121,44 +121,44 @@ const EditClient = () => {
         })
         .then(user => {
             setName({
-                value: user.personal_data[0].name,
+                value: user.personal_data.name,
                 setted: true,
                 mistakeInformation: []
             })
             setSurname({
-                value: user.personal_data[0].surname,
+                value: user.personal_data.surname,
                 setted: true,
                 mistakeInformation: []
             })
             setEmail({
-                value: user.personal_data[0].email,
+                value: user.personal_data.email,
                 setted: true,
                 mistakeInformation: []
             })
             setPhoneNumber({
-                value: user.personal_data[0].phone_number,
+                value: user.personal_data.phone_number,
                 setted: true,
                 mistakeInformation: []
             })
             setLogin({
-                value: user.data_logins[0].login,
+                value: user.data_logins.login,
                 setted: true,
                 mistakeInformation: []
             })
             setPassword({
-                value: user.data_logins[0].password,
+                value: user.data_logins.password,
                 setted: true,
                 mistakeInformation: []
             })
             setStreet({
-                value: user.delivery_addresses[0].street,
+                value: user.delivery_addresses.street,
                 setted: true,
                 mistakeInformation: []
             })
-            setProvince(user.delivery_addresses[0].province)
-            setCity(user.delivery_addresses[0].city)
-            setPostalCode(user.delivery_addresses[0].postal_code)
-            setHouseNumber(user.delivery_addresses[0].house_number)
+            setProvince(user.delivery_addresses.province)
+            setCity(user.delivery_addresses.city)
+            setPostalCode(user.delivery_addresses.postal_code)
+            setHouseNumber(user.delivery_addresses.house_number)
         })
     }, [])
 
