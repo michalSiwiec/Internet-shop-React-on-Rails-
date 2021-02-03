@@ -28,9 +28,7 @@ const SingIn = () =>  {
             })
         }
     }
-
-    console.log(userID)
-
+    
     return (
         <>
             {/*  I have to do it here, I can't use Link to because it movves me to form event when user isn't loggged - e.preventDefault() doesn't work */}

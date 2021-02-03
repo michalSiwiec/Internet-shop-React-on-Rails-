@@ -1,225 +1,155 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
+
+import {useSelector} from 'react-redux'
+
+import Header from './Header/Header'
+import City from './City/City'
+import Email from './Email/Email'
+import HouseNumber from './HouseNumber/HouseNumber'
+import Name from './Name/Name'
+import PhoneNumber from './PhoneNumber/PhoneNumber'
+import PostalCode from './PostalCode/PostalCode'
+import Province from './Province/Province'
+import Street from './Street/Street'
+import Surname from './Surname/Surname'
+import AddOrderButton from './AddOrderButton/AddOrderButton'
 
 import '../../../../assets/stylesheets/OrderForm'
 
 const OrderForm = () => {
+    const userID = useSelector((state: any) => state.userReducer.user.userID)
 
-    const [partsVisibilities, setPartsVisibilities] = useState(['', 'invisible', 'invisible'])
-    const [formData, setFormData] = useState({
-        email: {
-            value: '',
-            setted: false
-        },
-        repeatedEmail: {
-            value: '',
-            setted: false
-        },
-        phoneNumber: {
-            value: '',
-            setted: false
-        },
-        name: {
-            value: '',
-            setted: false
-        },  
-        surname: {
-            value: '',
-            setted: false
-        },
-        city: {
-            value: '',
-            setted: false
-        },
-        street: {
-            value: '',
-            setted: false
-        }
+    // const [partsVisibilities, setPartsVisibilities] = useState(['', 'invisible', 'invisible'])
+    const [partsVisibilities, setPartsVisibilities] = useState(['', '', ''])
+
+    const [email, setEmail] = useState({
+        value: '',
+        setted: false,
+        mistakeInformation: [],
+        unmutable: false
     })
+    const [phoneNumber, setPhoneNumber] = useState({
+        value: '',
+        setted: false,
+        mistakeInformation: [],
+        unmutable: false
+    })
+    const [name, setName] = useState({
+        value: '',
+        setted: false,
+        mistakeInformation: [],
+        unmutable: false
+    })
+    const [surname, setSurname] = useState({
+        value: '',
+        setted: false,
+        mistakeInformation: [],
+        unmutable: false
+    })
+    const [street, setStreet] = useState({
+        value: '',
+        setted: false,
+        mistakeInformation: [],
+        unmutable: false
+    })
+    const [province, setProvince] = useState({
+        value: "Śląskie",
+        unmutable: false
+    })
+    const [city, setCity] = useState({
+        value: "Gliwice",
+        unmutable: false
+    })
+    const [houseNumber, setHouseNumber] = useState({
+        value: 1,
+        unmutable: false
+    })
+    const [postalCode, setPostalCode] = useState("44 - 119")
 
-
-    const checkDataForm = (updateState:any, value:string) => {
-        const copyPresentState = {...formData}
-
-        updateState(value, copyPresentState)
-
-        if(formData.email.setted && formData.repeatedEmail.setted && formData.phoneNumber.setted){
-            if(formData.name.setted && formData.surname.setted){
-                setPartsVisibilities(['','',''])
-                return
-            }
-            setPartsVisibilities(['','','invisible'])
-        }
-        else
-            setPartsVisibilities(['','invisible','invisible'])
+    const submitOrder = () => {
+        console.log('submit order')
     }
 
-    const checkEmail = (email: string, copyPresentState:any) => {
-        const req = /^[a-zA-Z0-9]{3,}\.[a-zA-Z0-9]{3,}@[a-zA-Z]{2,}\.[a-zA-Z]{2,}/
-
-        copyPresentState.email.value = email
-
-        if(req.test(email))
-            copyPresentState.email.setted = true
-        else
-            copyPresentState.email.setted = false
-
-        setFormData(copyPresentState)
-    }
-
-    const checkRepeatedEmail = (repeatedEmail: string, copyPresentState:any) => {
-        const req = /^[a-zA-Z0-9]{3,}\.[a-zA-Z0-9]{3,}@[a-zA-Z]{2,}\.[a-zA-Z]{2,}/
-
-        copyPresentState.repeatedEmail.value = repeatedEmail
-
-        if(req.test(repeatedEmail) && repeatedEmail == formData.email.value)
-            copyPresentState.repeatedEmail.setted = true
-        else
-            copyPresentState.repeatedEmail.setted = false
-
-        setFormData(copyPresentState)
-    }
-
-    const checkPhoneNUmber = (phoneNumber: string, copyPresentState:any) => {
-        const req = /^[0-9]{9}$/
-
-        copyPresentState.phoneNumber.value = phoneNumber
-
-        if(req.test(phoneNumber))
-            copyPresentState.phoneNumber.setted = true
-        else
-            copyPresentState.phoneNumber.setted = false
-
-        setFormData(copyPresentState)
-    }
-
-    const checkName = (name: string, copyPresentState:any) => {
-        const req = /^[A-Z]{1}[a-z]{2,}$/
-
-        copyPresentState.name.value = name
-
-        if(req.test(name))
-            copyPresentState.name.setted = true
-        else
-            copyPresentState.name.setted = false
-
-        setFormData(copyPresentState)
-    }
-
-    const checkSurname = (surname: string, copyPresentState:any) => {
-        const req = /^[A-Z]{1}[a-z]{2,}$/
-
-        copyPresentState.surname.value = surname
-
-        if(req.test(surname))
-            copyPresentState.surname.setted = true
-        else
-            copyPresentState.surname.setted = false
-
-        setFormData(copyPresentState)
-    }
-
-    const checkStreet = (street: string, copyPresentState:any) => {
-        const req = /^[A-Z]{1}[a-z\-0-9]{3,}$/
-
-        copyPresentState.street.value = street
-
-        if(req.test(street))
-            copyPresentState.street.setted = true
-
-        setFormData(copyPresentState)
-    }
+    useEffect(() => {
+        if(userID !== 0)
+            fetch(`/api/v1/users/get_user?userID=${userID}`, {method: 'GET'})
+            .then(response => {
+                if(response.ok)
+                    return response.json()
+                else
+                    throw Error(response.statusText);
+            })
+            .then(user => {
+                setEmail({
+                    value: user.personal_data.email,
+                    setted: true,
+                    mistakeInformation: [],
+                    unmutable: true
+                })
+                setPhoneNumber({
+                    value: user.personal_data.phone_number,
+                    setted: true,
+                    mistakeInformation: [],
+                    unmutable: true
+                })
+                setName({
+                    value: user.personal_data.name,
+                    setted: true,
+                    mistakeInformation: [],
+                    unmutable: true
+                })
+                setSurname({
+                    value: user.personal_data.surname,
+                    setted: true,
+                    mistakeInformation: [],
+                    unmutable: true
+                })
+                setStreet({
+                    value: user.delivery_addresses.street,
+                    setted: true,
+                    mistakeInformation: [],
+                    unmutable: true
+                })
+                setProvince({
+                    value: user.delivery_addresses.province,
+                    unmutable: true
+                })
+                setCity({
+                    value: user.delivery_addresses.city,
+                    unmutable: true
+                })
+                setHouseNumber({
+                    value: user.delivery_addresses.house_number,
+                    unmutable: true
+                })
+                setPostalCode(user.delivery_addresses.postal_code)
+            })
+    }, [])
 
     return (
         <div className="order-form-container">
             <div className={`part-container ${partsVisibilities[0]}`}>
-                <div className="header-container">
-                    <h3>Dane kontaktssowe</h3>
-                </div>
-
-                <div className="data-container">
-                    <input type="text" 
-                        placeholder="E-mail"
-                        id="email-input" className='data-container__value-input'
-                        onChange={(e) => checkDataForm(checkEmail,e.target.value)}
-                    />
-                </div>
-
-                <div className="data-container">
-                    <input type="text"
-                        placeholder="Powtórz adres e-mail"
-                        id="repeated-email-input"
-                        className='data-container__value-input'
-                        onChange={(e) => checkDataForm(checkRepeatedEmail,e.target.value)}
-                    />
-                </div>
-
-                <div className="data-container">
-                    <input type="text"
-                        placeholder="Nr. telefonu komórkowego"
-                        id='phone-number-input'
-                        className='data-container__value-input'
-                        onChange={(e) => checkDataForm(checkPhoneNUmber,e.target.value)}
-                    />
-                </div>
+                <Header value="Dane kontaktowe" />
+                <Email email={email} setEmail={setEmail} />
+                <PhoneNumber phoneNumber={phoneNumber} setPhoneNumber={setPhoneNumber} />
             </div>
 
             <div className={`part-container ${partsVisibilities[1]}`}>
-                <div className="header-container">
-                    <h3>Dane osobowe</h3>
-                </div>
-
-                <div className="data-container">
-                    <input type="text"
-                        placeholder="Imię"
-                        id='name-input'
-                        className='data-container__value-input'
-                        onChange={(e) => checkDataForm(checkName,e.target.value)}
-                    />
-                </div>
-
-                <div className="data-container">
-                    <input type="text"
-                        placeholder="Nazwisko"
-                        id='surname-input'
-                        className='data-container__value-input'
-                        onChange={(e) => checkDataForm(checkSurname,e.target.value)}
-                    />
-                </div>
+                <Header value="Dane osobowe" />
+                <Name name={name} setName={setName} />
+                <Surname surname={surname} setSurname={setSurname} />
             </div>
 
             <div className={`part-container ${partsVisibilities[2]}`}>
-                <div className="header-container">
-                    <h3>Dane dostawcze</h3>
-                </div>
-
-                <div className="data-container">
-                    <label> Miasto
-                        <select className="city-select">
-                            <option>Żywiec</option>
-                            <option>Kraków</option>
-                            <option>Pozań</option>
-                            <option>Gliwice</option>
-                        </select>
-                    </label>
-                </div>
-
-                <div className="data-container">
-                    <input type="text"
-                        placeholder="Ulica"
-                        id='street-input'
-                        className='data-container__value-input'
-                        onChange={(e) => checkDataForm(checkStreet,e.target.value)}
-                    />
-                </div>
-
-                <div className="data-container">
-                    <label>
-                        Numer domu / mieszkania
-                        <input type="number" value="1" className="flat-number"/>
-                    </label>
-                </div>
+                <Header value="Dane dostawcze" />
+                <Province province={province} setProvince={setProvince} setCity={setCity} />
+                <City city={city} setCity={setCity} province={province.value} />
+                <PostalCode postalCode={postalCode} setPostalCode={setPostalCode} city={city.value} />
+                <Street street={street} setStreet={setStreet} />
+                <HouseNumber houseNumber={houseNumber} setHouseNumber={setHouseNumber} />
             </div>
-            
+
+            <AddOrderButton submitOrder={submitOrder} />
         </div>
     )
 }

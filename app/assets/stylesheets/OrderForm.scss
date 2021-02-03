@@ -19,7 +19,9 @@
             margin: 0 auto;
             margin-bottom: 30px;
     
-            &__value-input{
+            &__value-input,
+            select,
+            button{
                 width: 100%;
                 padding: 3px 15px;
                 font-size: 20px;
@@ -43,6 +45,10 @@
                     font-size: 20px;
                     margin-left: 20px;
                 }
+            }
+
+            .mistake-info-container{
+                color: red;
             }
         }
     }

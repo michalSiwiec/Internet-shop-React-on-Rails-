@@ -55,10 +55,11 @@ module Api
 
             def get_user
                 user_id = params[:userID]
+                user = User.find(user_id)
 
-                user_delivery_addresses = DeliveryAddress.where(user_id: user_id)
-                user_data_logins = DataLogin.where(user_id: user_id)
-                user_personal_data = DataPerson.where(user_id: user_id)
+                user_delivery_addresses = user.deliveryAddress
+                user_data_logins = user.dataLogin
+                user_personal_data = user.dataPerson
 
                 user_data = {delivery_addresses: user_delivery_addresses, data_logins: user_data_logins, personal_data: user_personal_data}
 
