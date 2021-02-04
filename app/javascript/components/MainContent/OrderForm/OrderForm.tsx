@@ -18,6 +18,8 @@ import '../../../../assets/stylesheets/OrderForm'
 
 const OrderForm = () => {
     const userID = useSelector((state: any) => state.userReducer.user.userID)
+    const productsFromBasket = useSelector((state: any) => state.basketReducer.products)
+    const wholeOrderPrice = useSelector((state: any) => state.basketReducer.wholePrice)
 
     // const [partsVisibilities, setPartsVisibilities] = useState(['', 'invisible', 'invisible'])
     const [partsVisibilities, setPartsVisibilities] = useState(['', '', ''])
@@ -66,8 +68,43 @@ const OrderForm = () => {
     })
     const [postalCode, setPostalCode] = useState("44 - 119")
 
-    const submitOrder = () => {
-        console.log('submit order')
+    // Here I have to do validation - don't forget about this!
+    // Next think is add country
+
+    const addOrder = () => {
+        let orderData
+
+        if(userID !== 0){
+            orderData = {
+                userID,
+                productsFromBasket,
+                wholeOrderPrice
+            }
+        } else {
+            orderData = {
+                userID,
+                country: 'Polska',
+                province: province.value,
+                city: city.value,
+                postalCode,
+                street: street.value,
+                houseNumber: houseNumber.value,
+                name: name.value,
+                surname: surname.value,
+                email: email.value,
+                phoneNumber: phoneNumber.value,
+                productsFromBasket,
+                wholeOrderPrice
+            } 
+        }
+
+        fetch("/api/v1/orders/addOrder", {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(orderData)
+        })
     }
 
     useEffect(() => {
@@ -149,7 +186,7 @@ const OrderForm = () => {
                 <HouseNumber houseNumber={houseNumber} setHouseNumber={setHouseNumber} />
             </div>
 
-            <AddOrderButton submitOrder={submitOrder} />
+            <AddOrderButton addOrder={addOrder} />
         </div>
     )
 }

@@ -27,6 +27,8 @@ Rails.application.routes.draw do
       get 'admins/log_in_admin', to: 'admin#log_in_admin'
       get 'admin/get_admin', to: 'admin#get_admin'
       put 'admin/editAdmin', to: 'admin#edit_admin'
+
+      post 'orders/addOrder', to: 'orders#add_order'
     end
   end
 

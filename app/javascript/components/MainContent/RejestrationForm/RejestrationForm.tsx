@@ -66,7 +66,6 @@ const RejestrationForm = () => {
     const [houseNumber, setHouseNumber] = useState('1')
     const [postalCode, setPostalCode] = useState('44 - 119')
 
-
     const registerUser = (e: any) => {
         const dataToCheck = [
             login.setted,

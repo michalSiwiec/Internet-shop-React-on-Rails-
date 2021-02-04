@@ -1,13 +1,13 @@
 import React, {FC} from 'react'
 
 interface Props {
-    submitOrder: any
+    addOrder: any
 }
 
-const AddOrderButton:FC<Props> = ({submitOrder}) => {
+const AddOrderButton:FC<Props> = ({addOrder}) => {
     return (
         <div className="data-container">
-            <button onClick={submitOrder}>Złóz zamówienie</button>
+            <button onClick={addOrder}>Złóz zamówienie</button>
         </div>
     )
 }
