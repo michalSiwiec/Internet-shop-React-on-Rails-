@@ -14,26 +14,34 @@ module Api
             def add_order
                 user_id = params[:userID]
                 productsFromBasket = params[:productsFromBasket]
-                wholeOrderPrice = params[:wholeOrderPrice]
+                order = nil
 
                 if(user_id != 0)
-                    Order.create(user_id: user_id)
+                    order = Order.create(user_id: user_id)
                 else
-                    country = params[:country]
-                    province = params[:province]
-                    city = params[:city]
-                    postal_code = params[:postalCode]
-                    street = params[:street]
-                    house_number = params[:houseNumber]
-
-                    name = params[:name]
-                    surname = params[:surname]
-                    email = params[:email]
-                    phone_number = params[:phoneNumber]
-
                     order = Order.create()
-                    order.create_dataPerson(name: name, surname: surname, email: email, phone_number: phone_number)
-                    order.create_deliveryAddress(country: country, province: province, city: city, postal_code: postal_code, street: street, house_number: house_number)
+                    order.create_dataPerson.create(
+                        name: params[:name],
+                        surname: params[:surname],
+                        email: params[:email],
+                        phone_number: params[:phone_number]
+                    )
+                    order.create_deliveryAddress(
+                        country: params[:country],
+                        province: params[:province],
+                        city: params[:city],
+                        postal_code: params[:postal_code],
+                        street: params[:street],
+                        house_number: params[:house_number]
+                    )
+                end
+
+                productsFromBasket.each do |product|
+                    OrdersProduct.create(
+                        order_id: order.id,
+                        product_id: product[:id],
+                        quantity: product[:quantity]
+                    )
                 end
             end
         end
