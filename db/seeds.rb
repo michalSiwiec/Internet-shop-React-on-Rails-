@@ -232,13 +232,11 @@ City.create(name: 'Gryfice', province_id: zachodniopomorskie.id, postal_code: '7
 City.create(name: 'Gryfino', province_id: zachodniopomorskie.id, postal_code: '74 - 100')
 City.create(name: 'Kamień Pomorski', province_id: zachodniopomorskie.id, postal_code: '72 - 400')
 
-me = User.create()
-DataLogin.create(login: 'michsiw439', password: 'Ab47901825', user_id: me.id)
-DataPerson.create(name: 'Michal', surname: 'Siwiec', email: 'siwiec.michal724@gmail.com', phone_number: '724131140', user_id: me.id)
-DeliveryAddress.create(country: 'Polska', province: 'Śląskie', city: 'Gliwice', postal_code: '44 - 119', street: 'Gruszczynskiego', house_number: 12, user_id: me.id)
+me_user = User.create()
+me_user.create_dataLogin(login: 'michsiw439', password: 'Ab47901825')
+me_user.create_dataPerson(name: 'Michal', surname: 'Siwiec', email: 'siwiec.michal724@gmail.com', phone_number: '724131140')
+me_user.create_deliveryAddress(country: 'Polska', province: 'Śląskie', city: 'Gliwice', postal_code: '44 - 119', street: 'Gruszczynskiego', house_number: 12)
 
-
-
-
-
-
+me_admin = Admin.create()
+me_admin.create_dataLogin(login: 'michsiw439', password: 'Ab47901825')
+me_admin.create_dataPerson(name: 'Michal', surname: 'Siwiec', email: 'siwiec.michal724@gmail.com', phone_number: '724131140')

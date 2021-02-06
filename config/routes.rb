@@ -23,12 +23,15 @@ Rails.application.routes.draw do
       put 'users/edit_user', to: 'user#edit_user'
       get 'users/get_user_person_data', to: 'user#get_user_person_data'
       delete 'users/remove_user', to: 'user#remove_user'
+      get 'users/get_log_in_users_with_orders', to: 'user#get_log_in_users_with_orders'
 
       get 'admins/log_in_admin', to: 'admin#log_in_admin'
       get 'admin/get_admin', to: 'admin#get_admin'
       put 'admin/editAdmin', to: 'admin#edit_admin'
 
       post 'orders/addOrder', to: 'orders#add_order'
+      get 'orders/get_user_orders', to: 'orders#get_user_orders'
+      get 'orders/get_log_out_users_orders', to: 'orders#get_log_out_users_orders'
     end
   end
 

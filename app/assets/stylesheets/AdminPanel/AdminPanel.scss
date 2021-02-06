@@ -55,6 +55,8 @@
             flex-basis: 100%;
             min-height: 300px;
             border: 2px solid black;
+            display: flex;
+            flex-wrap: wrap;
         }
 
         .product-list-container{

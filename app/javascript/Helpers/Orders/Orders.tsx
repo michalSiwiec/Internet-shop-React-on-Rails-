@@ -1,18 +1,16 @@
-// export const checkDataForm = (updateState:any, value:string) => {
-//     const copyPresentState = {...formData}
+export const checkDataForm = (datasToCheck:any) => {
+    let allFieldsSetted = true
 
-//     updateState(value, copyPresentState)
+    datasToCheck.forEach(data => {
+        if(!data)
+            allFieldsSetted = false
+    })
 
-//     if(formData.email.setted && formData.repeatedEmail.setted && formData.phoneNumber.setted){
-//         if(formData.name.setted && formData.surname.setted){
-//             setPartsVisibilities(['','',''])
-//             return
-//         }
-//         setPartsVisibilities(['','','invisible'])
-//     }
-//     else
-//         setPartsVisibilities(['','invisible','invisible'])
-// }
+    if(allFieldsSetted)
+        return true
+    else
+        return false
+}
 
 export const validateEmail = (value: string, setEmail: any, email: any) => {
     const req = /^[a-zA-Z0-9]{3,}\.[a-zA-Z0-9]{3,}@[a-zA-Z]{2,}\.[a-zA-Z]{2,}/

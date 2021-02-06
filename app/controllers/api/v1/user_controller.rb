@@ -92,7 +92,7 @@ module Api
                 )   
             end
 
-            def get_user_person_data
+            def get_user_person_data # I don't need it - to remove
                 user_id = params[:userID]
                 user_personal_data = DataPerson.find_by(user_id: user_id)
                 
@@ -110,6 +110,22 @@ module Api
                 user.deliveryAddress.destroy!
                 user.destroy!
             end
+
+            def get_log_in_users_with_orders
+                users = []
+
+                User.all.each do |user|
+                    users.push({userID: user.id, dataPerson: user.dataPerson}) if(user.order.count > 0)
+                end
+
+                render json: users
+            end
+
+            # def get_log_out_users_with_orders
+            #     users = []
+
+
+            # end
         end
     end
 end

@@ -12,7 +12,7 @@ interface Props {
 const Province:FC<Props> = ({province, setProvince, setCity}) => {
     const [provinces, setProvinces] = useState([])
 
-    const changeCityAfterSelectProvince = (provinceName) => {
+    const changeCityAfterSelectProvince = (provinceName, unmutable) => {
         fetch(`/api/v1/provinces/show?name=${provinceName}`, {method: 'GET'})
         .then(response => {
             if(response.ok)
@@ -20,7 +20,7 @@ const Province:FC<Props> = ({province, setProvince, setCity}) => {
             else
                 throw Error(response.statusText);
         })
-        .then(city => setCity(city.name))
+        .then(city => setCity({value: city.name, unmutable: unmutable}))
     }
 
     useEffect(() => {
@@ -37,8 +37,8 @@ const Province:FC<Props> = ({province, setProvince, setCity}) => {
     return (
         <div className="data-container">
             <select value={province.value} disabled={province.unmutable} onChange={(e) => {
-                setProvince(e.target.value)
-                changeCityAfterSelectProvince(e.target.value)
+                setProvince({value: e.target.value, unmutable: province.unmutable})
+                changeCityAfterSelectProvince(e.target.value, province.unmutable)
             }}>
                 {provinces.map((province: any) => <option key={`province${province.name}`}>{province.name}</option>)}
             </select>

@@ -10,8 +10,8 @@ module Api
                 name = params[:name]
                 province = Province.find_by({name: name})
 
-                firstCity = City.where({province_id: province.id}).first
-                render json: firstCity
+                first_city = City.where({province_id: province.id}).first
+                render json: first_city
             end
         end
     end

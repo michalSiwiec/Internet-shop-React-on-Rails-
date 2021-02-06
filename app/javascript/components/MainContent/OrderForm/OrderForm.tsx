@@ -14,6 +14,8 @@ import Street from './Street/Street'
 import Surname from './Surname/Surname'
 import AddOrderButton from './AddOrderButton/AddOrderButton'
 
+import {checkDataForm} from '../../../Helpers/Orders/Orders'
+
 import '../../../../assets/stylesheets/OrderForm'
 
 const OrderForm = () => {
@@ -72,43 +74,54 @@ const OrderForm = () => {
     // Next think is add country
 
     const addOrder = () => {
-        let orderData
+        const dataToCheck = [
+            email.value,
+            phoneNumber.value,
+            name.value,
+            surname.value,
+            street.value
+        ]
 
-        if(userID !== 0){
-            orderData = {
-                userID,
-                productsFromBasket,
-                wholeOrderPrice
+        if(checkDataForm(dataToCheck)){
+            let orderData
+
+            if(userID !== 0){
+                orderData = {
+                    userID,
+                    productsFromBasket,
+                    wholeOrderPrice
+                }
+            } else {
+                orderData = {
+                    userID,
+                    country: 'Polska',
+                    province: province.value,
+                    city: city.value,
+                    postalCode,
+                    street: street.value,
+                    houseNumber: houseNumber.value,
+                    name: name.value,
+                    surname: surname.value,
+                    email: email.value,
+                    phoneNumber: phoneNumber.value,
+                    productsFromBasket,
+                    wholeOrderPrice
+                } 
             }
-        } else {
-            orderData = {
-                userID,
-                country: 'Polska',
-                province: province.value,
-                city: city.value,
-                postalCode,
-                street: street.value,
-                houseNumber: houseNumber.value,
-                name: name.value,
-                surname: surname.value,
-                email: email.value,
-                phoneNumber: phoneNumber.value,
-                productsFromBasket,
-                wholeOrderPrice
-            } 
-        }
 
-        fetch("/api/v1/orders/addOrder", {
-            method: "post",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(orderData)
-        })
+            fetch("/api/v1/orders/addOrder", {
+                method: "post",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(orderData)
+            })
+        } else
+            alert('Prosze wypelnic wszystkie pola!')
     }
 
     useEffect(() => {
-        if(userID !== 0)
+        if(userID !== 0){
             fetch(`/api/v1/users/get_user?userID=${userID}`, {method: 'GET'})
             .then(response => {
                 if(response.ok)
@@ -161,7 +174,12 @@ const OrderForm = () => {
                 })
                 setPostalCode(user.delivery_addresses.postal_code)
             })
+        }
     }, [])
+    
+    // console.log(city)
+    // console.log(province)
+    // console.log(postalCode)
 
     return (
         <div className="order-form-container">

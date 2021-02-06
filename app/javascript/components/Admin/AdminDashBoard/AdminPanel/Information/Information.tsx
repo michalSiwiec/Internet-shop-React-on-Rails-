@@ -1,8 +1,8 @@
 import React, {FC} from 'react'
 
 import Products from './Products/Products'
-import OrdersDiagrams from './Orders/OrdersDiagrams'
-import OrdersList from './Orders/OrdersList'
+import OrdersDiagrams from './Orders/OrdersDiagrams/OrdersDiagrams'
+import OrdersList from './Orders/OrdersList/OrdersList'
 import Clients from './Clients/Clients'
 import Statistics from './Statistics/Statistics'
 import Complaints from './Complaints/Complaints'

@@ -44,6 +44,54 @@ module Api
                     )
                 end
             end
+
+            def get_user_orders
+                user_id = params[:userID]
+                orders = User.find(user_id).order
+
+                orders_details = []
+
+                orders.each do |order|
+                    orders_products = OrdersProduct.where(order_id: order.id)
+
+                    bufor = []
+                    order_price = 0
+
+                    orders_products.each do |order_product|
+                        product = Product.find(order_product.product_id)
+
+                        order_price += (product.price * order_product.quantity)
+
+                        bufor.push({
+                            product_description: product.description,
+                            product_price: product.price,
+                            quantity: order_product.quantity
+                        })
+                    end
+
+                    orders_details.push({details: bufor, orderPrice: order_price, dataCreated: order.created_at})
+                end
+
+                render json: orders_details
+            end
+
+            def get_log_out_users_orders
+                puts('sadasda')
+
+                orders_details = []
+
+                orders = Order.where(user_id: nil)
+                # puts(orders.inspect)
+
+                orders.each do |order|
+                    # puts(order.inspect)
+                    puts(order.dataPerson.inspect)
+                    puts(order.deliveryAddress.inspect)
+                    puts(OrdersProduct.where(order_id: order.id).inspect)
+                end
+
+                # render json: orders
+            end
         end
     end
 end

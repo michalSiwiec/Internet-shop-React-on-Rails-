@@ -17,7 +17,7 @@ const HouseNumber:FC<Props> = ({houseNumber, setHouseNumber}) => {
                     value={houseNumber.value}
                     min="1"
                     disabled={houseNumber.unmutable}
-                    onChange={(e) => setHouseNumber(e.target.value)}
+                    onChange={(e) => setHouseNumber({value: e.target.value, unmutable: houseNumber.unmutable})}
                     onKeyPress={(e) => e.preventDefault()}
                     onKeyDown={(e) => e.preventDefault()}
                     className="flat-number"
