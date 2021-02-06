@@ -20,19 +20,19 @@ module Api
                     order = Order.create(user_id: user_id)
                 else
                     order = Order.create()
-                    order.create_dataPerson.create(
+                    order.create_dataPerson(
                         name: params[:name],
                         surname: params[:surname],
                         email: params[:email],
-                        phone_number: params[:phone_number]
+                        phone_number: params[:phoneNumber]
                     )
                     order.create_deliveryAddress(
                         country: params[:country],
                         province: params[:province],
                         city: params[:city],
-                        postal_code: params[:postal_code],
+                        postal_code: params[:postalCode],
                         street: params[:street],
-                        house_number: params[:house_number]
+                        house_number: params[:houseNumber]
                     )
                 end
 
@@ -84,13 +84,16 @@ module Api
                 # puts(orders.inspect)
 
                 orders.each do |order|
-                    # puts(order.inspect)
-                    puts(order.dataPerson.inspect)
-                    puts(order.deliveryAddress.inspect)
-                    puts(OrdersProduct.where(order_id: order.id).inspect)
+                    # puts(order.dataPerson.inspect)
+                    # puts(order.deliveryAddress.inspect)
+
+                    orders_details.push({
+                        data_person: order.dataPerson,
+                        delivery_address: order.deliveryAddress
+                    })
                 end
 
-                # render json: orders
+                render json: orders_details
             end
         end
     end
