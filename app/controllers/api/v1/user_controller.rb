@@ -66,6 +66,19 @@ module Api
                 render json: user_data
             end
 
+            def get_last_user
+                user = User.last
+
+                # user_delivery_addresses = user.deliveryAddress
+                # user_data_logins = user.dataLogin
+                # user_personal_data = user.dataPerson
+
+                # user_data = {delivery_addresses: user_delivery_addresses, data_logins: user_data_logins, personal_data: user_personal_data}
+                user_data = {user_id: user.id}
+
+                render json: user_data
+            end
+
             def edit_user
                 user_id = params[:userID]
                 user_data = params[:newClientData]

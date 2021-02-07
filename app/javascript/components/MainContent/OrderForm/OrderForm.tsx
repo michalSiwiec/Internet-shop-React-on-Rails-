@@ -175,12 +175,8 @@ const OrderForm = () => {
                 setPostalCode(user.delivery_addresses.postal_code)
             })
         }
-    }, [])
+    }, [userID])
     
-    // console.log(city)
-    // console.log(province)
-    // console.log(postalCode)
-
     return (
         <div className="order-form-container">
             <div className={`part-container ${partsVisibilities[0]}`}>

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       get 'users/logInUser', to: 'user#log_in_user'
       get 'users', to: 'user#index'
       get 'users/get_user', to: 'user#get_user'
+      get 'users/get_last_user', to: 'user#get_last_user'
       put 'users/edit_user', to: 'user#edit_user'
       get 'users/get_user_person_data', to: 'user#get_user_person_data'
       delete 'users/remove_user', to: 'user#remove_user'

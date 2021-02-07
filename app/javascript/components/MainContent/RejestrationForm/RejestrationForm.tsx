@@ -18,9 +18,14 @@ import Province from './Province/Province'
 import City from './City/City'
 import PostalCode from './PostalCode/PostalCode'
 
+import {useDispatch} from 'react-redux'
+import actions from '../../../../redux/user/duck/actions'
+
 import '../../../../assets/stylesheets/RejestrationForm.scss'
 
 const RejestrationForm = () => {
+    const dispatch = useDispatch()
+
     const [login, setLogin] = useState({
         value: '',
         setted: false,
@@ -98,6 +103,16 @@ const RejestrationForm = () => {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(formData)
+            })
+            .then(() => {
+                fetch(`/api/v1/users/get_last_user`, {method: 'GET'})
+                .then(response => {
+                    if(response.ok)
+                        return response.json()
+                    else
+                        throw Error(response.statusText);
+                })
+                .then(user => dispatch(actions.singInUser(user.user_id)))
             })
         } else
             e.preventDefault()     

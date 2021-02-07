@@ -1,5 +1,7 @@
 import React, {FC} from 'react'
 
+import {Link} from 'react-router-dom'
+
 interface Props {
     registerUser: any,
 }
@@ -7,7 +9,9 @@ interface Props {
 const RejestrationButton:FC<Props> = ({registerUser}) => {
     return (
         <div className="submit-container">
-            <button onClick={(e) => registerUser(e)}>Załóz konto</button>
+            <Link to="/home/OrderForm">
+                <button onClick={(e) => registerUser(e)}>Załóz konto</button>
+            </Link>
         </div>
     )
 }
