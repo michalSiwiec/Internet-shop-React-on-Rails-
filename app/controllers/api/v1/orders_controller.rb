@@ -76,24 +76,70 @@ module Api
             end
 
             def get_log_out_users_orders
-                puts('sadasda')
-
                 orders_details = []
-
                 orders = Order.where(user_id: nil)
-                # puts(orders.inspect)
 
                 orders.each do |order|
-                    # puts(order.dataPerson.inspect)
-                    # puts(order.deliveryAddress.inspect)
+                    bufor = []
+                    order_price = 0
+                    orders_products = OrdersProduct.where(order_id: order.id) # Returning all products into order
+
+                    orders_products.each do |order_product| # I need do it because I need to know product price, desc etc not only quantity and id
+                        product = Product.find(order_product.product_id)
+
+                        order_price += (product.price * order_product.quantity)
+                        
+                        bufor.push({
+                            product_description: product.description,
+                            product_price: product.price,
+                            quantity: order_product.quantity
+                        })
+                    end
 
                     orders_details.push({
-                        data_person: order.dataPerson,
-                        delivery_address: order.deliveryAddress
+                        dataPerson: order.dataPerson,
+                        deliveryAddress: order.deliveryAddress,
+                        dataCreated: order.created_at,
+                        details: bufor,
+                        orderPrice: order_price,
+                        orderID: order.id
                     })
                 end
 
                 render json: orders_details
+            end
+
+            def get_order
+                order_id = params[:orderID]
+
+                puts(order_id)
+
+                order = Order.find(order_id)
+                data_person = order.dataPerson
+                delivery_address = order.deliveryAddress
+                whole_price = 0
+                products = order.product
+
+                bufor = []
+
+                products.each do |product|
+                    quantity_product_into_order = OrdersProduct.find_by(order_id: order_id, product_id: product.id).quantity
+                    whole_price += (quantity_product_into_order * product.price)
+
+                    bufor.push({
+                        product_description: product.description,
+                        product_price: product.price,
+                        quantity: quantity_product_into_order
+                    })
+                end
+
+                render json: {
+                    data_person: data_person,
+                    delivery_address: delivery_address,
+                    order_details: bufor,
+                    order_price: whole_price,
+                    data_created: order.created_at
+                }
             end
         end
     end

@@ -7,6 +7,7 @@ import UserOrders from './UserOrders/UserOrders'
 import Header from './Header/Header'
 import OrdersLogInUsers from './OrdersLogInUsers/OrdersLogInUsers'
 import OrdersLogOutUsers from './OrdersLogOutUser/OrdersLogOutUsers'
+import CommonOrders from './CommonOrders/CommonOrders'
 
 import '../../../../../../../../assets/stylesheets/AdminPanel/Information/Orders/Lists/OrdersList.scss'
 
@@ -27,7 +28,10 @@ const OrdersList:FC<Props> = ({informationPart}) => {
             <Route path="/admin/orders/:userID" exact>
                 <UserOrders />
             </Route>
-            
+
+            <Route path="/admin/commonOrders/:orderID">
+                <CommonOrders />
+            </Route>            
         </div>
     )
 }

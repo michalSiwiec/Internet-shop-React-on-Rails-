@@ -1,5 +1,7 @@
 import React, {FC, useState, useEffect} from 'react'
 
+import {Link} from 'react-router-dom'
+
 import Header from './Header/Header'
 
 interface Props {
@@ -13,15 +15,12 @@ const OrdersLogOutUsers:FC<Props> = () =>  {
         fetch('/api/v1/orders/get_log_out_users_orders', {method: 'GET'})
         .then(response => {
             if(response.ok)
-                return response.text()
+                return response.json()
             else
                 throw Error(response.statusText);
         })
-        // .then(orders_ => setOrders(orders_))
-        .then(data => console.log(data))
+        .then(orders_ => setOrders(orders_))
     }, [])
-
-    console.log(orders)
 
     return (
         <div className="order-part-container">
@@ -37,7 +36,15 @@ const OrdersLogOutUsers:FC<Props> = () =>  {
                 </thead>
                 
                 <tbody>
-
+                    {orders.map((order: any) => {
+                        return(
+                            <tr key={`order${order.orderID}`}>
+                                <td>{order.dataPerson.name}</td>
+                                <td>{order.dataPerson.surname}</td>
+                                <td><Link to={`/admin/commonOrders/${order.orderID}`}>{<button>Zobacz zamówienie</button>}</Link></td>
+                            </tr>
+                        )
+                    })}
                 </tbody>
             </table>
         </div>
