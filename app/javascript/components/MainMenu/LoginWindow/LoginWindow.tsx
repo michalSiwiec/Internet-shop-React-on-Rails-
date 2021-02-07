@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 import {useDispatch, useSelector} from 'react-redux'
 import actions from '../../../../redux/user/duck/actions'
@@ -7,6 +7,8 @@ const LogInWindow = () => {
     const [logInWindowVisible, setLogInWindowVisible] = useState('unvisible')
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
+    const [userData, setUserData] = useState({name: '', surname: ''})
+
     const dispatch = useDispatch()
     const userID = useSelector((state: any) => state.userReducer.user.userID)
 
@@ -30,6 +32,19 @@ const LogInWindow = () => {
         }
     }
 
+    useEffect(() => {
+        if(userID !== 0){
+            fetch(`/api/v1/users/get_user?userID=${userID}`, {method: 'GET'})
+            .then(response => {
+                if(response.ok)
+                    return response.json()
+                else
+                    throw Error(response.statusText);
+            })
+            .then(user => setUserData({name: user.personal_data.name, surname: user.personal_data.surname}))
+        }
+    }, [userID])
+
     return (
         <div className="login-container">
             {
@@ -43,7 +58,7 @@ const LogInWindow = () => {
                 :
                 <>
                     <h2>Zalogowany jako</h2>
-                    <p>Michal Siwiec</p>
+                    <p>{`${userData.name} ${userData.surname}`}</p>
                     <div>
                         <span>Wyloguj</span>
                         <i className="icon-user" onClick={() => dispatch(actions.logOutUser())}></i>
