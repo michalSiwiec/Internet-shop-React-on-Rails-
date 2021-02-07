@@ -44,6 +44,7 @@ const Product:FC<Props> = ({product}) => {
         .then(product => {
             const price = product.price
             dispatch(actions.addProductToBasket(productID, quantity, price))
+            setQuantity(1)
         })
     }
 
