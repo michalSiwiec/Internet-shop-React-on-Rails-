@@ -39,12 +39,14 @@
         align-items: center;
     }
 
-    .browser-container{
+    .login-container{
         padding: 20px;
         border: 2px solid black;
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
+
         @media only screen and(max-width: 767px){
             flex-basis: 100%;
             order: 5;
@@ -54,11 +56,62 @@
             order: 2;
         }
 
-        &__browser{
-            width: 250px;
-            height: 35px;
-            font-size: 17px;
-            padding: 3px 10px;
+        i{
+            font-size: 35px;
+        }
+
+        h2{
+            margin: 0px 0px 12px;
+            flex-basis: 100%;
+            text-align: center;
+        }
+
+        .log-in-window{
+            width: 30vw;
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgb(126, 136, 139);
+            color: white;
+
+            & > div{
+                margin: 8px 0px;
+                text-align: center;
+
+                & > p{
+                    font-size: 22px;
+                }
+
+                & > input{
+                    width: 75%;
+                }
+
+                button{
+                    margin: 0px 10px;
+                    background-color: black;
+                    padding: 3px 8px;
+                    font-size: 19px;
+
+                    &:hover{
+                        background-color: #fff;
+                        color: black;
+                        transition: background-color, color, .5s;
+                    }
+                }
+            }
+        }
+
+        .unvisible{
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity, 1s;
+        }
+
+        .visible{
+            opacity: 1;
+            visibility: visible;
+            transition: opacity, 1s;
         }
     }
 

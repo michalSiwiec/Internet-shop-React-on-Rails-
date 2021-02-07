@@ -2,6 +2,8 @@ import React, {FC} from 'react'
 
 import {Link} from 'react-router-dom'
 
+import '../../../../../../../../../../../../assets/Fontello/fontello-d1609120/css/fontello.css'
+
 interface Props {
     userID: number
 }
@@ -9,7 +11,12 @@ interface Props {
 const RemoveUserButton:FC<Props> = ({userID}) =>  {
     return (
         <Link to={`/admin/removeUser/${userID}`}>
-            <div><button className="remove-user-button">Usuń</button></div>
+            <div>
+                <button className="remove-user-button">
+                    Usuń
+                    <i className="icon-user-times"></i>
+                </button>
+            </div>
         </Link>
     )
 }

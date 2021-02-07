@@ -106,7 +106,7 @@ const CommonOrders = () => {
                 </div>
 
                 <div className="buttons-container">
-                    <Link to="/admin/"><button>Anuluj</button></Link>
+                    <Link to="/admin/"><button>Anulsuj</button></Link>
                     <Link to="/admin/"><button onClick={() => alert('I am realizing order')}>Realizuj zamówienie</button></Link>
                 </div>
             </div>

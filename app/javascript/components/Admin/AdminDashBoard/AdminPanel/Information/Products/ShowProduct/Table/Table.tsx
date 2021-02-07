@@ -33,7 +33,6 @@ const Table = () => {
                         <TableHeader columnName="Cena"/>
                         <TableHeader columnName="Ilość na magazynie"/>
                         <TableHeader columnName="Typ produktu"/>
-                        <TableHeader columnName="Słowa kluczowe"/>
                         <TableHeader columnName="Akcje"/>
                     </tr>
                 </thead>

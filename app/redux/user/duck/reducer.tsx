@@ -19,10 +19,14 @@ const initialState: InitialState = {
 const userReducer = (state = initialState, action) => {
     switch(action.type){
         case types.SING_IN_USER:
-            console.log('sing in user')
             return produce(state, draftState => {
                 draftState.user.userID = action.user_id
                 draftState.user.logIn = true
+            })
+        case types.LOG_OUT_USER:
+            return produce(state, draftState => {
+                draftState.user.userID = 0
+                draftState.user.logIn = false
             })
         default:
             return state

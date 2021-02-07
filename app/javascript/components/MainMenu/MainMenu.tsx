@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 
 import MainMenuLogo from './MainMenuLogo/MainMenuLogo'
 import MainMenuOptions from './MainMenuOptions/MainMenuOptions'
-import MainMenuBrowser from './MainMenuBrowser/MainMenuBrowser'
+import LogInWindow from './LoginWindow/LoginWindow'
 import MainMenuBasket from './MainMenuBasket/MainMenuBasket'
 import MainMenuHamburger from './MainMenuHamburger/MainMenuHamburger'
 
@@ -24,7 +24,7 @@ const MainMenu = () => {
             <MainMenuLogo />
             <MainMenuHamburger isInvisibility={isInvisibility} setIsInvisibilty={setIsInvisibilty}/>
             <MainMenuBasket />
-            <MainMenuBrowser />
+            <LogInWindow />
             <MainMenuOptions isInvisibility={isInvisibility} />
         </div>
     )

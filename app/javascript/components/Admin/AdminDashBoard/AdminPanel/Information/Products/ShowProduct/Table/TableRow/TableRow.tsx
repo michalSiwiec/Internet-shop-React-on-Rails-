@@ -1,6 +1,5 @@
 import React, {FC} from 'react'
 
-import KeyWordColumn from './KeyWordColumn/KeyWordColumn'
 import ProductTypeColumn from './ProductTypeColumn/ProductTypeColumn'
 import QuantityAvailableColumn from './QuantityAvailableColumn/QuantityAvailableColumn'
 import PriceColumn from './PriceColumn/PriceColumn'
@@ -21,7 +20,6 @@ const TableRow:FC<Props> = ({product}) => {
             <PriceColumn price={product.price}/>
             <QuantityAvailableColumn quantity_available={product.quantity_available}/>
             <ProductTypeColumn product_type={product.product_type}/>
-            <KeyWordColumn key_word={product.key_word}/>
             <td>
                 <EditProductButton productID = {product.id}/>
                 <RemoveProductButton productID={product.id}/>

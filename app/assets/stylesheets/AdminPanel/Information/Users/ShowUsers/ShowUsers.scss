@@ -8,6 +8,23 @@
             padding: 3px 15px;
             font-size: 19px;
             flex-grow: 1;
+            color: white;
+            background-color: black;
+            transition: color, background-color, .3s;
+            
+            i{
+                color: white;
+                padding-left: 15px;
+            }
+
+            &:hover{
+                color: black;
+                background-color: white;
+            }
+
+            &:hover i{
+                color: black;
+            }
         }
 
         h1{
@@ -33,18 +50,26 @@
                text-align: center;
 
                button{
-                   padding: 3px 10px;
-                   margin: 5px 10px;
-                   font-size: 17px;
+                    padding: 3px 10px;
+                    margin: 5px 10px;
+                    font-size: 17px;
+                    color: white;
+                    background-color: black;
+                    transition: color, background-color, .3s;
 
-                   .remove-user-button{
-                       background-color: red;
-                   }
-                   
-                   .edit-user-button {
-                       background-color: green;
-                   }
+                   &:hover{
+                        color: black;
+                        background-color: white
+                    }
+
+                    &:hover i{
+                        color: black;
+                    } 
                }
+
+               i{
+                color: white;
+                }
             }
         }
     }
