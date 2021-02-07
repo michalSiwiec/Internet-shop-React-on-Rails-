@@ -42,6 +42,12 @@ const basketReducer = (state = initialState, action) => {
                 updatedProduct.quantity += action.quantityAddedOrSubstractedProduct
                 draftState.wholePrice += (action.quantityAddedOrSubstractedProduct * action.price)
             })
+
+        case types.RESET_BASKET:
+            return produce(state, draftState => {
+                draftState.products = []
+                draftState.wholePrice = 0
+            })
             
         default:
              return state

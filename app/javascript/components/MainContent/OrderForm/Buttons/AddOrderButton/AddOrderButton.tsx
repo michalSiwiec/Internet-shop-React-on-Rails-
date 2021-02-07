@@ -1,5 +1,7 @@
 import React, {FC} from 'react'
 
+import {Link} from 'react-router-dom'
+
 interface Props {
     addOrder: any
 }
@@ -7,7 +9,7 @@ interface Props {
 const AddOrderButton:FC<Props> = ({addOrder}) => {
     return (
         <div className="data-container">
-            <button onClick={addOrder}>Złóz zamówienie</button>
+            <Link to=""><button onClick={addOrder}>Złóz zamówienie</button></Link>
         </div>
     )
 }

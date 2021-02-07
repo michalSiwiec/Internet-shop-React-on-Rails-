@@ -23,8 +23,11 @@ const changeProductQuantity = (productID:number, quantityAddedOrSubstractedProdu
     price
 })
 
+const resetBasket = () => ({type: types.RESET_BASKET})
+
 export default {
     addProductToBasket,
     removeProductFromBasket,
-    changeProductQuantity
+    changeProductQuantity,
+    resetBasket
 }

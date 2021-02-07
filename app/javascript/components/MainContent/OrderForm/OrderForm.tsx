@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 
-import {useSelector} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
+import actions from '../../../../redux/basket/duck/actions'
 
 import Header from './Header/Header'
 import City from './City/City'
@@ -12,7 +13,8 @@ import PostalCode from './PostalCode/PostalCode'
 import Province from './Province/Province'
 import Street from './Street/Street'
 import Surname from './Surname/Surname'
-import AddOrderButton from './AddOrderButton/AddOrderButton'
+import AddOrderButton from './Buttons/AddOrderButton/AddOrderButton'
+import CancelButton from './Buttons/CancelButton/CancelButton'
 
 import {checkDataForm} from '../../../Helpers/Orders/Orders'
 
@@ -22,6 +24,8 @@ const OrderForm = () => {
     const userID = useSelector((state: any) => state.userReducer.user.userID)
     const productsFromBasket = useSelector((state: any) => state.basketReducer.products)
     const wholeOrderPrice = useSelector((state: any) => state.basketReducer.wholePrice)
+
+    const dispatch = useDispatch()
 
     // const [partsVisibilities, setPartsVisibilities] = useState(['', 'invisible', 'invisible'])
     const [partsVisibilities, setPartsVisibilities] = useState(['', '', ''])
@@ -116,6 +120,7 @@ const OrderForm = () => {
                 },
                 body: JSON.stringify(orderData)
             })
+            .then(() => dispatch(actions.resetBasket()))
         } else
             alert('Prosze wypelnic wszystkie pola!')
     }
@@ -201,6 +206,7 @@ const OrderForm = () => {
             </div>
 
             <AddOrderButton addOrder={addOrder} />
+            <CancelButton />
         </div>
     )
 }
