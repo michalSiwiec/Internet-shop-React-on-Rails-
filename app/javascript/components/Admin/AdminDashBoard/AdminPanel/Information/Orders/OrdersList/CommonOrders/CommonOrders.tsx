@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 
 import {useParams, Link} from 'react-router-dom'
 
-import '../../../../../../../../../assets/stylesheets/AdminPanel/Information/Orders/Lists/CommonOrders/CommonOrders.scss'
+// import '../../../../../../../../../assets/stylesheets/AdminPanel/Information/Orders/Lists/CommonOrders/CommonOrders.scss'
 
 interface Order {
     data_created: string,

@@ -13,7 +13,7 @@ import Buttons from './Buttons/Buttons'
 
 import {checkDataForm} from '../../../../../../Helpers/Admins/Admins'
 
-import '../../../../../../../assets/stylesheets/AdminPanel/LeftMenu/EditAdmin/EditAdmin.scss'
+// import '../../../../../../../assets/stylesheets/AdminPanel/LeftMenu/EditAdmin/EditAdmin.scss'
 
 const EditAdmin = () => {
     const adminID = useSelector((state: any) => state.adminsReducer.admin.id)

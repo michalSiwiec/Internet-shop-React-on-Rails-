@@ -21,7 +21,7 @@ import PostalCode from './PostalCode/PostalCode'
 import {useDispatch} from 'react-redux'
 import actions from '../../../../../redux/user/duck/actions'
 
-import '../../../../../assets/stylesheets/UserContent/MainContent/RejestrationForm/RejestrationForm.scss'
+// import '../../../../../assets/stylesheets/UserContent/MainContent/RejestrationForm/RejestrationForm.scss'
 
 const RejestrationForm = () => {
     const dispatch = useDispatch()

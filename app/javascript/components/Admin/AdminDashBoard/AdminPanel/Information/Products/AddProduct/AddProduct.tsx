@@ -10,7 +10,7 @@ import Buttons from './Buttons/Buttons'
 
 import {checkDataForm} from '../../../../../../../Helpers/Products/ProductsHelper'
 
-import '../../../../../../../../assets/stylesheets/AdminPanel/Information/Products/AddProduct/AddProduct.scss'
+// import '../../../../../../../../assets/stylesheets/AdminPanel/Information/Products/AddProduct/AddProduct.scss'
 
 const AddProduct = () => {
     const [source, setSource] = useState('')

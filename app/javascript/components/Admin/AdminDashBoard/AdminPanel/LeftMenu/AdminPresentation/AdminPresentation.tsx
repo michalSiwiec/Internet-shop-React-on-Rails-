@@ -4,7 +4,7 @@ import Header from './Header/Header'
 import AdminFigure from './AdminFigure/AdminFigure'
 import LogOutAdminInscription from './LogOutAdminInscription/LogOutAdminInscription'
 
-import '../../../../../../../assets/stylesheets/AdminPanel/LeftMenu/AdminPresentation/AdminPresentation.scss'
+// import '../../../../../../../assets/stylesheets/AdminPanel/LeftMenu/AdminPresentation/AdminPresentation.scss'
 
 const AdminPresentation= () => {
     return (

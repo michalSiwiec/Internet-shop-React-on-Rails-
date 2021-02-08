@@ -5,7 +5,7 @@ import {useParams} from 'react-router-dom'
 import {useSelector, useDispatch} from 'react-redux'
 import productsActions from '../../../../../../redux/products/duck/actions'
 
-import '../../../../../../assets/stylesheets/UserContent/MainContent/OrderArea/OrderArea.scss'
+// import '../../../../../../assets/stylesheets/UserContent/MainContent/OrderArea/OrderArea.scss'
 
 import DownloadingData from './DownloadingData/DownloadingData'
 import Products from './Products/Products'

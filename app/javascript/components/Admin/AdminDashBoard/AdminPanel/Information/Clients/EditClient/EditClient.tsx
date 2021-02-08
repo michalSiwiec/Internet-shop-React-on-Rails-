@@ -20,7 +20,7 @@ import Password from './Password/Password'
 import PasswordConfirmation from './PasswordConfirmation/PasswordConfirmation'
 import Buttons from './Buttons/Buttons'
 
-import '../../../../../../../../assets/stylesheets/AdminPanel/Information/Users/EditUser/EditUser.scss'
+// import '../../../../../../../../assets/stylesheets/AdminPanel/Information/Users/EditUser/EditUser.scss'
 
 const EditClient = () => {
     const {userID} = useParams()

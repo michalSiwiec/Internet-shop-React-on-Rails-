@@ -18,7 +18,7 @@ import Buttons from './Buttons/Buttons'
 
 import {checkDataForm} from '../../../../../../../Helpers/Users/Users'
 
-import '../../../../../../../../assets/stylesheets/AdminPanel/Information/Users/AddUser/AddUser.scss'
+// import '../../../../../../../../assets/stylesheets/AdminPanel/Information/Users/AddUser/AddUser.scss'
 
 const AddClient = () => {
     const [name, setName] = useState({

@@ -2,7 +2,6 @@ import React from 'react'
 
 import {Link} from 'react-router-dom';
 
-
 const MainMenuLogo = () => {
     const Logo = require('../../../../../assets/images/Kaufland_Logo.png')
 

@@ -5,7 +5,7 @@ import CommonShopping from './CommonShopping/CommonShopping'
 import Rejestration from './Rejestration/Rejestration'
 import SingIn from './SingIn/SingIn'
 
-import '../../../../../assets/stylesheets/UserContent/MainContent/ShoppingOption/ShoppingOptions.scss'
+// import '../../../../../assets/stylesheets/UserContent/MainContent/ShoppingOption/ShoppingOptions.scss'
 
 const ShoppingOption = () => {
     return (

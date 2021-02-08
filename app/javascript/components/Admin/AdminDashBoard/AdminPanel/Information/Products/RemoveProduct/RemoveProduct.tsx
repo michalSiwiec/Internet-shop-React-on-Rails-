@@ -7,7 +7,7 @@ import Description from './Description/Description'
 import ProductSource from './ProductSource/ProductSource'
 import Buttons from './Buttons/Buttons'
 
-import '../../../../../../../../assets/stylesheets/AdminPanel/Information/Products/RemoveProduct/RemoveProduct.scss'
+// import '../../../../../../../../assets/stylesheets/AdminPanel/Information/Products/RemoveProduct/RemoveProduct.scss'
 
 const RemoveProduct = () => {
     const {productID} = useParams()

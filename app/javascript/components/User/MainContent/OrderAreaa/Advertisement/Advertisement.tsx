@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 
+// import '../../../../../../assets/stylesheets/UserContent/MainContent/OrderArea/Advertisement/Advertisement.scss'
+
 const Advertisement = () => {
     const Advertisement1 = require('../../../../../../assets/images/Advertisement.jpg')
     const Advertisement2 = require('../../../../../../assets/images/horizontalAdvertisement.png')

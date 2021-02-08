@@ -1,18 +1,15 @@
 import React from 'react'
 
-import {Link} from 'react-router-dom'
+import Ornament from './Ornament/Ornament'
+import RejestrationButton from './RejestrationButton/RejestrationButton'
 
 const Rejestration = () =>  {
     return (
         <div className="rejestration-container">
-            <div className="ornament">
-                <p>Rejestracja</p>
-            </div>
+            <Ornament />
 
             <div className="fileds-container">
-                <div>
-                    <Link to="/home/rejestrationForm"><button className="rejestration-btn">Zarejestruj się</button></Link>
-                </div>
+                <RejestrationButton />
             </div>
         </div>
     )

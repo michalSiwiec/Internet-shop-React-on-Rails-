@@ -4,7 +4,7 @@ import TopMenu from './TopMenu/TopMenu'
 import LeftMenu from './LeftMenu/LeftMenu'
 import Information from './Information/Information'
 
-import '../../../../../assets/stylesheets/AdminPanel/AdminPanel.scss'
+// import '../../../../../assets/stylesheets/AdminPanel/AdminPanel.scss'
 
 const AdminPanel = () => {
 

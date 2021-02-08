@@ -4,7 +4,7 @@ import Header from './Header/Header'
 import ClientsTable from './ClientsTable/ClientsTable'
 import AddClientButton from './AddClientButton/AddClientButton'
 
-import '../../../../../../../../assets/stylesheets/AdminPanel/Information/Users/ShowUsers/ShowUsers.scss'
+// import '../../../../../../../../assets/stylesheets/AdminPanel/Information/Users/ShowUsers/ShowUsers.scss'
 
 interface Props {
     clientsList: any

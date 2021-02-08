@@ -8,7 +8,7 @@ import ShoppingOption from './ShoppingOption/ShoppingOption'
 import BasketSummary from './BasketSummary/BasketSummary'
 import RejestrationForm from './RejestrationForm/RejestrationForm'
 
-import '../../../../assets/stylesheets/UserContent/MainContent/MainContent.scss'
+// import '../../../../assets/stylesheets/UserContent/MainContent/MainContent.scss'
 
 const MainContent = () => {
     return(
@@ -22,7 +22,7 @@ const MainContent = () => {
             </Route>
 
             <Route path="/home/Newspaper/">
-                <p>Newspaper</p>
+                <p>Newsspaper</p>
             </Route>
 
             <Route path="/home/Recipies/">

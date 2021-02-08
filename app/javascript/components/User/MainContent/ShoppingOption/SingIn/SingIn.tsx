@@ -5,6 +5,12 @@ import {Redirect} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 import actions from '../../../../../../redux/user/duck/actions'
 
+import Ornament from './Ornament/Ornament'
+import Login from './Login/Login'
+import Password from './Password/Password'
+import Prompt from './Prompt/Prompt'
+import LogInButton from './LogInButton/LogInButton'
+
 const SingIn = () =>  {
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
@@ -35,26 +41,13 @@ const SingIn = () =>  {
             {userID !== 0 ? <Redirect to="/home/OrderForm"/> : null} 
 
             <div className="sing-in-container">
-                <div className="ornament">
-                    <p>Logowanie</p>
-                </div>
+                <Ornament />
 
                 <div className="fileds-container">
-                    <div>
-                        <input type="text" placeholder="Login" value={login} onChange={(e) => setLogin(e.target.value)}/>
-                    </div>
-
-                    <div>
-                        <input type="text" placeholder="Hasło" value={password} onChange={(e) => setPassword(e.target.value)}/>
-                    </div>
-
-                    <div>
-                        <span className="prompt">Nie pamiętam hasła</span>
-                    </div>
-
-                    <div>
-                        <button onClick={LogIn} className="log-in-btn">Zaloguj się</button>
-                    </div>
+                    <Login login={login} setLogin={setLogin} />
+                    <Password password={password} setPassword={setPassword} />
+                    <Prompt />
+                    <LogInButton LogIn={LogIn} />
                 </div>
             </div>
         </>

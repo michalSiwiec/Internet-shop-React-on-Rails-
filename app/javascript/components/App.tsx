@@ -7,13 +7,8 @@ import MainMenu from './User/MainMenu/MainMenu';
 import AdvertisementSlider from './User/AdvertisementSlider/AdvertisementSlider'
 import MainContent from './User/MainContent/MainContent';
 import MainFooter from './User/MainFooter/MainFooter';
-// import adminsReducer from '../../redux/admin/reducer';
-
-// import store from '../../redux/store'
-
 
 const App = () => {
-    // console.log(store.getState())
     return(
         <div> 
             <Switch>

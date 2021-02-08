@@ -4,7 +4,7 @@ import Header from './Header/Header'
 import AddProductButton from './AddProductButton/AddProductButton'
 import Table from './Table/Table'
 
-import '../../../../../../../../assets/stylesheets/AdminPanel/Information/Products/ShowProducts/ShowProducts.scss'
+// import '../../../../../../../../assets/stylesheets/AdminPanel/Information/Products/ShowProducts/ShowProducts.scss'
 
 interface Props {
     productListElement: any

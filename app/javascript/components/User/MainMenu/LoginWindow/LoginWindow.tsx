@@ -60,7 +60,7 @@ const LogInWindow = () => {
                     <h2>Zalogowany jako</h2>
                     <p>{`${userData.name} ${userData.surname}`}</p>
                     <div>
-                        <span>Wyloguj</span>
+                        <span>Wylosguj</span>
                         <i className="icon-user" onClick={() => dispatch(actions.logOutUser())}></i>
                     </div>
                 </>

@@ -7,7 +7,7 @@ import Name from './Name/Name'
 import Surname from './Surname/Surname'
 import Buttons from './Buttons/Buttons'
 
-import '../../../../../../../../assets/stylesheets/AdminPanel/Information/Users/RemoveUser/RemoveUser.scss'
+// import '../../../../../../../../assets/stylesheets/AdminPanel/Information/Users/RemoveUser/RemoveUser.scss'
 
 const RemoveClient = () => {
 
