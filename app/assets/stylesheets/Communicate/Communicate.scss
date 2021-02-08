@@ -1,0 +1,15 @@
+.window-information{
+    width: 30vw;
+    height: 20vh;
+    padding: 10px 15px 30px;
+    background-color: black;
+    color: white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hide{
+    opacity: 0;
+    transition: opacity, 3s;
+}

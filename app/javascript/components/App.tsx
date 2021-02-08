@@ -3,11 +3,11 @@ import React from 'react'
 import {Route, Switch, Redirect} from 'react-router-dom'
 
 import AdminDashBoard from './Admin/AdminDashBoard/AdminDashBoard'
-import MainMenu from './MainMenu/MainMenu';
-import AdvertisementSlider from './AdvertisementSlider/AdvertisementSlider'
-import MainContent from './MainContent/MainContent';
-import MainFooter from './MainFooter/MainFooter';
-import adminsReducer from '../../redux/admin/reducer';
+import MainMenu from './User/MainMenu/MainMenu';
+import AdvertisementSlider from './User/AdvertisementSlider/AdvertisementSlider'
+import MainContent from './User/MainContent/MainContent';
+import MainFooter from './User/MainFooter/MainFooter';
+// import adminsReducer from '../../redux/admin/reducer';
 
 // import store from '../../redux/store'
 
