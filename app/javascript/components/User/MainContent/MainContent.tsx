@@ -3,12 +3,11 @@ import React from 'react'
 import {Route, Switch, Redirect} from 'react-router-dom'
 
 import OrderAreaa from './OrderAreaa/OrderAreaa'
+import AboutUs from './AboutUs/AboutUs'
 import OrderForm from './OrderForm/OrderForm'
 import ShoppingOption from './ShoppingOption/ShoppingOption'
 import BasketSummary from './BasketSummary/BasketSummary'
 import RejestrationForm from './RejestrationForm/RejestrationForm'
-
-// import '../../../../assets/stylesheets/UserContent/MainContent/MainContent.scss'
 
 const MainContent = () => {
     return(
@@ -21,8 +20,8 @@ const MainContent = () => {
                 <OrderAreaa />
             </Route>
 
-            <Route path="/home/Newspaper/">
-                <p>Newsspaper</p>
+            <Route path="/home/AboutUs/">
+                <AboutUs />
             </Route>
 
             <Route path="/home/Recipies/">

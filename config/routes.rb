@@ -34,6 +34,9 @@ Rails.application.routes.draw do
       get 'orders/get_user_orders', to: 'orders#get_user_orders'
       get 'orders/get_log_out_users_orders', to: 'orders#get_log_out_users_orders'
       get 'orders/get_order', to: 'orders#get_order'
+
+      get 'opinions/', to: 'opinions#index'
+      post 'opinions/add', to: 'opinions#add'
     end
   end
 

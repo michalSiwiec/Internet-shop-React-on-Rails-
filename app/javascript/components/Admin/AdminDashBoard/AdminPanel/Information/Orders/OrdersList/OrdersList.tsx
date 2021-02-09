@@ -9,8 +9,6 @@ import OrdersLogInUsers from './OrdersLogInUsers/OrdersLogInUsers'
 import OrdersLogOutUsers from './OrdersLogOutUser/OrdersLogOutUsers'
 import CommonOrders from './CommonOrders/CommonOrders'
 
-// import '../../../../../../../../assets/stylesheets/AdminPanel/Information/Orders/Lists/OrdersList.scss'
-
 interface Props{
     informationPart: any
 }
