@@ -3,7 +3,7 @@ import React from 'react'
 import {Route, Switch, Redirect} from 'react-router-dom'
 
 import OrderAreaa from './OrderAreaa/OrderAreaa'
-import AboutUs from './AboutUs/AboutUs'
+import ShopOpinions from './ShopOpinions/ShopOpinions'
 import OrderForm from './OrderForm/OrderForm'
 import ShoppingOption from './ShoppingOption/ShoppingOption'
 import BasketSummary from './BasketSummary/BasketSummary'
@@ -20,8 +20,8 @@ const MainContent = () => {
                 <OrderAreaa />
             </Route>
 
-            <Route path="/home/AboutUs/">
-                <AboutUs />
+            <Route path="/home/Opinions/">
+                <ShopOpinions />
             </Route>
 
             <Route path="/home/Recipies/">
