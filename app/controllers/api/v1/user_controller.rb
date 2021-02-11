@@ -24,7 +24,6 @@ module Api
                 user.create_deliveryAddress!(country: country, province: province, city: city, postal_code: postal_code, street: street, house_number: house_number)
                 user.create_dataPerson!(name: name, surname: surname, email: email, phone_number: phone_number)
 
-                # puts("Sending email on Address: #{email}")
                 UserMailer.singup_confirmation(user).deliver
             end
 

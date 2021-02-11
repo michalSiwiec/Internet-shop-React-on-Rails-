@@ -28,19 +28,29 @@ module Api
                     )
                 end
 
-                productsFromBasket.each do |product|
+                productsFromBasket.each do |product_from_basket|
                     OrdersProduct.create(
                         order_id: order.id,
-                        product_id: product[:id],
-                        quantity: product[:quantity]
+                        product_id: product_from_basket[:id],
+                        quantity: product_from_basket[:quantity]
                     )
+
+                    product = Product.find(product_from_basket[:id]) 
+                    product.update_columns(quantity_available: product.quantity_available - product_from_basket[:quantity])
                 end
 
                 if(user_id != 0)
                     user = User.find(user_id)
                     OrderMailer.add_order_confirmation(user).deliver
                 else
-                    puts("Sending email on address: #{params[:email]}")
+                    # puts("Sending email on address: #{params[:email]}")
+                    email_data = {
+                        email: params[:email],
+                        name: params[:name],
+                        surname: params[:surname]
+                    }
+                    
+                    OrderMailer.add_order_log_out_user_confirmation(email_data).deliver
                 end
             end
 

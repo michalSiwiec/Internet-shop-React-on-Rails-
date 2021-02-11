@@ -56,7 +56,8 @@ const Product:FC<Props> = ({product}) => {
         <div className="single-product-container">
             {productAdded 
                 ? <WindowCommunicate info="Produkt dodano do koszyka!" setTransmittedState={setProductAdded} />
-                : null}
+                : null
+            }
 
             <div className="flex-container">
                 <figure>
