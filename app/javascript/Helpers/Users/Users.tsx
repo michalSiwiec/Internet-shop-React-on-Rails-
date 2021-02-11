@@ -102,8 +102,7 @@ export const validateSurname = (value: string, setSurname: any, surname: any) =>
 }
 
 export const validateEmail = (value: string, setEmail: any, email: any) => {
-    // const req = /^[a-zA-Z0-9]{3,}\.[a-zA-Z0-9]{3,}@[a-zA-Z]{2,}\.[a-zA-Z]{2,}/
-    const req = /^[a-zA-Z0-9]{3,}[a-zA-Z0-9]{3,}@[a-zA-Z]{2,}\.[a-zA-Z]{2,}/
+    const req = /^[a-zA-Z0-9]{3,}\.[a-zA-Z0-9]{3,}@[a-zA-Z]{2,}\.[a-zA-Z]{2,}/
 
     const copyMail = {...email}
 

@@ -1,0 +1,18 @@
+<h1>Twoje konto zostało załozone pomyślnie!</h1>
+
+<p>
+  Dziękujemy za zalozenie konta
+  <%= @user.dataPerson.name %>
+  <%= @user.dataPerson.surname %>
+  Od teraz mozesz cieszyć się posiadaniem konta w naszym serwisie!  
+</p>
+
+<p>
+  Twoje dane logowania to: 
+  Login: <%= @user.dataLogin.login %>
+  Hasło: <%= @user.dataLogin.password %>
+</p>
+
+<span>Z powazaniem, <br/> Sklep internetowy Kaufland</span>
+
+
