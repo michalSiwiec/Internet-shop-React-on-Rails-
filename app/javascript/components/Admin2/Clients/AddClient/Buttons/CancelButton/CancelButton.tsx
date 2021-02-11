@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 
 const CancelButton = () => {
     return (
-        <Link to="/admin/">
+        <Link to="/admin/Users">
             <button>Anuluj</button>
         </Link>
     )

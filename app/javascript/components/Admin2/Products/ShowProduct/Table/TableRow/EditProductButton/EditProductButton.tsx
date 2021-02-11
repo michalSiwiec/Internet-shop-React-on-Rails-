@@ -8,7 +8,7 @@ interface Props {
 
 const EditProductButton:FC<Props> = ({productID}) => {
     return (
-        <Link to={`/admin/editProduct/${productID}`}>
+        <Link to={`/admin/Products/editProduct/${productID}`}>
             <div>
                 <button className="edit-button">Edytuj</button>
             </div>

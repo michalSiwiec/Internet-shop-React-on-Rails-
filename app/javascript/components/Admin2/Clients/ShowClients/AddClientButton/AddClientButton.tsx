@@ -6,7 +6,7 @@ import '../../../../../../assets/Fontello/fontello-d1609120/css/fontello.css'
 
 const AddClientButton = () => {
     return (
-        <Link to="/admin/addUser">
+        <Link to="/admin/Users/addUser">
             <button className="add-client-button">
                 Dodaj klienta
                 <i className="icon-user-plus"></i> 

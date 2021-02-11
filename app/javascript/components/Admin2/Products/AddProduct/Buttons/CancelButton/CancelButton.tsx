@@ -8,7 +8,7 @@ interface Props {
 
 const CancelButton = () => {
     return (
-        <Link to="/admin/">
+        <Link to="/admin/Products">
             <button>Anuluj</button>
         </Link>
     )

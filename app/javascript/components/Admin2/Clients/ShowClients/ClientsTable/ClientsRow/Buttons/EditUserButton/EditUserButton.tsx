@@ -8,7 +8,7 @@ interface Props {userID: number}
 
 const EditUserButton:FC<Props> = ({userID}) =>  {
     return (
-        <Link to={`/admin/editUser/${userID}`}>
+        <Link to={`/admin/Users/editUser/${userID}`}>
             <div>
                 <button className="edit-user-button">
                     Edytuj

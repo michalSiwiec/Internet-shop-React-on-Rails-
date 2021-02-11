@@ -32,7 +32,7 @@ const RemoveButton:FC<Props> = ({productID}) => {
         }
 
     return (
-        <Link to="/admin/">
+        <Link to="/admin/Products">
             <button onClick={removeProduct}>Usuń</button>
         </Link>
     )

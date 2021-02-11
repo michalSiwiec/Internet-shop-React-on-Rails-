@@ -10,7 +10,7 @@ interface Props {
 
 const RemoveUserButton:FC<Props> = ({userID}) =>  {
     return (
-        <Link to={`/admin/removeUser/${userID}`}>
+        <Link to={`/admin/Users/removeUser/${userID}`}>
             <div>
                 <button className="remove-user-button">
                     Usuń

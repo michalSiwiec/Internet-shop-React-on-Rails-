@@ -19,7 +19,7 @@ const RemoveButton:FC<Props> = ({userID}) => {
     }
 
     return(
-        <Link to="/admin/">
+        <Link to="/admin/Users">
             <button onClick={removeUser}>Usuń uzytkownika</button>
         </Link>
     )

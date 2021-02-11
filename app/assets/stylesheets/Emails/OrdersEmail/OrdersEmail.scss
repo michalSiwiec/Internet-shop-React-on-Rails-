@@ -1,0 +1,16 @@
+.order-email-container{
+    padding: 30px;
+
+    h1{
+        margin-bottom: 50px;
+    }
+
+    span{
+        color: red;
+        font-style: italic;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}

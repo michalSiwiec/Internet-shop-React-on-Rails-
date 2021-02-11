@@ -21,7 +21,7 @@ const Admin2 = () => {
                     <Statistics />
                 </Route>
 
-                <Route path="/admin/Clients">
+                <Route path="/admin/Users">
                     <Clients />
                 </Route>
 

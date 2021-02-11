@@ -41,7 +41,7 @@ const OrdersLogOutUsers:FC<Props> = () =>  {
                             <tr key={`order${order.orderID}`}>
                                 <td>{order.dataPerson.name}</td>
                                 <td>{order.dataPerson.surname}</td>
-                                <td><Link to={`/admin/commonOrders/${order.orderID}`}>{<button>Zobacz zamówienie</button>}</Link></td>
+                                <td><Link to={`/admin/Orders/commonOrder/${order.orderID}`}>{<button>Zobacz zamówienie</button>}</Link></td>
                             </tr>
                         )
                     })}

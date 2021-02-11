@@ -44,7 +44,7 @@ const OrdersLogInUsers:FC<Props> = () =>  {
                                 <td>{userWithOrder.dataPerson.name}</td>
                                 <td>{userWithOrder.dataPerson.surname}</td>
                                 <td>
-                                    <Link to={`/admin/orders/${userWithOrder.userID}`}>
+                                    <Link to={`/admin/Orders/userOrder/${userWithOrder.userID}`}>
                                         <button>Zobacz</button>
                                     </Link>
                                 </td>

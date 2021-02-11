@@ -14,15 +14,15 @@ const OrdersList = () => {
     return (
         <div className="order-list-container">
             <Switch>
-                <Route path="/admin/orders/:userID">
+                <Route path="/admin/Orders/userOrder/:userID">
                     <UserOrders />
                 </Route>
 
-                <Route path="/admin/commonOrders/:orderID">
+                <Route path="/admin/Orders/commonOrder/:orderID">
                     <CommonOrders />
                 </Route>
 
-                <Route path="/admin/Orders">
+                <Route path="/admin/Orders"> 
                     <Header />
                     <OrdersLogInUsers />
                     <OrdersLogOutUsers />

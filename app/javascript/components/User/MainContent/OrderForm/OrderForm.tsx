@@ -18,8 +18,6 @@ import CancelButton from './Buttons/CancelButton/CancelButton'
 
 import {checkDataForm} from '../../../../Helpers/Orders/Orders'
 
-// import '../../../../../assets/stylesheets/UserContent/MainContent/OrderForm/OrderForm.scss'
-
 const OrderForm = () => {
     const userID = useSelector((state: any) => state.userReducer.user.userID)
     const productsFromBasket = useSelector((state: any) => state.basketReducer.products)

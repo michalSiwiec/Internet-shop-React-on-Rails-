@@ -10,19 +10,19 @@ import AddClient from './AddClient/AddClient'
 const Clients = () => {
     return (
         <Switch>
-            <Route path="/admin/editUser/:userID"> 
+            <Route path="/admin/Users/editUser/:userID"> 
                 <EditClient />
             </Route>
 
-            <Route path="/admin/removeUser/:userID">
+            <Route path="/admin/Users/removeUser/:userID">
                 <RemoveClient />
             </Route>
 
-            <Route path="/admin/addUser">
+            <Route path="/admin/Users/addUser">
                 <AddClient />
             </Route>
 
-            <Route path="/admin/Clients">
+            <Route path="/admin/Users">
                 <ShowClients key={`${Math.random()}-clientList`} />
             </Route>
         </Switch>

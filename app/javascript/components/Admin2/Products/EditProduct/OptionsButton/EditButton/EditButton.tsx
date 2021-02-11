@@ -8,7 +8,7 @@ interface Props{
 
 const EditButton:FC<Props> = ({editProduct}) => {
     return(
-        <Link to="/admin/">
+        <Link to="/admin/Products">
             <button onClick={(e) => editProduct(e)}>Edytuj</button>
         </Link>
     )

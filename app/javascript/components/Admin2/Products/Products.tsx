@@ -10,15 +10,15 @@ import RemoveProduct from './RemoveProduct/RemoveProduct'
 const Products = () => {
     return (
         <Switch>
-            <Route path="/admin/addProduct/">
+            <Route path="/admin/Products/addProduct/">
                 <AddProduct />
             </Route>
 
-            <Route path="/admin/editProduct/:productID">
+            <Route path="/admin/Products/editProduct/:productID">
                 <EditProduct />
             </Route>
 
-            <Route path="/admin/removeProduct/:productID">
+            <Route path="/admin/Products/removeProduct/:productID">
                 <RemoveProduct />
             </Route>
 

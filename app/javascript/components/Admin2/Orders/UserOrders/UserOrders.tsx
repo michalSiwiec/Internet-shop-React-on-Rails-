@@ -23,7 +23,8 @@ const UserOrders:FC<Props> = () => {
         .then(orders_ => setOrders(orders_))
     }, [])
 
-    console.log(orders)
+    // console.log(orders)
+    console.log('user order')
 
     return (
         <div className="container">

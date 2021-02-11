@@ -3,14 +3,6 @@ module Api
         class OrdersController < ApplicationController
             skip_before_action :verify_authenticity_token
 
-            def index 
-
-            end
-
-            def show
-
-            end
-
             def add_order
                 user_id = params[:userID]
                 productsFromBasket = params[:productsFromBasket]
@@ -42,6 +34,13 @@ module Api
                         product_id: product[:id],
                         quantity: product[:quantity]
                     )
+                end
+
+                if(user_id != 0)
+                    user = User.find(user_id)
+                    OrderMailer.add_order_confirmation(user).deliver
+                else
+                    puts("Sending email on address: #{params[:email]}")
                 end
             end
 

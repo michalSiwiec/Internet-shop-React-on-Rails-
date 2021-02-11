@@ -9,7 +9,7 @@ interface Props {
 const RemoveProductButton:FC<Props> = ({productID}) => {
     return (
         <div>
-            <Link to={`/admin/removeProduct/${productID}`}>
+            <Link to={`/admin/Products/removeProduct/${productID}`}>
                 <button className="remove-button">Usuń</button>
             </Link>
         </div>

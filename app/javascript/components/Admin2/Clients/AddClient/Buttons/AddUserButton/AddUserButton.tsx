@@ -8,7 +8,7 @@ interface Props{
 
 const AddUserButton:FC<Props> = ({addUser}) => {
     return (
-        <Link to="/admin/">
+        <Link to="/admin/Users">
             <button onClick={(e) => addUser(e)}>Dodaj</button>
         </Link>
     )

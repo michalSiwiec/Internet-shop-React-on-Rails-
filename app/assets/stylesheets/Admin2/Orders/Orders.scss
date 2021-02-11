@@ -1,0 +1,84 @@
+.order-list-container{
+    .header-part-container{
+        flex-basis: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .order-part-container{
+        flex-basis: 100%;
+        height: 230px;
+        background-color: yellow;
+        text-align: center;
+        margin-bottom: 50px;
+
+        h3{
+            margin: 10px 0px 30px;
+        }
+
+        table{
+            width: 100%;
+            td,tr,th{
+                border: 2px solid black;
+            }
+
+            .th-name{
+                width: 40%;
+            }
+
+            .th-surname{
+                width: 40%;
+            }
+
+            .th-show-orders{
+                width: 20%;
+            }
+        }
+    }
+
+    // when user is obserwing own orders
+    // .container{
+    //     min-width: 100vw;
+    //     min-height: 100vh;
+    //     position: fixed;
+    //     top: 50%;
+    //     left: 50%;
+    //     transform: translate(-50%, -50%);
+
+    //     // background-image: url('../../../../../images//Kaufland-background.jpg');
+    //     background-image: url('../../../images//Kaufland-background.jpg');
+
+    //     background-position: center;
+    //     background-repeat: no-repeat;
+    //     background-size: cover;
+
+    //     .overlay{
+    //         width: 100vw;
+    //         height: 100vh;
+    //         background-color: black;
+    //         opacity: 0.84;
+    //         position: fixed;
+    //         top: 50%;
+    //         left: 50%;
+    //         transform: translate(-50%, -50%);
+    //     }
+
+    //     .user-order-container{
+    //         width: 40vw;
+    //         // height: 300px;
+    //         padding: 50px 0px;
+    //         position: fixed;
+    //         // position: relative;
+    //         // left: 50%;
+    //         // top: 0;
+    //         // left: 0;
+    //         // transform: translate(-50%, 0%);
+    //         background-color: #fff;
+
+    //         h3{
+    //             text-align: center;
+    //         }
+    //     }
+    // }
+}

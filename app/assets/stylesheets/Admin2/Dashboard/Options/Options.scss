@@ -1,0 +1,190 @@
+.options-container{
+    width: 100%;
+    margin-top: 50px;
+    padding: 30px 0px;
+    border: 2px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .option-container{
+        flex-basis: 25%;
+        height: 300px;
+        margin: 25px;
+        border-radius: 27px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        color: white;
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        .overlay{
+            position: absolute;
+            background-color: black;
+        }
+    }
+
+    .bigger-container{
+        flex-basis: 40%;
+    }
+
+    .orders-container{
+        background-image: url("../../../../images/Orders-adminPanel.jpg");
+
+        .overlay--bottom{
+            width: 100%;
+            height: 75px;
+            bottom: 0;
+            opacity: 0;
+            transition: opacity, 1s;
+
+            a{
+                color: white;
+            }
+        }
+
+        &:hover .overlay--bottom{
+            opacity: 0.6;
+        }
+    }
+
+    .statistics-container{
+        background-image: url("../../../../images/Statisticks-adminPanel.jpeg");
+        overflow: hidden;
+        transition: transform, 1s;
+
+        .overlay--full{
+            height: 100%;
+            opacity: 0;
+            transition: opacity, 1s;
+            position: relative;
+
+            a{
+                color: white;
+
+                span{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }  
+        }
+
+        &:hover .overlay--full{
+            opacity: 0.6;
+            transform: scale(1.9)
+        }
+    }
+
+    .clients-container{
+        background-image: url("../../../../images/Clients-adminPanel.jpg");
+
+        .overlay--full{
+            width: 100%;
+            height: 100%;
+            clip-path: circle(5% at 92% 8%);
+            transition: clip-path 1s;
+            opacity: 0.6;
+
+            .icon-container{
+                margin: 5px 0px 30px;
+                text-align: end;
+
+                span{
+                    padding: 0px 25px 0px;
+                    font-size: 30px;
+                    color: white;
+                }
+            }
+
+            .info-container{
+                // background-color:purple;
+
+                span{
+                    color: white;
+                    font-size: 33px;
+                }
+            }
+        }
+
+        .overlay--full:hover{
+            clip-path: circle(70%);
+        }
+    }
+
+    .products-container{
+        background-image: url("../../../../images/Products-adminPanel.jpg");
+
+        .overlay--full{
+            width: 100%;
+            height: 100%;
+            clip-path: circle(5% at 92% 8%);
+            transition: clip-path 1s;
+            opacity: 0.6;
+
+            .icon-container{
+                margin: 5px 0px 30px;
+                text-align: end;
+
+                span{
+                    padding: 0px 25px 0px;
+                    font-size: 30px;
+                    color: white;
+                }
+            }
+
+            .info-container{
+                // background-color:purple;
+
+                span{
+                    color: white;
+                    font-size: 33px;
+                }
+            }
+        }
+
+        .overlay--full:hover{
+            clip-path: circle(70%);
+        }
+    }
+
+    .opinion-container{
+        background-image: url("../../../../images/Opinions-adminPanel.jpg");
+
+        .overlay--full{
+            width: 100%;
+            height: 100%;
+            clip-path: circle(5% at 92% 8%);
+            transition: clip-path 1s;
+            opacity: 0.6;
+
+            .icon-container{
+                margin: 5px 0px 30px;
+                text-align: end;
+
+                span{
+                    padding: 0px 25px 0px;
+                    font-size: 30px;
+                    color: white;
+                }
+            }
+
+            .info-container{
+                // background-color:purple;
+
+                span{
+                    color: white;
+                    font-size: 33px;
+                }
+            }
+        }
+
+        .overlay--full:hover{
+            clip-path: circle(70%);
+        }
+    }
+}

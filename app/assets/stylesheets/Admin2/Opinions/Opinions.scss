@@ -1,0 +1,33 @@
+.opinions-container{
+    width: 60%;
+    // height: 400px;
+    background-color: white;
+
+    h2{
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .opinion-container{
+        width: 30%;
+        margin: 20px;
+        font-size: 22px;
+
+        .description-container{
+            margin: 10px;
+            font-style: italic;
+        }
+
+        .owner-data-container{
+            p{
+                margin-left: 15px;
+
+                span{
+                    font-size: 15px;
+                    margin-left: 7px;
+                }
+            }
+        }
+    }
+}

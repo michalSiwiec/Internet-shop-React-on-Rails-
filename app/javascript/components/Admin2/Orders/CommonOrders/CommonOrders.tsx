@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react'
 import {useParams, Link} from 'react-router-dom'
 
 // import '../../../../../../../../../assets/stylesheets/AdminPanel/Information/Orders/Lists/CommonOrders/CommonOrders.scss'
+import '../../../../../assets/stylesheets/Admin2/Orders/CommonOrder/CommonOrder.scss'
 
 interface Order {
     data_created: string,
@@ -61,7 +62,9 @@ const CommonOrders = () => {
         .then(order_ => setOrder(order_))
     }, [])
 
-    console.log(order)
+    // console.log(order)
+    // alert('Asadasdasd')
+    console.log('Common order')
 
     return (
         <div className="common-orders-container">
