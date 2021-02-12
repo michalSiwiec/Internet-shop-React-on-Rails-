@@ -1,27 +1,21 @@
 import React, {FC} from 'react'
 
-import {Link} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 
-interface Props{
-    userID: string
-}
+interface Props{userID: string}
 
 const RemoveButton:FC<Props> = ({userID}) => {
+    const history = useHistory()
 
-    const removeUser = () => {
+    const removeUser = (e) => {
+        e.preventDefault()
+
         fetch(`/api/v1/users/remove_user?userID=${userID}`, {method: 'DELETE'})
-        // .then(response => {
-        //     if(response.ok)
-        //         return response.text()
-        //     else
-        //         throw Error(response.statusText);
-        // })
+        .then(() => history.push('/admin/Users'))
     }
 
     return(
-        <Link to="/admin/Users">
-            <button onClick={removeUser}>Usuń uzytkownika</button>
-        </Link>
+        <button onClick={(e) => removeUser(e)}>Usuń uzytkownika</button>
     )
 }
 

@@ -20,6 +20,8 @@ import Password from './Password/Password'
 import PasswordConfirmation from './PasswordConfirmation/PasswordConfirmation'
 import Buttons from './Buttons/Buttons'
 
+import {useHistory} from 'react-router-dom'
+
 const EditClient = () => {
     const {userID} = useParams()
     const [name, setName] = useState({
@@ -66,8 +68,12 @@ const EditClient = () => {
     const [city, setCity] = useState('Gliwice')
     const [postalCode, setPostalCode] = useState('44 - 119')
     const [houseNumber, setHouseNumber] = useState('1')
+
+    const history = useHistory()
     
     const editUser = (e: any) => {
+        e.preventDefault()
+
         const dataToCheck = [
             name.setted,
             surname.setted,
@@ -105,8 +111,8 @@ const EditClient = () => {
                     newClientData
                 })
             })
-        } else
-            e.preventDefault()
+            .then(() => history.push('/admin/Users'))
+        }
     }
 
     useEffect(() => {

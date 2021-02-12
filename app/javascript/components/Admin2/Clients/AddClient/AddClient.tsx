@@ -17,6 +17,7 @@ import PhoneNumber from './PersonalPart/PhoneNumber/PhoneNumber'
 import Buttons from './Buttons/Buttons'
 
 import {checkDataForm} from '../../../../Helpers/Users/Users'
+import {useHistory } from 'react-router'
 
 const AddClient = () => {
     const [name, setName] = useState({
@@ -64,7 +65,11 @@ const AddClient = () => {
     const [postalCode, setPostalCode] = useState('44 - 119')
     const [houseNumber, setHouseNumber] = useState('1')
 
+    const history = useHistory()
+
     const addUser = (e: any) => {
+        e.preventDefault()        
+
         const dataToCheck = [
             login.setted,
             password.setted,
@@ -99,8 +104,8 @@ const AddClient = () => {
                 },
                 body: JSON.stringify(formData)
             })
-        } else
-            e.preventDefault()
+            .then(() => history.push('/admin/Users'))
+        }
     }
     
     return (

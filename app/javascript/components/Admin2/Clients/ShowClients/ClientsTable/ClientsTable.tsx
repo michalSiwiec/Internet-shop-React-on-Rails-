@@ -4,24 +4,7 @@ import TableHeader from './TableHeader/TableHeader'
 import ClientsRow from './ClientsRow/ClientsRow'
 
 const ClientsTable = () => {
-    const [usersData, setUsersData]:any = useState([{
-        user_delivery_addres: {
-            country: '',
-            city: '',
-            house_number: '',
-            postal_code: ''
-        },
-        data_login: {
-            login: ' ',
-            password: ''
-        },
-        personal_data: {
-            name: '',
-            surname: '',
-            email: '',
-            phone_number: ''
-        }
-    }])
+    const [usersData, setUsersData]: Array<any> = useState([])
 
     useEffect(() => {
         fetch('/api/v1/users', {method: 'GET'})
