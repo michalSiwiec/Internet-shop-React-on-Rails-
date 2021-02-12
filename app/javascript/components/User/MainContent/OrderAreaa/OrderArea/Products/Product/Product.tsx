@@ -3,7 +3,7 @@ import React, {FC, useState, useRef} from 'react'
 import WindowCommunicate from '../../../../../../Communicate/WindowCommunicate'
 
 import actions from '../../../../../../../../redux/basket/duck/actions'
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 
 interface Props {
     product: {
@@ -18,38 +18,50 @@ interface Props {
 }
 
 const Product:FC<Props> = ({product}) => {
+    // quantity enterd to input
     const [quantity, setQuantity] = useState(1)
+    // variables inform us if i should show a window after adding new product
     const [productAdded, setProductAdded] = useState(false)
+    // input holding quantity product
     const quantityInput:any = useRef(null)
     const dispatch = useDispatch()
-    
-    const updateQuantity = (e:string) => {
-        setQuantity(parseInt(e))
-    }
+    // product added to basket
+    let productIntoBasket = useSelector((state: any) => state.basketReducer.products.find(product => product.id === product.id))
+    // quantity product added to basket
+    let productQuantityIntoBasket;
+
+    // if basket doesn't include product his quantity is equal 0 otherwise I download this value - I need it to
+    // make limited quantity posible product 
+    if(!productIntoBasket)
+        productQuantityIntoBasket = 0
+    else
+        productQuantityIntoBasket = productIntoBasket.quantity
 
     const addProductToBasket = () => {
-        const productID = product.id
+        if(quantity > 0){
+            const productID = product.id
+            const URL = `/api/v1/products/show?productID=${productID}`
+            const OPTIONS = {method: 'GET'}
+            
+            fetch(URL,OPTIONS)
+            .then(response => {
+                if(response.ok)
+                    return response.json()
+                else
+                    throw Error(response.statusText);
+            })
+            .then(product => {
+                const price = product.price
+                dispatch(actions.addProductToBasket(productID, quantity, price))
+            })
 
-        fetchProduct(productID)
-        setProductAdded(true)
-    }
-
-    const fetchProduct = (productID:number) => {
-        const URL = `/api/v1/products/show?productID=${productID}`
-        const OPTIONS = {method: 'GET'}
-        
-        fetch(URL,OPTIONS)
-        .then(response => {
-            if(response.ok)
-                return response.json()
+            if(quantity === product.quantity_available - productQuantityIntoBasket)
+                setQuantity(0)
             else
-                throw Error(response.statusText);
-        })
-        .then(product => {
-            const price = product.price
-            dispatch(actions.addProductToBasket(productID, quantity, price))
-            setQuantity(1)
-        })
+                setQuantity(1)
+
+            setProductAdded(true)
+        }
     }
 
     return (
@@ -67,14 +79,14 @@ const Product:FC<Props> = ({product}) => {
             </div>
             
             <div className="flex-container">
-                <button className="add-to-basket-button" onClick={addProductToBasket}>Do koszyka</button>
+                <button className="add-to-basket-button" onClick={() => addProductToBasket()}>Do koszyka</button>
                 <input ref={quantityInput}
                     type="number"
                     className="select_quantity_product"
-                    onChange={(e) => updateQuantity(e.target.value)}
-                    min="1"
+                    onChange={(e) => setQuantity(parseInt(e.target.value))}
+                    min="0"
                     value={quantity}
-                    max={product.quantity_available}
+                    max={product.quantity_available - productQuantityIntoBasket}
                     onKeyPress={(e) => e.preventDefault()}
                     onKeyDown={(e) => e.preventDefault()}
                 />
