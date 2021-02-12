@@ -9,6 +9,7 @@ import Description from './Description/Description'
 import Buttons from './Buttons/Buttons'
 
 import {checkDataForm} from '../../../../Helpers/Products/ProductsHelper'
+import { useHistory } from 'react-router'
 
 const AddProduct = () => {
     const [source, setSource] = useState('')
@@ -21,7 +22,11 @@ const AddProduct = () => {
     const [type, setType] = useState('meats')
     const [quantityAvailable, setQuantityAvailable] = useState(1)
 
+    const history = useHistory()
+
     const addProduct = (e: any) => {
+        e.preventDefault()   
+
         const dataToCheck = [
             description.setted
         ]
@@ -31,7 +36,6 @@ const AddProduct = () => {
                 source,
                 description: description.value,
                 price,
-                key_word: '',
                 product_type: type,
                 quantity_available: quantityAvailable
             }
@@ -45,8 +49,8 @@ const AddProduct = () => {
                     formData
                 })
             })
-        } else
-            e.preventDefault()   
+            .then(() => history.push('/admin/Products'))
+        }
     }
 
     return (

@@ -12,7 +12,7 @@ import OptionsButton from './OptionsButton/OptionsButton'
 import actions from '../../../../../redux/products/duck/actions'
 import {useDispatch}  from 'react-redux'
 
-import {useParams} from 'react-router-dom'
+import {useParams, useHistory} from 'react-router-dom'
 
 const EditProduct = () => {
     const {productID} = useParams()
@@ -30,8 +30,12 @@ const EditProduct = () => {
     const [type, setType] = useState('dairy')
     const [price, setPrice] = useState(1)
     const [quantityAvailable, setQuantityAvailable] = useState(1)
+    
+    const history = useHistory()
 
     const editProduct = (e: any) => {
+        e.preventDefault()
+
         const dataToCheck = [
             description.setted
         ]
@@ -62,9 +66,8 @@ const EditProduct = () => {
                     throw Error(response.statusText);
             })
             .then(products => dispatch(actions.setProduct(products, 'all')))
-
-        } else 
-            e.preventDefault()
+            .then(() => history.push('/admin/Products'))
+        }   
     }
 
     useEffect(() => {

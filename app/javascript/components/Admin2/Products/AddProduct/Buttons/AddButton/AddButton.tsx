@@ -1,17 +1,7 @@
 import React, {FC} from 'react'
 
-import {Link} from 'react-router-dom'
+interface Props {addProduct: any}
 
-interface Props {
-    addProduct: any
-}
-
-const AddButton = ({addProduct}) => {
-    return (
-        <Link to="/admin/Products">
-            <button onClick={(e) => addProduct(e)}>Dodaj</button>
-        </Link>
-    )
-}
+const AddButton:FC<Props> = ({addProduct}) => <button onClick={(e) => addProduct(e)}>Dodaj</button>
 
 export default AddButton
