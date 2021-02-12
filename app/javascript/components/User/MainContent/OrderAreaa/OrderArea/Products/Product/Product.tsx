@@ -38,7 +38,7 @@ const Product:FC<Props> = ({product}) => {
         productQuantityIntoBasket = productIntoBasket.quantity
 
     const addProductToBasket = () => {
-        if(quantity > 0){
+        if(product.quantity_available - productQuantityIntoBasket > 0){
             const productID = product.id
             const URL = `/api/v1/products/show?productID=${productID}`
             const OPTIONS = {method: 'GET'}
@@ -54,18 +54,17 @@ const Product:FC<Props> = ({product}) => {
                 const price = product.price
                 dispatch(actions.addProductToBasket(productID, quantity, price))
             })
-
-            if(quantity === product.quantity_available - productQuantityIntoBasket)
-                setQuantity(0)
-            else
+            .then(() => {
                 setQuantity(1)
-
-            setProductAdded(true)
-        }
+                setProductAdded(true)
+            })
+        } else
+            alert('This product is available')
     }
 
     return (
-        <div className="single-product-container">
+        // <div className={`single-product-container ${(product.quantity_available - productQuantityIntoBasket === 0) ? "unavailable" : ""}`}>
+        <div className={`single-product-container`}>
             {productAdded 
                 ? <WindowCommunicate info="Produkt dodano do koszyka!" setTransmittedState={setProductAdded} />
                 : null
@@ -79,12 +78,13 @@ const Product:FC<Props> = ({product}) => {
             </div>
             
             <div className="flex-container">
-                <button className="add-to-basket-button" onClick={() => addProductToBasket()}>Do koszyka</button>
+            {/* <div className={`flex-container ${(product.quantity_available - productQuantityIntoBasket === 0) ? "unavailable" : ""}`}> */}
+                <button className="add-to-basket-button" onClick={() => addProductToBasket()}>Du koszyka</button>
                 <input ref={quantityInput}
                     type="number"
                     className="select_quantity_product"
                     onChange={(e) => setQuantity(parseInt(e.target.value))}
-                    min="0"
+                    min="1"
                     value={quantity}
                     max={product.quantity_available - productQuantityIntoBasket}
                     onKeyPress={(e) => e.preventDefault()}
