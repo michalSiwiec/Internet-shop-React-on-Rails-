@@ -86,8 +86,7 @@ module Api
             end
 
             def remove_user
-                user_id = params[:userID]
-                user = User.find(user_id)
+                user = User.find(params[:userID])
 
                 user.dataLogin.destroy!
                 user.dataPerson.destroy!

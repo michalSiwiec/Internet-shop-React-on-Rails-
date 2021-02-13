@@ -36,6 +36,12 @@ module Api
                     email: admin.dataPerson.email,
                     phone_number: admin.dataPerson.phone_number,
                 }
+                # admin = Admin.find(params[:adminID])
+                
+                # render json: {
+                #     dataLogin: admin.dataLogin,
+                #     dataperson: admin.dataPerson
+                # }
             end
 
             def edit_admin
@@ -60,6 +66,12 @@ module Api
                     login: login,
                     password: password
                 )
+            end
+
+            private
+
+            def admin_params
+                params.require(:deliveryAddress).permit(:country, :province, :city, :postal_code, :street, :house_number)
             end
         end
     end

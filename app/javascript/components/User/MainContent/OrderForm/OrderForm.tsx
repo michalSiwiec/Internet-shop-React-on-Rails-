@@ -95,17 +95,21 @@ const OrderForm = () => {
                 }
             } else {
                 orderData = {
+                    deliveryAddress: {
+                        country: 'Polska',
+                        province: province.value,
+                        city: city.value,
+                        postal_code: postalCode,
+                        street: street.value,
+                        house_number: houseNumber.value,
+                    },
+                    dataPerson:{
+                        name: name.value,
+                        surname: surname.value,
+                        email: email.value,
+                        phone_number: phoneNumber.value,
+                    },
                     userID,
-                    country: 'Polska',
-                    province: province.value,
-                    city: city.value,
-                    postalCode,
-                    street: street.value,
-                    houseNumber: houseNumber.value,
-                    name: name.value,
-                    surname: surname.value,
-                    email: email.value,
-                    phoneNumber: phoneNumber.value,
                     productsFromBasket,
                     wholeOrderPrice
                 } 

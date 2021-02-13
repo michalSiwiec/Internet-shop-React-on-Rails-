@@ -1,8 +1,8 @@
-Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/584/291584/ShotType1_225x225.jpg', product_type: "meats", description: 'Schab wieprzowy bez kości', price: 9.99, quantity_available: 50)
-Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/333/291333/ShotType1_225x225.jpg', product_type: "meats", description: 'Żeberka wieprzowe ekstra mięsne', price: 15.99, quantity_available: 50)
-Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/600/293600/ShotType1_225x225.jpg', product_type: "meats", description: 'Karkówka wieprzowa bez kości', price: 17.99, quantity_available: 50)
-Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/035/297035/ShotType1_225x225.jpg', product_type: "meats", description: 'Łopatka wieprzowa bez kości', price: 15.99, quantity_available: 50)
-Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/432/298432/ShotType1_225x225.jpg', product_type: "meats", description: 'Szynka wieprzowa bez kości', price: 17.99, quantity_available: 50)
+product1 = Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/584/291584/ShotType1_225x225.jpg', product_type: "meats", description: 'Schab wieprzowy bez kości', price: 9.99, quantity_available: 50)
+product2 = Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/333/291333/ShotType1_225x225.jpg', product_type: "meats", description: 'Żeberka wieprzowe ekstra mięsne', price: 15.99, quantity_available: 50)
+product3 = Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/600/293600/ShotType1_225x225.jpg', product_type: "meats", description: 'Karkówka wieprzowa bez kości', price: 17.99, quantity_available: 50)
+product4 = Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/035/297035/ShotType1_225x225.jpg', product_type: "meats", description: 'Łopatka wieprzowa bez kości', price: 15.99, quantity_available: 50)
+product5 = Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/432/298432/ShotType1_225x225.jpg', product_type: "meats", description: 'Szynka wieprzowa bez kości', price: 17.99, quantity_available: 50)
 Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/512/290512/ShotType1_225x225.jpg', product_type: "meats", description: 'Golonka wieprzowa przednia', price: 9.99, quantity_available: 50)
 Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/262/297262/ShotType1_225x225.jpg', product_type: "meats", description: 'Łopatka wołowa bez kości', price: 26.99, quantity_available: 50)
 Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/272/297272/ShotType1_225x225.jpg', product_type: "meats", description: 'Łigawa wołowa bez kości', price: 25.99, quantity_available: 50)
@@ -20,10 +20,10 @@ Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/145/293145/S
 Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/068/296068/ShotType1_225x225.jpg', product_type: "fishes", description: 'Śledź solony', price: 12.90, quantity_available: 25)
 Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/061/296061/ShotType1_225.jpg', product_type: "fishes", description: 'Dorsz atlantycki', price: 16.90, quantity_available: 25)
 
-Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/867/0000020205867/ShotType1_225x225.jpg', product_type: "fruits_and_vegetables", description: 'Banan', price: 4.90, quantity_available: 55)
-Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/127/5903034455127/ShotType1_225x225.jpg', product_type: "fruits_and_vegetables", description: 'Limonka', price: 3.49, quantity_available: 55)
-Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/869/295869/ShotType1_225x225.jpg', product_type: "fruits_and_vegetables", description: 'Ananas', price: 4.95, quantity_available: 55)
-Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/978/5051007103978/ShotType1_225x225.jpg', product_type: "fruits_and_vegetables", description: 'Awokado Hass', price: 5.79, quantity_available: 55)
+product6 = Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/867/0000020205867/ShotType1_225x225.jpg', product_type: "fruits_and_vegetables", description: 'Banan', price: 4.90, quantity_available: 55)
+product7 = Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/127/5903034455127/ShotType1_225x225.jpg', product_type: "fruits_and_vegetables", description: 'Limonka', price: 3.49, quantity_available: 55)
+product8 = Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/869/295869/ShotType1_225x225.jpg', product_type: "fruits_and_vegetables", description: 'Ananas', price: 4.95, quantity_available: 55)
+product9 = Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/978/5051007103978/ShotType1_225x225.jpg', product_type: "fruits_and_vegetables", description: 'Awokado Hass', price: 5.79, quantity_available: 55)
 Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/547/5906881465547/ShotType1_225x225.jpg', product_type: "fruits_and_vegetables", description: 'Kiwi', price: 13.58, quantity_available: 55)
 Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/664/290664/ShotType1_225x225.jpg', product_type: "fruits_and_vegetables", description: 'Pomidory luz', price: 4.99, quantity_available: 55)
 Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/267/0000025611267/ShotType1_225x225.jpg', product_type: "fruits_and_vegetables", description: 'Ogórek długi', price: 1.99, quantity_available: 55)
@@ -121,7 +121,7 @@ City.create(name: 'Kargowa', province_id: lubuskie.id, postal_code: '66 - 120')
 City.create(name: 'Nowa sól', province_id: lubuskie.id, postal_code: '67 - 106')
 City.create(name: 'Słubice', province_id: lubuskie.id, postal_code: '69 - 100')
 
-City.create(name: 'Łódź', province_id: lodzkie.id, postal_code: '90 - 004')
+lodz = City.create(name: 'Łódź', province_id: lodzkie.id, postal_code: '90 - 004')
 City.create(name: 'Piotrków Trybunalski', province_id: lodzkie.id, postal_code: '97 - 300')
 City.create(name: 'Pabianice', province_id: lodzkie.id, postal_code: '95 - 054')
 City.create(name: 'Zgierz', province_id: lodzkie.id, postal_code: '95 - 100')
@@ -188,7 +188,7 @@ City.create(name: 'Krynica Morska', province_id: pomorskie.id, postal_code: '82 
 City.create(name: 'Kwidzyń', province_id: pomorskie.id, postal_code: '82 - 500')
 City.create(name: 'Lębork', province_id: pomorskie.id, postal_code: '84 - 351')
 
-City.create(name: 'Gliwice', province_id: slaskie.id, postal_code: '44 - 119')
+gliwice = City.create(name: 'Gliwice', province_id: slaskie.id, postal_code: '44 - 119')
 City.create(name: 'Katowice', province_id: slaskie.id, postal_code: '40 - 013')
 City.create(name: 'Bytom', province_id: slaskie.id, postal_code: '41 - 907')
 City.create(name: 'Bielsko-Biała', province_id: slaskie.id, postal_code: '43 - 309')
@@ -229,15 +229,113 @@ City.create(name: 'Choszczno', province_id: zachodniopomorskie.id, postal_code: 
 City.create(name: 'Drawsko Pomorskie', province_id: zachodniopomorskie.id, postal_code: '78 - 500')
 City.create(name: 'Goleniów', province_id: zachodniopomorskie.id, postal_code: '72 - 100')
 City.create(name: 'Gryfice', province_id: zachodniopomorskie.id, postal_code: '72 - 300')
-City.create(name: 'Gryfino', province_id: zachodniopomorskie.id, postal_code: '74 - 100')
+gryfino = City.create(name: 'Gryfino', province_id: zachodniopomorskie.id, postal_code: '74 - 100')
 City.create(name: 'Kamień Pomorski', province_id: zachodniopomorskie.id, postal_code: '72 - 400')
 
-me_user = User.create()
-me_user.create_dataLogin(login: 'michsiw439', password: 'Ab47901825')
-me_user.create_dataPerson(name: 'Michal', surname: 'Siwiec', email: 'siwiec.michal724@gmail.com', phone_number: '724131140')
-me_user.create_deliveryAddress(country: 'Polska', province: 'Śląskie', city: 'Gliwice', postal_code: '44 - 119', street: 'Gruszczynskiego', house_number: 12)
-me_user.create_dataCreation(year: 2020, month: 3, day: 13, hour: 12, minute: 33, second: 55)
 
-me_admin = Admin.create()
-me_admin.create_dataLogin(login: 'michsiw439', password: 'Ab47901825')
-me_admin.create_dataPerson(name: 'Michal', surname: 'Siwiec', email: 'siwiec.michal724@gmail.com', phone_number: '724131140')
+user1 = User.create()
+user1.create_dataLogin(login: 'michsiw439', password: 'Ab47901825')
+user1.create_dataPerson(name: 'Michal', surname: 'Siwiec', email: 'siwiec.michal724@gmail.com', phone_number: '724131140')
+user1.create_deliveryAddress(country: 'Polska', province: slaskie.name, city: gliwice.name, postal_code: gliwice.postal_code, street: 'Gruszczynskiego', house_number: 12)
+user1.create_dataCreation(year: 2020, month: 3, day: 13, hour: 12, minute: 33, second: 55)
+
+user2 = User.create()
+user2.create_dataLogin(login: 'winiar123', password: 'qwertY12')
+user2.create_dataPerson(name: 'Michal', surname: 'Winiarski', email: 'michal.winiarski@gmail.com', phone_number: '785348001')
+user2.create_deliveryAddress(country: 'Polska', province: zachodniopomorskie.name, city: gryfino.name, postal_code: gryfino.postal_code, street: 'Lipowska', house_number: 12)
+user2.create_dataCreation(year: 2020, month: 2, day: 17, hour: 7, minute: 22, second: 2)
+
+
+# I should divide it on two models - something like opinion_content and dataCreation
+opinion1 = Opinion.create!(description: "Super sklep - polecam", mark: 3, user_id: user1.id)
+opinion1.create_dataCreation!(year: 2018, month: 8, day: 4, hour: 17, minute: 44, second: 12)
+
+opinion2  = Opinion.create!(description: "Chujowa sprawa nie polecam", mark: 1, user_id: user1.id)
+opinion2.create_dataCreation!(year: 2018, month: 8, day: 5, hour: 17, minute: 44, second: 12)
+
+opinion3 = Opinion.create!(description: "Bardzo dobry sklep, serdzecznie polecam", mark: 3, user_id: user1.id)
+opinion3.create_dataCreation!(year: 2021, month: 1, day: 24, hour: 9, minute: 12, second: 52)
+
+opinion4 = Opinion.create!(description: "Niezly, sklep, miła obsługa", mark: 2, user_id: user2.id)
+opinion4.create_dataCreation!(year: 2019, month: 4, day: 14, hour: 37, minute: 2, second: 36)
+
+opinion5 = Opinion.create!(description: "Nigdy nie bylem w gorszy sklepie!", mark: 1, user_id: user2.id)
+opinion5.create_dataCreation!(year: 2019, month: 12, day: 24, hour: 13, minute: 14, second: 32)
+
+# Orders not log in user
+order1 = Order.create!(user_id: nil)
+order1.create_dataPerson!(name: "Jan", surname: "Nowak", email: "jan.nowak123@gmail.com", phone_number: "765134562")
+order1.create_deliveryAddress!(country: "Polska", province: lodzkie.name, city: lodz.name, postal_code: lodz.postal_code, street: "Jagodowa", house_number: 12)
+order1.create_dataCreation!(year: 2020, month: 1, day: 3, hour: 6, minute: 34, second: 12)
+
+product_from_basket1 = [
+    {
+        id: product1.id,
+        quantity: 4
+    },
+    {
+        id: product2.id,
+        quantity: 3
+    },
+    {
+        id: product3.id,
+        quantity: 6
+    },
+    {
+        id: product4.id,
+        quantity: 1
+    },
+    {
+        id: product5.id,
+        quantity: 1
+    }
+]
+
+product_from_basket1.each do |product_from_basket|
+    OrdersProduct.create(
+        order_id: order1.id,
+        product_id: product_from_basket[:id],
+        quantity: product_from_basket[:quantity]
+    )
+
+    product = Product.find(product_from_basket[:id]) 
+    product.update_columns(quantity_available: product.quantity_available - product_from_basket[:quantity])
+end
+
+order2 = Order.create!(user_id: user2.id)
+order2.create_dataCreation!(year: 2019, month: 5, day: 23, hour: 6, minute: 34, second: 12)
+
+product_from_basket2 = [
+    {
+        id: product6.id,
+        quantity: 4
+    },
+    {
+        id: product7.id,
+        quantity: 3
+    },
+    {
+        id: product8.id,
+        quantity: 6
+    },
+    {
+        id: product9.id,
+        quantity: 1
+    }
+]
+
+product_from_basket2.each do |product_from_basket|
+    OrdersProduct.create(
+        order_id: order2.id,
+        product_id: product_from_basket[:id],
+        quantity: product_from_basket[:quantity]
+    )
+
+    product = Product.find(product_from_basket[:id]) 
+    product.update_columns(quantity_available: product.quantity_available - product_from_basket[:quantity])
+end
+
+
+admin1 = Admin.create!()
+admin1.create_dataLogin!(login: 'michsiw439', password: 'Ab47901825')
+admin1.create_dataPerson!(name: 'Michal', surname: 'Siwiec', email: 'siwiec.michal724@gmail.com', phone_number: '724131140')

@@ -12,7 +12,10 @@ module Api
                     name = opinion_owner.dataPerson.name
                     surname = opinion_owner.dataPerson.surname
 
-                    opinions_details.push({name: name, surname: surname, description: opinion.description, mark: opinion.mark, dataCreated: opinion.created_at})
+                    data_creation = opinion.dataCreation
+                    data = "#{data_creation.year}:#{data_creation.month}:#{data_creation.day} #{data_creation.hour}:#{data_creation.minute}:#{data_creation.second}"
+
+                    opinions_details.push({name: name, surname: surname, description: opinion.description, mark: opinion.mark, dataCreated: data})
                 end
 
                 render json: opinions_details

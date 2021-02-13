@@ -23,6 +23,7 @@ const AdminSignature = () => {
                 throw Error(response.statusText);
         })
         .then(admin => setAdmin(admin))
+        // .then(admin => console.log(admin))
     }, [])
 
     return(

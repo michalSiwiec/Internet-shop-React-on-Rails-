@@ -26,7 +26,10 @@ const Opinions = () => {
                         </div>
 
                         <div className="owner-data-container">
-                            <p>{`${opinion.name} ${opinion.surname}`} <span>{opinion.dataCreated}</span></p>
+                            <p>
+                                {opinion.name} {opinion.surname}
+                                <span>{opinion.dataCreated}</span>
+                            </p>
                         </div>
                     </div>
                 )

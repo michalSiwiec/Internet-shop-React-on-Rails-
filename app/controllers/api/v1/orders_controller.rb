@@ -12,21 +12,12 @@ module Api
                     order = Order.create(user_id: user_id)
                 else
                     order = Order.create()
-                    order.create_dataPerson(
-                        name: params[:name],
-                        surname: params[:surname],
-                        email: params[:email],
-                        phone_number: params[:phoneNumber]
-                    )
-                    order.create_deliveryAddress(
-                        country: params[:country],
-                        province: params[:province],
-                        city: params[:city],
-                        postal_code: params[:postalCode],
-                        street: params[:street],
-                        house_number: params[:houseNumber]
-                    )
+
+                    order.create_dataPerson(data_person_params)
+                    order.create_deliveryAddress(delivery_address_params)
                 end
+
+                order.create_dataCreation(creation_time)
 
                 productsFromBasket.each do |product_from_basket|
                     OrdersProduct.create(
@@ -54,7 +45,8 @@ module Api
                 end
             end
 
-            def get_user_orders
+            # Return all user's orders
+            def get_user_orders 
                 user_id = params[:userID]
                 orders = User.find(user_id).order
 
@@ -78,12 +70,16 @@ module Api
                         })
                     end
 
-                    orders_details.push({details: bufor, orderPrice: order_price, dataCreated: order.created_at})
+                    data_creation = order.dataCreation
+                    data = "#{data_creation.year}:#{data_creation.month}:#{data_creation.day} #{data_creation.hour}:#{data_creation.minute}:#{data_creation.second}"
+                    
+                    orders_details.push({details: bufor, orderPrice: order_price, dataCreated: data})
                 end
 
                 render json: orders_details
             end
 
+            # Return orders not associated with any user
             def get_log_out_users_orders
                 orders_details = []
                 orders = Order.where(user_id: nil)
@@ -105,10 +101,14 @@ module Api
                         })
                     end
 
+                    # puts(order.inspect)
+                    data_creation = order.dataCreation
+                    data = "#{data_creation.year}:#{data_creation.month}:#{data_creation.day} #{data_creation.hour}:#{data_creation.minute}:#{data_creation.second}"
+
                     orders_details.push({
                         dataPerson: order.dataPerson,
                         deliveryAddress: order.deliveryAddress,
-                        dataCreated: order.created_at,
+                        dataCreated: data,
                         details: bufor,
                         orderPrice: order_price,
                         orderID: order.id
@@ -142,13 +142,31 @@ module Api
                     })
                 end
 
+                data_creation = order.dataCreation
+                data = "#{data_creation.year}:#{data_creation.month}:#{data_creation.day} #{data_creation.hour}:#{data_creation.minute}:#{data_creation.second}"
+
                 render json: {
                     data_person: data_person,
                     delivery_address: delivery_address,
                     order_details: bufor,
                     order_price: whole_price,
-                    data_created: order.created_at
+                    data_created: data
                 }
+            end
+
+            private
+
+            def data_person_params
+                params.require(:dataPerson).permit(:name, :surname, :email, :phone_number)
+            end
+
+            def delivery_address_params
+                params.require(:deliveryAddress).permit(:country, :province, :city, :postal_code, :street, :house_number)
+            end
+
+            def creation_time
+                time  = Time.new
+                {year: time.year, month: time.month, day: time.day, hour: time.hour, minute: time.min, second: time.sec}
             end
         end
     end
