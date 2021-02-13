@@ -5,6 +5,7 @@ module Api
 
             def add_user
                 user = User.create!()
+                
                 user.create_dataLogin!(user_data_log_in_params)
                 user.create_deliveryAddress!(user_delivery_address_params)
                 user.create_dataPerson!(user_data_person_params)

@@ -40,23 +40,19 @@ module Api
 
             def edit_product
                 product = Product.find(params[:productID])
-                product.update_attributes(edit_params)
+                product.update_attributes(product_params)
 
                 products = Product.all
                 render json: products.sort_by {|product| product.id}
             end
 
             def add_product
-                Product.create(add_product_params)
+                Product.create(product_params)
             end
 
             private
-
-            def edit_params
-                params.require(:formData).permit(:source, :description, :price, :quantity_available, :product_type)
-            end
-
-            def add_product_params
+            
+            def product_params
                 params.require(:formData).permit(:source, :description, :price, :quantity_available, :product_type)
             end
         end
