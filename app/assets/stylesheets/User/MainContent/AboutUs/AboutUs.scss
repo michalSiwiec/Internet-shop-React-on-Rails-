@@ -1,5 +1,6 @@
 .about-us-container{
     width: 100%;
+    min-height: 300px;
     border: 2px solid black;
 
     .add-opinion-container{
@@ -21,7 +22,7 @@
     }
 
     .opinion-container{
-        width: 30%;
+        width: 50%;
         margin: 20px;
         font-size: 22px;
 

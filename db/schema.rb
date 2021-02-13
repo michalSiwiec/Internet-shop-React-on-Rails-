@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_09_172930) do
+ActiveRecord::Schema.define(version: 2021_02_13_091827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,8 +23,6 @@ ActiveRecord::Schema.define(version: 2021_02_09_172930) do
   create_table "cities", force: :cascade do |t|
     t.text "name"
     t.integer "province_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.string "postal_code"
   end
 
@@ -32,8 +30,6 @@ ActiveRecord::Schema.define(version: 2021_02_09_172930) do
     t.string "login"
     t.string "password"
     t.integer "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.integer "admin_id"
   end
 
@@ -43,8 +39,6 @@ ActiveRecord::Schema.define(version: 2021_02_09_172930) do
     t.string "email"
     t.string "phone_number"
     t.integer "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.integer "admin_id"
     t.integer "order_id"
   end
@@ -57,8 +51,6 @@ ActiveRecord::Schema.define(version: 2021_02_09_172930) do
     t.string "street"
     t.integer "house_number"
     t.integer "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.integer "order_id"
   end
 
@@ -66,43 +58,30 @@ ActiveRecord::Schema.define(version: 2021_02_09_172930) do
     t.integer "user_id"
     t.text "description"
     t.integer "mark"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "orders", force: :cascade do |t|
     t.integer "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "orders_products", force: :cascade do |t|
     t.integer "order_id"
     t.integer "product_id"
     t.integer "quantity"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "products", force: :cascade do |t|
     t.string "source"
     t.string "description"
     t.float "price"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.string "product_type"
     t.integer "quantity_available"
   end
 
   create_table "provinces", force: :cascade do |t|
     t.text "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
-
 end

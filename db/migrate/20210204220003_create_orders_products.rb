@@ -1,6 +1,6 @@
 class CreateOrdersProducts < ActiveRecord::Migration[6.0]
   def change
-    create_table :orders_products do |t|
+    create_table :orders_products, :id => false do |t|
       t.integer :order_id
       t.integer :product_id
       t.integer :quantity
