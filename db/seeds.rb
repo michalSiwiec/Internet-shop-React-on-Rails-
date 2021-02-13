@@ -236,6 +236,7 @@ me_user = User.create()
 me_user.create_dataLogin(login: 'michsiw439', password: 'Ab47901825')
 me_user.create_dataPerson(name: 'Michal', surname: 'Siwiec', email: 'siwiec.michal724@gmail.com', phone_number: '724131140')
 me_user.create_deliveryAddress(country: 'Polska', province: 'Śląskie', city: 'Gliwice', postal_code: '44 - 119', street: 'Gruszczynskiego', house_number: 12)
+me_user.create_dataCreation(year: 2020, month: 3, day: 13, hour: 12, minute: 33, second: 55)
 
 me_admin = Admin.create()
 me_admin.create_dataLogin(login: 'michsiw439', password: 'Ab47901825')

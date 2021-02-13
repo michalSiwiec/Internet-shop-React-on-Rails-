@@ -10,20 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_13_091827) do
+ActiveRecord::Schema.define(version: 2021_02_13_113226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "admins", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "cities", force: :cascade do |t|
     t.text "name"
     t.integer "province_id"
     t.string "postal_code"
+  end
+
+  create_table "data_createds", force: :cascade do |t|
+    t.integer "year"
+    t.integer "month"
+    t.integer "day"
+    t.integer "hour"
+    t.integer "min"
+    t.integer "sec"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "data_creations", force: :cascade do |t|
+    t.integer "year"
+    t.integer "month"
+    t.integer "day"
+    t.integer "hour"
+    t.integer "minute"
+    t.integer "second"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.integer "opinion_id"
+    t.integer "order_id"
   end
 
   create_table "data_logins", force: :cascade do |t|
@@ -84,4 +107,5 @@ ActiveRecord::Schema.define(version: 2021_02_13_091827) do
 
   create_table "users", force: :cascade do |t|
   end
+
 end

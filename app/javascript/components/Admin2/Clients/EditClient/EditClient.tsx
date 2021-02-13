@@ -87,18 +87,25 @@ const EditClient = () => {
 
         if(checkDataForm(dataToCheck)){
             const newClientData  = {
-                name: name.value,
-                surname: surname.value,
-                email: email.value,
-                phoneNumber: phoneNumber.value,
-                country: "Polska",
-                province,
-                city,
-                postalCode,
-                street: street.value,
-                houseNumber,
-                login: login.value,
-                password: password.value
+                dataLogin: {
+                    login: login.value,
+                    password: password.value
+                },
+                dataPerson: {
+                    name: name.value,
+                    surname: surname.value,
+                    email: email.value,
+                    phone_number: phoneNumber.value,
+                },
+                deliveryAddress: {
+                    country: "Polska",
+                    province,
+                    city,
+                    postal_code: postalCode,
+                    street: street.value,
+                    house_number: houseNumber,
+                },
+                userID
             }
 
             fetch(`/api/v1/users/edit_user`, {
@@ -106,10 +113,7 @@ const EditClient = () => {
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({
-                    userID,
-                    newClientData
-                })
+                body: JSON.stringify(newClientData)
             })
             .then(() => history.push('/admin/Users'))
         }

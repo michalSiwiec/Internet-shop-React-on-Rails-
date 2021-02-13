@@ -4,25 +4,11 @@ module Api
             skip_before_action :verify_authenticity_token
 
             def add_user
-                login = params[:login]
-                password = params[:password]
-
-                name = params[:name]
-                surname = params[:surname]
-                email = params[:email]
-                phone_number = params[:phone_number]
-
-                country = params[:country]
-                province = params[:province]
-                city = params[:city]
-                postal_code = params[:postal_code]
-                street = params[:street]
-                house_number = params[:house_number]
-
                 user = User.create!()
-                user.create_dataLogin!(login: login, password: password)
-                user.create_deliveryAddress!(country: country, province: province, city: city, postal_code: postal_code, street: street, house_number: house_number)
-                user.create_dataPerson!(name: name, surname: surname, email: email, phone_number: phone_number)
+                user.create_dataLogin!(user_data_log_in_params)
+                user.create_deliveryAddress!(user_delivery_address_params)
+                user.create_dataPerson!(user_data_person_params)
+                user.create_dataCreation!(creation_time)
 
                 # UserMailer.singup_confirmation(user).deliver
             end
@@ -82,29 +68,11 @@ module Api
             end
 
             def edit_user
-                user_id = params[:userID]
-                user_data = params[:newClientData]
+                user = User.find(params[:userID])
 
-                user = User.find(user_id)
-                
-                user.deliveryAddress.update_attributes(
-                    country: user_data[:country],
-                    province: user_data[:province],
-                    city: user_data[:city],
-                    postal_code: user_data[:postalCode],
-                    street: user_data[:street],
-                    house_number: user_data[:houseNumber]
-                )
-                user.dataLogin.update_attributes(
-                    login: user_data[:login],
-                    password: user_data[:password]
-                )
-                user.dataPerson.update_attributes(
-                    name: user_data[:name],
-                    surname: user_data[:surname],
-                    email: user_data[:email],
-                    phone_number: user_data[:phoneNumber]
-                )   
+                user.dataLogin.update_attributes!(user_data_log_in_params)
+                user.dataPerson.update_attributes!(user_data_person_params)
+                user.deliveryAddress.update_attributes!(user_delivery_address_params)
             end
 
             def get_user_person_data # I don't need it - to remove
@@ -134,6 +102,25 @@ module Api
                 end
 
                 render json: users
+            end
+
+            private
+
+            def user_data_log_in_params
+                params.require(:dataLogin).permit(:login, :password)
+            end
+
+            def user_data_person_params
+                params.require(:dataPerson).permit(:name, :surname, :email, :phone_number)
+            end
+
+            def user_delivery_address_params
+                params.require(:deliveryAddress).permit(:country, :province, :city, :postal_code, :street, :house_number)
+            end
+
+            def creation_time
+                time  = Time.new
+                {year: time.year, month: time.month, day: time.day, hour: time.hour, minute: time.min, second: time.sec}
             end
         end
     end

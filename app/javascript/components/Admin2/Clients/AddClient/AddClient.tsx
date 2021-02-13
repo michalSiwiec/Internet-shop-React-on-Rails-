@@ -83,18 +83,24 @@ const AddClient = () => {
 
         if(checkDataForm(dataToCheck)){
             const formData = {
-                login: login.value,
-                password: password.value,
-                name: name.value,
-                surname: surname.value,
-                phone_number: phoneNumber.value,
-                email: email.value,
-                street: street.value,
-                province,
-                city,
-                house_number: houseNumber,
-                postal_code: postalCode,
-                country: "Polska"
+                dataLogin: {
+                    login: login.value,
+                    password: password.value,
+                },
+                dataPerson: {
+                    name: name.value,
+                    surname: surname.value,
+                    phone_number: phoneNumber.value,
+                    email: email.value,
+                },
+                deliveryAddress: {
+                    street: street.value,
+                    province,
+                    city,
+                    house_number: houseNumber,
+                    postal_code: postalCode,
+                    country: "Polska"
+                }
             }
 
             fetch("/api/v1/users/addUser", {
