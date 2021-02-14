@@ -22,11 +22,19 @@ module Api
             end
 
             def add
-                user_id = params[:userID]
-                opinion = params[:opinion]
-                mark = params[:mark]
+                opinion = Opinion.create!(opinion_params)
+                opinion.create_dataCreation!(creation_time)
+            end
 
-                User.find(user_id).opinion.create(description: opinion, mark: mark)
+            private 
+
+            def opinion_params
+                params.require(:opinionDetails).permit(:description, :mark, :user_id)
+            end
+
+            def creation_time
+                time  = Time.new
+                {year: time.year, month: time.month, day: time.day, hour: time.hour, minute: time.min, second: time.sec}
             end
         end
     end

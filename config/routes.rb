@@ -37,6 +37,8 @@ Rails.application.routes.draw do
 
       get 'opinions/', to: 'opinions#index'
       post 'opinions/add', to: 'opinions#add'
+
+      get 'diagrams/', to: 'diagrams#index'
     end
   end
 

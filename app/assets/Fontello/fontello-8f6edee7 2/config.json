@@ -29,6 +29,12 @@
       "css": "user-o",
       "code": 62144,
       "src": "fontawesome"
+    },
+    {
+      "uid": "25b34dea4784f72c710454f32ff8fa2b",
+      "css": "star",
+      "code": 59393,
+      "src": "entypo"
     }
   ]
 }

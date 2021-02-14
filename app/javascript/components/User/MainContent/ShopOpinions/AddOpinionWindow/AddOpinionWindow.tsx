@@ -1,6 +1,7 @@
 import React, {FC, useState} from 'react'
 
 import TextArea from './TextArea/TextArea'
+import Marks from './Marks/Marks'
 import Buttons from './Buttons/Buttons'
 
 interface Props{
@@ -9,13 +10,16 @@ interface Props{
 }
 
 const AddOpinionWindow:FC<Props> = ({setWantAddOpinion, userID}) => {
-    const [opinion, setOpinion] = useState('')
+    const [opinionContent, setOpinionContent] = useState('')
+    const [opinionMark, setOpinionMark] = useState(5)
 
     const addOpinion = () => {
-        const opinionDetails = {
-            opinion,
-            userID,
-            mark: 2
+        const opinionParams = {
+            opinionDetails: {
+                description: opinionContent,
+                mark: opinionMark,
+                user_id: userID
+            },
         }
 
         fetch("/api/v1/opinions/add", {
@@ -23,14 +27,15 @@ const AddOpinionWindow:FC<Props> = ({setWantAddOpinion, userID}) => {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(opinionDetails)
+            body: JSON.stringify(opinionParams)
         })
         .then(() => setWantAddOpinion(false))
     }
 
     return (
         <div className="add-opinion-window">
-            <TextArea opinion={opinion} setOpinion={setOpinion} />
+            <TextArea opinion={opinionContent} setOpinion={setOpinionContent} />
+            <Marks setOpinionMark={setOpinionMark} />
             <Buttons setWantAddOpinion={setWantAddOpinion} addOpinion={addOpinion} />
         </div>
     )

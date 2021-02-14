@@ -247,16 +247,16 @@ user2.create_dataCreation(year: 2020, month: 2, day: 17, hour: 7, minute: 22, se
 
 
 # I should divide it on two models - something like opinion_content and dataCreation
-opinion1 = Opinion.create!(description: "Super sklep - polecam", mark: 3, user_id: user1.id)
+opinion1 = Opinion.create!(description: "Super sklep - polecam", mark: 5, user_id: user1.id)
 opinion1.create_dataCreation!(year: 2018, month: 8, day: 4, hour: 17, minute: 44, second: 12)
 
 opinion2  = Opinion.create!(description: "Chujowa sprawa nie polecam", mark: 1, user_id: user1.id)
 opinion2.create_dataCreation!(year: 2018, month: 8, day: 5, hour: 17, minute: 44, second: 12)
 
-opinion3 = Opinion.create!(description: "Bardzo dobry sklep, serdzecznie polecam", mark: 3, user_id: user1.id)
+opinion3 = Opinion.create!(description: "Bardzo dobry sklep, serdzecznie polecam", mark: 5, user_id: user1.id)
 opinion3.create_dataCreation!(year: 2021, month: 1, day: 24, hour: 9, minute: 12, second: 52)
 
-opinion4 = Opinion.create!(description: "Niezly, sklep, miła obsługa", mark: 2, user_id: user2.id)
+opinion4 = Opinion.create!(description: "Niezly, sklep, miła obsługa", mark: 4, user_id: user2.id)
 opinion4.create_dataCreation!(year: 2019, month: 4, day: 14, hour: 37, minute: 2, second: 36)
 
 opinion5 = Opinion.create!(description: "Nigdy nie bylem w gorszy sklepie!", mark: 1, user_id: user2.id)
