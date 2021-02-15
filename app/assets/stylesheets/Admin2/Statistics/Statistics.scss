@@ -1,8 +1,39 @@
 .statistics-container{
-    height: 400px;
-    background-color: green;
+    // height: 400px;
+    padding: 50px 0px;
+    background-color: white;
 
     h2{
         
+    }
+
+    .opinions-diagram-container{
+        width: 70%;
+        // display: flex;
+        // justify-content: center;
+        // height: 100vh;
+        // background-color: yellow;
+        margin: 25px 0px;
+    }
+
+    .whole-moth-price-diagram-container{
+        width: 70%;
+        margin: 25px 0px;
+        // height: 400px;
+        // height: 100vh;
+        // background-color: black;
+    }   
+
+    .main-info-diagram-container{
+        width: 100%;
+        margin: 25px 0px;
+        
+        // height: 100vh;
+        // background-color: blue;
+    }
+
+    .the-most-often-purchased-products-container{
+        width: 70%;
+        margin: 25px 0px;
     }
 }

@@ -1,13 +1,13 @@
 module Api
     module V1
         class DiagramsController < ApplicationController
-            def get_sum_orders_associated_with_month # I don't want here average, I want twelwe separate data to present it into diagrams
+            def get_sum_orders_associated_with_month
                 months = ["Styczen", "Luty", "Marzec", "Kwiecien", "Maj", "Czerwiec", "Lipiec", "Sierpien", "Wrzesien", "Pazdziernik", "Listopad", "Grudzien"]
                 sales_details = []
 
                 12.times do |i|
                     whole_month_price = 0
-                    orders_from_month = Order.joins(:dataCreation).where("month = #{i}")
+                    orders_from_month = Order.joins(:dataCreation).where("month = #{i+1}")
 
                     orders_from_month.each do |order_from_month|
                         order_from_month.product.each do |product|
@@ -35,25 +35,87 @@ module Api
                 mark4_quantity = Opinion.where(mark: 4).count
                 mark5_quantity = Opinion.where(mark: 5).count
 
-                render json: {
-                    mark1PercentPart: (mark1_quantity / marks_quantity) * 100,
-                    mark2PercentPart: (mark2_quantity / marks_quantity) * 100,
-                    mark3PercentPart: (mark3_quantity / marks_quantity) * 100,
-                    mark4PercentPart: (mark4_quantity / marks_quantity) * 100,
-                    mark5PercentPart: (mark5_quantity / marks_quantity) * 100
-                }
+                opinions_details_marks = [
+                    {
+                        percentage: (mark1_quantity / marks_quantity) * 100,
+                        label: "Bardzo słaby"
+                    },
+                    {
+                        percentage: (mark2_quantity / marks_quantity) * 100,
+                        label: "Słaby"
+                    },
+                    {
+                        percentage: (mark3_quantity / marks_quantity) * 100,
+                        label: "Sredni"
+                    },
+                    {
+                        percentage: (mark4_quantity / marks_quantity) * 100,
+                        label: "Dobry"
+                    },
+                    {
+                        percentage: (mark5_quantity / marks_quantity) * 100,
+                        label: "Bardzo dobry"
+                    }
+                ]
+
+                render json: opinions_details_marks
+            end
+
+            def get_the_most_often_purchased_product
+                orders = Order.all
+                orders_quantity_products = []
+
+                orders.each do |order|
+                    order.product.each do |product|
+                        quantity_product = OrdersProduct.where(order_id: order.id).find_by(product_id: product.id).quantity
+
+                        # looking for element into hash if exist I make bigger his quantity otherwise I add it
+                        element = orders_quantity_products.detect {  |h| h[:product_id] == product.id }
+
+                        if(element) 
+                            element[:quantity_product] += quantity_product
+                        else
+                            orders_quantity_products.push({
+                                product_id: product.id,
+                                quantity_product: quantity_product
+                            })
+                        end
+                    end
+                end
+
+                orders_quantity_products.sort_by! { |hsh| hsh[:quantity_product] }.reverse!
+                ten_the_most_often_buyed_product = []
+
+                10.times do |i|
+                    product_desc = Product.find(orders_quantity_products[i][:product_id]).description
+                    product_quantity = orders_quantity_products[i][:quantity_product]
+
+                    ten_the_most_often_buyed_product.push({
+                        label: product_desc,
+                        quantity: product_quantity
+                    })
+                end
+
+
+                render json: ten_the_most_often_buyed_product
             end
 
             def get_general_information
                 average_quantity_orders_on_mont = get_orders_per_month()
                 orders_average_price = get_orders_average_price()
-                the_most_often_buyed_product = get_the_most_often_buyed_product()
 
-                render json: {
-                    averageQuantityOrdersOnMont: average_quantity_orders_on_mont,
-                    averageOrderPrice: orders_average_price,
-                    theMostOftenBuyedProduct: the_most_often_buyed_product
-                }
+                general_info_details = [
+                    {
+                        property_value: average_quantity_orders_on_mont,
+                        label: "Srednia ilość zamówień na miesiąc"
+                    },
+                    {
+                        property_value: orders_average_price,
+                        label: "Srednia cena zamówienia"
+                    },
+                ]
+
+                render json: general_info_details
             end
 
             private
@@ -83,33 +145,6 @@ module Api
                 end
 
                 orders_average_price = orders_prices.sum / (orders_prices.count + 1)
-            end
-
-            def get_the_most_often_buyed_product
-                orders = Order.all
-                array_of_hashes = []
-
-                orders.each do |order|
-                    puts("Order")
-                    order.product.each do |product|
-                        quantity_product = OrdersProduct.where(order_id: order.id).find_by(product_id: product.id).quantity
-
-                        # looking for element into hash if exist I make bigger his quantity otherwise I add it
-                        element = array_of_hashes.detect {  |h| h[:product_id] == product.id }
-
-                        if(element) 
-                            element[:quantity_product] += quantity_product
-                        else
-                            array_of_hashes.push({
-                                product_id: product.id,
-                                quantity_product: quantity_product
-                            })
-                        end
-                    end
-                end
-
-                product_id_with_the_biggest_quantity = array_of_hashes.sort_by{|k| k[:quantity_product]}.last
-                the_most_often_buyed_product = Product.find(product_id_with_the_biggest_quantity[:product_id])
             end
         end
     end

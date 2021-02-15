@@ -1,38 +1,19 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
+
+import Header from './Header/Header'
+import WholeMonthPriceDiagram from './WholeMonthPriceDiagram/WholeMonthPriceDiagram'
+import TheMostOftenPurchasedProducts from './TheMostOftenPurchasedProducts/TheMostOftenPurchasedProducts'
+import OpinionsDiagram from './OpinionsDiagram/OpinionsDiagram'
+import MainInfo from './MainInfo/MainInfo'
 
 const Statistics = () => {
-    const [orders, setOrders] = useState([])
-
-    useEffect(() => {
-        fetch("/api/v1/diagrams/get_sum_orders_associated_with_month", {method: "GET"})
-        .then(response => {
-            if(response.ok) return response.json()
-            else return {info: "Something went wrong!"}
-        })
-        .then(info => console.log(info))
-    }, [])
-
-    useEffect(() => {
-        fetch("/api/v1/diagrams/get_relation_between_opinion_mark", {method: "GET"})
-        .then(response => {
-            if(response.ok) return response.json()
-            else return {info: "Something went wrong!"}
-        })
-        .then(info => console.log(info))
-    }, [])
-
-    useEffect(() => {
-        fetch("/api/v1/diagrams/get_general_information", {method: "GET"})
-        .then(response => {
-            if(response.ok) return response.json()
-            else return {info: "Something went wrong!"}
-        })
-        .then(info => console.log(info))
-    }, [])
-
     return (
-        <div className="statistics-container">
-            <h2>Statistic digrams</h2>
+        <div className="statistics-container">         
+            <Header />
+            <OpinionsDiagram />
+            <WholeMonthPriceDiagram />
+            <TheMostOftenPurchasedProducts />
+            <MainInfo />
         </div>
     )
 }

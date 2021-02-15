@@ -41,6 +41,7 @@ Rails.application.routes.draw do
       get 'diagrams/get_sum_orders_associated_with_month', to: 'diagrams#get_sum_orders_associated_with_month'
       get 'diagrams/get_relation_between_opinion_mark', to: 'diagrams#get_relation_between_opinion_mark'
       get 'diagrams/get_general_information', to: 'diagrams#get_general_information'
+      get 'diagrams/get_the_most_often_purchased_product', to: 'diagrams#get_the_most_often_purchased_product'
     end
   end
 
