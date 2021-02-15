@@ -51,11 +51,11 @@ Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/000/50510071
 Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/108/5051007122108/ShotType1_225x225.jpg', product_type: "frozens", description: 'Fasolka szparagowa 450g', price: 5.67, quantity_available: 20)
 Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/761/5900477000761/ShotType1_225x225.jpg', product_type: "frozens", description: 'Marchewka z groszkiem 450g', price: 5.67, quantity_available: 20)
 
-Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/767/8711000513767/ShotType1_90x90.jpg', product_type: "coffes", description: 'Jacobs Cronat Gold kawa rozpuszczalna 200g', price: 39.99, quantity_available: 35)
-Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/220/7613032734220/ShotType1_90x90.jpg', product_type: "coffes", description: 'Nescafe Creme kawa rozpuszczalna 200g', price: 34.99, quantity_available: 35)
-Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/045/8711000521045/ShotType1_90x90.jpg', product_type: "coffes", description: 'Jacobs Kronung kawa rozpuszczalna 200g', price: 38.50, quantity_available: 35)
-Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/722/8711000525722/ShotType1_90x90.jpg', product_type: "coffes", description: 'Jacobs Kronung kawa mielona 200g', price: 27.99, quantity_available: 35)
-Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/881/7613031918881/ShotType1_90x90.jpg', product_type: "coffes", description: 'Nescafe classic kawa rozpuszczalna 200g', price: 29.99, quantity_available: 35)
+product10 = Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/767/8711000513767/ShotType1_90x90.jpg', product_type: "coffes", description: 'Jacobs Cronat Gold kawa rozpuszczalna 200g', price: 39.99, quantity_available: 35)
+product11 = Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/220/7613032734220/ShotType1_90x90.jpg', product_type: "coffes", description: 'Nescafe Creme kawa rozpuszczalna 200g', price: 34.99, quantity_available: 35)
+product12 = Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/045/8711000521045/ShotType1_90x90.jpg', product_type: "coffes", description: 'Jacobs Kronung kawa rozpuszczalna 200g', price: 38.50, quantity_available: 35)
+product13 = Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/722/8711000525722/ShotType1_90x90.jpg', product_type: "coffes", description: 'Jacobs Kronung kawa mielona 200g', price: 27.99, quantity_available: 35)
+product14 = Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/881/7613031918881/ShotType1_90x90.jpg', product_type: "coffes", description: 'Nescafe classic kawa rozpuszczalna 200g', price: 29.99, quantity_available: 35)
 Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/826/8711000517826/ShotType1_90x90.jpg', product_type: "coffes", description: 'Jacobs Velvet kawa rozpuszczalna 200g', price: 22.50, quantity_available: 35)
 
 Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/030/5901588016030/ShotType1_225x225.jpg', product_type: "sweets", description: 'Wedel czekolada gorzka klasyczna 64%', price: 4.99, quantity_available: 35)
@@ -263,77 +263,167 @@ opinion5 = Opinion.create!(description: "Nigdy nie bylem w gorszy sklepie!", mar
 opinion5.create_dataCreation!(year: 2019, month: 12, day: 24, hour: 13, minute: 14, second: 32)
 
 # Orders not log in user
-order1 = Order.create!(user_id: nil)
-order1.create_dataPerson!(name: "Jan", surname: "Nowak", email: "jan.nowak123@gmail.com", phone_number: "765134562")
-order1.create_deliveryAddress!(country: "Polska", province: lodzkie.name, city: lodz.name, postal_code: lodz.postal_code, street: "Jagodowa", house_number: 12)
-order1.create_dataCreation!(year: 2020, month: 1, day: 3, hour: 6, minute: 34, second: 12)
+# order1 = Order.create!(user_id: nil)
+# order1.create_dataPerson!(name: "Jan", surname: "Nowak", email: "jan.nowak123@gmail.com", phone_number: "765134562")
+# order1.create_deliveryAddress!(country: "Polska", province: lodzkie.name, city: lodz.name, postal_code: lodz.postal_code, street: "Jagodowa", house_number: 12)
+# order1.create_dataCreation!(year: 2020, month: 1, day: 3, hour: 6, minute: 34, second: 12)
 
-product_from_basket1 = [
-    {
-        id: product1.id,
-        quantity: 4
-    },
-    {
-        id: product2.id,
-        quantity: 3
-    },
-    {
-        id: product3.id,
-        quantity: 6
-    },
-    {
-        id: product4.id,
-        quantity: 1
-    },
-    {
-        id: product5.id,
-        quantity: 1
-    }
-]
+# product_from_basket1 = [
+#     {
+#         id: product1.id,
+#         quantity: 4
+#     },
+#     {
+#         id: product2.id,
+#         quantity: 3
+#     },
+#     {
+#         id: product3.id,
+#         quantity: 6
+#     },
+#     {
+#         id: product4.id,
+#         quantity: 1
+#     },
+#     {
+#         id: product5.id,
+#         quantity: 1
+#     }
+# ]
 
-product_from_basket1.each do |product_from_basket|
-    OrdersProduct.create(
-        order_id: order1.id,
-        product_id: product_from_basket[:id],
-        quantity: product_from_basket[:quantity]
-    )
+# product_from_basket1.each do |product_from_basket|
+#     OrdersProduct.create(
+#         order_id: order1.id,
+#         product_id: product_from_basket[:id],
+#         quantity: product_from_basket[:quantity]
+#     )
 
-    product = Product.find(product_from_basket[:id]) 
-    product.update_columns(quantity_available: product.quantity_available - product_from_basket[:quantity])
-end
+#     product = Product.find(product_from_basket[:id]) 
+#     product.update_columns(quantity_available: product.quantity_available - product_from_basket[:quantity])
+# end
 
-order2 = Order.create!(user_id: user2.id)
-order2.create_dataCreation!(year: 2019, month: 5, day: 23, hour: 6, minute: 34, second: 12)
+# order2 = Order.create!(user_id: user2.id)
+# order2.create_dataCreation!(year: 2019, month: 5, day: 23, hour: 6, minute: 34, second: 12)
 
-product_from_basket2 = [
-    {
-        id: product6.id,
-        quantity: 4
-    },
-    {
-        id: product7.id,
-        quantity: 3
-    },
-    {
-        id: product8.id,
-        quantity: 6
-    },
-    {
-        id: product9.id,
-        quantity: 1
-    }
-]
+# product_from_basket2 = [
+#     {
+#         id: product6.id,
+#         quantity: 4
+#     },
+#     {
+#         id: product7.id,
+#         quantity: 3
+#     },
+#     {
+#         id: product8.id,
+#         quantity: 6
+#     },
+#     {
+#         id: product9.id,
+#         quantity: 1
+#     },
+#     {
+#         id: product5.id,
+#         quantity: 1
+#     }
+# ]
 
-product_from_basket2.each do |product_from_basket|
-    OrdersProduct.create(
-        order_id: order2.id,
-        product_id: product_from_basket[:id],
-        quantity: product_from_basket[:quantity]
-    )
+# product_from_basket2.each do |product_from_basket|
+#     OrdersProduct.create(
+#         order_id: order2.id,
+#         product_id: product_from_basket[:id],
+#         quantity: product_from_basket[:quantity]
+#     )
 
-    product = Product.find(product_from_basket[:id]) 
-    product.update_columns(quantity_available: product.quantity_available - product_from_basket[:quantity])
-end
+#     product = Product.find(product_from_basket[:id]) 
+#     product.update_columns(quantity_available: product.quantity_available - product_from_basket[:quantity])
+# end
+
+# order3 = Order.create!(user_id: nil)
+# order3.create_dataPerson!(name: "Makary", surname: "Zurek", email: "makary.zurek@gmail.com", phone_number: "883226561")
+# order3.create_deliveryAddress!(country: "Polska", province: lodzkie.name, city: lodz.name, postal_code: lodz.postal_code, street: "Jagodowa", house_number: 12)
+# order3.create_dataCreation!(year: 2020, month: 1, day: 13, hour: 16, minute: 14, second: 56)
+
+# product_from_basket3 = [
+#     {
+#         id: product1.id,
+#         quantity: 1
+#     },
+#     {
+#         id: product12.id,
+#         quantity: 4
+#     },
+#     {
+#         id: product3.id,
+#         quantity: 2
+#     },
+#     {
+#         id: product14.id,
+#         quantity: 7
+#     },
+#     {
+#         id: product2.id,
+#         quantity: 3
+#     },
+#     {
+#         id: product3.id,
+#         quantity: 6
+#     },
+#     {
+#         id: product12.id,
+#         quantity: 2
+#     }
+# ]
+
+# product_from_basket3.each do |product_from_basket|
+#     OrdersProduct.create(
+#         order_id: order3.id,
+#         product_id: product_from_basket[:id],
+#         quantity: product_from_basket[:quantity]
+#     )
+
+#     product = Product.find(product_from_basket[:id]) 
+#     product.update_columns(quantity_available: product.quantity_available - product_from_basket[:quantity])
+# end
+
+# order4 = Order.create!(user_id: nil)
+# order4.create_dataPerson!(name: "Karol", surname: "Budda", email: "budda.karol@gmail.com", phone_number: "990774132")
+# order4.create_deliveryAddress!(country: "Polska", province: lodzkie.name, city: lodz.name, postal_code: lodz.postal_code, street: "Jagodowa", house_number: 12)
+# order4.create_dataCreation!(year: 2020, month: 1, day: 22, hour: 23, minute: 4, second: 17)
+
+# product_from_basket4 = [
+#     {
+#         id: product10.id,
+#         quantity: 5
+#     },
+#     {
+#         id: product11.id,
+#         quantity: 9
+#     },
+#     {
+#         id: product12.id,
+#         quantity: 1
+#     },
+#     {
+#         id: product13.id,
+#         quantity: 1
+#     },
+#     {
+#         id: product14.id,
+#         quantity: 2
+#     }
+# ]
+
+# product_from_basket4.each do |product_from_basket|
+#     OrdersProduct.create(
+#         order_id: order4.id,
+#         product_id: product_from_basket[:id],
+#         quantity: product_from_basket[:quantity]
+#     )
+
+#     product = Product.find(product_from_basket[:id]) 
+#     product.update_columns(quantity_available: product.quantity_available - product_from_basket[:quantity])
+# end
 
 
 admin1 = Admin.create!()

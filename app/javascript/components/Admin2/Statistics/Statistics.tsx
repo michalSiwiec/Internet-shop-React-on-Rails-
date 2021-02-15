@@ -4,15 +4,31 @@ const Statistics = () => {
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
-        fetch("/api/v1/diagrams", {method: "GET"})
+        fetch("/api/v1/diagrams/get_sum_orders_associated_with_month", {method: "GET"})
         .then(response => {
             if(response.ok) return response.json()
             else return {info: "Something went wrong!"}
         })
-        .then(info => setOrders(info))
+        .then(info => console.log(info))
     }, [])
 
-    console.log(orders)
+    useEffect(() => {
+        fetch("/api/v1/diagrams/get_relation_between_opinion_mark", {method: "GET"})
+        .then(response => {
+            if(response.ok) return response.json()
+            else return {info: "Something went wrong!"}
+        })
+        .then(info => console.log(info))
+    }, [])
+
+    useEffect(() => {
+        fetch("/api/v1/diagrams/get_general_information", {method: "GET"})
+        .then(response => {
+            if(response.ok) return response.json()
+            else return {info: "Something went wrong!"}
+        })
+        .then(info => console.log(info))
+    }, [])
 
     return (
         <div className="statistics-container">

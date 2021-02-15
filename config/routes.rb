@@ -38,7 +38,9 @@ Rails.application.routes.draw do
       get 'opinions/', to: 'opinions#index'
       post 'opinions/add', to: 'opinions#add'
 
-      get 'diagrams/', to: 'diagrams#index'
+      get 'diagrams/get_sum_orders_associated_with_month', to: 'diagrams#get_sum_orders_associated_with_month'
+      get 'diagrams/get_relation_between_opinion_mark', to: 'diagrams#get_relation_between_opinion_mark'
+      get 'diagrams/get_general_information', to: 'diagrams#get_general_information'
     end
   end
 
