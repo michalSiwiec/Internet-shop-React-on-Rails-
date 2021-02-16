@@ -352,11 +352,11 @@ product_from_basket3 = [
     },
     {
         id: product12.id,
-        quantity: 4
+        quantity: 6
     },
     {
         id: product3.id,
-        quantity: 2
+        quantity: 8
     },
     {
         id: product14.id,
@@ -365,14 +365,6 @@ product_from_basket3 = [
     {
         id: product2.id,
         quantity: 3
-    },
-    {
-        id: product3.id,
-        quantity: 6
-    },
-    {
-        id: product12.id,
-        quantity: 2
     }
 ]
 

@@ -29,7 +29,7 @@ const Products:FC<Props> = () => {
     return (
         <div className="product-part-with-products">
             <Header />
-            {productsFullVersion.map((product:any) => <Product product={product} />)}
+            {productsFullVersion.map((product:any) => <Product product={product} key={`product-container${product.id}`} />)}
         </div>
     )
 }

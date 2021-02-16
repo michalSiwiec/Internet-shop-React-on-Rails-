@@ -53,7 +53,8 @@ const Product:FC<Props> = ({product}) => {
     }
 
     return (
-        <div className="product-flex-container" key={`product-container${product.id}`}>
+        // <div className="product-flex-container" key={`product-container${product.id}`}>
+        <div className="product-flex-container">
             <ProductPicture product={product} removeProductFromBasket={removeProductFromBasket} />
             <ProductDesciription description={product.description} />
             <ChangeProductQuantity product={product} updateQuantityProduct={updateQuantityProduct} />

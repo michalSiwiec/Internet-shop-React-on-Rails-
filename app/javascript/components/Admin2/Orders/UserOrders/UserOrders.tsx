@@ -1,14 +1,10 @@
-import React, {FC, useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 
 import {useParams} from 'react-router-dom'
 
 import Order from './Order/Order'
 
-interface Props {
-
-}
-
-const UserOrders:FC<Props> = () => {
+const UserOrders = () => {
     const {userID} = useParams()
     const [orders, setOrders]: any = useState([])
 
@@ -22,9 +18,6 @@ const UserOrders:FC<Props> = () => {
         })
         .then(orders_ => setOrders(orders_))
     }, [])
-
-    // console.log(orders)
-    console.log('user order')
 
     return (
         <div className="container">

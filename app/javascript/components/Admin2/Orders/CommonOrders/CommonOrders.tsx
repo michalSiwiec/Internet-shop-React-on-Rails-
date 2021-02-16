@@ -1,9 +1,14 @@
 import React, {useState, useEffect} from 'react'
 
-import {useParams, Link} from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 
-// import '../../../../../../../../../assets/stylesheets/AdminPanel/Information/Orders/Lists/CommonOrders/CommonOrders.scss'
 import '../../../../../assets/stylesheets/Admin2/Orders/CommonOrder/CommonOrder.scss'
+
+import Header from './Header/Header'
+import DeliveryAddress from './DeliveryAddress/DeliveryAddress'
+import OrderDetails from './OrderDetails/OrderDetails'
+import PersonalData from './PersonalData/PersonalData'
+import Buttons from './Buttons/Buttons'
 
 interface Order {
     data_created: string,
@@ -62,56 +67,16 @@ const CommonOrders = () => {
         .then(order_ => setOrder(order_))
     }, [])
 
-    // console.log(order)
-    // alert('Asadasdasd')
-    console.log('Common order')
-
     return (
         <div className="common-orders-container">
             <div className="overlay"></div>
 
             <div className="present-order-container">
-                <h1>{`Zamówienie z dnia: ${order.data_created}`}</h1>
-
-                <div className="data-person-container">
-                    <h2>Dane osobowe</h2>
-
-                    <p>{`Imię: ${order.data_person.name}`}</p>
-                    <p>{`Nazwisko: ${order.data_person.surname}`}</p>
-                    <p>{`Adres E-mail: ${order.data_person.email}`}</p>
-                    <p>{`Numer telefonu: ${order.data_person.phone_number}`}</p>
-                </div>
-
-                <div className="delivery-address-container">
-                    <h2>Adres dostawy</h2>
-
-                    <p>{`Kraj: ${order.delivery_address.country}`}</p>
-                    <p>{`Miasto: ${order.delivery_address.city}`}</p>
-                    <p>{`Kod pocztowy: ${order.delivery_address.postal_code}`}</p>
-                    <p>{`Ulica: ${order.delivery_address.street}`}</p>
-                    <p>{`Numer domu/mieszkania: ${order.delivery_address.house_number}`}</p>
-                </div>
-
-                <div className="order-details-container">
-                    <h2>Szczegóły zamówienia</h2>
-                    
-                    {order.order_details.map((order_detail: any) => {
-                        return(
-                            <div key={`commonOrderContainer${order_detail.product_description}`}>
-                                <p>{`Nazwa produktu: ${order_detail.product_description}`}</p>
-                                <p>{`Cena: ${order_detail.product_price}`}</p>
-                                <p>{`Ilość: ${order_detail.quantity}`}</p>
-                            </div>    
-                        )
-                    })}
-
-                    <p>{`Razem: ${order.order_price}`}</p>
-                </div>
-
-                <div className="buttons-container">
-                    <Link to="/admin/"><button>Anulsuj</button></Link>
-                    <Link to="/admin/"><button onClick={() => alert('I am realizing order')}>Realizuj zamówienie</button></Link>
-                </div>
+                <Header dataCreated={order.data_created} />
+                <PersonalData dataPerson={order.data_person} />
+                <DeliveryAddress deliveryAddress={order.delivery_address} />
+                <OrderDetails orderDetails={order.order_details} price={order.order_price} />
+                <Buttons />
             </div>
         </div>
     )
