@@ -7,25 +7,26 @@ import Name from './Name/Name'
 import Surname from './Surname/Surname'
 import Buttons from './Buttons/Buttons'
 
-// import '../../../../../../../../assets/stylesheets/AdminPanel/Information/Users/RemoveUser/RemoveUser.scss'
-
 const RemoveClient = () => {
 
     const {userID} = useParams()
-    const [userPersonData, setUserPersonData] = useState({
+    const [userPersonalData, setUserPersonalData]: any = useState({
         name: '',
         surname: ''
     })
 
     useEffect(() => {
-        fetch(`/api/v1/users/get_user_person_data?userID=${userID}`, {method: 'GET'})
+        fetch(`/api/v1/users/${userID}`, {method: 'GET'})
         .then(response => {
             if(response.ok)
                 return response.json()
             else
                 throw Error(response.statusText);
         })
-        .then(user_person_data => setUserPersonData(user_person_data))
+        .then(user_ => setUserPersonalData({
+            name: user_.personalData.name,
+            surname: user_.personalData.surname
+        }))
     }, [])
 
     return (
@@ -36,8 +37,8 @@ const RemoveClient = () => {
                 <Header />
 
                 <form>
-                    <Name name={userPersonData.name} />
-                    <Surname surname={userPersonData.surname} />
+                    <Name name={userPersonalData.name} />
+                    <Surname surname={userPersonalData.surname} />
                     <Buttons userID={userID}/>
                 </form>
             </div>

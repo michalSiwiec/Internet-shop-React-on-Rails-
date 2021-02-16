@@ -105,10 +105,9 @@ const EditClient = () => {
                     street: street.value,
                     house_number: houseNumber,
                 },
-                userID
             }
 
-            fetch(`/api/v1/users/edit_user`, {
+            fetch(`/api/v1/users/${userID}`, {
                 method: 'PUT',
                 headers: {
                     "Content-Type": "application/json"
@@ -120,7 +119,7 @@ const EditClient = () => {
     }
 
     useEffect(() => {
-        fetch(`/api/v1/users/get_user?userID=${userID}`, {method: 'GET'})
+        fetch(`/api/v1/users/${userID}`, {method: 'GET'})
         .then(response => {
             if(response.ok)
                 return response.json()
@@ -129,44 +128,44 @@ const EditClient = () => {
         })
         .then(user => {
             setName({
-                value: user.personal_data.name,
+                value: user.personalData.name,
                 setted: true,
                 mistakeInformation: []
             })
             setSurname({
-                value: user.personal_data.surname,
+                value: user.personalData.surname,
                 setted: true,
                 mistakeInformation: []
             })
             setEmail({
-                value: user.personal_data.email,
+                value: user.personalData.email,
                 setted: true,
                 mistakeInformation: []
             })
             setPhoneNumber({
-                value: user.personal_data.phone_number,
+                value: user.personalData.phone_number,
                 setted: true,
                 mistakeInformation: []
             })
             setLogin({
-                value: user.data_logins.login,
+                value: user.dataLogins.login,
                 setted: true,
                 mistakeInformation: []
             })
             setPassword({
-                value: user.data_logins.password,
+                value: user.dataLogins.password,
                 setted: true,
                 mistakeInformation: []
             })
             setStreet({
-                value: user.delivery_addresses.street,
+                value: user.deliveryAddresses.street,
                 setted: true,
                 mistakeInformation: []
             })
-            setProvince(user.delivery_addresses.province)
-            setCity(user.delivery_addresses.city)
-            setPostalCode(user.delivery_addresses.postal_code)
-            setHouseNumber(user.delivery_addresses.house_number)
+            setProvince(user.deliveryAddresses.province)
+            setCity(user.deliveryAddresses.city)
+            setPostalCode(user.deliveryAddresses.postal_code)
+            setHouseNumber(user.deliveryAddresses.house_number)
         })
     }, [])
 

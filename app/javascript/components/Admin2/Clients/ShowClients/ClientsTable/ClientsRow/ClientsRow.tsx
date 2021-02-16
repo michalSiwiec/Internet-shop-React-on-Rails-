@@ -8,18 +8,18 @@ import Buttons from './Buttons/Buttons'
 
 interface Props {
     userData: {
-        user_id: 0,
-        user_delivery_addres: {
+        userID: 0,
+        deliveryAddres: {
             country: '',
             city: '',
             house_number: '',
             postal_code: ''
         },
-        data_login: {
+        dataLogin: {
             login: '',
             password: ''
         },
-        personal_data: {
+        personalData: {
             name: '',
             surname: '',
             email: '',
@@ -30,12 +30,12 @@ interface Props {
 
 const ClientsRow:FC<Props> = ({userData}) => {
     return (
-        <tr key={`user ${userData.data_login.login}` }>
-            <NameColumn name={userData.personal_data.name} />
-            <SurnameColumn surname={userData.personal_data.surname} />
-            <EmailColumn email={userData.personal_data.email} />
-            <PhoneNumberColumn phoneNumber={userData.personal_data.phone_number} />
-            <Buttons userID={userData.user_id} />
+        <tr key={`user ${userData.dataLogin.login}` }>
+            <NameColumn name={userData.personalData.name} />
+            <SurnameColumn surname={userData.personalData.surname} />
+            <EmailColumn email={userData.personalData.email} />
+            <PhoneNumberColumn phoneNumber={userData.personalData.phone_number} />
+            <Buttons userID={userData.userID} />
         </tr>
     )
 }

@@ -16,14 +16,14 @@ Rails.application.routes.draw do
       get 'cities', to: 'cities#index'
       get 'cities/show', to: 'cities#show'
 
-      post 'users/addUser', to: 'user#add_user'
+      post 'users/', to: 'user#create'
       get 'users/logInUser', to: 'user#log_in_user'
       get 'users', to: 'user#index'
-      get 'users/get_user', to: 'user#get_user'
+      get 'users/:userID', to: 'user#show'
       get 'users/get_last_user', to: 'user#get_last_user'
-      put 'users/edit_user', to: 'user#edit_user'
+      put 'users/:userID', to: 'user#update'
       get 'users/get_user_person_data', to: 'user#get_user_person_data'
-      delete 'users/remove_user', to: 'user#remove_user'
+      delete 'users/:userID', to: 'user#destroy'
       get 'users/get_log_in_users_with_orders', to: 'user#get_log_in_users_with_orders'
 
       get 'admins/log_in_admin', to: 'admin#log_in_admin'

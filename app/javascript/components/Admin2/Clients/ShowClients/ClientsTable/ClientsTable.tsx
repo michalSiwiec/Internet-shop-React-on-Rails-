@@ -31,7 +31,7 @@ const ClientsTable = () => {
                 </thead>
 
                 <tbody>
-                    {usersData.map(data => <ClientsRow userData={data} key={`clientRow${data.data_login.login} ${Math.random()}`} />)}
+                    {usersData.map(data => <ClientsRow userData={data} key={`clientRow${data.dataLogin.login} ${Math.random()}`} />)}
                 </tbody>
             </table>
         </div>
