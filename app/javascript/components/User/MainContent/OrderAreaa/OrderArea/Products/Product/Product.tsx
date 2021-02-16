@@ -59,11 +59,10 @@ const Product:FC<Props> = ({product}) => {
                 setProductAdded(true)
             })
         } else
-            alert('This product is available')
+            alert('Brak produktu na magazynie - produkt nie dostępny :C')
     }
 
     return (
-        // <div className={`single-product-container ${(product.quantity_available - productQuantityIntoBasket === 0) ? "unavailable" : ""}`}>
         <div className={`single-product-container`}>
             {productAdded 
                 ? <WindowCommunicate info="Produkt dodano do koszyka!" setTransmittedState={setProductAdded} />
@@ -78,13 +77,12 @@ const Product:FC<Props> = ({product}) => {
             </div>
             
             <div className="flex-container">
-            {/* <div className={`flex-container ${(product.quantity_available - productQuantityIntoBasket === 0) ? "unavailable" : ""}`}> */}
                 <button className="add-to-basket-button" onClick={() => addProductToBasket()}>Du koszyka</button>
                 <input ref={quantityInput}
                     type="number"
                     className="select_quantity_product"
                     onChange={(e) => setQuantity(parseInt(e.target.value))}
-                    min="1"
+                    min={1}
                     value={quantity}
                     max={product.quantity_available - productQuantityIntoBasket}
                     onKeyPress={(e) => e.preventDefault()}

@@ -121,7 +121,7 @@ City.create(name: 'Kargowa', province_id: lubuskie.id, postal_code: '66 - 120')
 City.create(name: 'Nowa sól', province_id: lubuskie.id, postal_code: '67 - 106')
 City.create(name: 'Słubice', province_id: lubuskie.id, postal_code: '69 - 100')
 
-lodz = City.create(name: 'Łódź', province_id: lodzkie.id, postal_code: '90 - 004')
+City.create(name: 'Łódź', province_id: lodzkie.id, postal_code: '90 - 004')
 City.create(name: 'Piotrków Trybunalski', province_id: lodzkie.id, postal_code: '97 - 300')
 City.create(name: 'Pabianice', province_id: lodzkie.id, postal_code: '95 - 054')
 City.create(name: 'Zgierz', province_id: lodzkie.id, postal_code: '95 - 100')
@@ -188,7 +188,7 @@ City.create(name: 'Krynica Morska', province_id: pomorskie.id, postal_code: '82 
 City.create(name: 'Kwidzyń', province_id: pomorskie.id, postal_code: '82 - 500')
 City.create(name: 'Lębork', province_id: pomorskie.id, postal_code: '84 - 351')
 
-gliwice = City.create(name: 'Gliwice', province_id: slaskie.id, postal_code: '44 - 119')
+City.create(name: 'Gliwice', province_id: slaskie.id, postal_code: '44 - 119')
 City.create(name: 'Katowice', province_id: slaskie.id, postal_code: '40 - 013')
 City.create(name: 'Bytom', province_id: slaskie.id, postal_code: '41 - 907')
 City.create(name: 'Bielsko-Biała', province_id: slaskie.id, postal_code: '43 - 309')
@@ -229,20 +229,20 @@ City.create(name: 'Choszczno', province_id: zachodniopomorskie.id, postal_code: 
 City.create(name: 'Drawsko Pomorskie', province_id: zachodniopomorskie.id, postal_code: '78 - 500')
 City.create(name: 'Goleniów', province_id: zachodniopomorskie.id, postal_code: '72 - 100')
 City.create(name: 'Gryfice', province_id: zachodniopomorskie.id, postal_code: '72 - 300')
-gryfino = City.create(name: 'Gryfino', province_id: zachodniopomorskie.id, postal_code: '74 - 100')
+City.create(name: 'Gryfino', province_id: zachodniopomorskie.id, postal_code: '74 - 100')
 City.create(name: 'Kamień Pomorski', province_id: zachodniopomorskie.id, postal_code: '72 - 400')
 
 
 user1 = User.create()
-user1.create_dataLogin(login: 'michsiw439', password: 'Ab47901825')
+user1.create_dataLogin(login: 'michsiw439', password: '1234')
 user1.create_dataPerson(name: 'Michal', surname: 'Siwiec', email: 'siwiec.michal724@gmail.com', phone_number: '724131140')
-user1.create_deliveryAddress(country: 'Polska', province: slaskie.name, city: gliwice.name, postal_code: gliwice.postal_code, street: 'Gruszczynskiego', house_number: 12)
+user1.create_deliveryAddress(country: 'Polska', province: slaskie.name, city: slaskie.cities.first.name, postal_code: slaskie.cities.first.postal_code, street: 'Gruszczynskiego', house_number: 12)
 user1.create_dataCreation(year: 2020, month: 3, day: 13, hour: 12, minute: 33, second: 55)
 
 user2 = User.create()
 user2.create_dataLogin(login: 'winiar123', password: 'qwertY12')
 user2.create_dataPerson(name: 'Michal', surname: 'Winiarski', email: 'michal.winiarski@gmail.com', phone_number: '785348001')
-user2.create_deliveryAddress(country: 'Polska', province: zachodniopomorskie.name, city: gryfino.name, postal_code: gryfino.postal_code, street: 'Lipowska', house_number: 12)
+user2.create_deliveryAddress(country: 'Polska', province: zachodniopomorskie.name, city: zachodniopomorskie.cities.fourth.name, postal_code: zachodniopomorskie.cities.fourth.postal_code, street: 'Lipowska', house_number: 12)
 user2.create_dataCreation(year: 2020, month: 2, day: 17, hour: 7, minute: 22, second: 2)
 
 
@@ -263,169 +263,170 @@ opinion5 = Opinion.create!(description: "Nigdy nie bylem w gorszy sklepie!", mar
 opinion5.create_dataCreation!(year: 2019, month: 12, day: 24, hour: 13, minute: 14, second: 32)
 
 # Orders not log in user
-# order1 = Order.create!(user_id: nil)
-# order1.create_dataPerson!(name: "Jan", surname: "Nowak", email: "jan.nowak123@gmail.com", phone_number: "765134562")
-# order1.create_deliveryAddress!(country: "Polska", province: lodzkie.name, city: lodz.name, postal_code: lodz.postal_code, street: "Jagodowa", house_number: 12)
-# order1.create_dataCreation!(year: 2020, month: 1, day: 3, hour: 6, minute: 34, second: 12)
+order1 = Order.create!(user_id: nil)
+order1.create_dataPerson!(name: "Jan", surname: "Nowak", email: "jan.nowak123@gmail.com", phone_number: "765134562")
+order1.create_deliveryAddress!(country: "Polska", province: lodzkie.name, city: lodzkie.cities.third.name, postal_code: lodzkie.cities.third.postal_code, street: "Jagodowa", house_number: 12)
+order1.create_dataCreation!(year: 2020, month: 1, day: 3, hour: 6, minute: 34, second: 12)
 
-# product_from_basket1 = [
-#     {
-#         id: product1.id,
-#         quantity: 4
-#     },
-#     {
-#         id: product2.id,
-#         quantity: 3
-#     },
-#     {
-#         id: product3.id,
-#         quantity: 6
-#     },
-#     {
-#         id: product4.id,
-#         quantity: 1
-#     },
-#     {
-#         id: product5.id,
-#         quantity: 1
-#     }
-# ]
+product_from_basket1 = [
+    {
+        id: product1.id,
+        quantity: 4
+    },
+    {
+        id: product2.id,
+        quantity: 3
+    },
+    {
+        id: product3.id,
+        quantity: 6
+    },
+    {
+        id: product4.id,
+        quantity: 1
+    },
+    {
+        id: product5.id,
+        quantity: 1
+    }
+]
 
-# product_from_basket1.each do |product_from_basket|
-#     OrdersProduct.create(
-#         order_id: order1.id,
-#         product_id: product_from_basket[:id],
-#         quantity: product_from_basket[:quantity]
-#     )
+product_from_basket1.each do |product_from_basket|
+    OrdersProduct.create(
+        order_id: order1.id,
+        product_id: product_from_basket[:id],
+        quantity: product_from_basket[:quantity]
+    )
 
-#     product = Product.find(product_from_basket[:id]) 
-#     product.update_columns(quantity_available: product.quantity_available - product_from_basket[:quantity])
-# end
+    product = Product.find(product_from_basket[:id]) 
+    product.update_columns(quantity_available: product.quantity_available - product_from_basket[:quantity])
+end
 
-# order2 = Order.create!(user_id: user2.id)
-# order2.create_dataCreation!(year: 2019, month: 5, day: 23, hour: 6, minute: 34, second: 12)
+# Orders log in users
+order2 = Order.create!(user_id: user2.id)
+order2.create_dataCreation!(year: 2019, month: 5, day: 23, hour: 6, minute: 34, second: 12)
 
-# product_from_basket2 = [
-#     {
-#         id: product6.id,
-#         quantity: 4
-#     },
-#     {
-#         id: product7.id,
-#         quantity: 3
-#     },
-#     {
-#         id: product8.id,
-#         quantity: 6
-#     },
-#     {
-#         id: product9.id,
-#         quantity: 1
-#     },
-#     {
-#         id: product5.id,
-#         quantity: 1
-#     }
-# ]
+product_from_basket2 = [
+    {
+        id: product6.id,
+        quantity: 4
+    },
+    {
+        id: product7.id,
+        quantity: 3
+    },
+    {
+        id: product8.id,
+        quantity: 6
+    },
+    {
+        id: product9.id,
+        quantity: 1
+    },
+    {
+        id: product5.id,
+        quantity: 1
+    }
+]
 
-# product_from_basket2.each do |product_from_basket|
-#     OrdersProduct.create(
-#         order_id: order2.id,
-#         product_id: product_from_basket[:id],
-#         quantity: product_from_basket[:quantity]
-#     )
+product_from_basket2.each do |product_from_basket|
+    OrdersProduct.create(
+        order_id: order2.id,
+        product_id: product_from_basket[:id],
+        quantity: product_from_basket[:quantity]
+    )
 
-#     product = Product.find(product_from_basket[:id]) 
-#     product.update_columns(quantity_available: product.quantity_available - product_from_basket[:quantity])
-# end
+    product = Product.find(product_from_basket[:id]) 
+    product.update_columns(quantity_available: product.quantity_available - product_from_basket[:quantity])
+end
 
-# order3 = Order.create!(user_id: nil)
-# order3.create_dataPerson!(name: "Makary", surname: "Zurek", email: "makary.zurek@gmail.com", phone_number: "883226561")
-# order3.create_deliveryAddress!(country: "Polska", province: lodzkie.name, city: lodz.name, postal_code: lodz.postal_code, street: "Jagodowa", house_number: 12)
-# order3.create_dataCreation!(year: 2020, month: 1, day: 13, hour: 16, minute: 14, second: 56)
+order3 = Order.create!(user_id: nil)
+order3.create_dataPerson!(name: "Makary", surname: "Zurek", email: "makary.zurek@gmail.com", phone_number: "883226561")
+order3.create_deliveryAddress!(country: "Polska", province: lodzkie.name, city: lodzkie.cities.fourth.name, postal_code: lodzkie.cities.fourth.postal_code, street: "Jagodowa", house_number: 12)
+order3.create_dataCreation!(year: 2020, month: 1, day: 13, hour: 16, minute: 14, second: 56)
 
-# product_from_basket3 = [
-#     {
-#         id: product1.id,
-#         quantity: 1
-#     },
-#     {
-#         id: product12.id,
-#         quantity: 4
-#     },
-#     {
-#         id: product3.id,
-#         quantity: 2
-#     },
-#     {
-#         id: product14.id,
-#         quantity: 7
-#     },
-#     {
-#         id: product2.id,
-#         quantity: 3
-#     },
-#     {
-#         id: product3.id,
-#         quantity: 6
-#     },
-#     {
-#         id: product12.id,
-#         quantity: 2
-#     }
-# ]
+product_from_basket3 = [
+    {
+        id: product1.id,
+        quantity: 1
+    },
+    {
+        id: product12.id,
+        quantity: 4
+    },
+    {
+        id: product3.id,
+        quantity: 2
+    },
+    {
+        id: product14.id,
+        quantity: 7
+    },
+    {
+        id: product2.id,
+        quantity: 3
+    },
+    {
+        id: product3.id,
+        quantity: 6
+    },
+    {
+        id: product12.id,
+        quantity: 2
+    }
+]
 
-# product_from_basket3.each do |product_from_basket|
-#     OrdersProduct.create(
-#         order_id: order3.id,
-#         product_id: product_from_basket[:id],
-#         quantity: product_from_basket[:quantity]
-#     )
+product_from_basket3.each do |product_from_basket|
+    OrdersProduct.create(
+        order_id: order3.id,
+        product_id: product_from_basket[:id],
+        quantity: product_from_basket[:quantity]
+    )
 
-#     product = Product.find(product_from_basket[:id]) 
-#     product.update_columns(quantity_available: product.quantity_available - product_from_basket[:quantity])
-# end
+    product = Product.find(product_from_basket[:id]) 
+    product.update_columns(quantity_available: product.quantity_available - product_from_basket[:quantity])
+end
 
-# order4 = Order.create!(user_id: nil)
-# order4.create_dataPerson!(name: "Karol", surname: "Budda", email: "budda.karol@gmail.com", phone_number: "990774132")
-# order4.create_deliveryAddress!(country: "Polska", province: lodzkie.name, city: lodz.name, postal_code: lodz.postal_code, street: "Jagodowa", house_number: 12)
-# order4.create_dataCreation!(year: 2020, month: 1, day: 22, hour: 23, minute: 4, second: 17)
+order4 = Order.create!(user_id: nil)
+order4.create_dataPerson!(name: "Karol", surname: "Luczyk", email: "luczyk.karol@gmail.com", phone_number: "990774132")
+order4.create_deliveryAddress!(country: "Polska", province: lodzkie.name, city: lodzkie.cities.fifth.name, postal_code: lodzkie.cities.fifth.postal_code, street: "Lesna", house_number: 12)
+order4.create_dataCreation!(year: 2020, month: 1, day: 22, hour: 23, minute: 4, second: 17)
 
-# product_from_basket4 = [
-#     {
-#         id: product10.id,
-#         quantity: 5
-#     },
-#     {
-#         id: product11.id,
-#         quantity: 9
-#     },
-#     {
-#         id: product12.id,
-#         quantity: 1
-#     },
-#     {
-#         id: product13.id,
-#         quantity: 1
-#     },
-#     {
-#         id: product14.id,
-#         quantity: 2
-#     }
-# ]
+product_from_basket4 = [
+    {
+        id: product10.id,
+        quantity: 5
+    },
+    {
+        id: product11.id,
+        quantity: 9
+    },
+    {
+        id: product12.id,
+        quantity: 1
+    },
+    {
+        id: product13.id,
+        quantity: 1
+    },
+    {
+        id: product14.id,
+        quantity: 2
+    }
+]
 
-# product_from_basket4.each do |product_from_basket|
-#     OrdersProduct.create(
-#         order_id: order4.id,
-#         product_id: product_from_basket[:id],
-#         quantity: product_from_basket[:quantity]
-#     )
+product_from_basket4.each do |product_from_basket|
+    OrdersProduct.create(
+        order_id: order4.id,
+        product_id: product_from_basket[:id],
+        quantity: product_from_basket[:quantity]
+    )
 
-#     product = Product.find(product_from_basket[:id]) 
-#     product.update_columns(quantity_available: product.quantity_available - product_from_basket[:quantity])
-# end
+    product = Product.find(product_from_basket[:id]) 
+    product.update_columns(quantity_available: product.quantity_available - product_from_basket[:quantity])
+end
 
 
 admin1 = Admin.create!()
-admin1.create_dataLogin!(login: 'michsiw439', password: 'Ab47901825')
+admin1.create_dataLogin!(login: 'michsiw439', password: '1234')
 admin1.create_dataPerson!(name: 'Michal', surname: 'Siwiec', email: 'siwiec.michal724@gmail.com', phone_number: '724131140')

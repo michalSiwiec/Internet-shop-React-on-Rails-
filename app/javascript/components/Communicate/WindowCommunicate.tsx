@@ -20,12 +20,12 @@ const WindowCommunicate:FC<Props> = ({info, setTransmittedState}) => {
             const timeRemovingWindow = 5000
             removingElementEffect = setTimeout(() => setTransmittedState(false), timeRemovingWindow)
         }
-    })
 
-    // useEffect(() => {
-    //     clearTimeout(removingElementEffect)
-    //     clearTimeout(hideEffect)
-    // }, [])
+        return () => {
+            clearTimeout(removingElementEffect)
+            clearTimeout(hideEffect)
+          }
+    })
 
     return (
         <div className={`window-information ${hide}`}>

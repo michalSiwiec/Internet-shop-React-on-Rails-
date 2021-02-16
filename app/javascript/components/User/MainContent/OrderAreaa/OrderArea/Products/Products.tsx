@@ -22,7 +22,6 @@ interface IProduct{
 }
 
 const Products:FC<Props> = ({products, productsPartsVisibility}) => {
-
     const dispatch = useDispatch()
 
     useEffect(() => {  
