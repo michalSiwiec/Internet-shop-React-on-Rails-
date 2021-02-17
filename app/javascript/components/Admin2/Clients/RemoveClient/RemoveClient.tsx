@@ -16,7 +16,7 @@ const RemoveClient = () => {
     })
 
     useEffect(() => {
-        fetch(`/api/v1/users/${userID}`, {method: 'GET'})
+        fetch(`/api/v1/user/${userID}`, {method: 'GET'})
         .then(response => {
             if(response.ok)
                 return response.json()

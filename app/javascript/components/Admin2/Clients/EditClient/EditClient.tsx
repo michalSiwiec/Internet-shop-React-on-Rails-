@@ -107,8 +107,8 @@ const EditClient = () => {
                 },
             }
 
-            fetch(`/api/v1/users/${userID}`, {
-                method: 'PUT',
+            fetch(`/api/v1/user/${userID}`, {
+                method: 'PATCH',
                 headers: {
                     "Content-Type": "application/json"
                 },
@@ -119,7 +119,7 @@ const EditClient = () => {
     }
 
     useEffect(() => {
-        fetch(`/api/v1/users/${userID}`, {method: 'GET'})
+        fetch(`/api/v1/user/${userID}`, {method: 'GET'})
         .then(response => {
             if(response.ok)
                 return response.json()

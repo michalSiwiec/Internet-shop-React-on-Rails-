@@ -2,13 +2,14 @@ import React, {FC} from 'react'
 
 interface Props{
     product: any,
-    updateQuantityProduct: any
+    updateQuantityProduct: any,
+    quantity: number
 }
 
-const Quantity:FC<Props> = ({product, updateQuantityProduct}) => {
+const Quantity:FC<Props> = ({product, updateQuantityProduct, quantity}) => {
     return (
         <div>
-            <input type="number" min="1" defaultValue={product.quantity} onChange={(e) => updateQuantityProduct(product.id, e.target.value)}/>
+            <input type="number" min="1" defaultValue={quantity} onChange={(e) => updateQuantityProduct(product.id, e.target.value)}/>
         </div>
     )
 }

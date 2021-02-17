@@ -7,7 +7,7 @@ const ClientsTable = () => {
     const [usersData, setUsersData]: Array<any> = useState([])
 
     useEffect(() => {
-        fetch('/api/v1/users', {method: 'GET'})
+        fetch('/api/v1/user', {method: 'GET'})
         .then(response => {
             if(response.ok)
                 return response.json()

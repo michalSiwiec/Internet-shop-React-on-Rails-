@@ -15,7 +15,7 @@ const AdminSignature = () => {
     })
 
     useEffect(() => {
-        fetch(`/api/v1/admin/get_admin?adminID=${adminID}`, {method: 'GET',})
+        fetch(`/api/v1/admin/${adminID}`, {method: 'GET',})
         .then(response => {
             if(response.ok)
                 return response.json()
@@ -23,7 +23,6 @@ const AdminSignature = () => {
                 throw Error(response.statusText);
         })
         .then(admin => setAdmin(admin))
-        // .then(admin => console.log(admin))
     }, [])
 
     return(

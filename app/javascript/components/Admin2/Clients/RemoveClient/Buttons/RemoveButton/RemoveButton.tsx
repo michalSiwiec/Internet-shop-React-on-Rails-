@@ -10,7 +10,7 @@ const RemoveButton:FC<Props> = ({userID}) => {
     const removeUser = (e: any) => {
         e.preventDefault()
 
-        fetch(`/api/v1/users/${userID}`, {method: 'DELETE'})
+        fetch(`/api/v1/user/${userID}`, {method: 'DELETE'})
         .then(() => history.push('/admin/Users'))
     }
 

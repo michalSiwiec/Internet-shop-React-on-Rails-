@@ -7,15 +7,13 @@ import Description from './Description/Description'
 import ProductSource from './ProductSource/ProductSource'
 import Buttons from './Buttons/Buttons'
 
-// import '../../../../../../../../assets/stylesheets/AdminPanel/Information/Products/RemoveProduct/RemoveProduct.scss'
-
 const RemoveProduct = () => {
     const {productID} = useParams()
     const [source, setSource] = useState('')
     const [description, setDescription] = useState('')
 
     useEffect(() => {
-        fetch(`/api/v1/products/show?productID=${productID}`,{method: 'GET'})
+        fetch(`/api/v1/products/${productID}`,{method: 'GET'})
         .then(response => {
             if(response.ok)
                 return response.json()

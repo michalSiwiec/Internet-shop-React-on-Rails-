@@ -3,40 +3,30 @@ Rails.application.routes.draw do
 
   namespace :api, constraints: {format: :json}, defaults: {format: :json} do
     namespace :v1 do
-      get 'products', to: 'products#index'
-      get 'products/show', to: 'products#show'
-      get 'products/show_selected', to: 'products#show_selected'
-      put 'products/remove_product', to: 'products#remove_product'
-      put 'products/edit_product', to: 'products#edit_product'
-      post 'products/add_product', to: 'products#add_product'
+      # I need define this path before resources - otherwise I'd look for selected product into products#show - it'd be metched to that action
+      get "products/show_selected" => "products#show_selected"
+      resources :products, only: [:index, :show, :create, :update, :destroy]
 
-      get 'provinces', to: 'provinces#index'
-      get 'provinces/show', to: 'provinces#show'
+      resources :provinces, only: [:index, :show]
 
-      get 'cities', to: 'cities#index'
-      get 'cities/show', to: 'cities#show'
+      get 'cities', to: 'cities#index' #
+      get 'cities/show', to: 'cities#show' #
 
-      post 'users/', to: 'user#create'
-      get 'users/logInUser', to: 'user#log_in_user'
-      get 'users', to: 'user#index'
-      get 'users/:userID', to: 'user#show'
-      get 'users/get_last_user', to: 'user#get_last_user'
-      put 'users/:userID', to: 'user#update'
-      get 'users/get_user_person_data', to: 'user#get_user_person_data'
-      delete 'users/:userID', to: 'user#destroy'
-      get 'users/get_log_in_users_with_orders', to: 'user#get_log_in_users_with_orders'
-
+      get 'user/get_last_user', to: 'user#get_last_user'
+      get 'user/get_log_in_users_with_orders', to: 'user#get_log_in_users_with_orders'
+      get 'user/logInUser', to: 'user#log_in_user'
+      resources :user, only: [:index, :show, :create, :update, :destroy]
+      
       get 'admins/log_in_admin', to: 'admin#log_in_admin'
-      get 'admin/get_admin', to: 'admin#get_admin'
-      put 'admin/editAdmin', to: 'admin#edit_admin'
+      # get 'admin/get_admin', to: 'admin#get_admin' #
+      # put 'admin/editAdmin', to: 'admin#edit_admin' #
+      resources :admin, only: [:show, :update]
 
-      post 'orders/addOrder', to: 'orders#add_order'
       get 'orders/get_user_orders', to: 'orders#get_user_orders'
       get 'orders/get_log_out_users_orders', to: 'orders#get_log_out_users_orders'
-      get 'orders/get_order', to: 'orders#get_order'
+      resources :orders, only: [:create, :show]     
 
-      get 'opinions/', to: 'opinions#index'
-      post 'opinions/add', to: 'opinions#add'
+      resources :opinions, only: [:index, :create]
 
       get 'diagrams/get_sum_orders_associated_with_month', to: 'diagrams#get_sum_orders_associated_with_month'
       get 'diagrams/get_relation_between_opinion_mark', to: 'diagrams#get_relation_between_opinion_mark'

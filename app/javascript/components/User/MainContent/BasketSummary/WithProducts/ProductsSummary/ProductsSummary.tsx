@@ -15,7 +15,9 @@ const ProductsSummary = () => {
             </div>
 
             <div className="subcontainer">
-                <Link to='/home/ShoppingOption'> <input type="button" value="Przejdź dalej" className="subcontainer__continue-shopping-btn" /> </Link>
+                <Link to='/home/ShoppingOption'>
+                    <input type="button" value="Przejdź dalej" className="subcontainer__continue-shopping-btn" />
+                </Link>
             </div>
         </div>
     )

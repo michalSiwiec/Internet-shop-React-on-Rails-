@@ -16,7 +16,7 @@ const City:FC<Props> = ({setCity, selectedProvince}) => {
             else
                 throw Error(response.statusText);
         })
-        .then(data => setCities(data))
+        .then(cities_ => setCities(cities_))
     }
 
     useEffect(() => fetchCities(), [selectedProvince])

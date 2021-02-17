@@ -20,7 +20,7 @@ module Api
                 end
             end
 
-            def get_admin
+            def show
                 admin_id = params[:adminID]
                 admin = Admin.find(admin_id)
 
@@ -34,31 +34,7 @@ module Api
                 }
             end
 
-            # def edit_admin
-            #     admin_id = params[:adminID]
-                
-            #     name = params[:newAdminData][:name]
-            #     surname = params[:newAdminData][:surname]
-            #     email = params[:newAdminData][:email]
-            #     phone_number = params[:newAdminData][:phone_number]
-            #     login = params[:newAdminData][:login]
-            #     password = params[:newAdminData][:password]
-
-            #     admin = Admin.find(admin_id)
-
-            #     admin.dataPerson.update_attributes(
-            #         name: name,
-            #         surname: surname,
-            #         email: email,
-            #         phone_number: phone_number
-            #     )
-            #     admin.dataLogin.update_attributes(
-            #         login: login,
-            #         password: password
-            #     )
-            # end
-
-            def edit_admin
+            def update
                 admin = Admin.find(params[:adminID])
                 
                 name = params[:newAdminData][:name]

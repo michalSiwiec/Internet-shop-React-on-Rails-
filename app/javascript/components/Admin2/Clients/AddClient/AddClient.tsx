@@ -103,7 +103,7 @@ const AddClient = () => {
                 }
             }
 
-            fetch("/api/v1/users/", {
+            fetch("/api/v1/user/", {
                 method: "post",
                 headers: {
                     "Content-Type": "application/json"

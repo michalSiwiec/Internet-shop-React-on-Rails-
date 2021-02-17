@@ -21,8 +21,6 @@ import PostalCode from './PostalCode/PostalCode'
 import {useDispatch} from 'react-redux'
 import actions from '../../../../../redux/user/duck/actions'
 
-// import '../../../../../assets/stylesheets/UserContent/MainContent/RejestrationForm/RejestrationForm.scss'
-
 const RejestrationForm = () => {
     const dispatch = useDispatch()
 
@@ -103,15 +101,15 @@ const RejestrationForm = () => {
                 }
             }
 
-            fetch("/api/v1/users/", {
-                method: "post",
+            fetch("/api/v1/user/", {
+                method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(formData)
             })
             .then(() => {
-                fetch(`/api/v1/users/get_last_user`, {method: 'GET'})
+                fetch(`/api/v1/user/get_last_user`, {method: 'GET'})
                 .then(response => {
                     if(response.ok)
                         return response.json()

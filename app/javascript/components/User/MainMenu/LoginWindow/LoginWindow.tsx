@@ -14,7 +14,7 @@ const LogInWindow = () => {
 
     const LogIn = () => {
         if(login !== '' && password !== ''){
-            fetch(`/api/v1/users/logInUser?login=${login}&password=${password}`,{method: 'GET'})
+            fetch(`/api/v1/user/logInUser?login=${login}&password=${password}`,{method: 'GET'})
             .then(response => {
                 if(response.ok)
                     return response.json()
@@ -32,16 +32,16 @@ const LogInWindow = () => {
         }
     }
 
-    useEffect(() => {
+    useEffect(() => {        
         if(userID !== 0){
-            fetch(`/api/v1/users/get_user?userID=${userID}`, {method: 'GET'})
+            fetch(`/api/v1/user/${userID}`, {method: 'GET'})
             .then(response => {
                 if(response.ok)
                     return response.json()
                 else
                     throw Error(response.statusText);
             })
-            .then(user => setUserData({name: user.personal_data.name, surname: user.personal_data.surname}))
+            .then(user => setUserData({name: user.personalData.name, surname: user.personalData.surname}))
         }
     }, [userID])
 

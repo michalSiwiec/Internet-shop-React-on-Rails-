@@ -21,7 +21,7 @@ module Api
                 render json: opinions_details
             end
 
-            def add
+            def create
                 opinion = Opinion.create!(opinion_params)
                 opinion.create_dataCreation!(creation_time)
             end

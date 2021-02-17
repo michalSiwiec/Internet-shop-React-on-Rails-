@@ -30,6 +30,7 @@ const Product:FC<Props> = ({product}) => {
     // quantity product added to basket
     let productQuantityIntoBasket;
 
+    
     // if basket doesn't include product his quantity is equal 0 otherwise I download this value - I need it to
     // make limited quantity posible product 
     if(!productIntoBasket)
@@ -40,7 +41,7 @@ const Product:FC<Props> = ({product}) => {
     const addProductToBasket = () => {
         if(product.quantity_available - productQuantityIntoBasket > 0){
             const productID = product.id
-            const URL = `/api/v1/products/show?productID=${productID}`
+            const URL = `/api/v1/products/${productID}`
             const OPTIONS = {method: 'GET'}
             
             fetch(URL,OPTIONS)

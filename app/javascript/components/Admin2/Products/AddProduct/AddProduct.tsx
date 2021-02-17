@@ -40,7 +40,7 @@ const AddProduct = () => {
                 quantity_available: quantityAvailable
             }
 
-            fetch("/api/v1/products/add_product", {
+            fetch("/api/v1/products/", {
                 method: "post",
                 headers: {
                     "Content-Type": "application/json"

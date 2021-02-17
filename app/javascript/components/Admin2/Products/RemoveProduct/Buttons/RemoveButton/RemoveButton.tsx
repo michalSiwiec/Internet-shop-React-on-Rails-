@@ -16,14 +16,11 @@ const RemoveButton:FC<Props> = ({productID}) => {
     const removeProduct = (e) => {
         e.preventDefault()
 
-        fetch(`/api/v1/products/remove_product`,{
-            method: 'PUT',
+        fetch(`/api/v1/products/${productID}`,{
+            method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                productID: productID
-            })
+            }
         })
         .then(response => {
             if(response.ok)

@@ -19,7 +19,7 @@ const SingIn = () =>  {
 
     const LogIn = () => {
         if(login !== '' && password !== ''){
-            fetch(`/api/v1/users/logInUser?login=${login}&password=${password}`,{method: 'GET'})
+            fetch(`/api/v1/user/logInUser?login=${login}&password=${password}`,{method: 'GET'})
             .then(response => {
                 if(response.ok)
                     return response.json()

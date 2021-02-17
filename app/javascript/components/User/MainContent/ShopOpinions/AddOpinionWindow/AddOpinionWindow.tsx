@@ -22,8 +22,8 @@ const AddOpinionWindow:FC<Props> = ({setWantAddOpinion, userID}) => {
             },
         }
 
-        fetch("/api/v1/opinions/add", {
-            method: "post",
+        fetch("/api/v1/opinions/", {
+            method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },

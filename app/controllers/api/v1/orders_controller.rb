@@ -3,7 +3,41 @@ module Api
         class OrdersController < ApplicationController
             skip_before_action :verify_authenticity_token
 
-            def add_order
+            def show
+                order_id = params[:orderID]
+
+                order = Order.find(order_id)
+                data_person = order.dataPerson
+                delivery_address = order.deliveryAddress
+                whole_price = 0
+                products = order.product
+
+                bufor = []
+
+                products.each do |product|
+                    quantity_product_into_order = OrdersProduct.find_by(order_id: order_id, product_id: product.id).quantity
+                    whole_price += (quantity_product_into_order * product.price)
+
+                    bufor.push({
+                        product_description: product.description,
+                        product_price: product.price,
+                        quantity: quantity_product_into_order
+                    })
+                end
+
+                data_creation = order.dataCreation
+                data = "#{data_creation.year}:#{data_creation.month}:#{data_creation.day} #{data_creation.hour}:#{data_creation.minute}:#{data_creation.second}"
+
+                render json: {
+                    data_person: data_person,
+                    delivery_address: delivery_address,
+                    order_details: bufor,
+                    order_price: whole_price,
+                    data_created: data
+                }
+            end
+
+            def create
                 user_id = params[:userID]
                 productsFromBasket = params[:productsFromBasket]
                 order = nil
@@ -34,7 +68,6 @@ module Api
                     user = User.find(user_id)
                     # OrderMailer.add_order_confirmation(user).deliver
                 else
-                    # puts("Sending email on address: #{params[:email]}")
                     email_data = {
                         email: params[:email],
                         name: params[:name],
@@ -45,7 +78,6 @@ module Api
                 end
             end
 
-            # Return all user's orders
             def get_user_orders 
                 user_id = params[:userID]
                 orders = User.find(user_id).order
@@ -87,9 +119,10 @@ module Api
                 orders.each do |order|
                     bufor = []
                     order_price = 0
-                    orders_products = OrdersProduct.where(order_id: order.id) # Returning all products into order
+                    orders_products = OrdersProduct.where(order_id: order.id)
 
-                    orders_products.each do |order_product| # I need do it because I need to know product price, desc etc not only quantity and id
+                    # I need do it because I need to know product price, desc etc not only quantity and id
+                    orders_products.each do |order_product| 
                         product = Product.find(order_product.product_id)
 
                         order_price += (product.price * order_product.quantity)
@@ -101,7 +134,6 @@ module Api
                         })
                     end
 
-                    # puts(order.inspect)
                     data_creation = order.dataCreation
                     data = "#{data_creation.year}:#{data_creation.month}:#{data_creation.day} #{data_creation.hour}:#{data_creation.minute}:#{data_creation.second}"
 
@@ -116,42 +148,6 @@ module Api
                 end
 
                 render json: orders_details
-            end
-
-            def get_order
-                order_id = params[:orderID]
-
-                puts(order_id)
-
-                order = Order.find(order_id)
-                data_person = order.dataPerson
-                delivery_address = order.deliveryAddress
-                whole_price = 0
-                products = order.product
-
-                bufor = []
-
-                products.each do |product|
-                    quantity_product_into_order = OrdersProduct.find_by(order_id: order_id, product_id: product.id).quantity
-                    whole_price += (quantity_product_into_order * product.price)
-
-                    bufor.push({
-                        product_description: product.description,
-                        product_price: product.price,
-                        quantity: quantity_product_into_order
-                    })
-                end
-
-                data_creation = order.dataCreation
-                data = "#{data_creation.year}:#{data_creation.month}:#{data_creation.day} #{data_creation.hour}:#{data_creation.minute}:#{data_creation.second}"
-
-                render json: {
-                    data_person: data_person,
-                    delivery_address: delivery_address,
-                    order_details: bufor,
-                    order_price: whole_price,
-                    data_created: data
-                }
             end
 
             private

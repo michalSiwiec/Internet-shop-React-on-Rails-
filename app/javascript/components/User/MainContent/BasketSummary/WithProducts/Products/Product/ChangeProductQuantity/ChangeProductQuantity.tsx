@@ -8,16 +8,17 @@ import SummaryPrice from './SummaryPrice/SummaryPrice'
 interface Props {
     product: any
     updateQuantityProduct: any,
+    quantity: number
 }
 
-const ChangeProductQuantity:FC<Props> = ({product, updateQuantityProduct}) => {
+const ChangeProductQuantity:FC<Props> = ({product, updateQuantityProduct, quantity}) => {
     return (
         <div className="change-quantity-container">
             <Header />
-            <Quantity product={product} updateQuantityProduct={updateQuantityProduct} />
+            <Quantity product={product} updateQuantityProduct={updateQuantityProduct} quantity={quantity} />
 
             <div className="summary-price-container">
-                <SummaryPrice price={product.price} quantity={product.quantity} />
+                <SummaryPrice price={product.price} quantity={quantity} />
                 <Ornament />
             </div>
         </div>

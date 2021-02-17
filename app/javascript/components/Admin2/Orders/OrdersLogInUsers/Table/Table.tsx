@@ -7,7 +7,7 @@ const Table = () => {
     const [usersWithOrders, setUsersWithOrders]: any = useState([])
 
     useEffect(() => {
-        fetch('/api/v1/users/get_log_in_users_with_orders', {method: 'GET'})
+        fetch('/api/v1/user/get_log_in_users_with_orders', {method: 'GET'})
         .then(response => {
             if(response.ok)
                 return response.json()
@@ -16,6 +16,8 @@ const Table = () => {
         })
         .then(usersWithOrders_ => setUsersWithOrders(usersWithOrders_))
     }, [])
+
+    console.log(usersWithOrders)
 
     return (
         <table>

@@ -49,14 +49,13 @@ const EditProduct = () => {
                 product_type: type,
             }
 
-            fetch(`/api/v1/products/edit_product`, {
+            fetch(`/api/v1/products/${productID}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
                     formData: formData,
-                    productID: productID
                 })
             })
             .then(response => {
@@ -71,7 +70,7 @@ const EditProduct = () => {
     }
 
     useEffect(() => {
-        fetch(`/api/v1/products/show?productID=${productID}`,{method: 'GET'})
+        fetch(`/api/v1/products/${productID}`,{method: 'GET'})
         .then(response => {
             if(response.ok)
                 return response.json()

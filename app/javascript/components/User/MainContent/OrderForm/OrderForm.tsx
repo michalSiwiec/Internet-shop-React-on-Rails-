@@ -72,9 +72,6 @@ const OrderForm = () => {
     })
     const [postalCode, setPostalCode] = useState("44 - 119")
 
-    // Here I have to do validation - don't forget about this!
-    // Next think is add country
-
     const addOrder = () => {
         const dataToCheck = [
             email.value,
@@ -115,8 +112,8 @@ const OrderForm = () => {
                 } 
             }
 
-            fetch("/api/v1/orders/addOrder", {
-                method: "post",
+            fetch("/api/v1/orders/", {
+                method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
@@ -129,7 +126,7 @@ const OrderForm = () => {
 
     useEffect(() => {
         if(userID !== 0){
-            fetch(`/api/v1/users/get_user?userID=${userID}`, {method: 'GET'})
+            fetch(`/api/v1/user/${userID}`, {method: 'GET'})
             .then(response => {
                 if(response.ok)
                     return response.json()
@@ -138,48 +135,48 @@ const OrderForm = () => {
             })
             .then(user => {
                 setEmail({
-                    value: user.personal_data.email,
+                    value: user.personalData.email,
                     setted: true,
                     mistakeInformation: [],
                     unmutable: true
                 })
                 setPhoneNumber({
-                    value: user.personal_data.phone_number,
+                    value: user.personalData.phone_number,
                     setted: true,
                     mistakeInformation: [],
                     unmutable: true
                 })
                 setName({
-                    value: user.personal_data.name,
+                    value: user.personalData.name,
                     setted: true,
                     mistakeInformation: [],
                     unmutable: true
                 })
                 setSurname({
-                    value: user.personal_data.surname,
+                    value: user.personalData.surname,
                     setted: true,
                     mistakeInformation: [],
                     unmutable: true
                 })
                 setStreet({
-                    value: user.delivery_addresses.street,
+                    value: user.deliveryAddresses.street,
                     setted: true,
                     mistakeInformation: [],
                     unmutable: true
                 })
                 setProvince({
-                    value: user.delivery_addresses.province,
+                    value: user.deliveryAddresses.province,
                     unmutable: true
                 })
                 setCity({
-                    value: user.delivery_addresses.city,
+                    value: user.deliveryAddresses.city,
                     unmutable: true
                 })
                 setHouseNumber({
-                    value: user.delivery_addresses.house_number,
+                    value: user.deliveryAddresses.house_number,
                     unmutable: true
                 })
-                setPostalCode(user.delivery_addresses.postal_code)
+                setPostalCode(user.deliveryAddresses.postal_code)
             })
         }
     }, [userID])

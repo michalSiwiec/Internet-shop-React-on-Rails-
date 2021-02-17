@@ -9,27 +9,24 @@ module Api
             end
 
             def show
-                product = Product.find(params[:productID])
+                product = Product.find(params[:id])
                 render json: product
             end
 
-            def show_selected
-                products = JSON.parse(params[:products])
-                products_to_render = []
-
-                products.each do |product|
-                    # I'm doing it because later I do map on JSON and I need also product.qunatity
-                    product_from_db = Product.find(product["id"]).as_json
-                    merged = product_from_db.merge(product)
-
-                    products_to_render.push(merged)
-                end
-
-                render json: products_to_render
+            def create
+                Product.create(product_params)
             end
 
-            def remove_product
-                product_id = params[:productID]
+            def update
+                product = Product.find(params[:id])
+                product.update_attributes!(product_params)
+
+                products = Product.all
+                render json: products.sort_by {|product| product.id}
+            end
+
+            def destroy
+                product_id = params[:id]
                 product = Product.find(product_id)
 
                 product.destroy
@@ -38,16 +35,18 @@ module Api
                 render json: products
             end
 
-            def edit_product
-                product = Product.find(params[:productID])
-                product.update_attributes(product_params)
+            def show_selected
+                products = JSON.parse(params[:products])
+                full_products_from_basket_version = []
 
-                products = Product.all
-                render json: products.sort_by {|product| product.id}
-            end
+                products.each do |product|
+                    full_products_from_basket_version.push({
+                        product: Product.find(product["id"]),
+                        quantity: product["quantity"]
+                    })
+                end
 
-            def add_product
-                Product.create(product_params)
+                render json: full_products_from_basket_version
             end
 
             private

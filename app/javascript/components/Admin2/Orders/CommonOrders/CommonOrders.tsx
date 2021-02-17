@@ -57,7 +57,7 @@ const CommonOrders = () => {
     })
 
     useEffect(() => {
-        fetch(`/api/v1/orders/get_order?orderID=${orderID}`, {method: 'GET'})
+        fetch(`/api/v1/orders/${orderID}`, {method: 'GET'})
         .then(response => {
             if(response.ok)
                 return response.json()
