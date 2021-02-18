@@ -3,9 +3,7 @@ import React, {FC} from 'react'
 import EditButton from './EditButton/EditButton'
 import CancelButton from './CancelButton/CancelButton'
 
-interface Props{
-    editProduct:any
-}
+interface Props{editProduct: (e: React.SyntheticEvent) => void}
 
 const OptionsButton:FC<Props> = ({editProduct}) => {
     return (

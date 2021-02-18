@@ -1,4 +1,6 @@
-export const validateDescription = (value: string, setDescription: any, description: any) => {
+import {IFieldForm} from '../../../TypeScript/Interfaces/Interfaces'
+
+export const validateDescription = (value: string, setDescription: (desc: IFieldForm) => void, description: IFieldForm) => {
     const req = /^[A-Z]{1}[a-z]{2,}$/
     const copyDescription = {...description}
 
@@ -18,7 +20,7 @@ export const validateDescription = (value: string, setDescription: any, descript
     setDescription(copyDescription)
 }
 
-export const checkDataForm = (datasToCheck:any) => {
+export const checkDataForm = (datasToCheck:Array<boolean>) => {
     let allFieldsSetted = true
 
     datasToCheck.forEach(data => {

@@ -2,7 +2,7 @@ import React, {FC} from 'react'
 
 interface Props {
     source: string,
-    setSource: any
+    setSource: (source: string) => void
 }
 
 const ProductSource:FC<Props> = ({source, setSource}) => {

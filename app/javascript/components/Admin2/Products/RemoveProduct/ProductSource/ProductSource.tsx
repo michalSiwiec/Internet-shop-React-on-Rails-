@@ -1,8 +1,6 @@
 import React, {FC} from 'react'
 
-interface Props {
-    source: string
-}
+interface Props {source: string}
 
 const ProductSource:FC<Props> = ({source}) => {
     return (

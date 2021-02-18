@@ -1,8 +1,6 @@
 import React, {FC} from 'react'
 
-interface Props{
-    columnName: string
-}
+interface Props{columnName: string}
 
 const TableHeader:FC<Props> = ({columnName}) => <th>{columnName}</th>
 

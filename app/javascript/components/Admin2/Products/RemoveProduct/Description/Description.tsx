@@ -1,8 +1,6 @@
 import React, {FC} from 'react'
 
-interface Props {
-    description: string,
-}
+interface Props {description: string,}
 
 const Description:FC<Props> = ({description}) => {
     return (

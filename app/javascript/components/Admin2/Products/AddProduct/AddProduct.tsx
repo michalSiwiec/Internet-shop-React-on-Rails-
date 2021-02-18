@@ -16,7 +16,7 @@ const AddProduct = () => {
     const [description, setDescription] = useState({
         value: '',
         setted: false,
-        mistakeInformation: []
+        mistakeInformation: ['']
     })
     const [price, setPrice] = useState(1)
     const [type, setType] = useState('meats')
@@ -24,7 +24,7 @@ const AddProduct = () => {
 
     const history = useHistory()
 
-    const addProduct = (e: any) => {
+    const addProduct = (e: React.SyntheticEvent) => {
         e.preventDefault()   
 
         const dataToCheck = [

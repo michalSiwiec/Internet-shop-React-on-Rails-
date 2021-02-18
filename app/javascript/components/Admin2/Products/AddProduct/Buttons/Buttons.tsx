@@ -3,11 +3,9 @@ import React, {FC} from 'react'
 import AddButton from './AddButton/AddButton'
 import CancelButton from './CancelButton/CancelButton'
 
-interface Props {
-    addProduct: any
-}
+interface Props {addProduct: (e: React.SyntheticEvent) => void}
 
-const Buttons = ({addProduct}) => {
+const Buttons:FC<Props> = ({addProduct}) => {
     return (
         <div>
             <CancelButton />

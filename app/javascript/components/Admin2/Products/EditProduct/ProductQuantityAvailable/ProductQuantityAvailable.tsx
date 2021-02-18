@@ -2,7 +2,7 @@ import React, {FC} from 'react'
 
 interface Props {
     quantityAvailable: number,
-    setQuantityAvailable: any
+    setQuantityAvailable: (quantityAvailable: number) => void
 }
 
 const ProductQuantityAvailable:FC<Props> = ({quantityAvailable, setQuantityAvailable}) => {
@@ -12,7 +12,7 @@ const ProductQuantityAvailable:FC<Props> = ({quantityAvailable, setQuantityAvail
                 <input type="number"
                     min="1"
                     value={quantityAvailable}
-                    onChange={(e) => setQuantityAvailable(e.target.value)}
+                    onChange={(e) => setQuantityAvailable(parseInt(e.target.value))}
                     onKeyPress={(e) => e.preventDefault()}
                     onKeyDown={(e) => e.preventDefault()}
                 />

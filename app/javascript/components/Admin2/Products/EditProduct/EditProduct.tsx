@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react'
 
 import {checkDataForm} from '../../../../Helpers/Products/ProductsHelper'
 
+import {IProduct} from '../../../../../TypeScript/Interfaces/Interfaces'
+
 import ProductType from './ProductType/ProductType'
 import ProductQuantityAvailable from './ProductQuantityAvailable/ProductQuantityAvailable'
 import ProductPrice from './ProductPrice/ProductPrice'
@@ -25,7 +27,7 @@ const EditProduct = () => {
     const [description, setDescription] = useState({
         value: '',
         setted: true,
-        mistakeInformation: []
+        mistakeInformation: ['']
     })
     const [type, setType] = useState('dairy')
     const [price, setPrice] = useState(1)
@@ -33,7 +35,7 @@ const EditProduct = () => {
     
     const history = useHistory()
 
-    const editProduct = (e: any) => {
+    const editProduct = (e: React.SyntheticEvent) => {
         e.preventDefault()
 
         const dataToCheck = [
@@ -64,7 +66,7 @@ const EditProduct = () => {
                 else
                     throw Error(response.statusText);
             })
-            .then(products => dispatch(actions.setProduct(products, 'all')))
+            .then((products: Array<IProduct>) => dispatch(actions.setProduct(products, 'all')))
             .then(() => history.push('/admin/Products'))
         }   
     }
@@ -77,7 +79,7 @@ const EditProduct = () => {
             else
                 throw Error(response.statusText);
         })
-        .then(product => {
+        .then((product: IProduct) => {
             setSource({value: product.source, setted: true})
             setDescription({value: product.description, setted: true, mistakeInformation: []})
             setPrice(product.price)

@@ -2,9 +2,7 @@ import React, {FC} from 'react'
 
 import {Link} from 'react-router-dom'
 
-interface Props {
-    productID: number
-}
+interface Props {productID: number}
 
 const RemoveProductButton:FC<Props> = ({productID}) => {
     return (

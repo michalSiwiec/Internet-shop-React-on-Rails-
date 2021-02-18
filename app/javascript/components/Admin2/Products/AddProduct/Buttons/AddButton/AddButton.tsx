@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-interface Props {addProduct: any}
+interface Props {addProduct: (e: React.SyntheticEvent) => void}
 
 const AddButton:FC<Props> = ({addProduct}) => <button onClick={(e) => addProduct(e)}>Dodaj</button>
 

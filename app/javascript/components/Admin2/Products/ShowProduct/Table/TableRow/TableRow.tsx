@@ -1,5 +1,7 @@
 import React, {FC} from 'react'
 
+import {IProduct} from '../../../../../../../TypeScript/Interfaces/Interfaces'
+
 import ProductTypeColumn from './ProductTypeColumn/ProductTypeColumn'
 import QuantityAvailableColumn from './QuantityAvailableColumn/QuantityAvailableColumn'
 import PriceColumn from './PriceColumn/PriceColumn'
@@ -8,9 +10,7 @@ import SourceColumn from './SourceColumn/SourceColumn'
 import EditProductButton from './EditProductButton/EditProductButton'
 import RemoveProductButton from './RemoveProductButton/RemoveProductButton'
 
-interface Props{
-    product: any,
-}
+interface Props{product: IProduct}
 
 const TableRow:FC<Props> = ({product}) => {
     return (

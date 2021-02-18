@@ -2,13 +2,11 @@ import React, {FC} from 'react'
 
 import {validateDescription} from '../../../../../Helpers/Products/ProductsHelper'
 
+import {IFieldForm} from '../../../../../../TypeScript/Interfaces/Interfaces'
+
 interface Props {
-    description: {
-        value: string,
-        setted: boolean,
-        mistakeInformation: Array<string>
-    },
-    setDescription: any
+    description: IFieldForm,
+    setDescription: (description: IFieldForm) => void
 }
 
 const Description:FC<Props> = ({description, setDescription}) => {

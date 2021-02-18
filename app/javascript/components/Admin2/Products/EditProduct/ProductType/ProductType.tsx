@@ -2,7 +2,7 @@ import React, {FC} from 'react'
 
 interface Props {
     type: string,
-    setType: any
+    setType: (type: string) => void
 }
 
 const ProductType:FC<Props> = ({type, setType}) => {

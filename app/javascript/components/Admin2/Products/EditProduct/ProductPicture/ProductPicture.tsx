@@ -1,8 +1,13 @@
 import React, {FC} from 'react'
 
+interface ProductSource{
+    value: string,
+    setted: boolean
+}
+
 interface Props {
-    setSource: any,
-    source: any
+    setSource: (source: any) => void,
+    source: ProductSource
 }
 
 const ProductPicture:FC<Props> = ({setSource}) => {

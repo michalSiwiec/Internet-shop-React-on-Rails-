@@ -1,13 +1,13 @@
 export interface IReduxState{
     productsReducer: {
-        products: {
+        products: [{
             id: number,
             source: string,
             description: string,
             price: number,
             product_type: string,
             quantity_available: number
-        },
+        }],
         productType: string,
         productsPartVisibility: Array<string>
     },
@@ -93,6 +93,14 @@ export interface IOpinion{
     dataCreated: string
 }
 
+export interface IProduct{
+    description: string,
+    id: number,
+    price: number,
+    product_type: string,
+    quantity_available: number,
+    source: string
+}
 
 export interface IFieldForm{
     value: string,

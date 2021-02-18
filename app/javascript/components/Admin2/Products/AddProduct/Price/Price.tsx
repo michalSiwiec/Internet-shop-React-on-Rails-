@@ -2,7 +2,7 @@ import React, {FC} from 'react'
 
 interface Props {
     price: number,
-    setPrice: any
+    setPrice: (price: number) => void
 }
 
 const Price:FC<Props> = ({price, setPrice}) => {
@@ -12,7 +12,7 @@ const Price:FC<Props> = ({price, setPrice}) => {
                 <input type="number"
                     min="1"
                     step="0.1"
-                    value={price} onChange={(e) => setPrice(e.target.value)}
+                    value={price} onChange={(e) => setPrice(parseInt(e.target.value))}
                     onKeyPress={(e) => e.preventDefault()}
                     onKeyDown={(e) => e.preventDefault()}
                 />

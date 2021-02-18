@@ -1,5 +1,7 @@
 import React, {useEffect} from 'react'
 
+import {IProduct, IReduxState} from '../../../../../../TypeScript/Interfaces/Interfaces'
+
 import {useSelector, useDispatch} from 'react-redux'
 import actions from '../../../../../../redux/products/duck/actions'
 
@@ -7,19 +9,18 @@ import TableHeader from './TableHeader/TableHeader'
 import TableRow from './TableRow/TableRow'
 
 const Table = () => {
-
-    const products = useSelector((state:any) => state.productsReducer.products)
+    const products = useSelector((state: IReduxState) => state.productsReducer.products)
     const dispatch = useDispatch()
 
     useEffect(() => {
-        fetch('/api/v1/products.json',{method: 'GET'})
+        fetch('/api/v1/products',{method: 'GET'})
         .then(response => {
             if(response.ok)
                 return response.json()
             else
                 throw Error(response.statusText);
         })
-        .then((data) => dispatch(actions.setProduct(data, 'all')))
+        .then((products: Array<IProduct>) => dispatch(actions.setProduct(products, 'all')))
     }, [])
 
     return (
