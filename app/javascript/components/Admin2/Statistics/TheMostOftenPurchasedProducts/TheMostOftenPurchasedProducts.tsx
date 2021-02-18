@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react'
+import {ITheMostCommonProduct} from '../../../../../TypeScript/Interfaces/Interfaces'
 
 import {Bar} from 'react-chartjs-2'
 
 const TheMostOftenPurchasedProducts = () => {
-    const [theMostOftenPurchasedProducts, setTheMostOftenPurchasedProducts]: Array<any> = useState([])
+    const [theMostOftenPurchasedProducts, setTheMostOftenPurchasedProducts] = useState<Array<ITheMostCommonProduct>>([])
 
     useEffect(() => {
         fetch("/api/v1/diagrams/get_the_most_often_purchased_product", {method: "GET"})
@@ -11,20 +12,16 @@ const TheMostOftenPurchasedProducts = () => {
             if(response.ok) return response.json()
             else return {info: "Something went wrong!"}
         })
-        .then(theMostOftenPurchasedProducts_ => setTheMostOftenPurchasedProducts(theMostOftenPurchasedProducts_))
+        .then((theMostOftenPurchasedProducts_: Array<ITheMostCommonProduct>) => setTheMostOftenPurchasedProducts(theMostOftenPurchasedProducts_))
     }, [])
 
-    // console.log(theMostOftenPurchasedProducts)
+    const labels: Array<string> = []
+    const quantities: Array<number> = []
 
-    const labels: any = []
-    const quantities: any = []
-
-    theMostOftenPurchasedProducts.forEach((data: any) => {
+    theMostOftenPurchasedProducts.forEach((data) => {
         labels.push(data.label)
         quantities.push(data.quantity)
     })
-
-    // console.log(labels, quantities)
 
     const tenTheMostPruchasesProducts = {
         labels: labels,

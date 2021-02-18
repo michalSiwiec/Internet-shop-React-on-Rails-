@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react'
 
+import {IOpinionsData} from '../../../../../TypeScript/Interfaces/Interfaces'
+
 import {Doughnut} from 'react-chartjs-2'
 
 const OpinionsDiagram = () => {
-    const [opinionsData, setOpinionsData] = useState([])
+    const [opinionsData, setOpinionsData] = useState<Array<IOpinionsData>>([])
 
     useEffect(() => {
         fetch("/api/v1/diagrams/get_relation_between_opinion_mark", {method: "GET"})
@@ -11,19 +13,16 @@ const OpinionsDiagram = () => {
             if(response.ok) return response.json()
             else return {info: "Something went wrong!"}
         })
-        .then(opinionsData_ => setOpinionsData(opinionsData_))
+        .then((opinionsData_: Array<IOpinionsData>) => setOpinionsData(opinionsData_))
     }, [])
 
-    // console.log(opinionsData)
+    const labels: Array<string> = []
+    const persentageOpininsPart: Array<number> = []
 
-    const labels: any = []
-    const persentageOpininsPart: any = []
-
-    opinionsData.forEach((data: any) => {
+    opinionsData.forEach((data) => {
         labels.push(data.label)
         persentageOpininsPart.push(data.percentage)
     })
-
 
     const opinionsDiagramData = {
         labels: labels,

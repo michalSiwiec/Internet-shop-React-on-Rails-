@@ -102,6 +102,27 @@ export interface IProduct{
     source: string
 }
 
+export interface IMonthPrice{
+    month: string,
+    wholeMonthPrice: number
+}
+
+export interface ITheMostCommonProduct{
+    label: string,
+    quantity: number
+}
+
+export interface IOpinionsData{
+    percentage: number,
+    label: string
+}
+
+export interface IMainInfo{
+    property_value: number,
+    label: string
+}
+
+
 export interface IFieldForm{
     value: string,
     setted: boolean,
