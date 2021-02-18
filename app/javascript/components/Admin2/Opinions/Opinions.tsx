@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from 'react'
 
+import {IOpinion} from '../../../../TypeScript/Interfaces/Interfaces'
+
 import Header from './Header/Header'
 import Opinion from './Opinion/Opinion'
 
 const Opinions = () => {
-    const [opinions, setOpinions]: any = useState([])
+    const [opinions, setOpinions] = useState<Array<IOpinion>>([])
 
     useEffect(() => {
         fetch('/api/v1/opinions/', {method: 'GET'})
@@ -14,13 +16,13 @@ const Opinions = () => {
             else
                 throw Error(response.statusText);
         })
-        .then(opinions_ => setOpinions(opinions_))
+        .then((opinions_: Array<IOpinion>) => setOpinions(opinions_))
     }, [])
 
     return (
         <div className="opinions-container">
             <Header />
-            {opinions.map(opinion => <Opinion opinion={opinion} key={`opinion-container ${opinion.dataCreated}`} />)}
+            {opinions.map((opinion: IOpinion) => <Opinion opinion={opinion} key={`opinion-container ${opinion.dataCreated}`} />)}
         </div>
     )
 }

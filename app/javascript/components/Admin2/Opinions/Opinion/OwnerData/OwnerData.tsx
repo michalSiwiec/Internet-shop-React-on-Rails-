@@ -1,6 +1,8 @@
 import React, {FC} from 'react'
 
-interface Props {opinion: any}
+import {IOpinion} from '../../../../../../TypeScript/Interfaces/Interfaces'
+
+interface Props {opinion: IOpinion}
 
 const OwnerData:FC<Props> = ({opinion}) => {
     return (

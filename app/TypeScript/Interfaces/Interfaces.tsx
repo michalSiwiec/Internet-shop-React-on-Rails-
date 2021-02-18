@@ -85,6 +85,14 @@ export interface IUser{
     }
 }
 
+export interface IOpinion{
+    name: string,
+    surname: string,
+    description: string,
+    mark: number,
+    dataCreated: string
+}
+
 
 export interface IFieldForm{
     value: string,
