@@ -2,13 +2,11 @@ import React, {FC} from 'react'
 
 import {validatePasswordConfirmation} from '../../../../../../Helpers/Users/Users'
 
+import {IFieldForm} from '../../../../../../../TypeScript/Interfaces/Interfaces'
+
 interface Props {
-    passwordConfirmation: {
-        value: string,
-        setted: boolean,
-        mistakeInformation: Array<string>
-    },
-    setPasswordConfirmation: any,
+    passwordConfirmation: IFieldForm,
+    setPasswordConfirmation: (confirmation: IFieldForm) => void,
     password: string
 }
 

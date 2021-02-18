@@ -2,13 +2,11 @@ import React, {FC} from 'react'
 
 import {validateSurname} from '../../../../../Helpers/Users/Users'
 
+import {IFieldForm} from '../../../../../../TypeScript/Interfaces/Interfaces'
+
 interface Props {
-    surname: {
-        value: string,
-        setted: boolean,
-        mistakeInformation: Array<string>
-    },
-    setSurname: any
+    surname: IFieldForm,
+    setSurname: (surname: IFieldForm) => void
 }
 
 const Surname:FC<Props> = ({surname, setSurname}) => {

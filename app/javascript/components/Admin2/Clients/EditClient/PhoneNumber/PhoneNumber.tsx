@@ -2,13 +2,11 @@ import React, {FC} from 'react'
 
 import {validatePhoneNumber} from '../../../../../Helpers/Users/Users'
 
+import {IFieldForm} from '../../../../../../TypeScript/Interfaces/Interfaces'
+
 interface Props {
-    phoneNumber: {
-        value: string,
-        setted: boolean,
-        mistakeInformation: Array<string>
-    },
-    setPhoneNumber: any
+    phoneNumber: IFieldForm,
+    setPhoneNumber: (number: IFieldForm) => void
 }
 
 const PhoneNumber:FC<Props> = ({phoneNumber, setPhoneNumber}) => {

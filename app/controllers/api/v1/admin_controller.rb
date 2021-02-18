@@ -21,8 +21,7 @@ module Api
             end
 
             def show
-                admin_id = params[:adminID]
-                admin = Admin.find(admin_id)
+                admin = Admin.find(params[:id])
 
                 render json: {
                     login: admin.dataLogin.login,

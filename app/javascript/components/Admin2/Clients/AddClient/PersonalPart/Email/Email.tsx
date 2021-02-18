@@ -2,13 +2,11 @@ import React, {FC} from 'react'
 
 import {validateEmail} from '../../../../../../Helpers/Users/Users'
 
+import {IFieldForm} from '../../../../../../../TypeScript/Interfaces/Interfaces'
+
 interface Props {
-    email: {
-        value: string,
-        setted: boolean,
-        mistakeInformation: any
-    },
-    setEmail: any
+    email: IFieldForm,
+    setEmail: (email: IFieldForm) => void
 }
 
 const Email:FC<Props> = ({email, setEmail}) => {

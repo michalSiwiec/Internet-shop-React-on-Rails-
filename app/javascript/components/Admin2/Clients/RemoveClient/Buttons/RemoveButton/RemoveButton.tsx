@@ -7,7 +7,7 @@ interface Props{userID: string}
 const RemoveButton:FC<Props> = ({userID}) => {
     const history = useHistory()
 
-    const removeUser = (e: any) => {
+    const removeUser = (e: React.SyntheticEvent) => {
         e.preventDefault()
 
         fetch(`/api/v1/user/${userID}`, {method: 'DELETE'})

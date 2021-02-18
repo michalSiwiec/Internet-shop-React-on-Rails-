@@ -6,7 +6,8 @@ import actions from '../../../../../../redux/admin/actions'
 const LogOutAdminInscription = () => {
     const dispatch = useDispatch()
 
-    const logOutUser = () => dispatch(actions.logOutAdmin())
+    type TlogOutUser = () => {type: string}
+    const logOutUser: TlogOutUser = () => dispatch(actions.logOutAdmin())
     
     return(
         <p onClick={logOutUser}>Wyloguj</p>

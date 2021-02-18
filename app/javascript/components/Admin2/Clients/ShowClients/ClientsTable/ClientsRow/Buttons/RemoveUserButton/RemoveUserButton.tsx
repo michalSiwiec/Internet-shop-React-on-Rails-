@@ -4,9 +4,7 @@ import {Link} from 'react-router-dom'
 
 import '../../../../../../../../../assets/Fontello/fontello-8f6edee7 2/css/fontello.css'
 
-interface Props {
-    userID: number
-}
+interface Props {userID: number}
 
 const RemoveUserButton:FC<Props> = ({userID}) =>  {
     return (

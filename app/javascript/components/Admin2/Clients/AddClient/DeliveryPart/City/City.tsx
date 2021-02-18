@@ -1,12 +1,14 @@
 import React, {FC, useState, useEffect} from 'react'
 
+import {ICity} from '../../../../../../../TypeScript/Interfaces/Interfaces'
+
 interface Props {
-    setCity: any,
+    setCity: (city: string) => void,
     province: string
 }
 
 const City:FC<Props> = ({setCity, province}) => {
-    const [cities, setCities]:any = useState([])
+    const [cities, setCities] = useState<Array<ICity>>([])
 
     useEffect(() => {
         fetch(`/api/v1/cities?province_name=${province}`, {method: 'GET'})
@@ -16,7 +18,7 @@ const City:FC<Props> = ({setCity, province}) => {
             else
                 throw Error(response.statusText);
         })
-        .then(cities_ => setCities(cities_))
+        .then((cities_: Array<ICity>) => setCities(cities_))
     }, [province])
 
     return (

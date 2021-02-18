@@ -1,8 +1,6 @@
 import React, {FC} from 'react'
 
-interface Props {
-    surname: string
-}
+interface Props {surname: string}
 
 const SurnameColumn:FC<Props> = ({surname}) =>  {
     return (

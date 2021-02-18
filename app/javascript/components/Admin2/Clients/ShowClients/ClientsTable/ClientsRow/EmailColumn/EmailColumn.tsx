@@ -1,8 +1,6 @@
 import React, {FC} from 'react'
 
-interface Props {
-    email: string
-}
+interface Props {email: string}
 
 const EmailColumn:FC<Props> = ({email}) =>  {
     return (

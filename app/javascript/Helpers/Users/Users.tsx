@@ -1,4 +1,6 @@
-export const validateLogin = (value: string, setLogin: any, login: any) => {
+import {IFieldForm} from '../../../TypeScript/Interfaces/Interfaces'
+
+export const validateLogin = (value: string, setLogin: (login: IFieldForm) => void, login: IFieldForm) => {
     const req = /^[a-zA-Z0-9]{3,}/
     const copyLogin = {...login}
 
@@ -18,7 +20,7 @@ export const validateLogin = (value: string, setLogin: any, login: any) => {
     setLogin(copyLogin)
 }
 
-export const validatePassword = (value: string, setPassword: any, password: any) => {
+export const validatePassword = (value: string, setPassword: (password: IFieldForm) => void, password: IFieldForm) => {
     const req = /(?=.*[0-9])(?=.*[A-Z])(?=.{8,})/
     const copyPassword = {...password}
 
@@ -38,7 +40,7 @@ export const validatePassword = (value: string, setPassword: any, password: any)
     setPassword(copyPassword)
 }
 
-export const validatePasswordConfirmation = (value: string, setPasswordConfirmation: any, passwordConfirmation: any, password: string) => {
+export const validatePasswordConfirmation = (value: string, setPasswordConfirmation: (confirmation: IFieldForm) => void, passwordConfirmation: IFieldForm, password: string) => {
     const req = /(?=.*[0-9])(?=.*[A-Z])(?=.{8,})/
     const copyPasswordConfirmation = {...passwordConfirmation}
 
@@ -59,7 +61,7 @@ export const validatePasswordConfirmation = (value: string, setPasswordConfirmat
     setPasswordConfirmation(copyPasswordConfirmation)
 }
 
-export const validateName = (value: string, setName: any, name: any) => {
+export const validateName = (value: string, setName: (name: IFieldForm) => void, name: IFieldForm) => {
     const req = /^[A-Z]{1}[a-z]{2,}$/
         const copyName = {...name}
 
@@ -80,7 +82,7 @@ export const validateName = (value: string, setName: any, name: any) => {
         setName(copyName)
 }
 
-export const validateSurname = (value: string, setSurname: any, surname: any) => {
+export const validateSurname = (value: string, setSurname: (surname: IFieldForm) => void, surname: IFieldForm) => {
     const req = /^[A-Z]{1}[a-z]{2,}$/
     const copySurname = {...surname}
 
@@ -101,7 +103,7 @@ export const validateSurname = (value: string, setSurname: any, surname: any) =>
     setSurname(copySurname)
 }
 
-export const validateEmail = (value: string, setEmail: any, email: any) => {
+export const validateEmail = (value: string, setEmail: (email: IFieldForm) => void, email: IFieldForm) => {
     const req = /^[a-zA-Z0-9]{3,}\.[a-zA-Z0-9]{3,}@[a-zA-Z]{2,}\.[a-zA-Z]{2,}/
 
     const copyMail = {...email}
@@ -121,7 +123,7 @@ export const validateEmail = (value: string, setEmail: any, email: any) => {
     setEmail(copyMail)
 }
 
-export const validatePhoneNumber = (value: string, setPhoneNumber: any, phoneNumber: any) => {
+export const validatePhoneNumber = (value: string, setPhoneNumber: (phoneNumber: IFieldForm) => void, phoneNumber: IFieldForm) => {
     const req = /^[0-9]{9}$/
     const copyPhoneNumber = {...phoneNumber}
 
@@ -140,7 +142,7 @@ export const validatePhoneNumber = (value: string, setPhoneNumber: any, phoneNum
     setPhoneNumber(copyPhoneNumber)
 }
 
-export const validateStreet = (value: string, setStreet: any, street: any) => {
+export const validateStreet = (value: string, setStreet: (street: IFieldForm) => void, street: IFieldForm) => {
     const req = /^[A-Z]{1}[a-z]{2,}$/
         const copyStreet = {...street}
 

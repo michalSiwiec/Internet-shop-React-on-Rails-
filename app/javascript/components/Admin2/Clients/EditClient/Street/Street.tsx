@@ -2,13 +2,11 @@ import React, {FC} from 'react'
 
 import {validateStreet} from '../../../../../Helpers/Users/Users'
 
+import {IFieldForm} from '../../../../../../TypeScript/Interfaces/Interfaces'
+
 interface Props {
-    street: {
-        value: string,
-        setted: boolean,
-        mistakeInformation: Array<string>
-    },
-    setStreet: any
+    street: IFieldForm,
+    setStreet: (street: IFieldForm) => void
 }
 
 const Street:FC<Props> = ({street, setStreet}) => {

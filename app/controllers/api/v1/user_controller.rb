@@ -6,13 +6,15 @@ module Api
             def index                
                 users = User.all
                 users_data = []
-
+                
                 users.each do |user|
                     users_data.push({
                         userID: user.id,
-                        deliveryAddres: user.deliveryAddress,
-                        dataLogin: user.dataLogin,
-                        personalData: user.dataPerson
+                        userData: {
+                            deliveryAddresses: user.deliveryAddress,
+                            dataLogins: user.dataLogin,
+                            personalData: user.dataPerson
+                        }
                     })
                 end
 

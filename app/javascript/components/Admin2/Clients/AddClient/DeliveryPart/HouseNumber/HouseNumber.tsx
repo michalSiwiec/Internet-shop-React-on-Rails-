@@ -2,7 +2,7 @@ import React, {FC} from 'react'
 
 interface Props {
     houseNumber: string,
-    setHouseNumber: any
+    setHouseNumber: (houseNumber: string) => void
 }
 
 const HouseNumber:FC<Props> = ({houseNumber, setHouseNumber}) => {

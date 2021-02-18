@@ -2,15 +2,21 @@ import React, {useEffect, useState} from 'react'
 
 import {useParams} from 'react-router-dom'
 
+import {IUser} from '../../../../../TypeScript/Interfaces/Interfaces'
+
 import Header from './Header/Header'
 import Name from './Name/Name'
 import Surname from './Surname/Surname'
 import Buttons from './Buttons/Buttons'
 
-const RemoveClient = () => {
+interface IUserPersonalData{
+    name: string,
+    surname: string
+}
 
+const RemoveClient = () => {
     const {userID} = useParams()
-    const [userPersonalData, setUserPersonalData]: any = useState({
+    const [userPersonalData, setUserPersonalData] = useState<IUserPersonalData>({
         name: '',
         surname: ''
     })
@@ -23,7 +29,7 @@ const RemoveClient = () => {
             else
                 throw Error(response.statusText);
         })
-        .then(user_ => setUserPersonalData({
+        .then((user_: IUser) => setUserPersonalData({
             name: user_.personalData.name,
             surname: user_.personalData.surname
         }))

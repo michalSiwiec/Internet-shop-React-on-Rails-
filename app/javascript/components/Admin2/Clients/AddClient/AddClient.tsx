@@ -23,42 +23,42 @@ const AddClient = () => {
     const [name, setName] = useState({
         value: '',
         setted: false,
-        mistakeInformation: []
+        mistakeInformation: ['']
     })
     const [surname, setSurname] = useState({
         value: '',
         setted: false,
-        mistakeInformation: []
+        mistakeInformation: ['']
     })
     const [email, setEmail] = useState({
         value: '',
         setted: false,
-        mistakeInformation: []
+        mistakeInformation: ['']
     })
     const [phoneNumber, setPhoneNumber] = useState({
         value: '',
         setted: false,
-        mistakeInformation: []
+        mistakeInformation: ['']
     })
     const [login, setlogin] = useState({
         value: '',
         setted: false,
-        mistakeInformation: []
+        mistakeInformation: ['']
     })
     const [password, setPassword] = useState({
         value: '',
         setted: false,
-        mistakeInformation: []
+        mistakeInformation: ['']
     })
     const [street, setStreet] = useState({
         value: '',
         setted: false,
-        mistakeInformation: []
+        mistakeInformation: ['']
     })
     const [passwordConfirmation, setPasswordConfirmation] = useState({
         value: '',
         setted: false,
-        mistakeInformation: []
+        mistakeInformation: ['']
     })
     const [province, setProvince] = useState('Śląskie')
     const [city, setCity] = useState('Gliwice')
@@ -67,7 +67,7 @@ const AddClient = () => {
 
     const history = useHistory()
 
-    const addUser = (e: any) => {
+    const addUser = (e: React.FormEvent<EventTarget>) => {
         e.preventDefault()        
 
         const dataToCheck = [
@@ -104,7 +104,7 @@ const AddClient = () => {
             }
 
             fetch("/api/v1/user/", {
-                method: "post",
+                method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },

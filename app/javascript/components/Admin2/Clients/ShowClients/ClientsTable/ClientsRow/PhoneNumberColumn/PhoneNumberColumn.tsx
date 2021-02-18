@@ -1,8 +1,6 @@
 import React, {FC} from 'react'
 
-interface Props {
-    phoneNumber: string
-}
+interface Props {phoneNumber: string}
 
 const PhoneNumberColumn:FC<Props> = ({phoneNumber}) =>  {
     return (

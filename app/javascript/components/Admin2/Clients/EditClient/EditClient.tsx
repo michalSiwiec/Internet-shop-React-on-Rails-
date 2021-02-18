@@ -4,6 +4,8 @@ import {useParams} from 'react-router-dom'
 
 import {checkDataForm} from '../../../../Helpers/Users/Users'
 
+import {IUser} from '../../../../../TypeScript/Interfaces/Interfaces'
+
 import Header from './Header/Header'
 import Name from './Name/Name'
 import Surname from './Surname/Surname'
@@ -27,51 +29,51 @@ const EditClient = () => {
     const [name, setName] = useState({
         value: '',
         setted: false,
-        mistakeInformation: []
+        mistakeInformation: ['']
     })
     const [surname, setSurname] = useState({
         value: '',
         setted: false,
-        mistakeInformation: []
+        mistakeInformation: ['']
     })
     const [email, setEmail] = useState({
         value: '',
         setted: false,
-        mistakeInformation: []
+        mistakeInformation: ['']
     })
     const [phoneNumber, setPhoneNumber] = useState({
         value: '',
         setted: false,
-        mistakeInformation: []
+        mistakeInformation: ['']
     })
     const [street, setStreet] = useState({
         value: '',
         setted: false,
-        mistakeInformation: []
+        mistakeInformation: ['']
     })
     const [login, setLogin] = useState({
         value: '',
         setted: true,
-        mistakeInformation: []
+        mistakeInformation: ['']
     })
     const [password, setPassword] = useState({
         value: '',
         setted: false,
-        mistakeInformation: []
+        mistakeInformation: ['']
     })
     const [passwordConfirmation, setPasswordConfirmation] = useState({
         value: '',
         setted: false,
-        mistakeInformation: []
+        mistakeInformation: ['']
     })
     const [province, setProvince] = useState('Śląskie')
     const [city, setCity] = useState('Gliwice')
     const [postalCode, setPostalCode] = useState('44 - 119')
-    const [houseNumber, setHouseNumber] = useState('1')
+    const [houseNumber, setHouseNumber] = useState(1)
 
     const history = useHistory()
     
-    const editUser = (e: any) => {
+    const editUser = (e: React.SyntheticEvent) => {
         e.preventDefault()
 
         const dataToCheck = [
@@ -126,7 +128,7 @@ const EditClient = () => {
             else
                 throw Error(response.statusText);
         })
-        .then(user => {
+        .then((user: IUser) => {
             setName({
                 value: user.personalData.name,
                 setted: true,

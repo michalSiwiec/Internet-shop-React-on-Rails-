@@ -2,13 +2,11 @@ import React, {FC} from 'react'
 
 import {validateLogin} from '../../../../../../Helpers/Users/Users'
 
+import {IFieldForm} from '../../../../../../../TypeScript/Interfaces/Interfaces'
+
 interface Props {
-    login: {
-        value: string,
-        setted: boolean,
-        mistakeInformation: Array<string>
-    },
-    setLogin: any
+    login: IFieldForm,
+    setLogin: (login: IFieldForm) => void
 }
 
 const Login:FC<Props> = ({login, setLogin}) => {
