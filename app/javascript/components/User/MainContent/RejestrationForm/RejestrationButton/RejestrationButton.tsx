@@ -2,9 +2,7 @@ import React, {FC} from 'react'
 
 import {Link} from 'react-router-dom'
 
-interface Props {
-    registerUser: any,
-}
+interface Props {registerUser: (e: React.SyntheticEvent) => void}
 
 const RejestrationButton:FC<Props> = ({registerUser}) => {
     return (

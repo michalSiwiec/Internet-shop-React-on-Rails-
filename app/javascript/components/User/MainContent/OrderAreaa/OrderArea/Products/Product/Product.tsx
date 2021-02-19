@@ -1,21 +1,13 @@
 import React, {FC, useState, useRef} from 'react'
 
+import {IProduct, IReduxState} from '../../../../../../../../TypeScript/Interfaces/Interfaces'
+
 import WindowCommunicate from '../../../../../../Communicate/WindowCommunicate'
 
 import actions from '../../../../../../../../redux/basket/duck/actions'
 import {useDispatch, useSelector} from 'react-redux'
 
-interface Props {
-    product: {
-        id: number
-        source: string
-        description: string
-        price: number
-        key_word: string,
-        product_type: string,
-        quantity_available: number
-    }
-}
+interface Props {product: IProduct}
 
 const Product:FC<Props> = ({product}) => {
     // quantity enterd to input
@@ -26,9 +18,9 @@ const Product:FC<Props> = ({product}) => {
     const quantityInput:any = useRef(null)
     const dispatch = useDispatch()
     // product added to basket
-    let productIntoBasket = useSelector((state: any) => state.basketReducer.products.find(product => product.id === product.id))
+    let productIntoBasket = useSelector((state: IReduxState) => state.basketReducer.products.find(product => product.id === product.id))
     // quantity product added to basket
-    let productQuantityIntoBasket;
+    let productQuantityIntoBasket: number;
 
     
     // if basket doesn't include product his quantity is equal 0 otherwise I download this value - I need it to
@@ -51,7 +43,7 @@ const Product:FC<Props> = ({product}) => {
                 else
                     throw Error(response.statusText);
             })
-            .then(product => {
+            .then((product: IProduct) => {
                 const price = product.price
                 dispatch(actions.addProductToBasket(productID, quantity, price))
             })

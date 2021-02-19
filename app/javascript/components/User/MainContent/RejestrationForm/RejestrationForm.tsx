@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 
 import {checkDataForm} from '../../../../Helpers/Users/Users'
 
+import {IFieldForm} from '../../../../../TypeScript/Interfaces/Interfaces'
+
 import FormHeader from './Header/FormHeader'
 import Login from './Login/Login'
 import Password from './Password/Password'
@@ -24,44 +26,45 @@ import actions from '../../../../../redux/user/duck/actions'
 const RejestrationForm = () => {
     const dispatch = useDispatch()
 
-    const [login, setLogin] = useState({
+    const [login, setLogin] = useState<IFieldForm>({
         value: '',
         setted: false,
-        mistakeInformation: []
+        mistakeInformation: ['']
     })
-    const [password, setPassword] = useState({
+    const [password, setPassword] = useState<IFieldForm>({
         value: '',
         setted: false,
-        mistakeInformation: []
+        mistakeInformation: ['']
     })
-    const [passwordConfirmation, setPasswordConfirmation] = useState({
+    const [passwordConfirmation, setPasswordConfirmation] = useState<IFieldForm>({
         value: '',
         setted: false,
-        mistakeInformation: []
+        mistakeInformation: ['']
     })
-    const [name, setName]:Array<any> = useState({
-        value: '',
-        mistakeInformation: []
-    })
-    const [surname, setSurname]:Array<any> = useState({
+    const [name, setName] = useState<IFieldForm>({
         value: '',
         setted: false,
-        mistakeInformation: []
+        mistakeInformation: ['']
     })
-    const [phoneNumber, setPhoneNumber]:Array<any> = useState({
+    const [surname, setSurname] = useState<IFieldForm>({
         value: '',
         setted: false,
-        mistakeInformation: []
+        mistakeInformation: ['']
     })
-    const [email, setEmail]:Array<any> = useState({
+    const [phoneNumber, setPhoneNumber] = useState<IFieldForm>({
         value: '',
         setted: false,
-        mistakeInformation: []
+        mistakeInformation: ['']
     })
-    const [street, setStreet]:Array<any>  = useState({
+    const [email, setEmail] = useState<IFieldForm>({
+        value: '',
+        setted: false,
+        mistakeInformation: ['']
+    })
+    const [street, setStreet] = useState<IFieldForm>({
         value: '', 
         setted: false,
-        mistakeInformation: []
+        mistakeInformation: ['']
     })
 
     const [province, setProvince] = useState('Śląskie')
@@ -69,7 +72,7 @@ const RejestrationForm = () => {
     const [houseNumber, setHouseNumber] = useState('1')
     const [postalCode, setPostalCode] = useState('44 - 119')
 
-    const registerUser = (e: any) => {
+    const registerUser = (e: React.SyntheticEvent) => {
         const dataToCheck = [
             login.setted,
             password.setted,
@@ -116,7 +119,7 @@ const RejestrationForm = () => {
                     else
                         throw Error(response.statusText);
                 })
-                .then(user => dispatch(actions.singInUser(user.user_id)))
+                .then((user: {user_id: number}) => dispatch(actions.singInUser(user.user_id)))
             })
         } else
             e.preventDefault()     

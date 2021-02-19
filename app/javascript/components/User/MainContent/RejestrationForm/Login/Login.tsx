@@ -1,14 +1,12 @@
 import React, {FC} from 'react'
 
+import {IFieldForm} from '../../../../../../TypeScript/Interfaces/Interfaces'
+
 import {validateLogin} from '../../../../../Helpers/Users/Users'
 
 interface Props {
-    login: {
-        value: string,
-        setted: boolean,
-        mistakeInformation: Array<string>
-    },
-    setLogin:any
+    login: IFieldForm,
+    setLogin: (login: IFieldForm) => void
 }
 
 const Login:FC<Props> = ({login, setLogin}) => {
@@ -19,7 +17,7 @@ const Login:FC<Props> = ({login, setLogin}) => {
             </div>
 
             <div className="mistake-information-container">
-                {login.mistakeInformation.map(info => <p key={`Info__${info}`}>{info}</p>)}
+                {login.mistakeInformation.map((info: string) => <p key={`Info__${info}`}>{info}</p>)}
             </div>
         </div>
     )

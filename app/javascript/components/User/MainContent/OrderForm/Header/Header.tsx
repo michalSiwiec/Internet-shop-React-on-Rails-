@@ -1,8 +1,6 @@
 import React, {FC} from 'react'
 
-interface Props {
-    value: string
-}
+interface Props {value: string}
 
 const Header:FC<Props> = ({value}) => {
     return (

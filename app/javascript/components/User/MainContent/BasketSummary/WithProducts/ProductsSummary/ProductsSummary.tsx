@@ -4,8 +4,10 @@ import {useSelector} from 'react-redux'
 
 import {Link} from 'react-router-dom'
 
+import {IReduxState} from '../../../../../../../TypeScript/Interfaces/Interfaces'
+
 const ProductsSummary = () => {
-    const wholePrice = useSelector((state:any) => state.basketReducer.wholePrice)
+    const wholePrice = useSelector((state: IReduxState) => state.basketReducer.wholePrice)
 
     return (
         <div className="summary-part">

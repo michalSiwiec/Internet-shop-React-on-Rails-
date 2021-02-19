@@ -1,9 +1,6 @@
 import React, {FC} from 'react'
 
-interface Props {
-    opinion: string,
-    setOpinion: any
-}
+interface Props {opinion: string, setOpinion: (opinion: string) => void}
 
 const TextArea:FC<Props> = ({opinion, setOpinion}) => {
     return (

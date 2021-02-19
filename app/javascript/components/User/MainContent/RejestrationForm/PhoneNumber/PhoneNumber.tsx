@@ -1,14 +1,12 @@
 import React, {FC} from 'react'
 
+import {IFieldForm} from '../../../../../../TypeScript/Interfaces/Interfaces'
+
 import {validatePhoneNumber} from '../../../../../Helpers/Users/Users'
 
 interface Props {
-    phoneNumber: {
-        value: string,
-        setted: boolean,
-        mistakeInformation: Array<string>
-    },
-    setPhoneNumber:any
+    phoneNumber: IFieldForm,
+    setPhoneNumber: (phoneNumber: IFieldForm) => void
 }
 
 const PhoneNumber:FC<Props> = ({phoneNumber, setPhoneNumber}) => {
@@ -19,7 +17,7 @@ const PhoneNumber:FC<Props> = ({phoneNumber, setPhoneNumber}) => {
             </div>
 
             <div className="mistake-information-container">
-                {phoneNumber.mistakeInformation.map(info => <p key={`info__${info}`}>{info}</p>)}
+                {phoneNumber.mistakeInformation.map((info: string) => <p key={`info__${info}`}>{info}</p>)}
             </div>
         </div>
     )

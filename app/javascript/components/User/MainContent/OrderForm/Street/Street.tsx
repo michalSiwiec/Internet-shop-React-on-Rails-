@@ -1,15 +1,12 @@
 import React, {FC} from 'react'
 
+import {IFieldFormUnmutable} from '../../../../../../TypeScript/Interfaces/Interfaces'
+
 import {validateStreet} from '../../../../../Helpers/Orders/Orders'
 
 interface Props {
-    street: {
-        value: string,
-        setted: boolean,
-        mistakeInformation: Array<string>,
-        unmutable: boolean
-    },
-    setStreet: any
+    street: IFieldFormUnmutable,
+    setStreet: (street: IFieldFormUnmutable) => void
 }
 
 const Street:FC<Props> = ({street, setStreet}) => {
@@ -25,7 +22,7 @@ const Street:FC<Props> = ({street, setStreet}) => {
             />
 
             <div className="mistake-info-container">
-                {street.mistakeInformation.map(info => <span key={`key${info}`}>{info}</span>)}
+                {street.mistakeInformation.map((info: string) => <span key={`key${info}`}>{info}</span>)}
             </div>
         </div>
     )

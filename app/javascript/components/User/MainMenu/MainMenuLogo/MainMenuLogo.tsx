@@ -7,7 +7,9 @@ const MainMenuLogo = () => {
 
     return (
         <div className="logo-container">
-            <Link to="/home"><img src={Logo} alt="Logo" className="logo-container__logo"/></Link>
+            <Link to="/home">
+                <img src={Logo} alt="Logo" className="logo-container__logo"/>
+            </Link>
         </div>
     )
 }

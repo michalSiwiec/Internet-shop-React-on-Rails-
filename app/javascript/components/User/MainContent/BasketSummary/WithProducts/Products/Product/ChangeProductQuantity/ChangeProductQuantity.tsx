@@ -1,13 +1,15 @@
 import React, {FC} from 'react'
 
+import {IProduct} from '../../../../../../../../../TypeScript/Interfaces/Interfaces'
+
 import Quantity from './Quantity/Quantity'
 import Ornament from './Ornament/Ornament'
 import Header from './Header/Header'
 import SummaryPrice from './SummaryPrice/SummaryPrice'
 
 interface Props {
-    product: any
-    updateQuantityProduct: any,
+    product: IProduct
+    updateQuantityProduct: (id: number, quantity: string) => void,
     quantity: number
 }
 

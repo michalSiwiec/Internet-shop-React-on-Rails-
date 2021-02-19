@@ -5,7 +5,7 @@ import Mark from './Mark/Mark'
 
 import "../../../../../../../assets/Fontello/fontello-8f6edee7 2/css/fontello.css"
 
-interface Props {setOpinionMark: any}
+interface Props {setOpinionMark: (opinion: number) => void}
 
 const Marks:FC<Props> = ({setOpinionMark}) =>  {
     return (

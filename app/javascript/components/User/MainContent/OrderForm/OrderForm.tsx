@@ -25,37 +25,34 @@ const OrderForm = () => {
 
     const dispatch = useDispatch()
 
-    // const [partsVisibilities, setPartsVisibilities] = useState(['', 'invisible', 'invisible'])
-    const [partsVisibilities, setPartsVisibilities] = useState(['', '', ''])
-
     const [email, setEmail] = useState({
         value: '',
         setted: false,
-        mistakeInformation: [],
+        mistakeInformation: [''],
         unmutable: false
     })
     const [phoneNumber, setPhoneNumber] = useState({
         value: '',
         setted: false,
-        mistakeInformation: [],
+        mistakeInformation: [''],
         unmutable: false
     })
     const [name, setName] = useState({
         value: '',
         setted: false,
-        mistakeInformation: [],
+        mistakeInformation: [''],
         unmutable: false
     })
     const [surname, setSurname] = useState({
         value: '',
         setted: false,
-        mistakeInformation: [],
+        mistakeInformation: [''],
         unmutable: false
     })
     const [street, setStreet] = useState({
         value: '',
         setted: false,
-        mistakeInformation: [],
+        mistakeInformation: [''],
         unmutable: false
     })
     const [province, setProvince] = useState({
@@ -74,11 +71,11 @@ const OrderForm = () => {
 
     const addOrder = () => {
         const dataToCheck = [
-            email.value,
-            phoneNumber.value,
-            name.value,
-            surname.value,
-            street.value
+            email.setted,
+            phoneNumber.setted,
+            name.setted,
+            surname.setted,
+            street.setted
         ]
 
         if(checkDataForm(dataToCheck)){
@@ -183,19 +180,19 @@ const OrderForm = () => {
     
     return (
         <div className="order-form-container">
-            <div className={`part-container ${partsVisibilities[0]}`}>
+            <div className={'part-container'}>
                 <Header value="Dane kontaktowe" />
                 <Email email={email} setEmail={setEmail} />
                 <PhoneNumber phoneNumber={phoneNumber} setPhoneNumber={setPhoneNumber} />
             </div>
 
-            <div className={`part-container ${partsVisibilities[1]}`}>
+            <div className={'part-container'}>
                 <Header value="Dane osobowe" />
                 <Name name={name} setName={setName} />
                 <Surname surname={surname} setSurname={setSurname} />
             </div>
 
-            <div className={`part-container ${partsVisibilities[2]}`}>
+            <div className={'part-container'}>
                 <Header value="Dane dostawcze" />
                 <Province province={province} setProvince={setProvince} setCity={setCity} />
                 <City city={city} setCity={setCity} province={province.value} />

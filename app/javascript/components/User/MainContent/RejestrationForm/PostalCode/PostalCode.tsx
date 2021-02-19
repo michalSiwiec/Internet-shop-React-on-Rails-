@@ -2,7 +2,7 @@ import React, {FC, useEffect} from 'react'
 
 interface Props {
     city: string,
-    setPostalCode: any,
+    setPostalCode: (postalCode: string) => void,
     postalCode: string
 }
 
@@ -16,7 +16,7 @@ const PostalCode:FC<Props> = ({city, setPostalCode, postalCode}) => {
             else
                 throw Error(response.statusText);
         })
-        .then(data => setPostalCode(data))
+        .then((postalCode_: string) => setPostalCode(postalCode_))
     }
 
     useEffect(() => fetchPostalCode() ,[city])

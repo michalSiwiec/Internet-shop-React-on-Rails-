@@ -1,8 +1,6 @@
 import React, {FC} from 'react'
 
-interface Props {
-    LogIn: any
-}
+interface Props {LogIn: () => void}
 
 const LogInButton:FC<Props> = ({LogIn}) => {
     return (

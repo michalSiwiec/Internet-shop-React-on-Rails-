@@ -3,17 +3,20 @@ import React, {FC} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import actions from '../../../../../../../../redux/basket/duck/actions'
 
+import {IProduct, IReduxState} from '../../../../../../../../TypeScript/Interfaces/Interfaces'
+
 import ChangeProductQuantity from './ChangeProductQuantity/ChangeProductQuantity'
 import ProductDesciription from './ProductDescription/ProductDescription'
 import ProductPicture from './ProductPicture/ProductPicture'
 
-interface Props {product: any, quantity: number}
+interface Props {product: IProduct, quantity: number}
+interface IProductInBasket{id: number, quantity: number}
 
 const Product:FC<Props> = ({product, quantity}) => {
     const dispatch = useDispatch()
-    const productsInBasket = useSelector((state:any) => state.basketReducer.products)
-
-    const removeProductFromBasket = (id:number, quantity:number) => {
+    const productsInBasket: any = useSelector((state: IReduxState) => state.basketReducer.products)
+    
+    const removeProductFromBasket = (id: number, quantity: number) => {
         const URL = `/api/v1/products/${id}`
         const OPTIONS = {method: 'GET'}
         
@@ -24,10 +27,10 @@ const Product:FC<Props> = ({product, quantity}) => {
             else
                 throw Error(response.statusText);
         })
-        .then(product => dispatch(actions.removeProductFromBasket(id, quantity, product.price)))
+        .then((product: IProduct) => dispatch(actions.removeProductFromBasket(id, quantity, product.price)))
     }
 
-    const updateQuantityProduct = (id:number, quantity:string) => {
+    const updateQuantityProduct = (id: number, quantity: string) => {
         const URL = `/api/v1/products/${id}`
         const OPTIONS = {method: 'GET'}
         
@@ -38,9 +41,9 @@ const Product:FC<Props> = ({product, quantity}) => {
             else
                 throw Error(response.statusText);
         })
-        .then(product => {
+        .then((product: IProduct) => {
             const price = product.price
-            const presentProductQuantity = productsInBasket.find(product => product.id === id).quantity
+            const presentProductQuantity = productsInBasket.find((product_: IProductInBasket) => product_.id === id).quantity
             const quantityAddedOrSubstractedProduct = parseInt(quantity) - presentProductQuantity
 
             dispatch(actions.changeProductQuantity(id, quantityAddedOrSubstractedProduct, price))

@@ -2,9 +2,7 @@ import React, {FC} from 'react'
 
 import MainMenuOption from './MainMenuOption/MainMenuOption'
 
-interface Props{
-    isInvisibility:boolean
-}
+interface Props{isInvisibility:boolean}
 
 const MainMenuOptions:FC<Props> = ({isInvisibility}) => {
     return(

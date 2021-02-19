@@ -1,7 +1,7 @@
 import React, {FC} from 'react'
 
 interface Props {
-    setOpinionMark: any,
+    setOpinionMark: (opinionMark: number) => void,
     markValue: number,
     markDescription: string
 }

@@ -1,15 +1,13 @@
 import React, {FC} from 'react'
 
+import {IFieldForm} from '../../../../../../TypeScript/Interfaces/Interfaces'
+
 import {validatePasswordConfirmation} from '../../../../../Helpers/Users/Users'
 
 interface Props {
-    passwordConfirmation: {
-        value: string,
-        setted: boolean,
-        mistakeInformation: Array<string>
-    },
-    password: string
-    setPasswordConfirmation:any,
+    passwordConfirmation: IFieldForm,
+    password: string,
+    setPasswordConfirmation: (passwordConfirmation: IFieldForm) => void
 }
 
 const PasswordConfirmation: FC<Props> = ({passwordConfirmation, password, setPasswordConfirmation}) => {
@@ -23,7 +21,7 @@ const PasswordConfirmation: FC<Props> = ({passwordConfirmation, password, setPas
             </div>
 
             <div className="mistake-information-container">
-                {passwordConfirmation.mistakeInformation.map(info => <p key={`info__${info}`}>{info}</p>)}
+                {passwordConfirmation.mistakeInformation.map((info: string) => <p key={`info__${info}`}>{info}</p>)}
             </div>
         </div>
     )

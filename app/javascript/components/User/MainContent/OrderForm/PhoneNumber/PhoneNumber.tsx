@@ -1,15 +1,12 @@
 import React, {FC, useState, useEffect} from 'react'
 
+import {IFieldFormUnmutable} from '../../../../../../TypeScript/Interfaces/Interfaces'
+
 import {validatePhoneNumber} from '../../../../../Helpers/Orders/Orders'
 
 interface Props {
-    phoneNumber: {
-        value: string,
-        setted: boolean,
-        mistakeInformation: Array<string>,
-        unmutable: boolean
-    },
-    setPhoneNumber: any
+    phoneNumber: IFieldFormUnmutable,
+    setPhoneNumber: (phoneNumber: IFieldFormUnmutable) => void
 }
 
 const PhoneNumber:FC<Props> = ({phoneNumber, setPhoneNumber}) => {
@@ -24,7 +21,7 @@ const PhoneNumber:FC<Props> = ({phoneNumber, setPhoneNumber}) => {
             />
 
             <div className="mistake-info-container">
-                {phoneNumber.mistakeInformation.map(info => <span key={`key${info}`}>{info}</span>)}
+                {phoneNumber.mistakeInformation.map((info: string) => <span key={`key${info}`}>{info}</span>)}
             </div>
         </div>
     )

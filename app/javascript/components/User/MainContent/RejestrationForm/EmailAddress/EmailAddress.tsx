@@ -1,14 +1,12 @@
 import React, {FC} from 'react'
 
+import {IFieldForm} from '../../../../../../TypeScript/Interfaces/Interfaces'
+
 import {validateEmail} from '../../../../../Helpers/Users/Users'
 
 interface Props {
-    email: {
-        value: string,
-        setted: boolean,
-        mistakeInformation: Array<string>
-    },
-    setEmail:any
+    email: IFieldForm,
+    setEmail: (email: IFieldForm) => void
 }
 
 const Email:FC<Props> = ({email, setEmail}) => {
@@ -19,7 +17,7 @@ const Email:FC<Props> = ({email, setEmail}) => {
             </div>
 
             <div className="mistake-information-container">
-                {email.mistakeInformation.map(info => <p key={`info__${info}`}>{info}</p>)}
+                {email.mistakeInformation.map((info: string) => <p key={`info__${info}`}>{info}</p>)}
             </div>
         </div>
     )

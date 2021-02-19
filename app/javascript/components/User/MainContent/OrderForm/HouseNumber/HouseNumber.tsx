@@ -1,11 +1,8 @@
 import React, {FC} from 'react'
 
 interface Props {
-    houseNumber: {
-        value: number,
-        unmutable: boolean
-    },
-    setHouseNumber: any
+    houseNumber: {value: number, unmutable: boolean},
+    setHouseNumber: (houseNumber: {value: number, unmutable: boolean}) => void
 }
 
 const HouseNumber:FC<Props> = ({houseNumber, setHouseNumber}) => {
@@ -17,7 +14,7 @@ const HouseNumber:FC<Props> = ({houseNumber, setHouseNumber}) => {
                     value={houseNumber.value}
                     min="1"
                     disabled={houseNumber.unmutable}
-                    onChange={(e) => setHouseNumber({value: e.target.value, unmutable: houseNumber.unmutable})}
+                    onChange={(e) => setHouseNumber({value: parseInt(e.target.value), unmutable: houseNumber.unmutable})}
                     onKeyPress={(e) => e.preventDefault()}
                     onKeyDown={(e) => e.preventDefault()}
                     className="flat-number"

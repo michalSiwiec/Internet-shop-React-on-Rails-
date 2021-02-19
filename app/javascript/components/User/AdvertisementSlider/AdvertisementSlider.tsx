@@ -1,7 +1,5 @@
 import React from 'react'
 
-// import '../../../../assets/stylesheets/UserContent/AdvertisementSlider/AdvertisementSlider.scss'
-
 const AdvertisementSlider = () => {
     const PNG1 = require('../../../../assets/images/PictureSlider1.jpg')
 

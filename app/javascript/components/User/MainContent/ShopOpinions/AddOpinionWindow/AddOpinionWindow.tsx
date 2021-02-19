@@ -4,10 +4,7 @@ import TextArea from './TextArea/TextArea'
 import Marks from './Marks/Marks'
 import Buttons from './Buttons/Buttons'
 
-interface Props{
-    setWantAddOpinion: any,
-    userID: number
-}
+interface Props{setWantAddOpinion: (wantAddOpinion: boolean) => void, userID: number}
 
 const AddOpinionWindow:FC<Props> = ({setWantAddOpinion, userID}) => {
     const [opinionContent, setOpinionContent] = useState('')

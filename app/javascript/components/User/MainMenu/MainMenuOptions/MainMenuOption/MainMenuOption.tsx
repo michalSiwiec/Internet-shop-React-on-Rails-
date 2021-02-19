@@ -8,7 +8,9 @@ interface Props{
 
 const MainMenuOption:FC<Props> = ({value, path}) => {
    return(
-      <NavLink to={path} activeClassName="active"> <li>{value}</li> </NavLink>
+      <NavLink to={path} activeClassName="active">
+         <li>{value}</li>
+      </NavLink>
    )
 }
 

@@ -2,7 +2,7 @@ import React, {FC} from 'react'
 
 interface Props {
     value: number
-    changeProductsContainer(e:any): void
+    changeProductsContainer(e: React.SyntheticEvent): void
     id: string
 }
 

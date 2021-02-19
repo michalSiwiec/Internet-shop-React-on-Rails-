@@ -1,25 +1,14 @@
-import React, {FC, useState, useEffect} from 'react'
+import React, {FC, useEffect} from 'react'
 
 import {useDispatch} from 'react-redux'
 import productsActions from '../../../../../../../redux/products/duck/actions'
 
+import {IProduct} from '../../../../../../../TypeScript/Interfaces/Interfaces'
+
 import Product from './Product/Product'
 import Switch from './Switch/Switch'
 
-interface Props{
-    products: Array<IProduct>
-    productsPartsVisibility: Array<string>
-}
-
-interface IProduct{
-    id: number
-    source: string
-    description: string
-    price: number
-    key_word: string
-    product_type: string
-    quantity_available: number
-}
+interface Props{products: Array<IProduct>, productsPartsVisibility: Array<string>}
 
 const Products:FC<Props> = ({products, productsPartsVisibility}) => {
     const dispatch = useDispatch()
@@ -36,7 +25,7 @@ const Products:FC<Props> = ({products, productsPartsVisibility}) => {
         dispatch(productsActions.setProductsPartsVisibility(secondaryProductsPartsVisibility))
     },[products.length])   
 
-    const changeProductsContainer = (e:Event) => {
+    const changeProductsContainer = (e: React.SyntheticEvent) => {
         let id = (e.target as HTMLInputElement).id.slice(6)
         const secondaryProductsPartsVisibility = productsPartsVisibility.map(element => element = "inVisibly")
 
@@ -45,9 +34,9 @@ const Products:FC<Props> = ({products, productsPartsVisibility}) => {
     }
     
     const divideOnSubparts = () => {
-        const partsContainers:Array<object> = []
-        const partsProducts:Array<IProduct> = []
-        const switchesProductsContainers:Array<object> = []
+        const partsContainers: Array<object> = []
+        const partsProducts: Array<IProduct> = []
+        const switchesProductsContainers: Array<object> = []
         let counter = 0;
 
         products.forEach((product, index) => {            

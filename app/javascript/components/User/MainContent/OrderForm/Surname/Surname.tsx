@@ -1,15 +1,12 @@
 import React, {FC} from 'react'
 
+import {IFieldFormUnmutable} from '../../../../../../TypeScript/Interfaces/Interfaces'
+
 import {validateSurname} from '../../../../../Helpers/Orders/Orders'
 
 interface Props {
-    surname: {
-        value: string,
-        setted: boolean,
-        mistakeInformation: Array<string>,
-        unmutable: boolean
-    },
-    setSurname: any
+    surname: IFieldFormUnmutable,
+    setSurname: (surname: IFieldFormUnmutable) => void
 }
 
 const Surname:FC<Props> = ({surname, setSurname}) => {
@@ -25,7 +22,7 @@ const Surname:FC<Props> = ({surname, setSurname}) => {
             />
 
             <div className="mistake-info-container">
-                {surname.mistakeInformation.map(info => <span key={`key${info}`}>{info}</span>)}
+                {surname.mistakeInformation.map((info: string) => <span key={`key${info}`}>{info}</span>)}
             </div>
         </div>
     )

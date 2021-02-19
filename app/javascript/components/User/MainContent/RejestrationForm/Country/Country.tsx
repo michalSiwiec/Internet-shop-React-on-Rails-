@@ -1,8 +1,6 @@
-import React, {FC} from 'react'
+import React from 'react'
 
-interface Props {}
-
-const Country:FC<Props> = () => {
+const Country = () => {
     return (
         <div>
             <select disabled>

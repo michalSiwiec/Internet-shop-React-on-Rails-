@@ -5,6 +5,8 @@ import {Redirect} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 import actions from '../../../../../../redux/user/duck/actions'
 
+import {IReduxState} from '../../../../../../TypeScript/Interfaces/Interfaces'
+
 import Ornament from './Ornament/Ornament'
 import Login from './Login/Login'
 import Password from './Password/Password'
@@ -14,7 +16,7 @@ import LogInButton from './LogInButton/LogInButton'
 const SingIn = () =>  {
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
-    const userID = useSelector((state: any) => state.userReducer.user.userID)
+    const userID = useSelector((state: IReduxState) => state.userReducer.user.userID)
     const dispatch = useDispatch()
 
     const LogIn = () => {
@@ -26,7 +28,7 @@ const SingIn = () =>  {
                 else
                     throw Error(response.statusText);
             })
-            .then(user => {
+            .then((user: {userID: number}) => {
                 if(user.userID !== 0)
                     dispatch(actions.singInUser(user.userID))
                 else

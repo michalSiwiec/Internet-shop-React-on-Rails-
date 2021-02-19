@@ -1,9 +1,6 @@
 import React, {FC} from 'react'
 
-interface Props{
-    price: number,
-    quantity: number
-}
+interface Props{price: number, quantity: number}
 
 const SummaryPrice:FC<Props> = ({price, quantity}) => {
     return (

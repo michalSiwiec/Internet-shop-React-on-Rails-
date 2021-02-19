@@ -1,8 +1,6 @@
 import React, {FC} from 'react'
 
-interface Props {
-    showWindow: any
-}
+interface Props {showWindow: () => void}
 
 const AddOpinionButton:FC<Props> = ({showWindow}) => {
     return (

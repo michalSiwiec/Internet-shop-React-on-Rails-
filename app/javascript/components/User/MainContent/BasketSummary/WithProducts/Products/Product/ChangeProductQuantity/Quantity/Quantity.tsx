@@ -1,8 +1,10 @@
 import React, {FC} from 'react'
 
+import {IProduct} from '../../../../../../../../../../TypeScript/Interfaces/Interfaces'
+
 interface Props{
-    product: any,
-    updateQuantityProduct: any,
+    product: IProduct,
+    updateQuantityProduct: (id: number, quantity: string) => void,
     quantity: number
 }
 

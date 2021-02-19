@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react'
 
+import {IReduxState, IUser} from '../../../../../TypeScript/Interfaces/Interfaces'
+
 import {useDispatch, useSelector} from 'react-redux'
 import actions from '../../../../../redux/user/duck/actions'
 
@@ -10,7 +12,7 @@ const LogInWindow = () => {
     const [userData, setUserData] = useState({name: '', surname: ''})
 
     const dispatch = useDispatch()
-    const userID = useSelector((state: any) => state.userReducer.user.userID)
+    const userID = useSelector((state: IReduxState) => state.userReducer.user.userID)
 
     const LogIn = () => {
         if(login !== '' && password !== ''){
@@ -21,7 +23,7 @@ const LogInWindow = () => {
                 else
                     throw Error(response.statusText);
             })
-            .then(user => {
+            .then((user: {userID: number}) => {
                 if(user.userID !== 0){
                     dispatch(actions.singInUser(user.userID))
                     setLogInWindowVisible('unvisible')
@@ -41,7 +43,7 @@ const LogInWindow = () => {
                 else
                     throw Error(response.statusText);
             })
-            .then(user => setUserData({name: user.personalData.name, surname: user.personalData.surname}))
+            .then((user: IUser) => setUserData({name: user.personalData.name, surname: user.personalData.surname}))
         }
     }, [userID])
 

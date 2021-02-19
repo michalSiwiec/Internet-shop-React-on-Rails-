@@ -1,8 +1,10 @@
 import React, {FC} from 'react'
 
+import {IProduct} from '../../../../../../../../../TypeScript/Interfaces/Interfaces'
+
 interface Props {
-    product: any,
-    removeProductFromBasket: any,
+    product: IProduct,
+    removeProductFromBasket: (id: number, quantity: number) => void,
     quantity: number
 }
 

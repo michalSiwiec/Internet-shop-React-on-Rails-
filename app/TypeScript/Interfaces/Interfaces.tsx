@@ -1,21 +1,21 @@
 export interface IReduxState{
     productsReducer: {
-        products: [{
+        products: Array<{
             id: number,
             source: string,
             description: string,
             price: number,
             product_type: string,
             quantity_available: number
-        }],
+        }>
         productType: string,
-        productsPartVisibility: Array<string>
+        productsPartsVisibility: Array<string>
     },
     basketReducer: {
-        products: {
+        products: Array<{
             id: number,
             quantity: number
-        },
+        }>
         wholePrice: number
     },
     adminsReducer: {
@@ -162,5 +162,14 @@ export interface IOrderLogInPerson{
 export interface IFieldForm{
     value: string,
     setted: boolean,
+    mistakeInformation: Array<string>,
+    unmutable?: boolean
+}
+
+// I don't need it because I can use IFieldForm instead of this
+export interface IFieldFormUnmutable{
+    value: string,
+    setted: boolean,
     mistakeInformation: Array<string>
+    unmutable: boolean
 }

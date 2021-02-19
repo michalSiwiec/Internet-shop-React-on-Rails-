@@ -1,12 +1,14 @@
 import React, {FC, useEffect, useState} from 'react'
 
+import {ICity, IProvince} from '../../../../../../TypeScript/Interfaces/Interfaces'
+
 interface Props {
-    setProvince: any,
-    setCity: any,
+    setProvince: (province: string) => void,
+    setCity: (city: string) => void,
 }
 
 const Province:FC<Props> = ({setProvince, setCity}) => {
-    const [provinces, setProvinces] = useState([])
+    const [provinces, setProvinces] = useState<Array<IProvince>>([])
 
     const fetchProvinces = () => {
         fetch('/api/v1/provinces',{method: 'GET'})
@@ -16,7 +18,7 @@ const Province:FC<Props> = ({setProvince, setCity}) => {
             else
                 throw Error(response.statusText);
         })
-        .then(data => setProvinces(data))
+        .then((province_: Array<IProvince>) => setProvinces(province_))
     }
 
     const fetchFirstCity = (province: string) => {
@@ -38,9 +40,9 @@ const Province:FC<Props> = ({setProvince, setCity}) => {
             <select onChange={(e) => {
                 setProvince(e.target.value)
                 fetchFirstCity(e.target.value)
-                .then((data:any) => setCity(data.name))
+                .then((city: ICity) => setCity(city.name))
             }}>
-                {provinces.map((province:any) => <option key={`${province.id}`}>{province.name}</option>)}
+                {provinces.map((province: IProvince) => <option key={`${province.id}`}>{province.name}</option>)}
             </select>
         </div>
     )

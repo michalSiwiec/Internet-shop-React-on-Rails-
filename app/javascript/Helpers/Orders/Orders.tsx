@@ -1,4 +1,4 @@
-export const checkDataForm = (datasToCheck:any) => {
+export const checkDataForm = (datasToCheck:Array<boolean>) => {
     let allFieldsSetted = true
 
     datasToCheck.forEach(data => {
