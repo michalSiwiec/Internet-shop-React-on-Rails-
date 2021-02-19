@@ -1,10 +1,17 @@
 import React, {useEffect, useState} from 'react'
 
+import {IPersonalData} from '../../../../../../TypeScript/Interfaces/Interfaces'
+
 import TableHeader from './TableHeader/TableHeader'
 import TableRow from './TableRow/TableRow'
 
+interface IUsersWithOrders{
+    dataPerson: IPersonalData,
+    userID: number
+}
+
 const Table = () => {
-    const [usersWithOrders, setUsersWithOrders]: any = useState([])
+    const [usersWithOrders, setUsersWithOrders] = useState<Array<IUsersWithOrders>>([])
 
     useEffect(() => {
         fetch('/api/v1/user/get_log_in_users_with_orders', {method: 'GET'})
@@ -14,10 +21,8 @@ const Table = () => {
             else
                 throw Error(response.statusText);
         })
-        .then(usersWithOrders_ => setUsersWithOrders(usersWithOrders_))
+        .then((usersWithOrders_: Array<IUsersWithOrders>) => setUsersWithOrders(usersWithOrders_))
     }, [])
-
-    console.log(usersWithOrders)
 
     return (
         <table>
@@ -30,7 +35,7 @@ const Table = () => {
             </thead>
 
             <tbody>
-                {usersWithOrders.map((userWithOrder: any) => {
+                {usersWithOrders.map((userWithOrder: IUsersWithOrders) => {
                     return(
                         <tr key={`tr-user${userWithOrder.userID}`}>
                             <TableRow value={userWithOrder.dataPerson.name} />

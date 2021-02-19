@@ -1,8 +1,10 @@
 import React, {FC} from 'react'
 
+import {IOrderLogOutPerson} from '../../../../../../../TypeScript/Interfaces/Interfaces'
+
 import {Link} from 'react-router-dom'
 
-interface Props {order: any}
+interface Props {order: IOrderLogOutPerson}
 
 const TableRow:FC<Props> = ({order}) => {
     return (

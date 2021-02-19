@@ -32,6 +32,44 @@ export interface IReduxState{
     }
 }
 
+export interface IDeliveryAddress{
+    city: string,
+    country: string,
+    house_number: number,
+    id?: number,
+    order_id?: number | null,
+    postal_code: string,
+    province: string,
+    street: string,
+    user_id?: number | null
+}
+
+export interface IDataLogin{
+    admin_id?: number | null,
+    id?: number,
+    login: string,
+    password: string,
+    user_id?: number | null
+}
+
+export interface IPersonalData{
+    admin_id?: number | null,
+    email: string,
+    id?: number | null,
+    name: string,
+    order_id?: number | null,
+    phone_number: string,
+    surname: string
+    user_id?: number | null
+}
+
+export interface IOrderDetails{
+    product_description: string,
+    product_price: number,
+    quantity: number
+}
+
+// I should use here interfaces DataLogin and DataPerson
 export interface IAdmin{
     login: string,
     password: string,
@@ -51,40 +89,15 @@ export interface ICity{
     name: string,
     province_id: number,
     postal_code: string,
-    other: boolean
 }
 
 export interface IUser{
-    dataLogins: {
-        admin_id: null,
-        id: number,
-        login: string,
-        password: string,
-        user_id: number
-    },
-    deliveryAddresses: {
-        city: string,
-        country: string,
-        house_number: number,
-        id: number,
-        order_id: null,
-        postal_code: string,
-        province: string,
-        street: string,
-        user_id: number
-    },
-    personalData: {
-        admin_id: null,
-        email: string,
-        id: number,
-        name: string,
-        order_id: null,
-        phone_number: string,
-        surname: string
-        user_id: number
-    }
+    dataLogins: IDataLogin,
+    deliveryAddresses: IDeliveryAddress,
+    personalData: IPersonalData
 }
 
+// Why I don't use hee interface DataPerson if user has opinion?
 export interface IOpinion{
     name: string,
     surname: string,
@@ -120,6 +133,29 @@ export interface IOpinionsData{
 export interface IMainInfo{
     property_value: number,
     label: string
+}
+
+export interface ICommonOrder{
+    data_created: string,
+    data_person: IPersonalData,
+    delivery_address: IDeliveryAddress,
+    order_details: Array<IOrderDetails>
+    order_price: number
+}
+
+export interface IOrderLogOutPerson{
+    dataCreated: string,
+    dataPerson: IPersonalData,
+    deliveryAddress: IDeliveryAddress,
+    details: Array<IOrderDetails>,
+    orderID: number,
+    orderPrice: number
+}
+
+export interface IOrderLogInPerson{
+    dataCreated: string,
+    details: Array<IOrderDetails>,
+    orderPrice: number
 }
 
 

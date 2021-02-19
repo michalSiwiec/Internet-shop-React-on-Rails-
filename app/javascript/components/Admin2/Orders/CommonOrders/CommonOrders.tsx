@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 
 import {useParams} from 'react-router-dom'
 
+import {ICommonOrder} from '../../../../../TypeScript/Interfaces/Interfaces'
+
 import '../../../../../assets/stylesheets/Admin2/Orders/CommonOrder/CommonOrder.scss'
 
 import Header from './Header/Header'
@@ -10,33 +12,9 @@ import OrderDetails from './OrderDetails/OrderDetails'
 import PersonalData from './PersonalData/PersonalData'
 import Buttons from './Buttons/Buttons'
 
-interface Order {
-    data_created: string,
-    data_person: {
-        name: string,
-        surname: string,
-        email: string,
-        phone_number: string
-    },
-    delivery_address: {
-        country: string,
-        city: string,
-        house_number: number,
-        postal_code: string,
-        province: string,
-        street: string
-    },
-    order_details: Array<{
-        product_description: string,
-        product_price: number,
-        quantity: number
-    }>
-    order_price: number
-}
-
 const CommonOrders = () => {
     const {orderID} = useParams()
-    const [order, setOrder] = useState<Order>({
+    const [order, setOrder] = useState<ICommonOrder>({
         data_created: '',
         data_person: {
             name: '',
@@ -56,6 +34,8 @@ const CommonOrders = () => {
         order_price: 0
     })
 
+    console.log(order)
+
     useEffect(() => {
         fetch(`/api/v1/orders/${orderID}`, {method: 'GET'})
         .then(response => {
@@ -64,7 +44,7 @@ const CommonOrders = () => {
             else
                 throw Error(response.statusText);
         })
-        .then(order_ => setOrder(order_))
+        .then((order_: ICommonOrder) => setOrder(order_))
     }, [])
 
     return (

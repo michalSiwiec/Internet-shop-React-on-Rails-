@@ -1,9 +1,11 @@
 import React, {FC} from 'react'
 
+import {IDeliveryAddress} from '../../../../../../TypeScript/Interfaces/Interfaces'
+
 import Header from './Header/Header'
 import InfoField from './InfoField/InfoField'
 
-interface Props {deliveryAddress: any}
+interface Props {deliveryAddress: IDeliveryAddress}
 
 const DeliveryAddress:FC<Props> = ({deliveryAddress}) => {
     return (

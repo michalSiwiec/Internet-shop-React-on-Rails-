@@ -4,7 +4,7 @@ module Api
             skip_before_action :verify_authenticity_token
 
             def show
-                order_id = params[:orderID]
+                order_id = params[:id]
 
                 order = Order.find(order_id)
                 data_person = order.dataPerson

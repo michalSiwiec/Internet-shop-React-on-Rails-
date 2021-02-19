@@ -1,8 +1,6 @@
 import React, {FC} from 'react'
 
-interface Props {
-    orderPrice: any
-}
+interface Props {orderPrice: number}
 
 const OrderSummary:FC<Props> = ({orderPrice}) => {
     return(

@@ -1,8 +1,10 @@
 import React, {FC} from 'react'
 
+import {IOrderDetails} from '../../../../../../../TypeScript/Interfaces/Interfaces'
+
 import InfoField from './InfoField/InfoField'
 
-interface Props {orderDetail: any}
+interface Props {orderDetail: IOrderDetails}
 
 const OrderDetail:FC<Props> = ({orderDetail}) => {
     return (
