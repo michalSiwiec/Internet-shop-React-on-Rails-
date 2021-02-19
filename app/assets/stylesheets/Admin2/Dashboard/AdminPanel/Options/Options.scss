@@ -32,7 +32,7 @@
     }
 
     .orders-container{
-        background-image: url("../../../../images/Orders-adminPanel.jpg");
+        background-image: url("../../../../../images/Orders-adminPanel.jpg");
 
         .overlay--bottom{
             width: 100%;
@@ -52,7 +52,7 @@
     }
 
     .statistics-container{
-        background-image: url("../../../../images/Statisticks-adminPanel.jpeg");
+        background-image: url("../../../../../images/Statisticks-adminPanel.jpeg");
         overflow: hidden;
         transition: transform, 1s;
 
@@ -81,7 +81,7 @@
     }
 
     .clients-container{
-        background-image: url("../../../../images/Clients-adminPanel.jpg");
+        background-image: url("../../../../../images/Clients-adminPanel.jpg");
 
         .overlay--full{
             width: 100%;
@@ -117,7 +117,7 @@
     }
 
     .products-container{
-        background-image: url("../../../../images/Products-adminPanel.jpg");
+        background-image: url("../../../../../images/Products-adminPanel.jpg");
 
         .overlay--full{
             width: 100%;
@@ -153,7 +153,7 @@
     }
 
     .opinion-container{
-        background-image: url("../../../../images/Opinions-adminPanel.jpg");
+        background-image: url("../../../../../images/Opinions-adminPanel.jpg");
 
         .overlay--full{
             width: 100%;
@@ -174,8 +174,6 @@
             }
 
             .info-container{
-                // background-color:purple;
-
                 span{
                     color: white;
                     font-size: 33px;

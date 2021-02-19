@@ -2,7 +2,7 @@ import React from 'react'
 
 import {Link} from 'react-router-dom'
 
-import '../../../../../assets/stylesheets/Admin2/Dashboard/Options/Options.scss'
+import '../../../../../../assets/stylesheets/Admin2/Dashboard/AdminPanel/Options/Options.scss'
 
 const Options = () => {
     return (

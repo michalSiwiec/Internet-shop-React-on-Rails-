@@ -1,0 +1,30 @@
+.log-in-panel-container{
+    width: 70%;
+    min-height: 400px;
+    background-color: saddlebrown;
+
+    .log-in-header{
+        margin: 5px 0px 25px;
+    }
+
+    .input-container{
+        margin: 20px 0px;
+        border: 2px solid black;
+
+        &__label{
+            font-size: 16px;
+        }
+
+        &__input{
+            padding: 5px 12px;
+            font-size: 18px;
+        }
+    }
+
+    .log-in-button-container{
+        &__button{
+            padding: 5px 12px;
+            background-color: red;
+        }
+    }
+}

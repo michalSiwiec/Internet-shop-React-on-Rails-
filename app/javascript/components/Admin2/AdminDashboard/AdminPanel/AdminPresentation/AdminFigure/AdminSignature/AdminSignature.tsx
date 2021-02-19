@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 
-import {IReduxState, IAdmin} from '../../../../../../../TypeScript/Interfaces/Interfaces'
+import {IReduxState, IAdmin} from '../../../../../../../../TypeScript/Interfaces/Interfaces'
 
 import {useSelector} from 'react-redux'
 
@@ -25,7 +25,7 @@ const AdminSignature = () => {
             else
                 throw Error(response.statusText);
         })
-        .then(admin => setAdmin(admin))
+        .then((admin: IAdmin) => setAdmin(admin))
     }, [])
 
     return(

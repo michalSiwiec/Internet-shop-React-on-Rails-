@@ -1,14 +1,13 @@
 import React from 'react'
 
 import {useDispatch} from 'react-redux'
-import actions from '../../../../../../redux/admin/actions'
+import actions from '../../../../../../../redux/admin/actions'
 
 const LogOutAdminInscription = () => {
     const dispatch = useDispatch()
 
-    type TlogOutUser = () => {type: string}
-    const logOutUser: TlogOutUser = () => dispatch(actions.logOutAdmin())
-    
+    const logOutUser = () => dispatch(actions.logOutAdmin())
+
     return(
         <p onClick={logOutUser}>Wyloguj</p>
     )
