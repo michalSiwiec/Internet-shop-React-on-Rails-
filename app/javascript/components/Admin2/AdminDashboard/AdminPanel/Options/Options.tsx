@@ -9,7 +9,7 @@ const Options = () => {
         <div className="options-container">
             <div className="option-container bigger-container orders-container">
                 <div className="overlay overlay--bottom">
-                    <h3>Sledz zamówienia aby być zawsze na bieząco!</h3>
+                    <h3>Sledz zamóswienia aby być zawsze na bieząco!</h3>
                     <Link to="/admin/Orders"><span>Wejsdz!</span></Link>
                 </div>
             </div>

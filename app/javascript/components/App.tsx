@@ -8,6 +8,7 @@ import AdvertisementSlider from './User/AdvertisementSlider/AdvertisementSlider'
 import MainContent from './User/MainContent/MainContent';
 import MainFooter from './User/MainFooter/MainFooter';
 
+
 const App = () => {
     return(
         <div> 

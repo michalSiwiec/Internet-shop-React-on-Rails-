@@ -11,34 +11,33 @@ import Products from './Products/Products'
 
 const Admin2 = () => {
     return (
-        <div className="admin-panel-container">
-            <Switch>
-                <Route path="/admin/Orders">
-                    <Orders />
-                </Route>
+        <Switch>
+            <Route path="/admin/Orders">
+                <Orders />
+            </Route>
 
-                <Route path="/admin/Statistics">
-                    <Statistics />
-                </Route>
+            <Route path="/admin/Statistics">
+                <Statistics />
+            </Route>
 
-                <Route path="/admin/Users">
-                    <Clients />
-                </Route>
+            <Route path="/admin/Users">
+                <Clients />
+            </Route>
 
-                <Route path="/admin/Products">
-                    <Products />
-                </Route>
+            <Route path="/admin/Products">
+                <Products />
+            </Route>
 
-                <Route path="/admin/Opinions">
-                    <Opinions />
-                </Route>
+            <Route path="/admin/Opinions">
+                <Opinions />
+            </Route>
 
-                <Route path="/admin/">
-                    <AdminDashboard />
-                </Route>
-            </Switch>       
-        </div>
+            <Route path="/admin/">
+                <AdminDashboard />
+            </Route>
+        </Switch>       
     )
+
 }
 
 export default Admin2

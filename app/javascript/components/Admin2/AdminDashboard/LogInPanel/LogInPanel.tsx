@@ -17,7 +17,7 @@ const LogInPanel = () => {
 
     const logInAdmin = () => {
         if(login !== "" && password !== ""){
-            fetch(`api/v1/admins/log_in_admin?login=${login}&password=${password}`)
+            fetch(`/api/v1/admins/log_in_admin?login=${login}&password=${password}`, {method: 'GET'})
             .then(response => {
                 if(response.ok)
                     return response.json()
@@ -34,10 +34,12 @@ const LogInPanel = () => {
 
     return (
         <div className="log-in-panel-container">
-            <Header />
-            <Login login={login} setLogin={setLogin} />
-            <Password password={password} setPassword={setPassword} />
-            <Button logInAdmin={logInAdmin} />
+            <div className="log-in-panel">
+                <Header />
+                <Login login={login} setLogin={setLogin} />
+                <Password password={password} setPassword={setPassword} />
+                <Button logInAdmin={logInAdmin} />
+            </div>
         </div>
     )
 }
