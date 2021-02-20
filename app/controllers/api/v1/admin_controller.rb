@@ -14,9 +14,9 @@ module Api
                 )
                 
                 if admin.present?
-                    render json: admin
+                    render json: admin[0]
                 else
-                    render json: [{id: 0}]
+                    render json: {id: 0}
                 end
             end
 

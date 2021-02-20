@@ -7,13 +7,14 @@ import '../../../../../../assets/stylesheets/Admin2/Dashboard/AdminPanel/Options
 const Options = () => {
     return (
         <div className="options-container">
-            <div className="option-container bigger-container orders-container">
+            {/* <div className="option-container bigger-container orders-container">
                 <div className="overlay overlay--bottom">
                     <h3>Sledz zamóswienia aby być zawsze na bieząco!</h3>
                     <Link to="/admin/Orders"><span>Wejsdz!</span></Link>
                 </div>
             </div>
 
+            
 
             <div className="option-container bigger-container statistics-container">    
                 <div className="overlay overlay--full">
@@ -58,7 +59,7 @@ const Options = () => {
                         <Link to="/admin/Opinions"><span>Opinie</span></Link>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

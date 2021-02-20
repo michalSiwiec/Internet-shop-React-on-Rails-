@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 
-import {IReduxState, IAdmin} from '../../../../../../../../TypeScript/Interfaces/Interfaces'
+import {IReduxState, IAdmin} from '../../../../../../../../../TypeScript/Interfaces/Interfaces'
 
 import {useSelector} from 'react-redux'
 
@@ -29,7 +29,7 @@ const AdminSignature = () => {
     }, [])
 
     return(
-        <figcaption>{`${admin.name} ${admin.surname}`}</figcaption>
+        <figcaption className="figure__figcaption">{`${admin.name} ${admin.surname}`}</figcaption>
     )
 }
 

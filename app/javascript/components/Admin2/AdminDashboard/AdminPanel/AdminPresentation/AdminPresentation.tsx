@@ -1,21 +1,15 @@
 import React from 'react'
 
-import Header from './Header/Header'
-import AdminFigure from './AdminFigure/AdminFigure'
-import LogOutAdminInscription from './LogOutAdminInscription/LogOutAdminInscription'
+import FigurePart from './FigurePart/FigurePart'
+import DescriptionPart from './DescriptionPart/DescriptionPart'
+
+import '../../../../../../assets/stylesheets/Admin2/Dashboard/AdminPanel/AdminPresentation/AdminPresentation.scss'
 
 const AdminPresentation= () => {
     return (
         <div className="admin-presentation-container">
-            <div className="left-part">
-                <Header />
-                <AdminFigure />
-                <LogOutAdminInscription />
-            </div>
-
-            <div className="right-part">
-                <h1>Admin Panesl</h1>
-            </div>
+            <FigurePart />
+            <DescriptionPart />
         </div>
     )
 }

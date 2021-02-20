@@ -25,7 +25,12 @@ const LogInPanel = () => {
                     throw Error(response.statusText);
             })
             .then((admin: {id: number}) => {
-                dispatch(actions.logInAdmin(admin.id))
+                const id = admin.id
+
+                if(id !== 0)
+                    dispatch(actions.logInAdmin(id))
+                else
+                    alert("Niee ma takiego admina!")
             })
         }
         else

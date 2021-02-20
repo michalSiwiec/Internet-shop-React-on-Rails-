@@ -5,7 +5,7 @@ import AdminSignature from './AdminSignature/AdminSignature'
 
 const AdminFigure = () => {
     return(
-        <figure>
+        <figure className="figure">
             <AdminPicture />
             <AdminSignature />
         </figure>
@@ -13,3 +13,4 @@ const AdminFigure = () => {
 }
 
 export default AdminFigure
+

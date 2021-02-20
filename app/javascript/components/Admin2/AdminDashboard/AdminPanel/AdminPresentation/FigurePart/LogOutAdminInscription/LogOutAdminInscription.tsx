@@ -1,7 +1,7 @@
 import React from 'react'
 
 import {useDispatch} from 'react-redux'
-import actions from '../../../../../../../redux/admin/actions'
+import actions from '../../../../../../../../redux/admin/actions'
 
 const LogOutAdminInscription = () => {
     const dispatch = useDispatch()
@@ -9,7 +9,7 @@ const LogOutAdminInscription = () => {
     const logOutUser = () => dispatch(actions.logOutAdmin())
 
     return(
-        <p onClick={logOutUser}>Wyloguj</p>
+        <p onClick={logOutUser} className="log-out">Wyloguj</p>
     )
 }
 

@@ -12,7 +12,8 @@ const AdminDashboard = () => {
 
     return (
         <>
-            {adminID !== 0 ? <AdminPanel /> : <LogInPanel />}
+            {/* {adminID !== 0 ? <AdminPanel /> : <LogInPanel />} */}
+            <AdminPanel />
         </>
     )
 }
