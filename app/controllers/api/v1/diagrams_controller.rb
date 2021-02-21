@@ -37,23 +37,23 @@ module Api
 
                 opinions_details_marks = [
                     {
-                        percentage: (mark1_quantity / marks_quantity) * 100,
+                        percentage: ((mark1_quantity / marks_quantity) * 100).round(2),
                         label: "Bardzo słaby"
                     },
                     {
-                        percentage: (mark2_quantity / marks_quantity) * 100,
+                        percentage: ((mark2_quantity / marks_quantity) * 100).round(2),
                         label: "Słaby"
                     },
                     {
-                        percentage: (mark3_quantity / marks_quantity) * 100,
+                        percentage: ((mark3_quantity / marks_quantity) * 100).round(2),
                         label: "Sredni"
                     },
                     {
-                        percentage: (mark4_quantity / marks_quantity) * 100,
+                        percentage: ((mark4_quantity / marks_quantity) * 100).round(2),
                         label: "Dobry"
                     },
                     {
-                        percentage: (mark5_quantity / marks_quantity) * 100,
+                        percentage: ((mark5_quantity / marks_quantity) * 100).round(2),
                         label: "Bardzo dobry"
                     }
                 ]
@@ -106,11 +106,11 @@ module Api
 
                 general_info_details = [
                     {
-                        property_value: average_quantity_orders_on_mont,
+                        property_value: average_quantity_orders_on_mont.round(2),
                         label: "Srednia ilość zamówień na miesiąc"
                     },
                     {
-                        property_value: orders_average_price,
+                        property_value: orders_average_price.round(2),
                         label: "Srednia cena zamówienia"
                     },
                 ]

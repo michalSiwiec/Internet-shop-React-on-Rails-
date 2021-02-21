@@ -87,8 +87,9 @@ const TheMostOftenPurchasedProducts = () => {
 
 
     return (
-        <div className="the-most-often-purchased-products-container">
+        <div className="presentation-data-container">
             <Bar data={tenTheMostPruchasesProducts} />
+            <h4 className="presentation-data-container__title">Najczęściej kupowane produkty</h4>
         </div>
     )
 }

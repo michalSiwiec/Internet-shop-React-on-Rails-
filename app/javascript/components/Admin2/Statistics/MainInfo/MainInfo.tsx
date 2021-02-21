@@ -15,12 +15,14 @@ const MainInfo = () => {
     }, [])
 
     return (
-        <div className="main-info-diagram-container">
+        <div className="presentation-data-container">
             {mainInfos.map((mainInfo) => {
                 return(
-                    <div key={`mainInfoContainer ${mainInfo.label}`}>
-                        <p>{mainInfo.label}</p>
-                        <span>{mainInfo.property_value}</span>
+                    <div className="main-info-container" key={`mainInfoContainer ${mainInfo.label}`}>
+                        <p className="main-info-container__info-p">
+                            {mainInfo.label}
+                            <span className="main-info-container__info-span">{mainInfo.property_value}</span>
+                        </p>
                     </div>
                 )
             })}

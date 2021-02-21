@@ -39,8 +39,9 @@ const WholeMonthPriceDiagram = () => {
     }
 
     return (
-        <div className="whole-moth-price-diagram-container">
+        <div className="presentation-data-container">
             <Line data={wholeMonthPriceData} />
+            <h4 className="presentation-data-container__title">Średnia cena zamówienia</h4>
         </div>
     )
 }

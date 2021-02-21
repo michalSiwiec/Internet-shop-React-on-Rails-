@@ -1,39 +1,45 @@
+@import '../../Variables/Variables.scss';
+
 .statistics-container{
-    // height: 400px;
     padding: 50px 0px;
-    background-color: white;
+    background: $main-admin-panel-bcg-color;
+    border: 2px solid black;
 
-    h2{
-        
+    &__header{
+        text-align: center;
+        margin: 20px 20px 50px;
     }
 
-    .opinions-diagram-container{
-        width: 70%;
-        // display: flex;
-        // justify-content: center;
-        // height: 100vh;
-        // background-color: yellow;
-        margin: 25px 0px;
-    }
+    .presentation-data-container{
+        @media only screen and (max-width: $small-screen-width) {
+            width: 85%;
+        }
 
-    .whole-moth-price-diagram-container{
-        width: 70%;
-        margin: 25px 0px;
-        // height: 400px;
-        // height: 100vh;
-        // background-color: black;
-    }   
+        @media only screen and (max-width: $medium-screen-width) and (min-width: $small-screen-width){
+            width: 75%;
+        }
 
-    .main-info-diagram-container{
-        width: 100%;
-        margin: 25px 0px;
-        
-        // height: 100vh;
-        // background-color: blue;
-    }
+        @media only screen and (max-width: $large-screen-width) and (min-width: $medium-screen-width){
+            width: 65%;
+        }
 
-    .the-most-often-purchased-products-container{
-        width: 70%;
-        margin: 25px 0px;
+        @media only screen and (min-width: $large-screen-width){
+            width: 55%;
+            max-width: 850px;
+        }
+
+        margin: 50px auto;
+
+        .main-info-container{
+            
+            &__info-span{
+                padding-left: 7px;
+            }
+        }
+
+        &__title{
+            text-align: center;
+            padding: 30px 0px;
+        }
     }
 }

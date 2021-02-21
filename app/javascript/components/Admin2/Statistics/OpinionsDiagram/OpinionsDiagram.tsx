@@ -63,8 +63,9 @@ const OpinionsDiagram = () => {
     }
 
     return (
-        <div className="opinions-diagram-container">
+        <div className="presentation-data-container">
             <Doughnut data={opinionsDiagramData} />
+            <h4 className="presentation-data-container__title">Opinie uzytkowników</h4>
         </div>
     )
 }
