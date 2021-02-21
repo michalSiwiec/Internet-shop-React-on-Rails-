@@ -28,3 +28,4 @@ const Opinions = () => {
 }
 
 export default Opinions
+

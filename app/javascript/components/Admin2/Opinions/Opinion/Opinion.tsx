@@ -1,5 +1,6 @@
 import React, {FC} from 'react'
 
+
 import OwnerData from './OwnerData/OwnerData'
 import Description from './Description/Description'
 
