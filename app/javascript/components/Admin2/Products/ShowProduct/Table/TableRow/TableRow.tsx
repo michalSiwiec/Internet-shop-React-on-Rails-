@@ -7,8 +7,7 @@ import QuantityAvailableColumn from './QuantityAvailableColumn/QuantityAvailable
 import PriceColumn from './PriceColumn/PriceColumn'
 import DescriptionColumn from './DescriptionColumn/DescriptionColumn'
 import SourceColumn from './SourceColumn/SourceColumn'
-import EditProductButton from './EditProductButton/EditProductButton'
-import RemoveProductButton from './RemoveProductButton/RemoveProductButton'
+import Buttons from './Buttons/Buttons'
 
 interface Props{product: IProduct}
 
@@ -20,10 +19,7 @@ const TableRow:FC<Props> = ({product}) => {
             <PriceColumn price={product.price}/>
             <QuantityAvailableColumn quantity_available={product.quantity_available}/>
             <ProductTypeColumn product_type={product.product_type}/>
-            <td>
-                <EditProductButton productID = {product.id}/>
-                <RemoveProductButton productID={product.id}/>
-            </td>
+            <Buttons id={product.id} />
         </tr>
     )
 }

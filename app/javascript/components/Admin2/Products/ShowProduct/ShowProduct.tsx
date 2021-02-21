@@ -7,8 +7,11 @@ import Table from './Table/Table'
 const ShowProduct = () => {
     return (
         <div className="product-list-container">
-            <Header />
-            <AddProductButton />
+            <div className="top-bar-container">
+                <Header />
+                <AddProductButton />
+            </div>
+            
             <Table />
         </div>
     )

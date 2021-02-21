@@ -7,9 +7,7 @@ interface Props {productID: number}
 const EditProductButton:FC<Props> = ({productID}) => {
     return (
         <Link to={`/admin/Products/editProduct/${productID}`}>
-            <div>
-                <button className="edit-button">Edytuj</button>
-            </div>
+            <button className="table__td__edit-button">Edytuj</button>
         </Link>
     )
 }

@@ -25,15 +25,15 @@ const Table = () => {
 
     return (
         <div className="table-container">
-            <table>
+            <table className="table">
                 <thead>
                     <tr>
-                        <TableHeader columnName="Prezentacja produktu"/>
-                        <TableHeader columnName="Nazwa produktu"/>
-                        <TableHeader columnName="Cena"/>
-                        <TableHeader columnName="Ilość na magazynie"/>
-                        <TableHeader columnName="Typ produktu"/>
-                        <TableHeader columnName="Akcje"/>
+                        <TableHeader columnName="Prezentacja produktu" isVisibleInSmallerSize={true} />
+                        <TableHeader columnName="Nazwa produktu" isVisibleInSmallerSize={false} />
+                        <TableHeader columnName="Cena" isVisibleInSmallerSize={false} />
+                        <TableHeader columnName="Ilość na magazynie" isVisibleInSmallerSize={false} />
+                        <TableHeader columnName="Typ produktu" isVisibleInSmallerSize={false} />
+                        <TableHeader columnName="Akcje" isVisibleInSmallerSize={true} />
                     </tr>
                 </thead>
 
