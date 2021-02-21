@@ -4,6 +4,9 @@ import {checkDataForm} from '../../../../Helpers/Products/ProductsHelper'
 
 import {IProduct} from '../../../../../TypeScript/Interfaces/Interfaces'
 
+import '../../../../../assets/stylesheets/Admin2/Products/EditProduct/EditProduct.scss'
+
+import Header from './Header/Header'
 import ProductType from './ProductType/ProductType'
 import ProductQuantityAvailable from './ProductQuantityAvailable/ProductQuantityAvailable'
 import ProductPrice from './ProductPrice/ProductPrice'
@@ -89,13 +92,14 @@ const EditProduct = () => {
     },[])
 
     return (
-        <div className="background">
+        <div className="edit-product-container">
             <div className="overlay">
                                     
             </div>
 
-            <div className="edit-form-container">
+            <div className="edit-user-form">
                 <form>
+                    <Header />
                     <ProductPicture setSource={setSource} source={source}/>
                     <ProductDescription description={description} setDescription={setDescription} />
                     <ProductPrice price={price} setPrice={setPrice} />

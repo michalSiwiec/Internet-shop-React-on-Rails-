@@ -7,18 +7,26 @@ interface Props {
 
 const Price:FC<Props> = ({price, setPrice}) => {
     return (
-        <div>
-            <label>Cena
+        <div className="add-user-form__input-container">
+            <div className="add-user-form__input-container__label-container">
+                <label className="add-user-form__input-container__label">Cena</label>
+            </div>
+
+            <div>
                 <input type="number"
                     min="1"
                     step="0.1"
-                    value={price} onChange={(e) => setPrice(parseInt(e.target.value))}
+                    defaultValue={price}
+                    onChange={(e) => setPrice(parseInt(e.target.value))}
                     onKeyPress={(e) => e.preventDefault()}
                     onKeyDown={(e) => e.preventDefault()}
+                    className="add-user-form__input-container__input"
                 />
-            </label>
+            </div>
         </div>
     )
 }
 
 export default Price
+
+

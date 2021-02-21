@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 const CancelButton = () => {
     return (
         <Link to="/admin/Products">
-            <button>Anuluj</button>
+            <button className="add-user-form__buttons-container__button">Anuluj</button>
         </Link>
     )
 }

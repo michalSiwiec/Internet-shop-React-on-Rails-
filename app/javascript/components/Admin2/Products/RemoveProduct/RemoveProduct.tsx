@@ -4,6 +4,8 @@ import {useParams} from 'react-router-dom'
 
 import {IProduct} from '../../../../../TypeScript/Interfaces/Interfaces'
 
+import '../../../../../assets/stylesheets/Admin2/Products/RemoveProduct/RemoveProduct.scss'
+
 import Header from './Header/Header'
 import Description from './Description/Description'
 import ProductSource from './ProductSource/ProductSource'
@@ -28,11 +30,12 @@ const RemoveProduct = () => {
         })
     }, [])
 
+    
     return (
         <div className="remove-product-container">
             <div className="overlay"></div>
 
-            <div className="remove-user-form-container">
+            <div className="remove-product-form">
                 <form>
                     <Header />
                     <ProductSource source={source} />

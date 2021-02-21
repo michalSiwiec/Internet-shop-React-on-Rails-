@@ -4,8 +4,8 @@ interface Props {source: string}
 
 const ProductSource:FC<Props> = ({source}) => {
     return (
-        <div>
-            <img src={source} alt="Zdjęcie produktu" />
+        <div className="picture-container">
+            <img src={source} alt="Zdjęcie produktu" className="picture-container__picture" />
         </div>
     )
 }

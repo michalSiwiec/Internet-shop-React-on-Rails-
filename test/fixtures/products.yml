@@ -4,10 +4,8 @@ one:
   source: MyString
   description: MyString
   price: 1.5
-  key_word: MyString
 
 two:
   source: MyString
   description: MyString
   price: 1.5
-  key_word: MyString

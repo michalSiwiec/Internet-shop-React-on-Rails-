@@ -7,8 +7,12 @@ interface Props {
 
 const ProductQuantityAvailable:FC<Props> = ({quantityAvailable, setQuantityAvailable}) => {
     return (
-        <div className="input-container">
-            <label>Ilość na magazynie
+        <div className="edit-user-form__input-container">
+            <div className="edit-user-form__input-container__label-container">
+                <label className="edit-user-form__input-container__label">Ilość na magazynie</label>
+            </div>
+
+            <div>
                 <input type="number"
                     min="1"
                     value={quantityAvailable}
@@ -16,7 +20,7 @@ const ProductQuantityAvailable:FC<Props> = ({quantityAvailable, setQuantityAvail
                     onKeyPress={(e) => e.preventDefault()}
                     onKeyDown={(e) => e.preventDefault()}
                 />
-            </label>
+            </div>
         </div>
     )
 }

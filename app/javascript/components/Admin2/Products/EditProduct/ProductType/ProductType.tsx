@@ -40,15 +40,19 @@ const ProductType:FC<Props> = ({type, setType}) => {
     const selectedType = types.filter(type_ => type_.value === type)[0].name
 
     return (
-        <div className="input-container">
-            <label>Typ produktu
+        <div className="edit-user-form__input-container">
+            <div className="edit-user-form__input-container__label-container">
+                <label className="edit-user-form__input-container__label">Cena</label>
+            </div>
+
+            <div>
                 <select value={selectedType} onChange={(e) => {
                     const selectedValue = types.filter(type_ => type_.name === e.target.value)[0].value
                     setType(selectedValue)
                 }}>
                     {types.map(type => <option key={`type${type.name}`}>{type.name}</option>)}
                 </select>
-            </label>
+            </div>
         </div>
     )
 }

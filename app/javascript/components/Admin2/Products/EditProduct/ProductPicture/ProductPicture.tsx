@@ -12,15 +12,17 @@ interface Props {
 
 const ProductPicture:FC<Props> = ({setSource}) => {
     return (
-        <div className="input-container">
-            {/* <div>
-                <img src={source} alt="Zdjęcie produktu"/>
-            </div> */}
+        <div className="edit-user-form__input-container">
+            <div className="edit-user-form__input-container__label-container">
+                <label htmlFor="productPicture" className="edit-user-form__input-container__label">Wybierz zdjęcie</label>
+            </div>
 
             <div>
-                <label>Zdjęcie
-                    <input type="file"/>
-                </label>
+                <input type="file"
+                    name="productPicture"
+                    value="" onChange={(e) => setSource(e.target.value)}
+                    className="edit-user-form__input-container__input"
+                />
             </div>
         </div>
     )

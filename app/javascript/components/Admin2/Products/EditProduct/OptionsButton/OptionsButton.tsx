@@ -7,7 +7,7 @@ interface Props{editProduct: (e: React.SyntheticEvent) => void}
 
 const OptionsButton:FC<Props> = ({editProduct}) => {
     return (
-        <div className="button-container">
+        <div className="edit-user-form__input-container edit-user-form__buttons-container">
             <CancelButton />
             <EditButton editProduct={editProduct} />
         </div>

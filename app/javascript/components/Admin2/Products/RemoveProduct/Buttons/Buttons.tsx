@@ -9,7 +9,7 @@ interface Props {
 
 const Buttons:FC<Props> = ({productID}) => {
     return (
-        <div>
+        <div className="buttons-container">
             <CancelButton />
             <RemoveButton productID={productID} />
         </div>

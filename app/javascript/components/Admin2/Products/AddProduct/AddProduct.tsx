@@ -1,5 +1,12 @@
 import React, {useState} from 'react'
 
+import {checkDataForm} from '../../../../Helpers/Products/ProductsHelper'
+
+import { useHistory } from 'react-router'
+
+
+import '../../../../../assets/stylesheets/Admin2/Products/AddProduct/AddProduct.scss'
+
 import Header from './Header/Header'
 import Type from './Type/Type'
 import ProductSource from './ProductSource/ProductSource'
@@ -7,9 +14,6 @@ import QuantityAvailable from './QuantityAvailable/QuantityAvailable'
 import Price from './Price/Price'
 import Description from './Description/Description'
 import Buttons from './Buttons/Buttons'
-
-import {checkDataForm} from '../../../../Helpers/Products/ProductsHelper'
-import { useHistory } from 'react-router'
 
 const AddProduct = () => {
     const [source, setSource] = useState('')
@@ -60,7 +64,7 @@ const AddProduct = () => {
             <div className="add-user-form">
                 <form>
                     <Header />
-                    <ProductSource source={source} setSource={setSource} />
+                    <ProductSource setSource={setSource} />
                     <Description description={description} setDescription={setDescription} />
                     <Price price={price} setPrice={setPrice} />
                     <Type type={type} setType={setType} />

@@ -1,15 +1,21 @@
 import React, {FC} from 'react'
 
-interface Props {
-    source: string,
-    setSource: (source: string) => void
-}
+interface Props {setSource: (source: string) => void}
 
-const ProductSource:FC<Props> = ({source, setSource}) => {
+const ProductSource:FC<Props> = ({setSource}) => {
     return (
-        <div>
-            {/* <label htmlFor="productPicture">Wybierz zdjęcie</label> */}
-            <input type="file" name="productPicture" value={source} onChange={(e) => setSource(e.target.value)} />
+        <div className="add-user-form__input-container">
+            <div className="add-user-form__input-container__label-container">
+                <label htmlFor="productPicture" className="add-user-form__input-container__label">Wybierz zdjęcie</label>
+            </div>
+
+            <div>
+                <input type="file"
+                    name="productPicture"
+                    value="" onChange={(e) => setSource(e.target.value)}
+                    className="add-user-form__input-container__input"
+                />
+            </div>  
         </div>
     )
 }

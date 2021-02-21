@@ -33,7 +33,7 @@ const RemoveButton:FC<Props> = ({productID}) => {
     }
 
     return (
-        <button onClick={(e) => removeProduct(e)}>Usuń</button>
+        <button onClick={(e) => removeProduct(e)} className="buttons-container__button">Usuń</button>
     )
 }
 

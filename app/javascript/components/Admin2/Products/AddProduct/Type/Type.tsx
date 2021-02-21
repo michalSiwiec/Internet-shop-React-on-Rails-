@@ -38,12 +38,16 @@ const Type:FC<Props> = ({type, setType}) => {
     ]
 
     return (
-        <div>
-            <label> Typ produktu
-                <select value={type} onChange={(e) => setType(e.target.value) }>
+        <div className="add-user-form__input-container">
+            <div className="add-user-form__input-container__label-container">
+                <label className="add-user-form__input-container__label"> Typ produktu</label>
+            </div>
+            
+            <div>
+                <select value={type} onChange={(e) => setType(e.target.value) } className="add-user-form__input-container__input">
                     {types.map(type_ => <option value={type_.type} key={type_.name}>{type_.name}</option>)}
                 </select>
-            </label>
+            </div>
         </div>
     )
 }

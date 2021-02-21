@@ -11,11 +11,15 @@ interface Props {
 
 const Description:FC<Props> = ({description, setDescription}) => {
     return (
-        <div>
-            <label>Opis produktu
-                <input type="text" value={description.value} onChange={(e) => validateDescription(e.target.value, setDescription, description)} />
-            </label>
+        <div className="add-user-form__input-container">
+            <div className="add-user-form__input-container__label-container">
+                <label className="add-user-form__input-container__label">Opis produktu</label>
+            </div>
 
+            <div>
+                <input type="text" className="add-user-form__input-container__input" value={description.value} onChange={(e) => validateDescription(e.target.value, setDescription, description)} />
+            </div>
+            
             <div className="mistake-info-container">
                 {description.mistakeInformation.map(info => <span key={`key${info}`}>{info}</span>)}
             </div>
