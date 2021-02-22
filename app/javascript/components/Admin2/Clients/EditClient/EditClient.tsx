@@ -25,7 +25,7 @@ import Buttons from './Buttons/Buttons'
 import {useHistory} from 'react-router-dom'
 
 const EditClient = () => {
-    const {userID} = useParams()
+    const {id} = useParams()
     const [name, setName] = useState({
         value: '',
         setted: false,
@@ -109,7 +109,7 @@ const EditClient = () => {
                 },
             }
 
-            fetch(`/api/v1/user/${userID}`, {
+            fetch(`/api/v1/user/${id}`, {
                 method: 'PATCH',
                 headers: {
                     "Content-Type": "application/json"
@@ -121,7 +121,7 @@ const EditClient = () => {
     }
 
     useEffect(() => {
-        fetch(`/api/v1/user/${userID}`, {method: 'GET'})
+        fetch(`/api/v1/user/${id}`, {method: 'GET'})
         .then(response => {
             if(response.ok)
                 return response.json()
@@ -170,6 +170,8 @@ const EditClient = () => {
             setHouseNumber(user.deliveryAddresses.house_number)
         })
     }, [])
+
+    // console.log(`edit client ${id}`)
 
     return (
         <div className="edit-user-container">

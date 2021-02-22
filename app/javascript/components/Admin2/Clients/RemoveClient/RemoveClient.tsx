@@ -14,14 +14,14 @@ import Buttons from './Buttons/Buttons'
 interface IUserPersonalData{name: string, surname: string}
 
 const RemoveClient = () => {
-    const {userID} = useParams()
+    const {id} = useParams()
     const [userPersonalData, setUserPersonalData] = useState<IUserPersonalData>({
         name: '',
         surname: ''
     })
 
     useEffect(() => {
-        fetch(`/api/v1/user/${userID}`, {method: 'GET'})
+        fetch(`/api/v1/user/${id}`, {method: 'GET'})
         .then(response => {
             if(response.ok)
                 return response.json()
@@ -34,6 +34,8 @@ const RemoveClient = () => {
         }))
     }, [])
 
+    // console.log(`remove client ${id}`)
+
     return (
         <div className="remove-user-container">
             <div className="overlay"></div>
@@ -44,7 +46,7 @@ const RemoveClient = () => {
                 <form>
                     <Name name={userPersonalData.name} />
                     <Surname surname={userPersonalData.surname} />
-                    <Buttons userID={userID}/>
+                    <Buttons userID={id}/>
                 </form>
             </div>
         </div>

@@ -21,6 +21,8 @@ const UserOrders = () => {
         .then((orders_: Array<IOrderLogInPerson>) => setOrders(orders_))
     }, [])
 
+    console.log(userID)
+
     return (
         <div className="container">
             <div className="overlay"></div>

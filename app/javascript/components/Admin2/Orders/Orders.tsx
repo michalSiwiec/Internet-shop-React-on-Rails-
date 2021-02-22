@@ -18,7 +18,7 @@ const OrdersList = () => {
                     <UserOrders />
                 </Route>
 
-                <Route path="/admin/Orders/commonOrder/:orderID">
+                <Route path="/admin/Orders/commonOrder/:id">
                     <CommonOrders />
                 </Route>
 

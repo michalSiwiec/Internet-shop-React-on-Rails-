@@ -10,11 +10,11 @@ import AddClient from './AddClient/AddClient'
 const Clients = () => {
     return (
         <Switch>
-            <Route path="/admin/Users/editUser/:userID"> 
+            <Route path="/admin/Users/editUser/:id"> 
                 <EditClient />
             </Route>
 
-            <Route path="/admin/Users/removeUser/:userID">
+            <Route path="/admin/Users/removeUser/:id">
                 <RemoveClient />
             </Route>
 
