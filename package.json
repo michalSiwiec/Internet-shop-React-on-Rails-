@@ -15,7 +15,7 @@
     "@types/redux": "^3.6.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "chart.js": "^2.9.4",
-    "immer": "^8.0.0",
+    "immer": "^8.0.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-chartjs-2": "^2.11.1",
@@ -33,6 +33,7 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "@types/node": "^14.14.31",
     "@types/rx": "^4.1.2",
     "webpack-dev-server": "^3.11.2"
   },
