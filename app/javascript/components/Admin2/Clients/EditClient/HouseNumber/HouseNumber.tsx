@@ -1,16 +1,13 @@
 import React, {FC} from 'react'
 
-interface Props {
-    houseNumber: number,
-    setHouseNumber: (houseNumber: number) => void
-}
+interface Props {houseNumber: number, setHouseNumber: (houseNumber: number) => void}
 
 const HouseNumber:FC<Props> = ({houseNumber, setHouseNumber}) => {
     return (
-        <div>
+        <div className="input-container">
             <p>Numer domu / mieszkania</p>
             
-            <input type="number"
+            <input type="number" className="input-container__input"
                 min="1"
                 value={houseNumber}
                 onChange={(e) => setHouseNumber(parseInt(e.target.value))}

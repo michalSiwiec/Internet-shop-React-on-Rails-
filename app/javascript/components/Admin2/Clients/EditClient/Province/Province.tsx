@@ -2,11 +2,7 @@ import React, {FC, useEffect, useState} from 'react'
 
 import {IProvince, ICity} from '../../../../../../TypeScript/Interfaces/Interfaces'
 
-interface Props {
-    province: string,
-    setProvince: (province: string) => void,
-    setCity: (city: string) => void
-}
+interface Props {province: string, setProvince: (province: string) => void, setCity: (city: string) => void}
 
 const Province:FC<Props> = ({province, setProvince, setCity}) => {
     const [provinces, setProvinces] = useState<Array<IProvince>>([])
@@ -35,10 +31,10 @@ const Province:FC<Props> = ({province, setProvince, setCity}) => {
     }, [])
 
     return (
-        <div>
+        <div className="input-container">
             <p>Województwo</p>
             
-            <select value={province} onChange={(e) => {
+            <select value={province} className="input-container__input" onChange={(e) => {
                 setProvince(e.target.value)
                 changeCityAfterSelectProvince(e.target.value)
             }}>

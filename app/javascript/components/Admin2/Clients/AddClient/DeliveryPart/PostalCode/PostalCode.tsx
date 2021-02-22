@@ -19,10 +19,10 @@ const PostalCode:FC<Props> = ({postalCode, setPostalCode, city}) => {
     }, [city])
 
     return (
-        <div>
+        <div className="input-container">
             <p>Kod pocztowy</p>
             
-            <select disabled>
+            <select disabled className="input-container__input" >
                 <option>{postalCode}</option>
             </select>
         </div>

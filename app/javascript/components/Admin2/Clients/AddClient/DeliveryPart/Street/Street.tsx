@@ -11,10 +11,10 @@ interface Props {
 
 const Street:FC<Props> = ({street, setStreet}) => {
     return (
-        <div>
+        <div className="input-container">
             <p>Ulica</p>
             
-            <input type="text" value={street.value} onChange={(e) => validateStreet(e.target.value, setStreet, street)} />
+            <input type="text" value={street.value} onChange={(e) => validateStreet(e.target.value, setStreet, street)}  className="input-container__input" />
 
             <div className="mistake-info-container">
                 {street.mistakeInformation.map(info => <span key={`key${info}`}>{info}</span>)}

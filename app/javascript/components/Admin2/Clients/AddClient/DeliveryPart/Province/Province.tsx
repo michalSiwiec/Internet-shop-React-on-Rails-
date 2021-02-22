@@ -33,10 +33,10 @@ const Province:FC<Props> = ({setProvince, setCity}) => {
     }, [])
 
     return (
-        <div>
+        <div className="input-container">
             <p>Województwo</p>
             
-            <select onChange={
+            <select className="input-container__input" onChange={
                 (e) => {
                     setProvince(e.target.value)
                     changeCityAfterSelectProvince(e.target.value)

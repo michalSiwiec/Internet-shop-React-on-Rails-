@@ -117,37 +117,28 @@ const AddClient = () => {
         }
     }
     
-
-    
     return (
-        <div className="add-client-container">
+        <div className="add-user-container">
             <div className="overlay"></div>
 
             <div className="form-container">
                 <form>
                     <Header />
+                    <Name name={name} setName={setName} />
+                    <Surname surname={surname} setSurname={setSurname} />
+                    <Email email={email} setEmail={setEmail} />
+                    <PhoneNumber phoneNumber={phoneNumber} setPhoneNumber={setPhoneNumber} />
 
-                    <div className="personal-part-container">
-                        <Name name={name} setName={setName} />
-                        <Surname surname={surname} setSurname={setSurname} />
-                        <Email email={email} setEmail={setEmail} />
-                        <PhoneNumber phoneNumber={phoneNumber} setPhoneNumber={setPhoneNumber} />
-                    </div>
+                    <Login login={login} setLogin={setlogin} />
+                    <Password password={password} setPassword={setPassword} />
+                    <PasswordConfirmation passwordConfirmation={passwordConfirmation} setPasswordConfirmation={setPasswordConfirmation} password={password.value} />
 
-                    <div className="log-in-container">
-                        <Login login={login} setLogin={setlogin} />
-                        <Password password={password} setPassword={setPassword} />
-                        <PasswordConfirmation passwordConfirmation={passwordConfirmation} setPasswordConfirmation={setPasswordConfirmation} password={password.value} />
-                    </div>
-
-                    <div className="delivery-address-container">
-                        <Country />
-                        <Province setProvince={setProvince} setCity={setCity} />
-                        <City setCity={setCity} province={province}/>
-                        <PostalCode postalCode={postalCode} setPostalCode={setPostalCode} city={city}/>
-                        <Street street={street} setStreet={setStreet} />
-                        <HouseNumber houseNumber={houseNumber} setHouseNumber={setHouseNumber} />
-                    </div>
+                    <Country />
+                    <Province setProvince={setProvince} setCity={setCity} />
+                    <City setCity={setCity} province={province}/>
+                    <PostalCode postalCode={postalCode} setPostalCode={setPostalCode} city={city}/>
+                    <Street street={street} setStreet={setStreet} />
+                    <HouseNumber houseNumber={houseNumber} setHouseNumber={setHouseNumber} />
 
                     <Buttons addUser={addUser} />
                 </form>

@@ -11,10 +11,10 @@ interface Props {
 
 const Name:FC<Props> = ({name, setName}) => {
     return (
-        <div>
+        <div className="input-container">
             <p>Imię</p>
             
-            <input type="text" value={name.value} onChange={(e) => validateName(e.target.value, setName, name)} />
+            <input type="text" value={name.value} onChange={(e) => validateName(e.target.value, setName, name)} className="input-container__input" />
 
             <div className="mistake-info-container">
                 {name.mistakeInformation.map(info => <span key={`key${info}`}>{info}</span>)}

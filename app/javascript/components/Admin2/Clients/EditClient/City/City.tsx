@@ -23,10 +23,10 @@ const City:FC<Props> = ({city, setCity, province}) => {
     }, [province])
 
     return (
-        <div>
+        <div className="input-container">
             <p>Miasto</p>
             
-            <select value={city} onChange={(e) => setCity(e.target.value)} >
+            <select value={city} onChange={(e) => setCity(e.target.value)} className="input-container__input" >
                 {cities.map((city: ICity) => <option key={`key${city.name}`}>{city.name}</option>)}
             </select>
         </div>

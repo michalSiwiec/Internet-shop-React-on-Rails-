@@ -9,7 +9,7 @@ interface Props {
 
 const Buttons:FC<Props> = ({editUser}) => {
     return (
-        <div>
+        <div className="buttons-part-container">
             <CancelButton />
             <EditButton editUser={editUser}/>
         </div>

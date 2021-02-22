@@ -12,11 +12,16 @@ interface Props {
 
 const PasswordConfirmation:FC<Props> = ({passwordConfirmation, setPasswordConfirmation, password}) => {
     return (
-        <div>
+        <div className="input-container">
             <p>Potwierdzenie hasła</p>
             
             <div>
-                <input type="text" value={passwordConfirmation.value} onChange={(e) => validatePasswordConfirmation(e.target.value, setPasswordConfirmation, passwordConfirmation, password)} />
+                <input
+                    type="text"
+                    value={passwordConfirmation.value}
+                    onChange={(e) => validatePasswordConfirmation(e.target.value, setPasswordConfirmation, passwordConfirmation, password)}
+                    className="input-container__input"
+                />
             </div>
 
             <div className="mistake-info-container">

@@ -1,10 +1,6 @@
 import React, {FC, useEffect} from 'react'
 
-interface Props {
-    postalCode: string,
-    setPostalCode: (postalCode: string) => void,
-    city: string
-}
+interface Props {postalCode: string, setPostalCode: (postalCode: string) => void, city: string}
 
 const PostalCode:FC<Props> = ({postalCode, setPostalCode, city}) => {
     useEffect(() => {
@@ -19,10 +15,10 @@ const PostalCode:FC<Props> = ({postalCode, setPostalCode, city}) => {
     }, [city])
 
     return (
-        <div>
+        <div className="input-container">
             <p>Kod pocztowy</p>
             
-            <select disabled>
+            <select disabled className="input-container__input">
                 <option>{postalCode}</option>
             </select>
         </div>

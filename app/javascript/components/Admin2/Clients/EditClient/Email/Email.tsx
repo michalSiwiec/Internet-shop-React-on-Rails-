@@ -11,10 +11,10 @@ interface Props {
 
 const Email:FC<Props> = ({email, setEmail}) => {
     return (
-        <div>
+        <div className="input-container">
             <p>Adres e-mail</p>
             
-            <input type="text" value={email.value} onChange={(e) => validateEmail(e.target.value, setEmail, email)} />
+            <input type="text" value={email.value} onChange={(e) => validateEmail(e.target.value, setEmail, email)} className="input-container__input" />
 
             <div className="mistake-info-container">
                 {email.mistakeInformation.map(info => <span key={`info${info}`}>{info}</span>)}

@@ -1,13 +1,10 @@
 @import '../../../Variables/Variables.scss';
 
-.add-client-container{
+.add-user-container{
     width: 100vw;
-    min-height: 100vh;
-
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    padding: 20px 0px;
+    min-height: 140vh;
+    position: relative;
 
     background-image: url("../../../../images/Kaufland-background.jpg");
     background-color: black;
@@ -17,13 +14,15 @@
 
     .overlay{
         width: 100vw;
-        height: 100vh;
         background-color: black;
         opacity: 0.84;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
     }
 
     .form-container{
@@ -35,22 +34,48 @@
             width: 70%;
         }
 
-        @media only screen and (max-width: $large-screen-width) and (min-width: $medium-screen-width){
-            width: 60%;
+        @media only screen and (min-width: $medium-screen-width){
+            width: 65%;
         }
 
-        @media only screen and (min-width: $large-screen-width){
-            width: 40%;
-            max-width: 850px;
-        }
-
-        padding: 50px;
-
-        position: fixed;
-        top: 50%;
+        z-index: 3;
+        position: absolute;
+        top: 10%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translateX(-50%);
 
         background: $main-admin-panel-bcg-color;
+        text-align: center;
+        padding-bottom: 50px;
+
+        .input-container{
+            margin: 5px 0px 10px;
+
+
+            &__input{
+                width: 50%;
+                padding: 3px 7px;
+                margin-top: 5px;
+            }
+        }
+
+        .buttons-part-container{
+            margin-top: 20px;
+
+            &__button{
+                padding: 3px 7px;
+                margin: 0px 10px;
+            }
+        }
+
+        &__header{
+            text-align: center;
+            margin: 20px 20px 25px;
+        }
+
+        .mistake-info-container{
+            color: red;
+            font-size: 17px;
+        }
     }
 }

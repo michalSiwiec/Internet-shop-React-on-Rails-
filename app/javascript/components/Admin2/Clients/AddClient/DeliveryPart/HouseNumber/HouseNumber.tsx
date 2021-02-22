@@ -7,7 +7,7 @@ interface Props {
 
 const HouseNumber:FC<Props> = ({houseNumber, setHouseNumber}) => {
     return (
-        <div>
+        <div className="input-container">
             <p>Numer domu / mieszkania</p>
             <input type="number"
                 placeholder="Numer domu"
@@ -15,6 +15,7 @@ const HouseNumber:FC<Props> = ({houseNumber, setHouseNumber}) => {
                 onChange={(e) => setHouseNumber(e.target.value)}
                 onKeyPress={(e) => e.preventDefault()}
                 onKeyDown={(e) => e.preventDefault()}
+                className="input-container__input"
             />
         </div>
     )

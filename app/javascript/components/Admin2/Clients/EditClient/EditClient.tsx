@@ -6,6 +6,8 @@ import {checkDataForm} from '../../../../Helpers/Users/Users'
 
 import {IUser} from '../../../../../TypeScript/Interfaces/Interfaces'
 
+import '../../../../../assets/stylesheets/Admin2/Users/EditUser/EditUser.scss'
+
 import Header from './Header/Header'
 import Name from './Name/Name'
 import Surname from './Surname/Surname'
@@ -23,6 +25,9 @@ import PasswordConfirmation from './PasswordConfirmation/PasswordConfirmation'
 import Buttons from './Buttons/Buttons'
 
 import {useHistory} from 'react-router-dom'
+
+
+
 
 const EditClient = () => {
     const {id} = useParams()
@@ -120,6 +125,8 @@ const EditClient = () => {
         }
     }
 
+
+
     useEffect(() => {
         fetch(`/api/v1/user/${id}`, {method: 'GET'})
         .then(response => {
@@ -171,8 +178,6 @@ const EditClient = () => {
         })
     }, [])
 
-    // console.log(`edit client ${id}`)
-
     return (
         <div className="edit-user-container">
             <div className="overlay"></div>
@@ -184,6 +189,7 @@ const EditClient = () => {
                     <Surname surname={surname} setSurname={setSurname} />
                     <Email email={email} setEmail={setEmail} />
                     <PhoneNumber phoneNumber={phoneNumber} setPhoneNumber={setPhoneNumber} />
+                
                     <Header value="Dane dostawcze" />
                     <Country />
                     <Province province={province} setProvince={setProvince} setCity={setCity} />
@@ -191,10 +197,12 @@ const EditClient = () => {
                     <PostalCode postalCode={postalCode} setPostalCode={setPostalCode} city={city} />
                     <Street street={street} setStreet={setStreet} />
                     <HouseNumber houseNumber={houseNumber} setHouseNumber={setHouseNumber} />
+
                     <Header value="Dane logowania" />
                     <Login login={login} setLogin ={setLogin} />
                     <Password password={password} setPassword={setPassword} />
                     <PasswordConfirmation passwordConfirmation={passwordConfirmation} setPasswordConfirmation={setPasswordConfirmation} password={password.value} />
+                    
                     <Buttons editUser={editUser} />
                 </form>
             </div>
