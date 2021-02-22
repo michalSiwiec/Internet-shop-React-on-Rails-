@@ -4,7 +4,7 @@ interface Props {surname: string}
 
 const SurnameColumn:FC<Props> = ({surname}) =>  {
     return (
-        <td>{surname}</td>
+        <td className="table__td">{surname}</td>
     )
 }
 

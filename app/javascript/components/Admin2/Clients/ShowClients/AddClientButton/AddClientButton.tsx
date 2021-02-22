@@ -8,7 +8,7 @@ const AddClientButton = () => {
     return (
         <Link to="/admin/Users/addUser">
             <button className="add-client-button">
-                Dodaj klienta
+                Dodaj
                 <i className="icon-user-plus"></i> 
             </button>
         </Link>

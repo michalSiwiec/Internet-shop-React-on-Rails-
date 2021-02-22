@@ -26,6 +26,7 @@ const MainInfo = () => {
                     </div>
                 )
             })}
+            <h4 className="presentation-data-container__title">Ogólne opinie</h4>
         </div>
     )
 }

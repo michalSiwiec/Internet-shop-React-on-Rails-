@@ -4,15 +4,14 @@ import {useParams} from 'react-router-dom'
 
 import {IUser} from '../../../../../TypeScript/Interfaces/Interfaces'
 
+import '../../../../../assets/stylesheets/Admin2/Users/RemoveUser/RemoveUser.scss'
+
 import Header from './Header/Header'
 import Name from './Name/Name'
 import Surname from './Surname/Surname'
 import Buttons from './Buttons/Buttons'
 
-interface IUserPersonalData{
-    name: string,
-    surname: string
-}
+interface IUserPersonalData{name: string, surname: string}
 
 const RemoveClient = () => {
     const {userID} = useParams()
@@ -53,3 +52,4 @@ const RemoveClient = () => {
 }
 
 export default RemoveClient
+

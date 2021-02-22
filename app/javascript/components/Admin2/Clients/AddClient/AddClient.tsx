@@ -1,5 +1,11 @@
 import React, {useState} from 'react'
 
+import {checkDataForm} from '../../../../Helpers/Users/Users'
+
+import {useHistory } from 'react-router'
+
+import '../../../../../assets/stylesheets/Admin2/Users/AddUser/AddUser.scss'
+
 import Header from './Header/Header'
 import City from './DeliveryPart/City/City'
 import Country from './DeliveryPart/Country/Country'
@@ -15,9 +21,6 @@ import Surname from './PersonalPart/Surname/Surname'
 import Email from './PersonalPart/Email/Email'
 import PhoneNumber from './PersonalPart/PhoneNumber/PhoneNumber'
 import Buttons from './Buttons/Buttons'
-
-import {checkDataForm} from '../../../../Helpers/Users/Users'
-import {useHistory } from 'react-router'
 
 const AddClient = () => {
     const [name, setName] = useState({
@@ -113,6 +116,8 @@ const AddClient = () => {
             .then(() => history.push('/admin/Users'))
         }
     }
+    
+
     
     return (
         <div className="add-client-container">

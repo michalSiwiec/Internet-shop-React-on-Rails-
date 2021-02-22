@@ -26,14 +26,14 @@ const ClientsTable = () => {
 
     return (
         <div className="clients-table-container">
-            <table>
+            <table className="table">
                 <thead>
                     <tr>
-                        <TableHeader columnName="Imie" />
-                        <TableHeader columnName="Nazwisko" />
-                        <TableHeader columnName="E-mail" />
-                        <TableHeader columnName="Numer tel." />
-                        <TableHeader columnName="Akcje" />
+                        <TableHeader columnName="Imie" isInvisible={false} />
+                        <TableHeader columnName="Nazwisko" isInvisible={false} />
+                        <TableHeader columnName="E-mail" isInvisible={true} />
+                        <TableHeader columnName="Numer tel." isInvisible={true} />
+                        <TableHeader columnName="Akcje" isInvisible={false} />
                     </tr>
                 </thead>
 

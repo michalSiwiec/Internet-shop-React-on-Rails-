@@ -4,8 +4,8 @@ interface Props {surname: string}
 
 const Surname:FC<Props> = ({surname}) => {
     return (
-        <div>
-            <input type="text" disabled value={surname} />
+        <div className="remove-user-form__input-container">
+            <input type="text" disabled value={surname} className="remove-user-form__input-container__input" />
         </div>
     )
 }

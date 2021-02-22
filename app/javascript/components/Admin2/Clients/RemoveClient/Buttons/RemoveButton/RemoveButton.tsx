@@ -15,7 +15,7 @@ const RemoveButton:FC<Props> = ({userID}) => {
     }
 
     return(
-        <button onClick={(e) => removeUser(e)}>Usuń uzytkownika</button>
+        <button onClick={(e) => removeUser(e)} className="remove-user-form__buttons-container__button">Usuń</button>
     )
 }
 

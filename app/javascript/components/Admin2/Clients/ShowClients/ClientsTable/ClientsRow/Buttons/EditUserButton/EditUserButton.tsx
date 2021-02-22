@@ -10,7 +10,7 @@ const EditUserButton:FC<Props> = ({userID}) =>  {
     return (
         <Link to={`/admin/Users/editUser/${userID}`}>
             <div>
-                <button className="edit-user-button">
+                <button className="table__td__edit-button">
                     Edytuj
                     <i className=" icon-user"></i>
                 </button>

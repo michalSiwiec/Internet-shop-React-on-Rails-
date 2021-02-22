@@ -10,7 +10,7 @@ const RemoveUserButton:FC<Props> = ({userID}) =>  {
     return (
         <Link to={`/admin/Users/removeUser/${userID}`}>
             <div>
-                <button className="remove-user-button">
+                <button className="table__td__remove-button">
                     Usuń
                     <i className="icon-user-times"></i>
                 </button>

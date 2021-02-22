@@ -1,0 +1,57 @@
+@import '../../Variables/Variables.scss';
+
+.clients-list-container{
+    width: 100vw;
+    min-height: 100vh;
+    padding: 70px;
+
+    background: $main-admin-panel-bcg-color;
+
+    .top-bar-container{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 20px 20px 50px;
+
+        .header{
+            text-align: center;
+        }
+        .add-client-button{
+        }
+    }
+
+    .clients-table-container{
+        background-color: black;
+        color: #bbb;
+ 
+         .table{
+             width: 100%;
+ 
+             &_th{
+                 padding: 15px;
+                 text-align: center;
+                 background: #252525;
+                 border-bottom: 0;
+                 font-weight: 600;
+                 letter-spacing: 0.5px;
+             }
+ 
+             &__td{
+                 padding: 25px 15px;
+                 text-align: center;
+                 border-top: 1px solid #bbb;
+ 
+                 &__edit-button,
+                 &__remove-button{
+                     margin: 10px;
+                 }
+             }
+ 
+             .--invisible{
+                 @media only screen and (max-width: $large-screen-width){
+                     display: none;
+                 }
+             }
+         }
+    }
+}

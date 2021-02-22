@@ -4,7 +4,7 @@ interface Props {phoneNumber: string}
 
 const PhoneNumberColumn:FC<Props> = ({phoneNumber}) =>  {
     return (
-        <td>{phoneNumber}</td>
+        <td className="table__td --invisible">{phoneNumber}</td>
     )
 }
 

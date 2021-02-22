@@ -9,7 +9,7 @@ interface Props {
 
 const Buttons:FC<Props> = ({userID}) => {
     return (
-        <div>
+        <div className="remove-user-form__buttons-container">
             <CancelButton />
             <RemoveButton userID={userID}/>
         </div>
