@@ -2,7 +2,6 @@ import React, {FC} from 'react'
 
 import {Link} from 'react-router-dom'
 
-import '../../../../../../../../../assets/Fontello/fontello-2faec39f/css/fontello.css'
 
 interface Props {userID: number}
 
