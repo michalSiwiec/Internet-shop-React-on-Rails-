@@ -2,8 +2,10 @@ import React from 'react'
 
 import {Link} from 'react-router-dom';
 
+import Logo from '/images/Kaufland_Logo.png'
+
 const MainMenuLogo = () => {
-    const Logo = require('../../../../../assets/images/Kaufland_Logo.png')
+    // const Logo = require('../../../../../assets/images/Kaufland_Logo.png')
 
     return (
         <div className="logo-container">
