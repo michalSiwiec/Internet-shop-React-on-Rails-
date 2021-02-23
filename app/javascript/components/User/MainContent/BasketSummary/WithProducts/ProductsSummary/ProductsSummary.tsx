@@ -11,7 +11,7 @@ const ProductsSummary = () => {
 
     return (
         <div className="summary-part">
-            <div className="subcontainer">
+            {/* <div className="subcontainer">
                 <p>Do zapłaty<span className="subcontainer__price">{wholePrice}</span>zł</p>
                 <p>+ transport <span className="subcontainer__price-of-transport">15</span> zł</p>
             </div>
@@ -20,7 +20,7 @@ const ProductsSummary = () => {
                 <Link to='/home/ShoppingOption'>
                     <input type="button" value="Przejdź dalej" className="subcontainer__continue-shopping-btn" />
                 </Link>
-            </div>
+            </div> */}
         </div>
     )
 }

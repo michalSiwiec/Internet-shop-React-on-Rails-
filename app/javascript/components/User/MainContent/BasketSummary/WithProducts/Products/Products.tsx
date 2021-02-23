@@ -31,7 +31,7 @@ const Products = () => {
     return (
         <div className="product-part-with-products">
             <Header />
-            {productsInBasketFullVersion.map((productFullVersion: IProductFullVersion) => <Product product={productFullVersion.product} quantity={productFullVersion.quantity} key={`product-container${productFullVersion.product.id}`} />)}
+            {/* {productsInBasketFullVersion.map((productFullVersion: IProductFullVersion) => <Product product={productFullVersion.product} quantity={productFullVersion.quantity} key={`product-container${productFullVersion.product.id}`} />)} */}
         </div>
     )
 }
