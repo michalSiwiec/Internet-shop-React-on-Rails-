@@ -2,6 +2,8 @@ import React from 'react'
  
 import {Link} from 'react-router-dom'
 
+declare module "*.png"
+
 import logo from 'images/adminPicture.png';
 
 const AdminPicture = () => {
