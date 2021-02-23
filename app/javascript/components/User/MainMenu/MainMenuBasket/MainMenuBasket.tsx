@@ -11,7 +11,7 @@ const MainMenuBasket = () => {
 
     return (
         <div className='basket-container'>
-            <Link to='/home/BasketSummary'> <p>{wholePrice} zł</p> </Link>
+            <Link to='/home/BasketSummary'> <p>{wholePrice.toFixed(2)} zł</p> </Link>
         </div> 
     )
 }

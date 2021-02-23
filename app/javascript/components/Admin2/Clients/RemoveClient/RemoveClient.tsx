@@ -14,7 +14,7 @@ import Buttons from './Buttons/Buttons'
 interface IUserPersonalData{name: string, surname: string}
 
 const RemoveClient = () => {
-    const {id} = useParams()
+    let {id} = useParams<any>()
     const [userPersonalData, setUserPersonalData] = useState<IUserPersonalData>({
         name: '',
         surname: ''
@@ -34,7 +34,7 @@ const RemoveClient = () => {
         }))
     }, [])
 
-    // console.log(`remove client ${id}`)
+    console.log(`remove client ${id}`)
 
     return (
         <div className="remove-user-container">

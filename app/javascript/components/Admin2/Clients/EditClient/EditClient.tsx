@@ -26,11 +26,8 @@ import Buttons from './Buttons/Buttons'
 
 import {useHistory} from 'react-router-dom'
 
-
-
-
 const EditClient = () => {
-    const {id} = useParams()
+    const {id} = useParams<any>()
     const [name, setName] = useState({
         value: '',
         setted: false,

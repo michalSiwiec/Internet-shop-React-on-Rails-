@@ -7,6 +7,8 @@ import '../../../../../../../../../assets/Fontello/fontello-2faec39f/css/fontell
 interface Props {userID: number}
 
 const RemoveUserButton:FC<Props> = ({userID}) =>  {
+    console.log(userID)
+
     return (
         <Link to={`/admin/Users/removeUser/${userID}`}>
             <div>

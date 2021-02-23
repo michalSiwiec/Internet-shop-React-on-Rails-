@@ -12,7 +12,7 @@ import Products from './Products/Products'
 import WindowCommunicate from '../../../../Communicate/WindowCommunicate'
 
 const OrderArea = () => {
-    const {info} = useParams()
+    const {info} = useParams<any>()
 
     const products: Array<IProduct> = useSelector((state: IReduxState) => state.productsReducer.products)
     const productsType = useSelector((state: IReduxState) => state.productsReducer.productType)

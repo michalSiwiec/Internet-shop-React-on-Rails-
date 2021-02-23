@@ -20,7 +20,7 @@ import {useDispatch}  from 'react-redux'
 import {useParams, useHistory} from 'react-router-dom'
 
 const EditProduct = () => {
-    const {productID} = useParams()
+    const {productID} = useParams<any>()
     const dispatch = useDispatch()
 
     const [source, setSource] = useState({

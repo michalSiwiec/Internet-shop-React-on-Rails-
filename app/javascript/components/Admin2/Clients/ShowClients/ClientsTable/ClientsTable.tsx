@@ -5,10 +5,7 @@ import {IUser} from '../../../../../../TypeScript/Interfaces/Interfaces'
 import TableHeader from './TableHeader/TableHeader'
 import ClientsRow from './ClientsRow/ClientsRow'
 
-interface IUsersData{
-    userData: IUser,
-    userID: number
-}
+interface IUsersData{userData: IUser, userID: number}
 
 const ClientsTable = () => {
     const [usersData, setUsersData] = useState<Array<IUsersData>>([])
@@ -23,6 +20,8 @@ const ClientsTable = () => {
         })
         .then((users: Array<IUsersData>) => setUsersData(users))
     }, [])
+    
+    console.log(usersData)
 
     return (
         <div className="clients-table-container">

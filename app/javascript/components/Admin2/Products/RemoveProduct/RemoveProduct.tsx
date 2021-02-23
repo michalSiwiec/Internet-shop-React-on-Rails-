@@ -12,7 +12,7 @@ import ProductSource from './ProductSource/ProductSource'
 import Buttons from './Buttons/Buttons'
 
 const RemoveProduct = () => {
-    const {productID} = useParams()
+    const {productID} = useParams<any>()
     const [source, setSource] = useState('')
     const [description, setDescription] = useState('')
 
@@ -29,9 +29,6 @@ const RemoveProduct = () => {
             setDescription(product.description)
         })
     }, [])
-
-    // console.log(`ProductID in removeProduct form ${productID}`)
-    // console.log(typeof productID)
     
     return (
         <div className="remove-product-container">

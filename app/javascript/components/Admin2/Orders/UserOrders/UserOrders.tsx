@@ -9,7 +9,7 @@ import {IOrderLogInPerson} from '../../../../../TypeScript/Interfaces/Interfaces
 import Order from './Order/Order'
 
 const UserOrders = () => {
-    const {userID} = useParams()
+    const {userID} = useParams<any>()
     const [orders, setOrders] = useState<Array<IOrderLogInPerson>>([])
 
     useEffect(() => {
