@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
 
-import Advertisement1 from '../../../../../../assets/images/Advertisement.jpg'
-import Advertisement2 from '../../../../../../assets/images/horizontalAdvertisement.png'
+// import Advertisement1 from '../../../../../../assets/images/Advertisement.jpg'
+// import Advertisement2 from '../../../../../../assets/images/horizontalAdvertisement.png'
 
 const Advertisement = () => {
-    // const Advertisement1 = require('../../../../../../assets/images/Advertisement.jpg')
-    // const Advertisement2 = require('../../../../../../assets/images/horizontalAdvertisement.png')
+    const Advertisement1 = require('../../../../../../assets/images/Advertisement.jpg')
+    const Advertisement2 = require('../../../../../../assets/images/horizontalAdvertisement.png')
 
     const [path, setPath] = useState(Advertisement2)
 
