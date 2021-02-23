@@ -1,7 +1,7 @@
 .option-menu-container{
     flex-basis: 100%;
     padding: 20px;
-    border: 2px solid black;
+    border-top: 2px solid black;
     order: 4;
     font-size: 17px;
 
@@ -12,6 +12,10 @@
 
         @media only screen and(max-width: 767px){
             flex-direction: column;
+        
+            &__item{
+                margin: 3px 0px;
+            }
         }
         @media only screen and(min-width: 768px){
             flex-direction: row;

@@ -3,7 +3,7 @@ import React, {FC} from 'react'
 import Header from './Header/Header'
 import Mark from './Mark/Mark'
 
-import "../../../../../../../assets/Fontello/fontello-8f6edee7 2/css/fontello.css"
+import "../../../../../../../assets/Fontello//fontello-2faec39f/css/fontello.css"
 
 interface Props {setOpinionMark: (opinion: number) => void}
 

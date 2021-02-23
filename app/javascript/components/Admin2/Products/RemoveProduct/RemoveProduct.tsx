@@ -30,6 +30,8 @@ const RemoveProduct = () => {
         })
     }, [])
 
+    // console.log(`ProductID in removeProduct form ${productID}`)
+    // console.log(typeof productID)
     
     return (
         <div className="remove-product-container">

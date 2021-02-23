@@ -1,11 +1,4 @@
 .login-container{
-    padding: 20px;
-    border: 2px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-
     @media only screen and(max-width: 767px){
         flex-basis: 100%;
         order: 5;
@@ -15,15 +8,30 @@
         order: 2;
     }
 
-    i{
-        font-size: 35px;
-    }
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 
-    h2{
-        margin: 0px 0px 12px;
-        flex-basis: 100%;
-        text-align: center;
-    }
+        &__header{
+            flex-basis: 100%;
+            margin: 0px 0px 12px;
+            text-align: center;
+        }
+
+        &__element-container{
+            flex-basis: 100%;
+            text-align: center;
+
+            &__icon{
+                font-size: 35px;
+            }
+
+            &__element{
+                text-align: center;
+            }
+        }
 
     .log-in-window{
         width: 30vw;

@@ -6,7 +6,7 @@ const Opinions = () => {
     const [opinions, setOpinions]: any = useState([])
 
     useEffect(() => {
-        fetch('/api/v1/opinions/', {method: 'GET'})
+        fetch('/api/v1/opinions',{method: 'GET'})
         .then(response => {
             if(response.ok)
                 return response.json()

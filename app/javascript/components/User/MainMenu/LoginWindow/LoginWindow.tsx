@@ -53,17 +53,24 @@ const LogInWindow = () => {
                 userID === 0
                 ?
                  <>
-                    <h2>Zaloguj się</h2>
-                    <i className="icon-user" onClick={() => setLogInWindowVisible('visible')}></i>
+                    <h2 className="login-container__header">Zaloguj się</h2>
+
+                    <div className="login-container__element-container__icon">
+                        <i className="icon-user" onClick={() => setLogInWindowVisible('visible')}></i>
+                    </div>    
                 </>
 
                 :
                 <>
-                    <h2>Zalogowany jako</h2>
-                    <p>{`${userData.name} ${userData.surname}`}</p>
-                    <div>
-                        <span>Wylosguj</span>
-                        <i className="icon-user" onClick={() => dispatch(actions.logOutUser())}></i>
+                    <h2 className="login-container__header">Zalogowany jako</h2>
+
+                    <div className="login-container__element-container">
+                        <p className="login-container__element-container__element">{`${userData.name} ${userData.surname}`}</p>
+                    </div>
+                    
+                    <div className="login-container__element-container">
+                        <span className="login-container__element-container__element">Wyloguj</span>
+                        <i className="icon-user login-container__element-container__element" onClick={() => dispatch(actions.logOutUser())}></i>
                     </div>
                 </>
             }

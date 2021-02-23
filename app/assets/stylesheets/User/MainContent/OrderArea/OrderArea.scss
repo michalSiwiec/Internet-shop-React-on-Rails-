@@ -1,41 +1,54 @@
-.products-part-container{
-    width: 100%;
-    min-height: 100px;
-    border: 2px solid black;
-    margin-bottom: 50px;
+@import '../../../Variables/Variables.scss';
+@import '../../../Variables/Variables.scss';
 
-    .single-product-container{
-        @media only screen and(max-width: 749px){
-            flex-basis: 85%;
-        }
-        @media only screen and(max-width: 1024px) and (min-width: 750px){
-            flex-basis: 50%;
-        }
-        @media only screen and(min-width: 1025px){
-            flex-basis: 30%;
-        }
-        border: 2px solid black;
-        margin: 15px 10px;
-        position: relative;
+.order-area-container{
+    width: 100%;
+    margin-bottom: 50px;
+    background: $main-admin-panel-bcg-color;
+
+    .flex-container{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+
+        .single-product-container{
+            @media only screen and (max-width: $small-screen-width) {
+                flex-basis: 80%;
+            }
     
-        .flex-container{
-            display: flex;
-            justify-content: center;
+            @media only screen and (max-width: $medium-screen-width) and (min-width: $small-screen-width){
+                flex-basis: 70%;
+            }
+    
+            @media only screen and (max-width: $large-screen-width) and (min-width: $medium-screen-width){
+                flex-basis: 45%;
+            }
+    
+            @media only screen and (min-width: $large-screen-width){
+                flex-basis: 30%;
+            }
+
             padding: 10px;
-    
+            border: 2px solid black;
+            margin: 15px 10px;
+            text-align: center;
+            
             .product-picture{
                 width: 70%;
+                margin-bottom: 10px;
             }
     
             .product-description{
                 text-align: center;
                 font-size: 17px;
+                margin: 10px;
             }
     
             .add-to-basket-button{
-                width: 50%;
+                width: 45%;
                 padding: 3px 7px;
                 font-size: 15px;
+                margin: 0px 5px;
     
                 &:hover{
                     cursor: pointer;
@@ -43,9 +56,10 @@
             }
         
             .select_quantity_product{
-                width: 50%;
+                width: 45%;
                 padding: 3px 7px;
                 font-size: 15px;
+                margin: 0px 5px;
             }
         }
     }

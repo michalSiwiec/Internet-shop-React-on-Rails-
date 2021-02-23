@@ -1,8 +1,12 @@
 .logo-container{
     min-height: 100px;
-    border: 2px solid black;
+    // border: 2px solid black;
     flex-basis: 25%;
     order: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &__logo{
         width: 85%;

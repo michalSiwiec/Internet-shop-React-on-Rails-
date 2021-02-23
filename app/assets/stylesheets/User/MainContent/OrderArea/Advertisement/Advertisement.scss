@@ -1,5 +1,13 @@
+@import '../../../../Variables/Variables.scss';
+
+.advertisement-container{
+    background: $main-admin-panel-bcg-color;
+}
+
+
 .advertisement{
     width: 100%;
+
     @media only screen and(max-width: 1024px){
         max-height: 150px;
     }

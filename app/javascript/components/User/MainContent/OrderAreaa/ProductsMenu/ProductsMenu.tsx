@@ -3,6 +3,8 @@ import React from 'react'
 import {useDispatch} from 'react-redux'
 import actions from '../../../../../../redux/products/duck/actions'
 
+import '../../../../../../assets/stylesheets/User/MainMenu/MainMenu.scss'
+
 import ProductMenuOption from './ProductsMenuOption/ProductMenuOption' 
 
 const ProductsMenu = () => {

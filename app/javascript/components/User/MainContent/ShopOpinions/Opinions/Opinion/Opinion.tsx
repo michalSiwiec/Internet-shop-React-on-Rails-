@@ -1,10 +1,8 @@
 import React, {FC} from 'react'
 
-import '../../../../../../../assets/Fontello/fontello-8f6edee7 2/css/fontello.css'
+import '../../../../../../../assets/Fontello/fontello-2faec39f/css/fontello.css'
 
-interface Props {
-    opinion: any
-}
+interface Props {opinion: any}
 
 const Opinion:FC<Props> = ({opinion}) => {
     const stars: Array<any> = []

@@ -10,7 +10,6 @@ import OrdersLogOutUsers from './OrdersLogOutUser/OrdersLogOutUsers'
 import CommonOrders from './CommonOrders/CommonOrders'
 
 const OrdersList = () => {
-
     return (
         <div className="order-list-container">
             <Switch>

@@ -5,7 +5,7 @@ const AdvertisementSlider = () => {
 
     return(
         <div className="advertisement-slider-container">
-            <img src={PNG1} alt="Ressssssssklasma 1" className="picture"/>
+            <img src={PNG1} alt="Reklama1" className="picture" />
         </div>
     )
 }

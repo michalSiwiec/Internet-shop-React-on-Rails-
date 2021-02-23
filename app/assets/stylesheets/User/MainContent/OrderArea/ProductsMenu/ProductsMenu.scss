@@ -1,13 +1,21 @@
+@import '../../../../Variables/Variables.scss';
+
 .products-menu-container{
-    padding: 15px 0px 15px 15px;
+    padding: 15px 0px;
+    background: $main-admin-panel-bcg-color;
+
+    .header{
+        text-align: center;
+    }
 
     .menu-option-list{
-        display: flex;
-        flex-direction: column;
+        .item-container{
+            text-align: center;
+            margin: 10px 0px;
 
-        &__item{
-            margin: 7px;
-            font-size: 17px;
+            &__item{
+                font-size: 17px;
+            }
         }
     }
 

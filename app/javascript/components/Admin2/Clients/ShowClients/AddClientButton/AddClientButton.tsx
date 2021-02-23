@@ -2,7 +2,7 @@ import React from 'react'
 
 import {Link} from 'react-router-dom'
 
-import '../../../../../../assets/Fontello/fontello-8f6edee7 2/css/fontello.css'
+import '../../../../../../assets/Fontello/fontello-2faec39f/css/fontello.css'
 
 const AddClientButton = () => {
     return (

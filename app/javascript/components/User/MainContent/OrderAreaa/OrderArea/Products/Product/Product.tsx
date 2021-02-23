@@ -55,6 +55,8 @@ const Product:FC<Props> = ({product}) => {
             alert('Brak produktu na magazynie - produkt nie dostępny :C')
     }
 
+
+
     return (
         <div className={`single-product-container`}>
             {productAdded 
@@ -70,7 +72,7 @@ const Product:FC<Props> = ({product}) => {
             </div>
             
             <div className="flex-container">
-                <button className="add-to-basket-button" onClick={() => addProductToBasket()}>Du koszyka</button>
+                <button className="add-to-basket-button" onClick={() => addProductToBasket()}>Do koszyka</button>
                 <input ref={quantityInput}
                     type="number"
                     className="select_quantity_product"

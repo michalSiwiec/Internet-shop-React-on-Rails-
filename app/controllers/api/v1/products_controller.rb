@@ -26,8 +26,10 @@ module Api
             end
 
             def destroy
-                product_id = params[:id]
-                product = Product.find(product_id)
+                # product_id = params[:id]
+                # product = Product.find(product_id)
+                puts(params[:id])
+                product = Product.find(params[:id])
 
                 product.destroy
                 products = Product.all

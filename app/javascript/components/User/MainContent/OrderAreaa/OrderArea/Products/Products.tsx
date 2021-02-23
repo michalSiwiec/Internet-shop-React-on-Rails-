@@ -53,7 +53,7 @@ const Products:FC<Props> = ({products, productsPartsVisibility}) => {
                 )
 
                 partsContainers.push(
-                    <div className={`products-part-container ${productsPartsVisibility[counter]}`} key={`Products part${product.id}`}>
+                    <div className={`${productsPartsVisibility[counter]}`} key={`Products part${product.id}`}>
                         {partsProducts.map((product) => <Product product={product} key={product.id}/>)}
                     </div>
                 )
@@ -64,7 +64,7 @@ const Products:FC<Props> = ({products, productsPartsVisibility}) => {
 
         return(
             <>
-                <div>{partsContainers}</div>
+                {partsContainers}
                 <div className="switches-container">{switchesProductsContainers}</div>
             </>
         ) 

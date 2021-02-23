@@ -33,6 +33,13 @@ const basketReducer = (state = initialState, action) => {
 
                 draftState.products = draftState.products.filter(product => product.id !== id)
                 draftState.wholePrice -= (quantity * action.price)
+                
+                // console.log(typeof quantity)
+                // console.log(typeof draftState.wholePrice)
+                // console.log(typeof action.price)
+                // draftState.wholePrice = parseFloat(draftState.wholePrice).toFixed(0)
+                // draftState.wholePrice = (draftState.wholePrice - (quantity * action.price))
+                // draftState.wholePrice = parseInt(draftState.wholePrice)
             })
 
         case types.CHANGE_PRODUCT_QUANTITY:
