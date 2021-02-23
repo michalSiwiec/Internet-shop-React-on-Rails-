@@ -1,5 +1,5 @@
 import React from 'react'
 
-const Header = () => <h1>Dane osobowe</h1>
+const Header = () => <h2 className="part-container__header">Dane osobowe</h2>
 
 export default Header

@@ -4,8 +4,8 @@ interface Props {orderPrice: number}
 
 const OrderSummary:FC<Props> = ({orderPrice}) => {
     return(
-        <div>
-            <p>{`Razem: ${orderPrice}`}</p>
+        <div className="summary-container">
+            <p className="summary-container__span">{`Razem: ${orderPrice}`}</p>
         </div>
     )
 }

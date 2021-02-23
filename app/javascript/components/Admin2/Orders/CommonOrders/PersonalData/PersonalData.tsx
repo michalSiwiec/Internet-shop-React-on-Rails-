@@ -9,7 +9,7 @@ interface Props {dataPerson: IPersonalData}
 
 const PersonalData:FC<Props> = ({dataPerson}) => {
     return (
-        <div className="data-person-container">
+        <div className="part-container">
             <Header />
             <InfoField value={`Imię: ${dataPerson.name}`} />
             <InfoField value={`Nazwisko: ${dataPerson.surname}`} />

@@ -6,10 +6,21 @@ interface Props {
 
 const Product:FC<Props> = ({detail}) => {
     return(
-        <div>
-            <p>{`Nazwa produktu: ${detail.product_description}`}</p>
-            <p>{`Cena: ${detail.product_price}`}</p>
-            <p>{`Ilośsxć: ${detail.quantity}`}</p>
+        <div className="product-container">
+            <p className="product-container__p">
+                Nazwa produktu
+                <span className="product-container__span">{detail.product_description}</span>
+            </p>
+
+            <p className="product-container__p">
+                Cena
+                <span className="product-container__span">{detail.product_price}</span>
+            </p>
+
+            <p className="product-container__p">
+                Ilość
+                <span className="product-container__span">{detail.quantity}</span>
+            </p> 
         </div>
     )
 }

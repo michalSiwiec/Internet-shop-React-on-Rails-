@@ -66,7 +66,7 @@ module Api
 
                 if(user_id != 0)
                     user = User.find(user_id)
-                    # OrderMailer.add_order_confirmation(user).deliver
+                    OrderMailer.add_order_confirmation(user).deliver
                 else
                     email_data = {
                         email: params[:email],

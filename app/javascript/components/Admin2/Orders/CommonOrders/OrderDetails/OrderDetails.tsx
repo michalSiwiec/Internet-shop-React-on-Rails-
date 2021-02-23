@@ -6,10 +6,7 @@ import Header from './Header/Header'
 import OrderDetail from './OrderDetail/OrderDetail'
 import Summary from './Summary/Summary'
 
-interface Props {
-    orderDetails: Array<IOrderDetails>
-    price: number
-}
+interface Props {orderDetails: Array<IOrderDetails>, price: number}
 
 const OrderDetails:FC<Props> = ({orderDetails, price}) => {
     return (

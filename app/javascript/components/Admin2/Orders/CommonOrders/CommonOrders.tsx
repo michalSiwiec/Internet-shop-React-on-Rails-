@@ -13,7 +13,7 @@ import PersonalData from './PersonalData/PersonalData'
 import Buttons from './Buttons/Buttons'
 
 const CommonOrders = () => {
-    const {orderID} = useParams()
+    const {id} = useParams()
     const [order, setOrder] = useState<ICommonOrder>({
         data_created: '',
         data_person: {
@@ -34,10 +34,8 @@ const CommonOrders = () => {
         order_price: 0
     })
 
-    console.log(order)
-
     useEffect(() => {
-        fetch(`/api/v1/orders/${orderID}`, {method: 'GET'})
+        fetch(`/api/v1/orders/${id}`, {method: 'GET'})
         .then(response => {
             if(response.ok)
                 return response.json()
@@ -48,10 +46,10 @@ const CommonOrders = () => {
     }, [])
 
     return (
-        <div className="common-orders-container">
+        <div className="order-container">
             <div className="overlay"></div>
 
-            <div className="present-order-container">
+            <div className="order-details">
                 <Header dataCreated={order.data_created} />
                 <PersonalData dataPerson={order.data_person} />
                 <DeliveryAddress deliveryAddress={order.delivery_address} />

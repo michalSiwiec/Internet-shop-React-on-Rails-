@@ -8,10 +8,10 @@ interface Props {orderDetail: IOrderDetails}
 
 const OrderDetail:FC<Props> = ({orderDetail}) => {
     return (
-        <div>
-            <InfoField value={`Nazwa produktu: ${orderDetail.product_description}`} />
-            <InfoField value={`Cena: ${orderDetail.product_price}`} />
-            <InfoField value={`Ilość: ${orderDetail.quantity}`} />
+        <div className="order-detail-container">
+            <InfoField property="Nazwa produktu:" value={orderDetail.product_description} />
+            <InfoField property="Cena" value={(orderDetail.product_price).toString()} />
+            <InfoField property="Ilość" value={(orderDetail.quantity).toString()} />
         </div> 
     )
 }

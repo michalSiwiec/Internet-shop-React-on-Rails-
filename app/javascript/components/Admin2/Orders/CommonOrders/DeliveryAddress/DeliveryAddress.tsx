@@ -9,7 +9,7 @@ interface Props {deliveryAddress: IDeliveryAddress}
 
 const DeliveryAddress:FC<Props> = ({deliveryAddress}) => {
     return (
-        <div className="delivery-address-container">
+        <div className="part-container">
             <Header />
             <InfoField value={`Kraj: ${deliveryAddress.country}`} />
             <InfoField value={`Miasto: ${deliveryAddress.city}`} />

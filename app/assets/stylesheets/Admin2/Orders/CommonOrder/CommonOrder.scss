@@ -1,55 +1,104 @@
-.common-orders-container{
+@import '../../../Variables/Variables.scss';
+
+.order-container{
     width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-image: url("../../../../images//Kaufland-background.jpg");
+    padding: 20px 0px;
+    min-height: 220vh;
+    position: relative;
+
+    background-image: url("../../../../images/Kaufland-background.jpg");
     background-color: black;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    color: white;
 
     .overlay{
         width: 100vw;
-        height: 100vh;
         background-color: black;
         opacity: 0.84;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
     }
 
-    .present-order-container{
-        width: 40vw;
-        // height: 300px;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: rgb(63, 32, 32);
-        padding: 50px 0px;
+    .order-details{
+        @media only screen and (max-width: $small-screen-width) {
+            width: 80%;
+        }
 
-        .data-person-container,
-        .delivery-address-container,
-        .order-details-container,
-        .buttons-container{
-            margin: 20px 0px;
-            border: 2px solid black;
-            // min-height: 150px;
+        @media only screen and (max-width: $medium-screen-width) and (min-width: $small-screen-width){
+            width: 70%;
+        }
+
+        @media only screen and (min-width: $medium-screen-width){
+            width: 65%;
+        }
+
+        z-index: 3;
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        background: $main-admin-panel-bcg-color;
+        text-align: center;
+        padding-bottom: 50px;
+
+        &__main-header{
+            margin: 20px 20px 50px;
+            text-align: center;
+        }
+
+        .part-container{
+            margin: 10px 0px 20px;
+
+            &__header{
+                text-align: center;
+                margin: 20px 20px 25px;
+            }
+
+            .info-container{
+                margin: 5px 0px 10px;
+            }
+        }
+
+        .order-details-container{
+            margin-top: 20px;
+            padding: 5px;
+
+            &__header{
+                margin: 20px 20px 50px;
+            }
+
+            .order-detail-container{
+                margin: 12px 0px;
+
+                .property-value{
+                    padding: 3px 0px 3px 15px;
+                    margin: 5px;
+                    font-style: italic;
+                    font-weight: bold;
+                }
+            }
         }
 
         .buttons-container{
-            button{
-                width: 45%;
-                margin: 0 2.5%;
-                color: white;
-                background-color: red;
-                font-size: 20px;
+            margin-top: 20px;
+
+            &__button{
+                margin: 30px 10px;
+                padding: 3px 7px;
+                margin: 0px 10px;
             }
+        }
+
+        .mistake-info-container{
+            color: red;
+            font-size: 17px;
         }
     }
 }

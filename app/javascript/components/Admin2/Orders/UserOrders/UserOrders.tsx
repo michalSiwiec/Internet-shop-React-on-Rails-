@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react'
 
 import {useParams} from 'react-router-dom'
 
+import '../../../../../assets/stylesheets/Admin2/Orders/UserOrder/UserOrder.scss'
+
 import {IOrderLogInPerson} from '../../../../../TypeScript/Interfaces/Interfaces'
 
 import Order from './Order/Order'
@@ -21,10 +23,8 @@ const UserOrders = () => {
         .then((orders_: Array<IOrderLogInPerson>) => setOrders(orders_))
     }, [])
 
-    console.log(userID)
-
     return (
-        <div className="container">
+        <div className="user-orders-container">
             <div className="overlay"></div>
 
             <div className="user-order-container">

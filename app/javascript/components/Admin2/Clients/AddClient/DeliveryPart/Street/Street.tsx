@@ -17,7 +17,7 @@ const Street:FC<Props> = ({street, setStreet}) => {
             <input type="text" value={street.value} onChange={(e) => validateStreet(e.target.value, setStreet, street)}  className="input-container__input" />
 
             <div className="mistake-info-container">
-                {street.mistakeInformation.map(info => <span key={`key${info}`}>{info}</span>)}
+                {street.mistakeInformation.map(info => <p key={`key${info}`}>{info}</p>)}
             </div>
         </div>
     )

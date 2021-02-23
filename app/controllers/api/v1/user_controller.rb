@@ -41,7 +41,7 @@ module Api
                 user.create_dataPerson!(user_data_person_params)
                 user.create_dataCreation!(creation_time)
 
-                # UserMailer.singup_confirmation(user).deliver
+                UserMailer.singup_confirmation(user).deliver
             end
 
             def update
