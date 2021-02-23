@@ -13,7 +13,7 @@ import PersonalData from './PersonalData/PersonalData'
 import Buttons from './Buttons/Buttons'
 
 const CommonOrders = () => {
-    const {id} = useParams()
+    const id = 77
     const [order, setOrder] = useState<ICommonOrder>({
         data_created: '',
         data_person: {

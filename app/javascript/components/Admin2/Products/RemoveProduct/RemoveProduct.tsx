@@ -12,7 +12,7 @@ import ProductSource from './ProductSource/ProductSource'
 import Buttons from './Buttons/Buttons'
 
 const RemoveProduct = () => {
-    const {productID} = useParams()
+    const productID = "77"
     const [source, setSource] = useState('')
     const [description, setDescription] = useState('')
 

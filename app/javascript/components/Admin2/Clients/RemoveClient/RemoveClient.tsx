@@ -14,14 +14,14 @@ import Buttons from './Buttons/Buttons'
 interface IUserPersonalData{name: string, surname: string}
 
 const RemoveClient = () => {
-    const {id} = useParams()
+    // const {id} = useParams()
     const [userPersonalData, setUserPersonalData] = useState<IUserPersonalData>({
         name: '',
         surname: ''
     })
 
     useEffect(() => {
-        fetch(`/api/v1/user/${id}`, {method: 'GET'})
+        fetch(`/api/v1/user/77`, {method: 'GET'})
         .then(response => {
             if(response.ok)
                 return response.json()
@@ -46,7 +46,7 @@ const RemoveClient = () => {
                 <form>
                     <Name name={userPersonalData.name} />
                     <Surname surname={userPersonalData.surname} />
-                    <Buttons userID={id}/>
+                    <Buttons userID="77"/>
                 </form>
             </div>
         </div>

@@ -30,7 +30,7 @@ import {useHistory} from 'react-router-dom'
 
 
 const EditClient = () => {
-    const {id} = useParams()
+    // const {id} = useParams()
     const [name, setName] = useState({
         value: '',
         setted: false,
@@ -114,7 +114,7 @@ const EditClient = () => {
                 },
             }
 
-            fetch(`/api/v1/user/${id}`, {
+            fetch(`/api/v1/user/77`, {
                 method: 'PATCH',
                 headers: {
                     "Content-Type": "application/json"
@@ -128,7 +128,7 @@ const EditClient = () => {
 
 
     useEffect(() => {
-        fetch(`/api/v1/user/${id}`, {method: 'GET'})
+        fetch(`/api/v1/user/77`, {method: 'GET'})
         .then(response => {
             if(response.ok)
                 return response.json()
