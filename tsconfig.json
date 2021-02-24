@@ -16,9 +16,7 @@
       "noImplicitAny":false,
       "noImplicitThis":true,
       "noImplicitReturns":true,
-      "strictNullChecks":true,
-      "types": [ "node" ],
-      "typeRoots": [ "../node_modules/@types" ]
+      "strictNullChecks":true
     },
     "exclude": [
       "**/*.spec.ts",
