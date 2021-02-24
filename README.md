@@ -1,24 +1,26 @@
 # README
+KauflandOnRails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1) Zasada działania interfejsu
 
-Things you may want to cover:
+	Aplikacja działa w trybie użytkownika oraz admina.
+Użytkownik początkowo odwiedzając aplikację jest przekierowywany na główną jej część.
+Domyślnie użytkownik nie jest zalogowany, natomiast interfejs pozwala mu na to.
+Zalogowany użytkownik może dodać opinię o serwise która zostanie przypisana do jego konta.
 
-* Ruby version
+Aplikacja umożliwia również składanie zamówień zarówno dla użytkowników posiadających konto i zalogowanych jak i użytkowników którzy nie chcą zakładać konta. W sytuacji gdy użytkownik zaloguj się do serwisu nie musi wypełniać formularza – zostanie on automatycznie wypełniony danymi z jego konta w przeciwieństwie do nie zalogowanego użytkownika. 
 
-* System dependencies
+Aby zamówienie mogło zostać zrealizowane należy dodać przynajmniej jeden produkt do koszyka, w późniejszym etapie przy podsumowaniu koszyka możliwa jest edycja ilości produktu lub usunięcie go całkowite z koszyka.
 
-* Configuration
+Po założeniu konta lub złożeniu zamówienia do użytkownika zostaje wysłany email wraz z odpowiednią informacją.
 
-* Database creation
+2) Opis użytych technologi
 
-* Database initialization
+Interfejs użytkownika został napisany z użyciem biblioteki React, w którym zamiast zwykłego JavaScriptu używam TypeScript, do zarządzania stanem aplikacji używam zarówno  technologi Redux oraz zwykłego Reacta. Użycie Reduxa w projekcie nie ma wielkiego uzasadnienia, został od zastosowany w celach naukowych. 
 
-* How to run the test suite
+Do wystylizowania aplikacji użyto preprocesora Sass, a do uzyskania efektu responsywności media-queries.
 
-* Services (job queues, cache servers, search engines, etc.)
+Jako bazy danych użyłem PostgreSQL, a do stworzenia strony back-endowej frameworka RubyOnRails. Użytkownik komunikuje się z bazą danych za pomocą zapytań do  API (metoda fetch) które są dopasowywane do odpowiednich akcji w kontrolerach, dzięki temu mamy możliwość pobierania, dodawania, edycji i usuwania odpowiednich danych. 
 
-* Deployment instructions
 
-* ...
+
