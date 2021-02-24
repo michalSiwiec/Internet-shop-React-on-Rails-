@@ -14,6 +14,11 @@ Aby zamówienie mogło zostać zrealizowane należy dodać przynajmniej jeden pr
 
 Po założeniu konta lub złożeniu zamówienia do użytkownika zostaje wysłany email wraz z odpowiednią informacją.
 
+Aby dostać się do panelu administratora należy usunąć część ścieżki /home/ i zamienić ją na /admin. Po przejściu pod ten adres zalogować się z danymi min:
+
+login: michsiw439
+hasło 1234
+
 2) Opis użytych technologi
 
 Interfejs użytkownika został napisany z użyciem biblioteki React, w którym zamiast zwykłego JavaScriptu używam TypeScript, do zarządzania stanem aplikacji używam zarówno  technologi Redux oraz zwykłego Reacta. Użycie Reduxa w projekcie nie ma wielkiego uzasadnienia, został od zastosowany w celach naukowych. 
