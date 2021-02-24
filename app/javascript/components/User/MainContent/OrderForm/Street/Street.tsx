@@ -22,7 +22,7 @@ const Street:FC<Props> = ({street, setStreet}) => {
             />
 
             <div className="mistake-info-container">
-                {street.mistakeInformation.map((info: string) => <span key={`key${info}`}>{info}</span>)}
+                {street.mistakeInformation.map((info: string) => <p key={`key${info}`}>{info}</p>)}
             </div>
         </div>
     )

@@ -22,6 +22,8 @@ const City:FC<Props> = ({setCity, selectedProvince}) => {
 
     return (
         <div>
+            <p className="label-container__label">Miasto</p>
+
             <select onChange={(e) => setCity(e.target.value)} >
                 {cities.map((city: ICity) => <option key={`city${city.id}`}>{city.name}</option>)}
             </select>

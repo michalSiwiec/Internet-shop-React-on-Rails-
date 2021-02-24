@@ -24,11 +24,11 @@ const City:FC<Props> = ({city, setCity, province}) => {
  
     return (
         <div className="data-container">
-            <label> Miasto
-                <select value={city.value} disabled={city.unmutable} onChange={(e) => setCity({value: e.target.value, unmutable: city.unmutable}) }>
-                    {cities.map((city_: ICity) => <option key={`city${city_.name}`}>{city_.name}</option>)}
-                </select>
-            </label>
+            <p className="data-container__label">Miasto</p>
+
+            <select value={city.value} disabled={city.unmutable} onChange={(e) => setCity({value: e.target.value, unmutable: city.unmutable}) }>
+                {cities.map((city_: ICity) => <option key={`city${city_.name}`}>{city_.name}</option>)}
+            </select>
         </div>
     )
 } 

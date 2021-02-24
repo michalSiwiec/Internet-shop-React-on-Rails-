@@ -12,6 +12,7 @@ const ShoppingOption = () => {
             <SingIn />
             <Rejestration />
             <CommonShopping />
+            
         </div>
     )
 }

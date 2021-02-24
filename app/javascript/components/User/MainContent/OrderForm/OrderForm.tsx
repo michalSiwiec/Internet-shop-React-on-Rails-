@@ -201,10 +201,13 @@ const OrderForm = () => {
                 <HouseNumber houseNumber={houseNumber} setHouseNumber={setHouseNumber} />
             </div>
 
-            <AddOrderButton addOrder={addOrder} />
-            <CancelButton />
+            <div className="buttons-container">
+                <CancelButton />
+                <AddOrderButton addOrder={addOrder} />
+            </div>
         </div>
     )
 }
 
 export default OrderForm
+

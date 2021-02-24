@@ -1,13 +1,17 @@
+@import '../../../Variables/Variables.scss';
+
 .order-form-container{
+    width: 90%;
     min-height: 100px;
     padding: 30px 0px;
-    background-color: beige;
+    margin: 0 auto;
+    background: $main-admin-panel-bcg-color;
 
     .part-container{
         margin: 20px 0px;
 
         .header-container{
-            width: 80%;
+            width: 65%;
             margin: 0 auto;
             border-bottom: 2px solid black;
             margin-bottom: 50px;
@@ -15,41 +19,37 @@
         }
     
         .data-container{
-            width: 80%;
+            width: 65%;
             margin: 0 auto;
             margin-bottom: 30px;
     
             &__value-input,
-            select,
-            button{
+            select{
                 width: 100%;
                 padding: 3px 15px;
                 font-size: 20px;
-    
-                &:focus{
-                    border: 2px solid red;
-                }
             }
-
-            label{
-                font-size: 23px;
-
-                select{
-                    margin-left: 20px;
-                    padding: 3px 10px;
-                    font-size: 20px;
+                &__label{
+                    margin-bottom: 10px;
                 }
-
-                .flat-number{
-                    padding: 3px 10px;
-                    font-size: 20px;
-                    margin-left: 20px;
-                }
-            }
 
             .mistake-info-container{
-                color: red;
+                color: #800000;
             }
+        }
+    }
+
+    .buttons-container{
+        text-align: center;
+        margin-top: 25px;
+        
+        &__button{
+            width: 30%;
+            padding: 6px 7px;
+            margin: 0px 10px;
+            background-color: #800000;
+            color: white;
+            font-size: 16px;
         }
     }
 

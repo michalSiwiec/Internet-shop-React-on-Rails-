@@ -35,6 +35,8 @@ const Province:FC<Props> = ({province, setProvince, setCity}) => {
 
     return (
         <div className="data-container">
+            <p className="data-container__label">Województwo</p>
+
             <select value={province.value} disabled={province.unmutable} onChange={(e) => {
                 setProvince({value: e.target.value, unmutable: province.unmutable})
                 changeCityAfterSelectProvince(e.target.value, province.unmutable)

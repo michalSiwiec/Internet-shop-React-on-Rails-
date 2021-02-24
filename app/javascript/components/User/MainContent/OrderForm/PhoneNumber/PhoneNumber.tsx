@@ -21,7 +21,7 @@ const PhoneNumber:FC<Props> = ({phoneNumber, setPhoneNumber}) => {
             />
 
             <div className="mistake-info-container">
-                {phoneNumber.mistakeInformation.map((info: string) => <span key={`key${info}`}>{info}</span>)}
+                {phoneNumber.mistakeInformation.map((info: string) => <p key={`key${info}`}>{info}</p>)}
             </div>
         </div>
     )

@@ -1,27 +1,45 @@
+@import '../../../Variables/Variables.scss';
+
 .shopping-options-container{
     width: 90%;
     margin: 0 auto;
-    // min-height: 40vh;
+    
+    background: $main-admin-panel-bcg-color;
     border: 2px solid black;
+
     display: flex;
     flex-wrap: wrap;
 
     .header-container{
+        padding: 10px 20px;
         flex-basis: 100%;
+        margin-bottom: 30px;
 
-        .header{
-            color: red;
-            font-size: 45px;
-            padding-left: 35px;
-            letter-spacing: 1px;
+        h2{
+            .header{
+                @media only screen and (max-width: $large-screen-width) {
+                    display: block;
+                }
+        
+                font-size: 45px;
+                color: #800000;
+                padding-right: 10px;
+                letter-spacing: 1px;
+            }
         }
     }
     
     .sing-in-container{
-        flex-basis: 33.3%;
+        @media only screen and (max-width: $large-screen-width) {
+            flex-basis: 100%;
+        }
+    
+        @media only screen and (min-width: $large-screen-width){
+            flex-basis: 33.3%;
+        }
+
         border: 2px solid black;
         padding: 20px 10px;
-        background-color: beige;
 
         .ornament{
             width: 80%;
@@ -44,6 +62,11 @@
                     padding: 3px 15px;
                 }
 
+                .log-in-btn{
+                    background-color: #800000;
+                    color: white;
+                }
+
                 .prompt{
                     font-size: 15px;
                     &:hover{
@@ -59,10 +82,16 @@
     }
 
     .rejestration-container{
-        flex-basis: 33.3%;
+        @media only screen and (max-width: $large-screen-width) {
+            flex-basis: 100%;
+        }
+    
+        @media only screen and (min-width: $large-screen-width){
+            flex-basis: 33.3%;
+        }
+
         border: 2px solid black;
         padding: 20px 10px;
-        background-color: beige;
 
         .ornament{
             width: 80%;
@@ -82,7 +111,8 @@
                     width: 100%;
                     font-size: 17px;
                     padding: 3px 15px;
-                    background-color: rgb(158, 8, 8);
+                    background-color: #800000;
+                    color: white;
 
                     &:hover{
                         cursor: pointer;
@@ -93,7 +123,14 @@
     }
 
     .shopping-without-rejestration-container{
-        flex-basis: 33.3%;
+        @media only screen and (max-width: $large-screen-width) {
+            flex-basis: 100%;
+        }
+    
+        @media only screen and (min-width: $large-screen-width){
+            flex-basis: 33.3%;
+        }
+
         border: 2px solid black;
         padding: 20px 10px;
 
@@ -119,6 +156,8 @@
                     width: 100%;
                     font-size: 17px;
                     padding: 3px 15px;
+                    background-color: #800000;
+                    color: white;
 
                     &:hover{
                         cursor: pointer;
@@ -126,5 +165,16 @@
                 }
             }
         }
+    }
+}
+
+.about-us-container{
+    width: 90%;
+    margin: 0 auto;
+    background: $main-admin-panel-bcg-color;
+
+    .add-opinion-container{
+        border: none;
+        margin: 20px;
     }
 }

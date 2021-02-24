@@ -20,6 +20,8 @@ const PostalCode:FC<Props> = ({postalCode, setPostalCode, city}) => {
 
     return (
         <div className="data-container">
+            <p className="data-container__label">Kod pocztowy</p>
+
             <input type="text" className="data-container__value-input" disabled value={postalCode} />
         </div>
     )

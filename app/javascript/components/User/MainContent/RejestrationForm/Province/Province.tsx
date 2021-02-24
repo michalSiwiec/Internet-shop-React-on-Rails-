@@ -37,6 +37,8 @@ const Province:FC<Props> = ({setProvince, setCity}) => {
 
     return (
         <div>
+            <p className="label-container__label">Województwo</p>
+
             <select onChange={(e) => {
                 setProvince(e.target.value)
                 fetchFirstCity(e.target.value)

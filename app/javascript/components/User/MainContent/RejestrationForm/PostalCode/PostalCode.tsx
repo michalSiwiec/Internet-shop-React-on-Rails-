@@ -23,6 +23,8 @@ const PostalCode:FC<Props> = ({city, setPostalCode, postalCode}) => {
 
     return (
         <div>
+            <p className="label-container__label">Kod pocztowy</p>
+
             <select disabled>
                 <option>{postalCode}</option>
             </select>

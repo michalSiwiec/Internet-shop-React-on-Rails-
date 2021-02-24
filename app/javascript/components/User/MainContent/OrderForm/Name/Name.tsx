@@ -22,7 +22,7 @@ const Name:FC<Props> = ({name, setName}) => {
             />
 
             <div className="mistake-info-container">
-                {name.mistakeInformation.map((info: string) => <span key={`key${info}`}>{info}</span>)}
+                {name.mistakeInformation.map((info: string) => <p key={`key${info}`}>{info}</p>)}
             </div>
         </div>
     )

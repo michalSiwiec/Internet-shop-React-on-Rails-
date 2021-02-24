@@ -18,7 +18,7 @@ const Email:FC<Props> = ({email, setEmail}) => {
             />
 
             <div className="mistake-info-container">
-                {email.mistakeInformation.map((info: string) => <span key={`info${info}`}>{info}</span>)}
+                {email.mistakeInformation.map((info: string) => <p key={`info${info}`}>{info}</p>)}
             </div>
         </div>
     )

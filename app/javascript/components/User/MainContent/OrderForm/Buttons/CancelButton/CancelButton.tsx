@@ -4,11 +4,9 @@ import {Link} from 'react-router-dom'
 
 const CancelButton = () => {
     return (
-        <div className="data-container">
-           <Link to="">
-               <button>Anuluj</button>
-            </Link> 
-        </div>
+        <Link to="">
+            <button className="buttons-container__button">Anuluj</button>
+        </Link> 
     )
 }
 
