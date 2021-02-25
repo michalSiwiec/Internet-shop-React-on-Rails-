@@ -19,6 +19,11 @@ Aby dostać się do panelu administratora należy usunąć część ścieżki /h
 login: michsiw439
 hasło 1234
 
+Aby zalogować się do serwisu jako jeden z wielu użytkowników można użyć danych:
+
+login: michsiw439
+hasło: 1234
+
 2) Opis użytych technologi
 
 Interfejs użytkownika został napisany z użyciem biblioteki React, w którym zamiast zwykłego JavaScriptu używam TypeScript, do zarządzania stanem aplikacji używam zarówno  technologi Redux oraz zwykłego Reacta. Użycie Reduxa w projekcie nie ma wielkiego uzasadnienia, został od zastosowany w celach naukowych. 
