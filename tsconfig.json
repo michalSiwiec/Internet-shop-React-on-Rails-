@@ -16,15 +16,13 @@
       "noImplicitAny":false,
       "noImplicitThis":true,
       "noImplicitReturns":true,
-      "strictNullChecks":true,
-      "types": [ "node" ],
-      "typeRoots": [ "../node_modules/@types" ]
+      "strictNullChecks":true
     },
     "exclude": [
       "**/*.spec.ts",
       "node_modules",
-      "public",
-      "vendor/bundle"
+      "vendor/bundle",
+      "public"
     ],
     "compileOnSave":false
   }

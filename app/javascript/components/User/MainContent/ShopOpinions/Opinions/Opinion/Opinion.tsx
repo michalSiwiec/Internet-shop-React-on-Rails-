@@ -1,7 +1,5 @@
 import React, {FC} from 'react'
 
-import '../../../../../../../assets/Fontello/fontello-2faec39f/css/fontello.css'
-
 interface Props {opinion: any}
 
 const Opinion:FC<Props> = ({opinion}) => {

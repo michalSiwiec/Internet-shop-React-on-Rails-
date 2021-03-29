@@ -2,12 +2,12 @@ import React from 'react'
  
 import {Link} from 'react-router-dom'
 
-// import logo from '../../../../../../../../../assets/images/adminPicture.png'
-// import logo from '../../../../../../../../../assets/images/adminPicture.png'
-// import logo from './adminPicture.png'
+declare module "*.png"
+
+import logo from 'images/adminPicture.png';
 
 const AdminPicture = () => {
-    const logo = require('../../../../../../../../../assets/images/adminPicture.png')
+    // const logo = require('../../../../../../../../../assets/images/adminPicture.png')
 
     return(
         <Link to={`/admin/editAdmin`}>
