@@ -55,8 +55,6 @@ const Product:FC<Props> = ({product}) => {
             alert('Brak produktu na magazynie - produkt nie dostępny :C')
     }
 
-
-
     return (
         <div className={`single-product-container`}>
             {productAdded 
