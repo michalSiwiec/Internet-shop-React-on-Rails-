@@ -10,6 +10,8 @@ import Statistics from './Statistics/Statistics'
 import Products from './Products/Products'
 
 const Admin2 = () => {
+    console.log("Dashboard")
+
     return (
         <Switch>
             <Route path="/admin/Orders">
@@ -32,12 +34,11 @@ const Admin2 = () => {
                 <Opinions />
             </Route>
 
-            <Route path="/admin/">
+            <Route path="/admin">
                 <AdminDashboard />
             </Route>
         </Switch>       
     )
-
 }
 
 export default Admin2

@@ -9,13 +9,14 @@ import Opinions from './Opinions/Opinions'
 import '../../../../../../assets/stylesheets/Admin2/Dashboard/AdminPanel/Options/Options.scss'
 
 const Options = () => {
+    console.log("Options")
     return (
         <div className="options-container">
             <Orders />
             <Statistics />
-            <Clients />
+            {/* <Clients />
             <Products />
-            <Opinions />
+            <Opinions /> */}
         </div>
     )
 }
