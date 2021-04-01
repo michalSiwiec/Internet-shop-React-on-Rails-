@@ -24,7 +24,6 @@ const MainMenu = () => {
             <MainMenuBasket />
             <LogInWindow />
             <MainMenuOptions isInvisibility={isInvisibility} />
-            
         </div>
     )
 }

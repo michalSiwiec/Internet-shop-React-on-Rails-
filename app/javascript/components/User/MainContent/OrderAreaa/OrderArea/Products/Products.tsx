@@ -6,9 +6,9 @@ import ProductsRow from './ProductsRow/ProductsRow'
 import Product from './Product/Product'
 import Switch from './Switch/Switch'
 
-interface Props{products: Array<IProduct>, productsPartsVisibility: Array<string>}
+interface Props{products: Array<IProduct>}
 
-const Products:FC<Props> = ({products, productsPartsVisibility}) => {
+const Products:FC<Props> = ({products}) => {
 
     const setValueClassRow = () => {
         let quantityRow: (null | number) = null

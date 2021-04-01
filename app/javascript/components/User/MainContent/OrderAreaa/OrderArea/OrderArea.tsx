@@ -16,7 +16,6 @@ const OrderArea = () => {
 
     const products: Array<IProduct> = useSelector((state: IReduxState) => state.productsReducer.products)
     const productsType = useSelector((state: IReduxState) => state.productsReducer.productType)
-    const productsPartsVisibility = useSelector((state: IReduxState) => state.productsReducer.productsPartsVisibility)
 
     const dispatch = useDispatch()
     let selectedProducts = [...products]
@@ -41,7 +40,7 @@ const OrderArea = () => {
     return (
         <div className="order-area-container">
             {info === "orderCompletted" ? <WindowCommunicate info="Dodano zamówienie"/> : null}
-            {products.length ? <Products products={selectedProducts} productsPartsVisibility={productsPartsVisibility}/> : <DownloadingData />}
+            {products.length ? <Products products={selectedProducts} /> : <DownloadingData />}
         </div>
     )         
 }
