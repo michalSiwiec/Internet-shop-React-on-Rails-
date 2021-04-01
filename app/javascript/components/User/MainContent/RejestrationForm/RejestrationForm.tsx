@@ -15,10 +15,11 @@ import PhoneNumber from './PhoneNumber/PhoneNumber'
 import Country from './Country/Country'
 import Street from './Street/Street'
 import HouseNumber from './HouseNumber/HouseNumber'
-import RejestrationButton from './RejestrationButton/RejestrationButton'
+// import RejestrationButton from './RejestrationButton/RejestrationButton'
 import Province from './Province/Province'
 import City from './City/City'
 import PostalCode from './PostalCode/PostalCode'
+import Buttons from './Buttons/Buttons'
 
 import {useDispatch} from 'react-redux'
 import actions from '../../../../../redux/user/duck/actions'
@@ -153,7 +154,7 @@ const RejestrationForm = () => {
                     <HouseNumber houseNumber={houseNumber} setHouseNumber={setHouseNumber}/>
                 </div>
 
-                <RejestrationButton registerUser={registerUser}/>
+                <Buttons registerUser={registerUser} />
             </form>
         </div>
     )
