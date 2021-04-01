@@ -33,7 +33,7 @@ const OrderArea = () => {
                 else
                     throw Error(response.statusText);
             })
-            .then((products: Array<IProduct>) => dispatch(productsActions.setProduct(products, "meats")))
+            .then((products: Array<IProduct>) => dispatch(productsActions.setProduct(products, "all")))
             .catch(err => console.error(err))
         },500)
     },[])

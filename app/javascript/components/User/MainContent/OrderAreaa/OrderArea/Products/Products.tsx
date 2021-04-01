@@ -1,76 +1,65 @@
-import React, {FC, useEffect} from 'react'
-
-import {useDispatch} from 'react-redux'
-import productsActions from '../../../../../../../redux/products/duck/actions'
+import React, {FC, useState, useEffect} from 'react'
 
 import {IProduct} from '../../../../../../../TypeScript/Interfaces/Interfaces'
 
+import ProductsRow from './ProductsRow/ProductsRow'
 import Product from './Product/Product'
 import Switch from './Switch/Switch'
 
 interface Props{products: Array<IProduct>, productsPartsVisibility: Array<string>}
 
 const Products:FC<Props> = ({products, productsPartsVisibility}) => {
-    const dispatch = useDispatch()
 
-    useEffect(() => {  
-        const secondaryProductsPartsVisibility:Array<string> = []
+    const setValueClassRow = () => {
+        let quantityRow: (null | number) = null
+        const classRowBuff: Array<string> = []
 
-        products.forEach((product, index) => {
-            if(index % 6 == 0)
-                secondaryProductsPartsVisibility.push("inVisibly")
-        })
-        secondaryProductsPartsVisibility[0] = "flex-container"
+        if(products.length % 6 === 0)
+            quantityRow = products.length / 6
+        else
+            quantityRow = Math.floor((products.length / 6) + 1)
 
-        dispatch(productsActions.setProductsPartsVisibility(secondaryProductsPartsVisibility))
-    },[products.length])   
+        for(let i = 0; i < quantityRow; ++i){
+            classRowBuff.push("hidden")
+        }
+        classRowBuff[0] = ""
 
-    const changeProductsContainer = (e: React.SyntheticEvent) => {
-        let id = (e.target as HTMLInputElement).id.slice(6)
-        const secondaryProductsPartsVisibility = productsPartsVisibility.map(element => element = "inVisibly")
-
-        secondaryProductsPartsVisibility[id] = "flex-container"
-        dispatch(productsActions.setProductsPartsVisibility(secondaryProductsPartsVisibility))
-    }
-    
-    const divideOnSubparts = () => {
-        const partsContainers: Array<object> = []
-        const partsProducts: Array<IProduct> = []
-        const switchesProductsContainers: Array<object> = []
-        let counter = 0;
-
-        products.forEach((product, index) => {            
-            partsProducts.push(product)
-
-            if(index % 6 === 5 || index === products.length-1){
-                switchesProductsContainers.push(
-                    <Switch 
-                        value={counter + 1}
-                        changeProductsContainer={(e) => changeProductsContainer(e)}
-                        key={`counter${counter}`}
-                        id={`switch${counter}`}
-                    />
-                )
-
-                partsContainers.push(
-                    <div className={`${productsPartsVisibility[counter]}`} key={`Products part${product.id}`}>
-                        {partsProducts.map((product) => <Product product={product} key={product.id}/>)}
-                    </div>
-                )
-                partsProducts.splice(0, partsProducts.length)
-                ++counter
-            }
-        })
-
-        return(
-            <>
-                {partsContainers}
-                <div className="switches-container">{switchesProductsContainers}</div>
-            </>
-        ) 
+        return classRowBuff
     }
 
-    return divideOnSubparts()
+    const [classRow, setClassRow] = useState<Array<any>>(setValueClassRow())
+
+    let productsInRow: Array<any> = []
+    const productsRow :Array<any> = []
+    const switches: Array<any> = []
+    let counter = 0
+
+    products.forEach((product, index) => {
+        productsInRow.push(<Product product={product} />)
+
+        if(productsInRow.length === 6 || index === (products.length - 1)){
+            productsRow.push(<ProductsRow productsInRow={productsInRow} className={classRow[counter]} key={`productRow${index}`} />)
+            switches.push(<Switch rowNumber={counter} setClassRow={setClassRow} classRow={classRow} key={`switch${index}`}/>)
+            productsInRow = []
+            ++counter
+        }
+    })
+
+    useEffect(() => {
+        setClassRow(setValueClassRow())
+    }, [products.length])
+   
+    return (
+        <>
+            <div className="products-container">
+                {productsRow}
+            </div>
+
+            <div className="switch-container">
+                {switches}
+            </div>
+        </>
+    )
 }
 
 export default Products

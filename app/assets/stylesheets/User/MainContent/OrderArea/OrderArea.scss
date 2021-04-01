@@ -1,92 +1,82 @@
 @import '../../../Variables/Variables.scss';
 
 .order-area-container{
-    width: 100%;
-    margin-bottom: 50px;
-    background: $main-admin-panel-bcg-color;
+    .products-container{
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
 
-    .flex-container{
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
+            .single-product-container{
+                background-color: white;
+                flex-basis: 90%;
 
-        .single-product-container{
-            @media only screen and (max-width: $small-screen-width) {
-                flex-basis: 80%;
-            }
-    
-            @media only screen and (max-width: $medium-screen-width) and (min-width: $small-screen-width){
-                flex-basis: 70%;
-            }
-    
-            @media only screen and (max-width: $large-screen-width) and (min-width: $medium-screen-width){
-                flex-basis: 45%;
-            }
-    
-            @media only screen and (min-width: $large-screen-width){
-                flex-basis: 30%;
-            }
+                @media only screen and (min-width: $medium-screen-width) {
+                    flex-basis: 45%;
+                }
 
-            padding: 10px;
-            border: 2px solid black;
-            margin: 15px 10px;
-            text-align: center;
-            
-            .product-picture{
-                width: 70%;
-                margin-bottom: 10px;
-            }
+                @media only screen and (min-width: $extra-large-screen-width) {
+                    flex-basis: 30%;
+                }
     
-            .product-description{
+                padding: 10px;
+                margin: 15px 10px;
                 text-align: center;
-                font-size: 17px;
-                margin: 10px;
+                
+                .product-picture{
+                    width: 70%;
+                    margin-bottom: 10px;
+                }
+        
+                .product-description{
+                    text-align: center;
+                    font-size: 17px;
+                    margin: 10px;
+                }
+        
+                .add-to-basket-button{
+                    width: 60%;
+                    padding: 5px 12px;
+                    font-size: 15px;
+                    margin: 0px 5px;
+                    background-color: #800;
+                    color: white;
+        
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            
+                .select_quantity_product{
+                    width: 30%;
+                    padding: 3px 7px;
+                    font-size: 15px;
+                    margin: 0px 5px;
+                    border: 2px solid #800;
+                }
             }
+        }
     
-            .add-to-basket-button{
-                width: 45%;
-                padding: 3px 7px;
-                font-size: 15px;
-                margin: 0px 5px;
-    
+        .hidden{
+            display: none;
+        }
+    }
+
+    .switch-container{
+        text-align: center;
+        margin-bottom: 17px;
+
+        .switch{
+            display: inline;
+            margin: 0px 7px;
+
+            span{
+                font-size: 20px;
+
                 &:hover{
                     cursor: pointer;
                 }
             }
-        
-            .select_quantity_product{
-                width: 45%;
-                padding: 3px 7px;
-                font-size: 15px;
-                margin: 0px 5px;
-            }
         }
     }
-}
-
-.switches-container{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-    border-bottom: 2px solid black;
-
-    .switch{
-        font-size: 20px;
-        margin: 0px 7px;
-
-        &:hover{
-            cursor: pointer;
-        }
-    }
-}
-
-.inVisibly{
-    display: none;
-}
-
-.flex-container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
 }
