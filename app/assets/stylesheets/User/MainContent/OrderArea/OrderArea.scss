@@ -1,6 +1,6 @@
 @import '../../../Variables/Variables.scss';
 
-.order-area-container{
+.order-area-container{    
     .products-container{
         .row{
             display: flex;
@@ -64,7 +64,7 @@
 
     .switch-container{
         text-align: center;
-        margin-bottom: 17px;
+        margin: 17px 0px;
 
         .switch{
             display: inline;

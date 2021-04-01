@@ -33,4 +33,6 @@ Do wystylizowania aplikacji użyto preprocesora Sass, a do uzyskania efektu resp
 Jako bazy danych użyłem PostgreSQL, a do stworzenia strony back-endowej frameworka RubyOnRails. Użytkownik komunikuje się z bazą danych za pomocą zapytań do  API (metoda fetch) które są dopasowywane do odpowiednich akcji w kontrolerach, dzięki temu mamy możliwość pobierania, dodawania, edycji i usuwania odpowiednich danych. 
 
 
-Niestety w wrzuceniu tego projektu na Heroku, pomagała mi osoba z zewnątrz, z którą już nie mam kontaktu więc mogę naprawiać niektóre niedoskonałości jedynie u siebie lokalnie. 
+1) Problem with keys
+
+

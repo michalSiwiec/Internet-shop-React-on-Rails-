@@ -7,7 +7,7 @@ interface Props {
 
 const ProductsRow:FC<Props> = ({productsInRow, className}) => {
     return (
-        <div className={`row ${className}`}>
+        <div className={`row ${className}`} key={`row${Math.random() * 1000000}`}>
             {productsInRow}
         </div>
     )

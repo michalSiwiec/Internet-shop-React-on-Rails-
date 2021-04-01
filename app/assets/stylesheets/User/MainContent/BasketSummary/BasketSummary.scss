@@ -11,11 +11,6 @@
     flex-wrap: wrap;
     justify-content: center;
 
-    .product-part-without-products-part{
-        text-align: center;
-        border: 2px solid black;
-    }
-
     .product-part-with-products{
         @media only screen and (max-width: $large-screen-width) {
             flex-basis: 100%;
@@ -26,31 +21,40 @@
         }
 
         min-height: 100px;
-        border: 2px solid black;
         text-align: center;
+
+        h2{
+            padding-bottom: 10px;
+            border-bottom: 2px solid black;
+        }
 
         .product-flex-container{
             display: flex;
             margin: 10px 0px;
-            border-top: 2px solid black;
             border-bottom: 2px solid black;
     
             .picture-container{
                 padding-top: 20px;
                 flex-basis: 20%;
                 text-align: center;
-    
-                &__picture{
-                    width: 85%;
-                    max-width: 100px;
-                }
-    
-                &__remove-product{
-                    font-size: 17px;
-    
-                    &:hover{
-                        cursor: pointer;
-                        color: #800000;
+                margin-bottom: 10px;
+
+                figure{
+                    .picture-container__picture{
+                        width: 85%;
+                        max-width: 100px;
+                    }
+
+                    .picture-container__remove-product{
+                        width: 25%;
+                        margin: 0 auto;
+                        margin-top: 10px;
+                        font-size: 17px;
+        
+                        &:hover{
+                            cursor: pointer;
+                            color: #800000;
+                        }
                     }
                 }
             }
@@ -59,12 +63,30 @@
                 flex-basis: 40%;
                 padding-top: 30px;
                 text-align: center;
+
+                h3{
+                    margin-bottom: 20px;
+                }
+
+                span{
+                    font-style: italic;
+                }
             }
     
             .change-quantity-container{
                 flex-basis: 40%;
                 text-align: right;
                 padding: 15px;
+
+                h3{
+                    margin-bottom: 10px;
+                }
+
+                input{
+                    border: 2px solid #800;
+                    padding: 3px 5px;
+                    margin-bottom: 10px;
+                }
     
                 .summary-price-container{
                     position: relative;
@@ -97,7 +119,6 @@
         }
 
         min-height: 100px;
-        border: 2px solid black;
         text-align: center;
 
         .subcontainer{

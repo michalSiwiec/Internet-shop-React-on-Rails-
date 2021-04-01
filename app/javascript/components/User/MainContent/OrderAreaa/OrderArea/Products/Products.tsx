@@ -38,7 +38,7 @@ const Products:FC<Props> = ({products}) => {
         productsInRow.push(<Product product={product} />)
 
         if(productsInRow.length === 6 || index === (products.length - 1)){
-            productsRow.push(<ProductsRow productsInRow={productsInRow} className={classRow[counter]} key={`productRow${index}`} />)
+            productsRow.push(<ProductsRow productsInRow={productsInRow} className={classRow[counter]} />)
             switches.push(<Switch rowNumber={counter} setClassRow={setClassRow} classRow={classRow} key={`switch${index}`}/>)
             productsInRow = []
             ++counter
@@ -56,7 +56,7 @@ const Products:FC<Props> = ({products}) => {
             </div>
 
             <div className="switch-container">
-                {switches}
+                {switches.length !== 1 ? switches : null}
             </div>
         </>
     )
