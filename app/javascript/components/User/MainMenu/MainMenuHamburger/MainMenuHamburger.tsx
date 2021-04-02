@@ -4,8 +4,8 @@ interface Props{isInvisibility: boolean, setIsInvisibilty: (value: boolean) => v
 
 const MainMenuHamburger: FC<Props> = ({setIsInvisibilty, isInvisibility}) => {
     return(
-        <div className="hamburger-menu-container">
-            <i className="icon-menu hamburger-menu-container__hamburger" onClick={() => setIsInvisibilty(!isInvisibility)}></i>
+        <div className="hamburger-menu-container" onClick={() => setIsInvisibilty(!isInvisibility)}>
+            <i className="fas fa-bars hamburger-menu-container__hamburger"></i>
         </div>
     )
 }
