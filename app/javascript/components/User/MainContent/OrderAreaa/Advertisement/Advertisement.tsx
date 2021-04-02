@@ -21,7 +21,7 @@ const Advertisement = () => {
 
     return (
         <div className="advertisement-container">
-            <img src={path} alt="Adavertisement" className="advertisement"/>
+            <img src={path} alt="Adavertisement" className="advertisement" />
         </div>
     )
 }

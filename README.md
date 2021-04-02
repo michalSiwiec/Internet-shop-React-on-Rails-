@@ -35,6 +35,4 @@ Jako bazy danych użyłem PostgreSQL, a do stworzenia strony back-endowej framew
 
 1) Problem with keys
 2) Check if back arrow works everywhere
-4) Call to that guy tommorow
 5) Login window
-

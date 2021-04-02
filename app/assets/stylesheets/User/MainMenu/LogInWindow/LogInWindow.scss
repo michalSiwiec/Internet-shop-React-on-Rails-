@@ -14,6 +14,10 @@
     align-items: center;
     flex-wrap: wrap;
 
+    svg{
+        font-size: 35px;
+    }
+
         &__header{
             flex-basis: 100%;
             margin: 0px 0px 12px;
@@ -24,12 +28,12 @@
             flex-basis: 100%;
             text-align: center;
 
-            &__icon{
-                font-size: 35px;
+            &:hover{
+                cursor: pointer;
             }
 
-            &__element{
-                text-align: center;
+            span{
+                font-style: italic;
             }
         }
 
