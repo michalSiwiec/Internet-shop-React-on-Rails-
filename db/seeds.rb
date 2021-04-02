@@ -46,12 +46,12 @@ Product.create(source: "#{img_prefix}Activia_jogurt_naturalny_180g.jpeg", produc
 Product.create(source: "#{img_prefix}Danone_jogurt_naturalny_łagodny_165g.jpeg", product_type: "dairy", description: 'Danone jogurt naturalny łagodny 165g', price: 8.73, quantity_available: 30)
 Product.create(source: "#{img_prefix}Jogurt_naturalny_kremowy_200g.jpeg", product_type: "dairy", description: 'Jogurt naturalny kremowy 200g', price: 4.60, quantity_available: 30)
 
-Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/928/5051007111928/ShotType1_225x225.jpg', product_type: "frozens", description: 'Brokuły 450g', price: 7.67, quantity_available: 20)
-Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/730/5900477000730/ShotType1_225x225.jpg', product_type: "frozens", description: 'Szpinak rozdrobniony 450g', price: 9.76, quantity_available: 20)
-Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/207/5051007122207/ShotType1_225x225.jpg', product_type: "frozens", description: 'Kalafior 450g', price: 7.67, quantity_available: 20)
-Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/000/5051007112000/ShotType1_225x225.jpg', product_type: "frozens", description: 'Mieszanka warzywna z ziemniakami', price: 7.67, quantity_available: 20)
-Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/108/5051007122108/ShotType1_225x225.jpg', product_type: "frozens", description: 'Fasolka szparagowa 450g', price: 5.67, quantity_available: 20)
-Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/761/5900477000761/ShotType1_225x225.jpg', product_type: "frozens", description: 'Marchewka z groszkiem 450g', price: 5.67, quantity_available: 20)
+Product.create(source: "#{img_prefix}Brokuły_450g.jpeg", product_type: "frozens", description: 'Brokuły 450g', price: 7.67, quantity_available: 20)
+Product.create(source: "#{img_prefix}Szpinak_rozdrobniony_450g.jpeg", product_type: "frozens", description: 'Szpinak rozdrobniony 450g', price: 9.76, quantity_available: 20)
+Product.create(source: "#{img_prefix}Kalafior_450g.jpeg", product_type: "frozens", description: 'Kalafior 450g', price: 7.67, quantity_available: 20)
+Product.create(source: "#{img_prefix}Mieszanka_warzywna_z_ziemniakami.jpeg", product_type: "frozens", description: 'Mieszanka warzywna z ziemniakami', price: 7.67, quantity_available: 20)
+Product.create(source: "#{img_prefix}Fasolka_szparagowa_450g.jpeg", product_type: "frozens", description: 'Fasolka szparagowa 450g', price: 5.67, quantity_available: 20)
+Product.create(source: "#{img_prefix}Marchewka_z_groszkiem_450g.jpeg", product_type: "frozens", description: 'Marchewka z groszkiem 450g', price: 5.67, quantity_available: 20)
 
 product10 = Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/767/8711000513767/ShotType1_90x90.jpg', product_type: "coffes", description: 'Jacobs Cronat Gold kawa rozpuszczalna 200g', price: 39.99, quantity_available: 35)
 product11 = Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/220/7613032734220/ShotType1_90x90.jpg', product_type: "coffes", description: 'Nescafe Creme kawa rozpuszczalna 200g', price: 34.99, quantity_available: 35)
