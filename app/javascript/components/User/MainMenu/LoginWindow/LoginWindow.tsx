@@ -55,8 +55,8 @@ const LogInWindow = () => {
                  <>
                     <h2 className="login-container__header">Zaloguj się</h2>
 
-                    <div className="login-container__element-container__icon">
-                        <i className="icon-user" onClick={() => setLogInWindowVisible('visible')}></i>
+                    <div className="login-container__element-container__icon" onClick={() => setLogInWindowVisible('visible')}>
+                        <i className="fas fa-user"></i>
                     </div>    
                 </>
 

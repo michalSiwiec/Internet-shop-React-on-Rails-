@@ -11,7 +11,10 @@ const MainMenuBasket = () => {
 
     return (
         <div className='basket-container'>
-            <Link to='/home/BasketSummary'> <p>{wholePrice.toFixed(2)} zł</p> </Link>
+            <Link to='/home/BasketSummary'>
+                <i className="fas fa-shopping-basket"></i>
+                <p>{wholePrice.toFixed(2)} zł</p>
+            </Link>
         </div> 
     )
 }

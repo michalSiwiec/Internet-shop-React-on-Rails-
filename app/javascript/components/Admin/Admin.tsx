@@ -13,6 +13,7 @@ const Admin2 = () => {
 
     if(adminID !== 0)
         response = <AdminPanel />
+    // let response = <AdminPanel />
 
     return response
 }

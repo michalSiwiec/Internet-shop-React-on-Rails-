@@ -39,5 +39,3 @@ Jako bazy danych użyłem PostgreSQL, a do stworzenia strony back-endowej framew
 4) Call to that guy tommorow
 5) Login window
 
-
-

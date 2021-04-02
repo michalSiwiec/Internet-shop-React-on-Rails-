@@ -4,4 +4,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    a{
+        text-align: center;
+
+        svg{
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+    }
 }
