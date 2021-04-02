@@ -53,12 +53,12 @@ Product.create(source: "#{img_prefix}Mieszanka_warzywna_z_ziemniakami.jpeg", pro
 Product.create(source: "#{img_prefix}Fasolka_szparagowa_450g.jpeg", product_type: "frozens", description: 'Fasolka szparagowa 450g', price: 5.67, quantity_available: 20)
 Product.create(source: "#{img_prefix}Marchewka_z_groszkiem_450g.jpeg", product_type: "frozens", description: 'Marchewka z groszkiem 450g', price: 5.67, quantity_available: 20)
 
-product10 = Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/767/8711000513767/ShotType1_90x90.jpg', product_type: "coffes", description: 'Jacobs Cronat Gold kawa rozpuszczalna 200g', price: 39.99, quantity_available: 35)
-product11 = Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/220/7613032734220/ShotType1_90x90.jpg', product_type: "coffes", description: 'Nescafe Creme kawa rozpuszczalna 200g', price: 34.99, quantity_available: 35)
-product12 = Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/045/8711000521045/ShotType1_90x90.jpg', product_type: "coffes", description: 'Jacobs Kronung kawa rozpuszczalna 200g', price: 38.50, quantity_available: 35)
-product13 = Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/722/8711000525722/ShotType1_90x90.jpg', product_type: "coffes", description: 'Jacobs Kronung kawa mielona 200g', price: 27.99, quantity_available: 35)
-product14 = Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/881/7613031918881/ShotType1_90x90.jpg', product_type: "coffes", description: 'Nescafe classic kawa rozpuszczalna 200g', price: 29.99, quantity_available: 35)
-Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/826/8711000517826/ShotType1_90x90.jpg', product_type: "coffes", description: 'Jacobs Velvet kawa rozpuszczalna 200g', price: 22.50, quantity_available: 35)
+product10 = Product.create(source: "#{img_prefix}Jacobs_Cronat_Gold_kawa_rozpuszczalna_200g.jpeg", product_type: "coffes", description: 'Jacobs Cronat Gold kawa rozpuszczalna 200g', price: 39.99, quantity_available: 35)
+product11 = Product.create(source: "#{img_prefix}Nescafe_Creme_kawa_rozpuszczalna_200g.jpeg", product_type: "coffes", description: 'Nescafe Creme kawa rozpuszczalna 200g', price: 34.99, quantity_available: 35)
+product12 = Product.create(source: "#{img_prefix}Nescafe_classic_kawa_rozpuszczalna_200g.jpeg", product_type: "coffes", description: 'Jacobs Kronung kawa rozpuszczalna 200g', price: 38.50, quantity_available: 35)
+product13 = Product.create(source: "#{img_prefix}Jacobs_Kronung_kawa_mielona_200g.jpeg", product_type: "coffes", description: 'Jacobs Kronung kawa mielona 200g', price: 27.99, quantity_available: 35)
+product14 = Product.create(source: "#{img_prefix}Jacobs_Kronung_kawa_rozpuszczalna_200g.jpeg", product_type: "coffes", description: 'Nescafe classic kawa rozpuszczalna 200g', price: 29.99, quantity_available: 35)
+Product.create(source: "#{img_prefix}Jacobs_Velvet_kawa_rozpuszczalna_200g.jpeg", product_type: "coffes", description: 'Jacobs Velvet kawa rozpuszczalna 200g', price: 22.50, quantity_available: 35)
 
 Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/030/5901588016030/ShotType1_225x225.jpg', product_type: "sweets", description: 'Wedel czekolada gorzka klasyczna 64%', price: 4.99, quantity_available: 35)
 Product.create(source: 'https://secure.ce-tescoassets.com/assets/PL/610/5900102312610/ShotType1_225x225.jpg', product_type: "sweets", description: 'Wawel czekolada gorzka klasyczna 70%', price: 4.50, quantity_available: 35)
