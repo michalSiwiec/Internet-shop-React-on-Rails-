@@ -24,6 +24,9 @@ const Window:FC<Props> = ({logInWindowVisible, setLogInWindowVisible}) => {
                     throw Error(response.statusText);
             })
             .then((user: {userID: number}) => {
+                setLogin("")
+                setPassword("")
+
                 if(user.userID !== 0){
                     dispatch(actions.singInUser(user.userID))
                     setLogInWindowVisible('unvisible')
@@ -43,10 +46,10 @@ const Window:FC<Props> = ({logInWindowVisible, setLogInWindowVisible}) => {
 
                 <div>
                     <p>Hasło</p>
-                    <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
                 
-                <div>
+                <div className="btn-container">
                     <button onClick={() => setLogInWindowVisible('unvisible')}>Anuluj</button>
                     <button onClick={() => LogIn()}>Zaloguj</button>
                 </div>
