@@ -7,12 +7,17 @@ interface Props {
 }
 
 const Mark:FC<Props> = ({setOpinionMark, markValue, markDescription}) => {
+    console.log()
+
+    const stars: Array<any> = []
+
+    for(let i = 0; i < markValue; ++i)
+        stars.push(<i className="fas fa-star"></i>)
+
     return (
         <div className="mark-container">
             <span>{markDescription}</span>
-            <i className="icon-star"></i>
-            <i className="icon-star"></i>
-            <i className="icon-star"></i>
+            {stars}            
             <button onClick={() => setOpinionMark(markValue)}>Wybierz</button>
         </div>
     )

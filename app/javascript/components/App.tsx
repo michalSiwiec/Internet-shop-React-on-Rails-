@@ -8,12 +8,12 @@ import User from './User/User'
 const App = () => {
     return(
         <Switch>
-            <Route path="/" exact>
-                <User />
-            </Route>
-
             <Route path="/admin">
                 <Admin />
+            </Route>
+
+            <Route path="/">
+                <User />
             </Route>
 
             <Route>

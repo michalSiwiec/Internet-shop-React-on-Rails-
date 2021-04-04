@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {Route, Switch} from 'react-router-dom'
+import {Route, Switch, useRouteMatch} from 'react-router-dom'
 
 import OrderAreaa from './OrderAreaa/OrderAreaa'
 import ShopOpinions from './ShopOpinions/ShopOpinions'
@@ -10,30 +10,32 @@ import BasketSummary from './BasketSummary/BasketSummary'
 import RejestrationForm from './RejestrationForm/RejestrationForm'
 
 const MainContent = () => {
+    const {path} = useRouteMatch()
+
     return(
         <Switch>
             {/* <Route path="/:info?" exact> */}
-            <Route path="/" exact>
+            <Route path={`${path}`} exact>
                 <OrderAreaa />
             </Route>
 
-            <Route path="/Opinions">
+            <Route path={`${path}Opinions`}>
                 <ShopOpinions />
             </Route>
 
-            <Route path="/BasketSummary">
+            <Route path={`${path}BasketSummary`}>
                 <BasketSummary />
             </Route>
 
-            <Route path="/ShoppingOption">
+            <Route path={`${path}ShoppingOption`}>
                 <ShoppingOption />
             </Route>
 
-            <Route path='/OrderForm'>
+            <Route path={`${path}OrderForm`}>
                 <OrderForm />
             </Route>
 
-            <Route path="/rejestrationForm"> 
+            <Route path={`${path}rejestrationForm`}> 
                 <RejestrationForm />
             </Route>
 

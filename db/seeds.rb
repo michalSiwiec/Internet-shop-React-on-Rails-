@@ -252,9 +252,6 @@ user2.create_dataCreation(year: 2020, month: 2, day: 17, hour: 7, minute: 22, se
 opinion1 = Opinion.create!(description: "Super sklep - polecam", mark: 5, user_id: user1.id)
 opinion1.create_dataCreation!(year: 2018, month: 8, day: 4, hour: 17, minute: 44, second: 12)
 
-opinion2  = Opinion.create!(description: "Chujowa sprawa nie polecam", mark: 1, user_id: user1.id)
-opinion2.create_dataCreation!(year: 2018, month: 8, day: 5, hour: 17, minute: 44, second: 12)
-
 opinion3 = Opinion.create!(description: "Bardzo dobry sklep, serdzecznie polecam", mark: 5, user_id: user1.id)
 opinion3.create_dataCreation!(year: 2021, month: 1, day: 24, hour: 9, minute: 12, second: 52)
 

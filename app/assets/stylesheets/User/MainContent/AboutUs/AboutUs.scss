@@ -1,4 +1,8 @@
 .about-us-container{
+    h2{
+        margin: 30px;
+    }
+
     width: 100%;
     min-height: 300px;
     border: 2px solid black;
@@ -22,13 +26,23 @@
     }
 
     .opinion-container{
-        width: 50%;
         margin: 20px;
         font-size: 22px;
 
         .description-container{
             margin: 10px;
             font-style: italic;
+
+            q{
+                padding-right: 20px;
+            }
+
+            span{
+                svg{
+                    color: gold;
+                    margin: 0px 3px;
+                }
+            }
         }
 
         .owner-data-container{
@@ -46,7 +60,7 @@
 
 .add-opinion-window{
     width: 30vw;
-    padding: 30px 0px;
+    padding: 30px;
     background-color: gray;
     position: absolute;
     position: fixed;
@@ -86,7 +100,7 @@
                 margin-right: 20px;
             }
 
-            .icon-star{
+            .fa-star{
                 color: gold;
                 margin: 0px 1px;
             }

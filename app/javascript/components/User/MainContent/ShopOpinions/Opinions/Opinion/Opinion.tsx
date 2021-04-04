@@ -6,7 +6,7 @@ const Opinion:FC<Props> = ({opinion}) => {
     const stars: Array<any> = []
 
     for(let i = 0, size = opinion.mark; i < size; ++i)
-        stars.push(<i className="icon-star" key={`opinion-star${i}`}></i>)
+        stars.push(<i className="fas fa-star" key={`opinion-star${i}`}></i>)
 
     return (
         <div className="opinion-container">
