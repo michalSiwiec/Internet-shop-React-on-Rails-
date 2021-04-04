@@ -2,7 +2,7 @@ import React, {FC} from 'react'
 
 import {IFieldFormUnmutable} from '../../../../../../TypeScript/Interfaces/Interfaces'
 
-import {validateStreet} from '../../../../../Helpers/Orders/Orders'
+import {validateStreet} from '../../../../../Helpers/Validation'
 
 interface Props {
     street: IFieldFormUnmutable,

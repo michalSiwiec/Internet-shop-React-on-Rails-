@@ -1,6 +1,6 @@
 import React, {FC, useEffect, useState} from 'react'
 
-import {IProvince, ICity} from '../../../../../../../../TypeScript/Interfaces/Interfaces'
+import {IProvince, ICity} from '../../../../../../../TypeScript/Interfaces/Interfaces'
 
 interface Props {
     setProvince: (province: string) => void,

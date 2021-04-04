@@ -2,7 +2,7 @@ import React, {FC} from 'react'
 
 import {IFieldFormUnmutable} from '../../../../../../TypeScript/Interfaces/Interfaces'
 
-import {validateSurname} from '../../../../../Helpers/Orders/Orders'
+import {validateSurname} from '../../../../../Helpers/Validation'
 
 interface Props {
     surname: IFieldFormUnmutable,

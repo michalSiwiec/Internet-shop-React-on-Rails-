@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-import {checkDataForm} from '../../../../Helpers/Users/Users'
+import {checkDataForm} from '../../../../Helpers/Validation'
 
 import {IFieldForm} from '../../../../../TypeScript/Interfaces/Interfaces'
 
@@ -15,7 +15,6 @@ import PhoneNumber from './PhoneNumber/PhoneNumber'
 import Country from './Country/Country'
 import Street from './Street/Street'
 import HouseNumber from './HouseNumber/HouseNumber'
-// import RejestrationButton from './RejestrationButton/RejestrationButton'
 import Province from './Province/Province'
 import City from './City/City'
 import PostalCode from './PostalCode/PostalCode'

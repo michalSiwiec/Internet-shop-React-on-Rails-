@@ -2,7 +2,7 @@ import React, {FC} from 'react'
 
 import {IFieldFormUnmutable} from '../../../../../../TypeScript/Interfaces/Interfaces'
 
-import {validateEmail} from '../../../../../Helpers/Orders/Orders'
+import {validateEmail} from '../../../../../Helpers/Validation'
 
 interface Props {email: IFieldFormUnmutable, setEmail: (email: IFieldFormUnmutable) => void}
 

@@ -2,7 +2,7 @@ import React, {FC} from 'react'
 
 import {IFieldForm} from '../../../../../../TypeScript/Interfaces/Interfaces'
 
-import {validatePhoneNumber} from '../../../../../Helpers/Users/Users'
+import {validatePhoneNumber} from '../../../../../Helpers/Validation'
 
 interface Props {
     phoneNumber: IFieldForm,

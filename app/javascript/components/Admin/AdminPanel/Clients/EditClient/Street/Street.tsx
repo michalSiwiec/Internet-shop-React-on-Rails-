@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {validateStreet} from '../../../../../../Helpers/Users/Users'
+import {validateStreet} from '../../../../../../Helpers/Validation'
 
 import {IFieldForm} from '../../../../../../../TypeScript/Interfaces/Interfaces'
 

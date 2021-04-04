@@ -1,8 +1,8 @@
 import React, {FC} from 'react'
 
-import {validateLogin} from '../../../../../../../Helpers/Users/Users'
+import {validateLogin} from '../../../../../../Helpers/Validation'
 
-import {IFieldForm} from '../../../../../../../../TypeScript/Interfaces/Interfaces'
+import {IFieldForm} from '../../../../../../../TypeScript/Interfaces/Interfaces'
 
 interface Props {
     login: IFieldForm,

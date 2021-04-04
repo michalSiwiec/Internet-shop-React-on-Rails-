@@ -2,7 +2,7 @@ import React, {FC, useState, useEffect} from 'react'
 
 import {IFieldFormUnmutable} from '../../../../../../TypeScript/Interfaces/Interfaces'
 
-import {validatePhoneNumber} from '../../../../../Helpers/Orders/Orders'
+import {validatePhoneNumber} from '../../../../../Helpers/Validation'
 
 interface Props {
     phoneNumber: IFieldFormUnmutable,

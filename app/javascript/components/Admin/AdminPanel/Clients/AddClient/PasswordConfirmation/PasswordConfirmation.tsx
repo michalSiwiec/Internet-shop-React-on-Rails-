@@ -1,8 +1,8 @@
 import React, {FC} from 'react'
 
-import {validatePasswordConfirmation} from '../../../../../../../Helpers/Users/Users'
+import {validatePasswordConfirmation} from '../../../../../../Helpers/Validation'
 
-import {IFieldForm} from '../../../../../../../../TypeScript/Interfaces/Interfaces'
+import {IFieldForm} from '../../../../../../../TypeScript/Interfaces/Interfaces'
 
 interface Props {
     passwordConfirmation: IFieldForm,

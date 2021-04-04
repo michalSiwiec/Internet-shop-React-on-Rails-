@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 
-import {checkDataForm} from '../../../../../Helpers/Products/ProductsHelper'
+import {checkDataForm} from '../../../../../Helpers/Validation'
 
 import {IProduct} from '../../../../../../TypeScript/Interfaces/Interfaces'
 

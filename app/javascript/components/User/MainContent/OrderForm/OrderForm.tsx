@@ -16,7 +16,7 @@ import Surname from './Surname/Surname'
 import AddOrderButton from './Buttons/AddOrderButton/AddOrderButton'
 import CancelButton from './Buttons/CancelButton/CancelButton'
 
-import {checkDataForm} from '../../../../Helpers/Orders/Orders'
+import {checkDataForm} from '../../../../Helpers/Validation'
 
 const OrderForm = () => {
     const userID = useSelector((state: any) => state.userReducer.user.userID)
@@ -210,4 +210,3 @@ const OrderForm = () => {
 }
 
 export default OrderForm
-

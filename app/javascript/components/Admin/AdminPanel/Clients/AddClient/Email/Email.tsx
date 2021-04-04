@@ -1,8 +1,8 @@
 import React, {FC} from 'react'
 
-import {validateEmail} from '../../../../../../../Helpers/Users/Users'
+import {validateEmail} from '../../../../../../Helpers/Validation'
 
-import {IFieldForm} from '../../../../../../../../TypeScript/Interfaces/Interfaces'
+import {IFieldForm} from '../../../../../../../TypeScript/Interfaces/Interfaces'
 
 interface Props {
     email: IFieldForm,

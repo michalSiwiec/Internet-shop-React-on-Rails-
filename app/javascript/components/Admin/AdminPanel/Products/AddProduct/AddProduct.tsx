@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-import {checkDataForm} from '../../../../../Helpers/Products/ProductsHelper'
+import {checkDataForm} from '../../../../../Helpers/Validation'
 
 import { useHistory } from 'react-router'
 

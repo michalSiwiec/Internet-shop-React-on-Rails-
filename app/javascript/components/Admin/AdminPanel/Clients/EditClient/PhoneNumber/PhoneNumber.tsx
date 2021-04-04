@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {validatePhoneNumber} from '../../../../../../Helpers/Users/Users'
+import {validatePhoneNumber} from '../../../../../../Helpers/Validation'
 
 import {IFieldForm} from '../../../../../../../TypeScript/Interfaces/Interfaces'
 

@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 
 import {useParams} from 'react-router-dom'
 
-import {checkDataForm} from '../../../../../Helpers/Users/Users'
+import {checkDataForm} from '../../../../../Helpers/Validation'
 
 import {IUser} from '../../../../../../TypeScript/Interfaces/Interfaces'
 

@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {validateName} from '../../../../../../Helpers/Users/Users'
+import {validateName} from '../../../../../../Helpers/Validation'
 
 import {IFieldForm} from '../../../../../../../TypeScript/Interfaces/Interfaces'
 

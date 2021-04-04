@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {validateDescription} from '../../../../../../Helpers/Products/ProductsHelper'
+import {validateDescription} from '../../../../../../Helpers/Validation'
 
 import {IFieldForm} from '../../../../../../../TypeScript/Interfaces/Interfaces'
 
