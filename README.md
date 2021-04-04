@@ -35,7 +35,8 @@ Jako bazy danych użyłem PostgreSQL, a do stworzenia strony back-endowej framew
 
 1) Problem with keys
 2) Check if back arrow works everywhere
-5) Login window (style)
 6) Check if emails work
 7) Style into admin panel
 8) Regex
+9)  My Routing works fine with BrowserRouter but not with Router (and history) - but both approachs don't solve my problem with arrow back
+10) Stars with opinions

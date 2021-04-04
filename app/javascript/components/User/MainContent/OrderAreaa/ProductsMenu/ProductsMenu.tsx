@@ -52,15 +52,15 @@ const ProductsMenu = () => {
 
             <div>
                 <ul className="menu-option-list">
-                    <ProductMenuOption value="Wszystko" path="/home/Offer/" id="all-menu-option" setType={setType} />
-                    <ProductMenuOption value="Mięso" path="meats" id="meats-menu-option" setType={setType} />
-                    <ProductMenuOption value="Swieze ryby" path="fishes" id="fishes-menu-option" setType={setType} />
-                    <ProductMenuOption value="Owoce i warzywa" path="fruits_and_vegetables" id="fruit_and_vegetables-menu-option" setType={setType} />
-                    <ProductMenuOption value="Mrozonki" path="frozens" id="frozen-menu-option" setType={setType} />
-                    <ProductMenuOption value="Nabiał" path="dairies" id="dairy-menu-option" setType={setType} />
-                    <ProductMenuOption value="Kawa i herbata" path="coffe_and_tea" id="coffe_and_tea-menu-option" setType={setType} />
-                    <ProductMenuOption value="Słodycze" path="sweets" id="sweets-menu-option" setType={setType} />
-                    <ProductMenuOption value="Konserwy" path="canned" id="canned-menu-option" setType={setType} />
+                    <ProductMenuOption value="Wszystko" id="all-menu-option" setType={setType} type="all" />
+                    <ProductMenuOption value="Mięso" id="meats-menu-option" setType={setType} type="meats" />
+                    <ProductMenuOption value="Swieze ryby" id="fishes-menu-option" setType={setType} type="fishes" />
+                    <ProductMenuOption value="Owoce i warzywa" id="fruit_and_vegetables-menu-option" setType={setType} type="fruits_and_vegetables" />
+                    <ProductMenuOption value="Mrozonki" id="frozen-menu-option" setType={setType} type="frozens" />
+                    <ProductMenuOption value="Nabiał" id="dairy-menu-option" setType={setType} type="dairy" />
+                    <ProductMenuOption value="Kawa i herbata" id="coffe_and_tea-menu-option" setType={setType} type="coffes" />
+                    <ProductMenuOption value="Słodycze" id="sweets-menu-option" setType={setType} type="sweets" />
+                    <ProductMenuOption value="Konserwy" id="canned-menu-option" setType={setType} type="canned" />
                 </ul>
             </div>    
         </div>

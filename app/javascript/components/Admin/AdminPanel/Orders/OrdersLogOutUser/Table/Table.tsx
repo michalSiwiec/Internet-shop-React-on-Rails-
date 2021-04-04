@@ -19,8 +19,6 @@ const Table = () => {
         .then((orders_: Array<IOrderLogOutPerson>) => setOrders(orders_))
     }, [])
 
-    // console.log(orders)
-
     return (
         <table>
             <thead>

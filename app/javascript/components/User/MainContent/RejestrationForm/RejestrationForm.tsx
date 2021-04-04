@@ -145,7 +145,6 @@ const RejestrationForm = () => {
                 </div>
 
                 <div className="fields-container">
-                    
                     <Country />
                     <Province setProvince={setProvince} setCity={setCity} />
                     <City setCity={setCity} selectedProvince={province} />

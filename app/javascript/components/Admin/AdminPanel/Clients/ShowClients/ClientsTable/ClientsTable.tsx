@@ -20,8 +20,6 @@ const ClientsTable = () => {
         })
         .then((users: Array<IUsersData>) => setUsersData(users))
     }, [])
-    
-    console.log(usersData)
 
     return (
         <div className="clients-table-container">

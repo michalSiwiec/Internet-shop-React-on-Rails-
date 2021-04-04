@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 import {NavLink} from 'react-router-dom';
+import { exact } from 'prop-types';
 
 interface Props{
    value: string
@@ -9,7 +10,7 @@ interface Props{
 
 const MainMenuOption:FC<Props> = ({value, path, disabled}) => {
    return(
-      <NavLink to={path} activeClassName="active" className={disabled ? "disabled" : ""}>
+      <NavLink to={path} exact className={disabled ? "disabled" : ""}>
          <li className="list__item">{value}</li>
       </NavLink>
    )

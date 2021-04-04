@@ -40,7 +40,7 @@ const SingIn = () =>  {
     return (
         <>
             {/*  I have to do it here, I can't use Link to because it movves me to form event when user isn't loggged - e.preventDefault() doesn't work */}
-            {userID !== 0 ? <Redirect to="/home/OrderForm"/> : null} 
+            {userID !== 0 ? <Redirect to="/OrderForm"/> : null} 
 
             <div className="sing-in-container">
                 <Ornament />

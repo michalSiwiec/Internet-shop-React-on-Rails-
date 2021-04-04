@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {Link} from 'react-router-dom'
+import {Link, useRouteMatch} from 'react-router-dom'
 
 interface Props {
     type?: string,
@@ -9,13 +9,15 @@ interface Props {
 }
 
 const TableRow:FC<Props> = ({type, userID, value}) => {
+    const {path} = useRouteMatch()
+
     return (
         <>
             {
                 type === "button"
                 ? (
                     <td>
-                        <Link to={`/admin/Orders/userOrder/${userID}`}>
+                        <Link to={`${path}/userOrder/${userID}`}>
                             <button>Zobacz</button>
                         </Link>
                     </td>

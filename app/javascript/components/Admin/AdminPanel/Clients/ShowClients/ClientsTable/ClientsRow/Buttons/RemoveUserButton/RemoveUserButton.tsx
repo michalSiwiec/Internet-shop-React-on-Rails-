@@ -5,8 +5,6 @@ import {Link} from 'react-router-dom'
 interface Props {userID: number}
 
 const RemoveUserButton:FC<Props> = ({userID}) =>  {
-    console.log(userID)
-
     return (
         <Link to={`/admin/Users/removeUser/${userID}`}>
             <div>

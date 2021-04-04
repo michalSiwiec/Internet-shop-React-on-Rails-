@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {Route, Switch} from 'react-router-dom'
+import {Route, Switch, useRouteMatch} from 'react-router-dom'
 
 import Clients from './Clients/Clients'
 import Opinions from './Opinions/Opinions'
@@ -10,30 +10,32 @@ import Products from './Products/Products'
 import AdminDashboard from './Dashboard/Dashboard'
 
 const AdminPanel = () => {
+    const {path} = useRouteMatch()
+
     return(
         <Switch>
-            <Route path="/admin/Orders">
+            <Route path={`${path}/`} exact>
+                <AdminDashboard />
+            </Route>
+
+            <Route path={`${path}/Orders`}>
                 <Orders />
             </Route>
 
-            <Route path="/admin/Statistics">
+            <Route path={`${path}/Statistics`}>
                 <Statistics />
             </Route>
 
-            <Route path="/admin/Users">
+            <Route path={`${path}/Users`}>
                 <Clients />
             </Route>
 
-            <Route path="/admin/Products">
+            <Route path={`${path}/Products`}>
                 <Products />
             </Route>
 
-            <Route path="/admin/Opinions">
+            <Route path={`${path}/Opinions`}>
                 <Opinions />
-            </Route>
-
-            <Route path="/admin">
-                <AdminDashboard />
             </Route>
         </Switch>    
     )

@@ -1,12 +1,14 @@
 import React from 'react'
 
-import {Link} from 'react-router-dom'
+import {Link, useRouteMatch} from 'react-router-dom'
 
 const Statistics = () => {
+    const {path} = useRouteMatch()
+
     return (
         <div className="option-container bigger-container statistics-container">  
             <div className="overlay overlay--full">
-                <Link to="/admin/Statistics">
+                <Link to={`${path}Statistics`}>
                     <span>Wejdz!</span>
                 </Link>
             </div>

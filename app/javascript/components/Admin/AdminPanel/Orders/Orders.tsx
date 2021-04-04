@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {Route, Switch} from 'react-router-dom'
+import {Route, Switch, useRouteMatch} from 'react-router-dom'
 
 import UserOrders from './UserOrders/UserOrders'
 
@@ -10,21 +10,23 @@ import OrdersLogOutUsers from './OrdersLogOutUser/OrdersLogOutUsers'
 import CommonOrders from './CommonOrders/CommonOrders'
 
 const OrdersList = () => {
+    const {path} = useRouteMatch()
+
     return (
         <div className="order-list-container">
             <Switch>
-                <Route path="/admin/Orders/userOrder/:userID">
-                    <UserOrders />
-                </Route>
-
-                <Route path="/admin/Orders/commonOrder/:id">
-                    <CommonOrders />
-                </Route>
-
-                <Route path="/admin/Orders"> 
+                <Route path={path} exact> 
                     <Header />
                     <OrdersLogInUsers />
                     <OrdersLogOutUsers />
+                </Route>
+
+                <Route path={`${path}/userOrder/:userID`}>
+                    <UserOrders />
+                </Route>
+
+                <Route path={`${path}/commonOrder/:id`}>
+                    <CommonOrders />
                 </Route>
             </Switch>     
         </div>

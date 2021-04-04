@@ -6,7 +6,6 @@ import DescriptionPart from './DescriptionPart/DescriptionPart'
 import '../../../../../../assets/stylesheets/Admin/Dashboard/AdminPanel/AdminPresentation/AdminPresentation.scss'
 
 const AdminPresentation= () => {
-    console.log("AdminPresentation")
     return (
         <div className="admin-presentation-container">
             <FigurePart />

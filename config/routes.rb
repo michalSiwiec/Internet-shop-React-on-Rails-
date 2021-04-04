@@ -35,5 +35,6 @@ Rails.application.routes.draw do
     end
   end
 
-  get '*path', to: 'home#index', via: :all
+  # get '*path', to: 'home#index', via: :all
+  match '*path', to: 'home#index', via: :all
 end

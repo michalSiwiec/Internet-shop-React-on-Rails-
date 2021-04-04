@@ -6,7 +6,7 @@ interface Props {registerUser: (e: React.SyntheticEvent) => void}
 
 const RejestrationButton:FC<Props> = ({registerUser}) => {
     return (
-        <Link to="/home/OrderForm">
+        <Link to="/OrderForm">
             <button onClick={(e) => registerUser(e)}>Załóz konto</button>
         </Link>
     )

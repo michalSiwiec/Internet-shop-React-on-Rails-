@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 
+import { useHistory } from "react-router-dom";
+
 import {useDispatch} from 'react-redux'
 import actions from '../../../../redux/admin/actions'
 
@@ -14,6 +16,7 @@ const LogInPanel = () => {
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
     const dispatch = useDispatch()
+    const history = useHistory()
 
     const logInAdmin = () => {
         if(login !== "" && password !== ""){
@@ -27,8 +30,10 @@ const LogInPanel = () => {
             .then((admin: {id: number}) => {
                 const id = admin.id
 
-                if(id !== 0)
+                if(id !== 0){
                     dispatch(actions.logInAdmin(id))
+                    history.push("/admin")
+                }
                 else
                     alert("Niee ma takiego admina!")
             })

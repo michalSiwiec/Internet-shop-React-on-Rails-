@@ -1,17 +1,25 @@
 import React, {FC} from 'react'
-import {NavLink} from 'react-router-dom'
+
+import {useSelector} from 'react-redux'
+import productsReducer from '../../../../../../../redux/products/duck/reducer'
+
+import {IReduxState} from '../../../../../../../TypeScript/Interfaces/Interfaces'
 
 interface Props {
-    value: string
-    path: string
-    id:string
-    setType(id:string):void
+    value: string,
+    id:string,
+    setType(id:string):void,
+    type: string
 }
 
-const ProductMenuOption: FC<Props> = ({value, path, setType,id}) => {
+const ProductMenuOption: FC<Props> = ({value, setType,id, type}) => {
+    const productType = useSelector((state: IReduxState) => state.productsReducer.productType)
+
     return (
         <div className="item-container">
-            <NavLink to={path} exact={true} className="item-container__item" id={id} onClick={(e) => setType(id)}>{value}</NavLink>
+            <li id={id} onClick={() => setType(id)} className="item-container__item">
+                <span className={`${type === productType ? " active" : ""}`}>{value}</span>
+            </li>
         </div>
     )
 }

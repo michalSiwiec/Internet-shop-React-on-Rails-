@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {Route, Switch, Redirect} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 
 import OrderAreaa from './OrderAreaa/OrderAreaa'
 import ShopOpinions from './ShopOpinions/ShopOpinions'
@@ -12,39 +12,28 @@ import RejestrationForm from './RejestrationForm/RejestrationForm'
 const MainContent = () => {
     return(
         <Switch>
-            <Route path="/home/" exact>
-                <Redirect to="/home/Offer/"/>
-            </Route>
-
-            <Route path="/home/Offer/:info?">
+            {/* <Route path="/:info?" exact> */}
+            <Route path="/" exact>
                 <OrderAreaa />
             </Route>
 
-            <Route path="/home/Opinions/">
+            <Route path="/Opinions">
                 <ShopOpinions />
             </Route>
 
-            <Route path="/home/Recipies/">
-                <p>Recipies</p>
-            </Route>
-
-            <Route path="/home/ClientsApp/">
-                <p>ClientsApp</p>
-            </Route>
-
-            <Route path="/home/BasketSummary">
+            <Route path="/BasketSummary">
                 <BasketSummary />
             </Route>
 
-            <Route path="/home/ShoppingOption">
+            <Route path="/ShoppingOption">
                 <ShoppingOption />
             </Route>
 
-            <Route path='/home/OrderForm'>
+            <Route path='/OrderForm'>
                 <OrderForm />
             </Route>
 
-            <Route path="/home/rejestrationForm"> 
+            <Route path="/rejestrationForm"> 
                 <RejestrationForm />
             </Route>
 

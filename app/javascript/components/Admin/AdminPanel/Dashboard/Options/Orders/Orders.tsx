@@ -1,13 +1,17 @@
 import React from 'react'
 
-import {Link} from 'react-router-dom'
+import {Link, useRouteMatch} from 'react-router-dom'
 
 const Orders = () => {
+    const {path} = useRouteMatch()
+
     return (
         <div className="option-container bigger-container orders-container">
             <div className="overlay overlay--bottom">
                 <h3>Sledz zamóswienia aby być zawsze na bieząco!</h3>
-                <Link to="/admin/Orders"><span>Wejsdz!</span></Link>
+                <Link to={`${path}Orders`}>
+                    <span>Wejdz!</span>
+                </Link>
             </div>
         </div>
     )
