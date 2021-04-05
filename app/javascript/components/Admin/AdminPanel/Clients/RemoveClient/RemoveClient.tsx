@@ -7,8 +7,7 @@ import {IUser} from '../../../../../../TypeScript/Interfaces/Interfaces'
 import '../../../../../../assets/stylesheets/Admin/Users/RemoveUser/RemoveUser.scss'
 
 import Header from './Header/Header'
-import Name from './Name/Name'
-import Surname from './Surname/Surname'
+import PersonData from './PersonData/PersonData'
 import Buttons from './Buttons/Buttons'
 
 interface IUserPersonalData{name: string, surname: string}
@@ -34,8 +33,6 @@ const RemoveClient = () => {
         }))
     }, [])
 
-    console.log(`remove client ${id}`)
-
     return (
         <div className="remove-user-container">
             <div className="overlay"></div>
@@ -44,8 +41,7 @@ const RemoveClient = () => {
                 <Header />
 
                 <form>
-                    <Name name={userPersonalData.name} />
-                    <Surname surname={userPersonalData.surname} />
+                    <PersonData name={userPersonalData.name} surname={userPersonalData.surname} />
                     <Buttons userID={id}/>
                 </form>
             </div>

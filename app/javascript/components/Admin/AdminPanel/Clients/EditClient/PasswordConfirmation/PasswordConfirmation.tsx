@@ -12,7 +12,7 @@ const PasswordConfirmation:FC<Props> = ({passwordConfirmation, setPasswordConfir
             <p>Potwierdzenie hasła</p>
             
             <input 
-                type="text"
+                type="password"
                 value={passwordConfirmation.value}
                 onChange={(e) => validatePasswordConfirmation(e.target.value, setPasswordConfirmation, passwordConfirmation, password)}
                 className="input-container__input"

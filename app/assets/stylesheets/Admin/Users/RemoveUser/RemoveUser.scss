@@ -64,16 +64,21 @@
 
             &__input{
                 width: 50%;
+
             }
         }
 
         &__buttons-container{
-            margin: 50px 0px;
+            margin: 10px 0px;
             display: flex;
             justify-content: center;
 
             &__button{
-                margin: 0px 20px;
+                font-size: 18px;
+                margin: 10px;
+                background-color: #800;
+                color: white;
+                padding: 5px 12px;
             }
         }
     }
