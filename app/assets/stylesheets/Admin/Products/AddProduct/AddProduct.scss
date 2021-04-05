@@ -67,17 +67,20 @@
 
             &__input{
                 width: 100%;
-                // padding: 5px 12px;
+                padding: 5px 12px;
             }   
         }
 
         &__buttons-container{
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
 
             &__button{
-                // padding: 3px 7px;
                 font-size: 18px;
+                margin: 10px;
+                background-color: #800;
+                color: white;
+                padding: 5px 12px;
             }
         }
     }

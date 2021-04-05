@@ -42,11 +42,11 @@ const ProductType:FC<Props> = ({type, setType}) => {
     return (
         <div className="edit-user-form__input-container">
             <div className="edit-user-form__input-container__label-container">
-                <label className="edit-user-form__input-container__label">Cena</label>
+                <label className="edit-user-form__input-container__label">Typ produktu</label>
             </div>
 
             <div>
-                <select value={selectedType} onChange={(e) => {
+                <select className="edit-user-form__input-container__input" value={selectedType} onChange={(e) => {
                     const selectedValue = types.filter(type_ => type_.name === e.target.value)[0].value
                     setType(selectedValue)
                 }}>

@@ -19,6 +19,7 @@ const ProductQuantityAvailable:FC<Props> = ({quantityAvailable, setQuantityAvail
                     onChange={(e) => setQuantityAvailable(parseInt(e.target.value))}
                     onKeyPress={(e) => e.preventDefault()}
                     onKeyDown={(e) => e.preventDefault()}
+                    className="edit-user-form__input-container__input"
                 />
             </div>
         </div>
