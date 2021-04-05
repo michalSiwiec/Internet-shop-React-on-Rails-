@@ -1,12 +1,12 @@
 # README
 KauflandOnRails
 
-Aby przetestować działanie interfejsu z poziomu zalogowanegi uzytkownika nalezy zalogować się danymi:
+Aby przetestować działanie interfejsu z poziomu zalogowanego uzytkownika nalezy zalogować się danymi:
 
 login: michsiw439
 hasło: 1234
 
-lub zalozyc wlasne konto.
+lub utowrzyc wlasne konto.
 
 Aby skorzystac z panelu admina nalezy odwiedzic link 
 https://kaufland-on-rails1.herokuapp.com/admin
