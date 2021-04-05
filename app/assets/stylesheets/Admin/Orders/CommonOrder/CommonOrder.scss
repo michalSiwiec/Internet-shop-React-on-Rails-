@@ -44,21 +44,19 @@
         left: 50%;
         transform: translateX(-50%);
 
-        background: $main-admin-panel-bcg-color;
-        text-align: center;
+        background-color: #fff;
+        padding: 20px 130px 50px;
         padding-bottom: 50px;
 
         &__main-header{
-            margin: 20px 20px 50px;
-            text-align: center;
+            margin-bottom: 50px;
         }
 
         .part-container{
             margin: 10px 0px 20px;
 
             &__header{
-                text-align: center;
-                margin: 20px 20px 25px;
+                margin-bottom: 20px;
             }
 
             .info-container{
@@ -70,10 +68,6 @@
             margin-top: 20px;
             padding: 5px;
 
-            &__header{
-                margin: 20px 20px 50px;
-            }
-
             .order-detail-container{
                 margin: 12px 0px;
 
@@ -84,21 +78,10 @@
                     font-weight: bold;
                 }
             }
-        }
 
-        .buttons-container{
-            margin-top: 20px;
-
-            &__button{
-                margin: 30px 10px;
-                padding: 3px 7px;
-                margin: 0px 10px;
+            p.summary{
+                font-weight: bold;
             }
-        }
-
-        .mistake-info-container{
-            color: red;
-            font-size: 17px;
         }
     }
 }

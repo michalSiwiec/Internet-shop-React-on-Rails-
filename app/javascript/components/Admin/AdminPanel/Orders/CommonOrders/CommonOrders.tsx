@@ -10,7 +10,6 @@ import Header from './Header/Header'
 import DeliveryAddress from './DeliveryAddress/DeliveryAddress'
 import OrderDetails from './OrderDetails/OrderDetails'
 import PersonalData from './PersonalData/PersonalData'
-import Buttons from './Buttons/Buttons'
 
 const CommonOrders = () => {
     const {id} = useParams<any>()
@@ -54,7 +53,6 @@ const CommonOrders = () => {
                 <PersonalData dataPerson={order.data_person} />
                 <DeliveryAddress deliveryAddress={order.delivery_address} />
                 <OrderDetails orderDetails={order.order_details} price={order.order_price} />
-                <Buttons />
             </div>
         </div>
     )

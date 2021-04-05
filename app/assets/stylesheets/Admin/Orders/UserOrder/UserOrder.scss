@@ -43,23 +43,13 @@
         left: 50%;
         transform: translateX(-50%);
 
-        background: $main-admin-panel-bcg-color;
-        text-align: center;
-        padding: 20px 0px 50px;
+        background-color: #fff;
+        padding: 20px 130px 50px;
         border: 2px solid black;
-        margin: 30px 0px;
-
-        &__header{
-            text-align: center;
-            margin: 20px 20px 50px;
-        }
+        margin: 50px 0px;
 
         .product-container{
             margin: 20px 0px;
-
-            &__p{
-
-            }
 
             &__span{
                 font-style: italic;
@@ -68,11 +58,13 @@
         }
 
         .summary-container{
+            width: 40%;
             margin: 25px 0px;
             border-bottom: 2px solid black;
 
             &__span{
                 font-weight: bold;
+                margin-bottom: 10px;
             }
         }
     }
