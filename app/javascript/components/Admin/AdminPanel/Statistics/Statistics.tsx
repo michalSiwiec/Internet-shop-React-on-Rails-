@@ -16,8 +16,6 @@ const Statistics = () => {
             <MainInfo />
         </div>
     )
-    
-
 }
 
 export default Statistics

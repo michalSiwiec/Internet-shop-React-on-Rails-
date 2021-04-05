@@ -1,5 +1,16 @@
 import React from 'react'
 
-const Header= () => <div className="header-part-container"><h2>Lista zamówień</h2></div>
+import {Link} from 'react-router-dom'
+
+const Header= () => {
+    return(
+        <div className="header-part-container">
+            <Link to="/admin">
+                <button>Cofnij</button>
+            </Link>
+            <h2>Lista zamówień</h2>
+        </div>
+    )
+}
 
 export default Header

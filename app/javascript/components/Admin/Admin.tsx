@@ -8,12 +8,12 @@ import AdminPanel from './AdminPanel/AdminPanel'
 import LoginPanel from './LoginPanel/LoginPanel'
 
 const Admin2 = () => {
-    // const adminID = useSelector((state: IReduxState) => state.adminsReducer.admin.id)
-    // let response = <LoginPanel />
+    const adminID = useSelector((state: IReduxState) => state.adminsReducer.admin.id)
+    let response = <LoginPanel />
 
-    // if(adminID !== 0)
-    //     response = <AdminPanel />
-    let response = <AdminPanel />
+    if(adminID !== 0)
+        response = <AdminPanel />
+    // let response = <AdminPanel />
 
     return response
 }

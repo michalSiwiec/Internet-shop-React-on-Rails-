@@ -5,9 +5,24 @@
     background: $main-admin-panel-bcg-color;
     border: 2px solid black;
 
-    &__header{
-        text-align: center;
-        margin: 20px 20px 50px;
+    .header-part-container{
+        a{
+            flex-basis: 10%;
+            padding: 20px;
+
+            button{
+                font-size: 18px;
+                margin: 10px;
+                background-color: #800;
+                color: white;
+                padding: 5px 12px;
+            }
+        }
+        
+        h2{
+            flex-basis: 90%;
+            text-align: center;
+        }
     }
 
     .presentation-data-container{

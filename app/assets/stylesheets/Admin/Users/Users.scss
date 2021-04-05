@@ -7,6 +7,16 @@
 
     background: $main-admin-panel-bcg-color;
 
+    .back-container{
+        button{
+            font-size: 18px;
+            margin: 10px;
+            background-color: #800;
+            color: white;
+            padding: 5px 12px;
+        }
+    }
+
     .top-bar-container{
         display: flex;
         align-items: center;

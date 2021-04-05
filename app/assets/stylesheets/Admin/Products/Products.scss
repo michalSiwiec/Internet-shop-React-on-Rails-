@@ -4,9 +4,19 @@
     background: $main-admin-panel-bcg-color;
     padding: 70px;
 
+    .back-container{
+        button{
+            font-size: 18px;
+            margin: 10px;
+            background-color: #800;
+            color: white;
+            padding: 5px 12px;
+        }
+    }
+
    .top-bar-container{
         display: flex;
-        margin-bottom: 50px;
+        margin: 50px 0px;
 
         .header-container{
             flex-basis: 80%;
