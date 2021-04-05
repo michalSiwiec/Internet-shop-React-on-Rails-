@@ -16,6 +16,8 @@ const MainInfo = () => {
 
     return (
         <div className="presentation-data-container">
+            <h3 className="presentation-data-container__title">Ogólne Informacje</h3>
+
             {mainInfos.map((mainInfo) => {
                 return(
                     <div className="main-info-container" key={`mainInfoContainer ${mainInfo.label}`}>
@@ -26,7 +28,6 @@ const MainInfo = () => {
                     </div>
                 )
             })}
-            <h4 className="presentation-data-container__title">Ogólne opinie</h4>
         </div>
     )
 }

@@ -30,18 +30,44 @@ const WholeMonthPriceDiagram = () => {
             {
                 label: "Sales for 2020",
                 data: wholeMonthsPrices,
-                borderColor: ['rgba(255, 206, 86, 0.2)'],
-                backgroundColor: ['rgba(255, 206, 86, 0.2)'],
-                pointBackgroundColor: ['rgba(255, 206, 86, 0.2)'],
-                pointBorderColor: ['rgba(255, 206, 86, 0.2)']
+                borderColor: ['rgba(0,255,0,1)'],
+                backgroundColor: ['rgba(0,255,0,1)'],
+                pointBackgroundColor: [
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)'
+                ],
+                pointBorderColor: [
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)'
+                ]
             }
         ]
     }
 
     return (
         <div className="presentation-data-container">
+            <h3 className="presentation-data-container__title">Średnia cena zamówienia</h3>
             <Line data={wholeMonthPriceData} />
-            <h4 className="presentation-data-container__title">Średnia cena zamówienia</h4>
         </div>
     )
 }

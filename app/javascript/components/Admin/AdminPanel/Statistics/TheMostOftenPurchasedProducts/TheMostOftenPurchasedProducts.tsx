@@ -30,66 +30,39 @@ const TheMostOftenPurchasedProducts = () => {
                 label: labels,
                 data: quantities,
                 borderColor: [
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(176, 223, 86, 0.2',
-                    'rgba(201, 177, 227, 0.2)',
-                    'rgba(53, 240, 231, 0.2)',
-                    'rgba(100, 0, 5, 0.2)',
+                    'rgba(255,255,0,1)',
+                    'rgba(36,5,255,1)',
+                    'rgba(0,255,0,1)',
+                    'rgba(255,0,0,1)',
+                    'rgba(199,203,255,1)',
 
-                    'rgba(125, 126, 44, 0.2)',
-                    'rgba(56, 223, 114, 0.2',
-                    'rgba(177, 177, 239, 0.2)',
-                    'rgba(111, 100, 100, 0.2)',
-                    'rgba(23, 114, 92, 0.2)'
+                    'rgba(228, 126, 144, 1)',
+                    'rgba(96, 23, 33, 1',
+                    'rgba(177, 177, 239, 1)',
+                    'rgba(111, 100, 100, 1)',
+                    'rgba(123, 14, 192, 1)'
                 ],
                 backgroundColor: [
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(176, 223, 86, 0.2',
-                    'rgba(201, 177, 227, 0.2)',
-                    'rgba(53, 240, 231, 0.2)',
-                    'rgba(100, 0, 5, 0.2)',
+                    'rgba(255,255,0,1)',
+                    'rgba(36,5,255,1)',
+                    'rgba(0,255,0,1)',
+                    'rgba(255,0,0,1)',
+                    'rgba(199,203,255,1)',
 
-                    'rgba(125, 126, 44, 0.2)',
-                    'rgba(56, 223, 114, 0.2',
-                    'rgba(177, 177, 239, 0.2)',
-                    'rgba(111, 100, 100, 0.2)',
-                    'rgba(23, 114, 92, 0.2)'
-                ],
-                pointBackgroundColor: [
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(176, 223, 86, 0.2',
-                    'rgba(201, 177, 227, 0.2)',
-                    'rgba(53, 240, 231, 0.2)',
-                    'rgba(100, 0, 5, 0.2)',
-
-                    'rgba(125, 126, 44, 0.2)',
-                    'rgba(56, 223, 114, 0.2',
-                    'rgba(177, 177, 239, 0.2)',
-                    'rgba(111, 100, 100, 0.2)',
-                    'rgba(23, 114, 92, 0.2)'
-                ],
-                pointBorderColor: [
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(176, 223, 86, 0.2',
-                    'rgba(201, 177, 227, 0.2)',
-                    'rgba(53, 240, 231, 0.2)',
-                    'rgba(100, 0, 5, 0.2)',
-
-                    'rgba(125, 126, 44, 0.2)',
-                    'rgba(56, 223, 114, 0.2',
-                    'rgba(177, 177, 239, 0.2)',
-                    'rgba(111, 100, 100, 0.2)',
-                    'rgba(23, 114, 92, 0.2)'
+                    'rgba(228, 126, 144, 1)',
+                    'rgba(96, 23, 33, 1',
+                    'rgba(177, 177, 239, 1)',
+                    'rgba(111, 100, 100, 1)',
+                    'rgba(123, 14, 192, 1)'
                 ]
             }
         ]
     }
 
-
     return (
         <div className="presentation-data-container">
+            <h3 className="presentation-data-container__title">Najczęściej kupowane produkty</h3>
             <Bar data={tenTheMostPruchasesProducts} />
-            <h4 className="presentation-data-container__title">Najczęściej kupowane produkty</h4>
         </div>
     )
 }
