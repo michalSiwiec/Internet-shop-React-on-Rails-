@@ -1,13 +1,9 @@
 @import '../../../../stylesheets/Variables/Variables.scss';
 
-// I can add constands margins between input in form or somethig like this
-
 .log-in-panel-container{
-    // It can be miksins because I'll be using it several times - full-screen-container
     width: 100vw;
     min-height: 100vh;
 
-    // It can be miksins because I'll be using it several times - flex-container
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +13,7 @@
     .log-in-panel{
         padding: 30px;
 
-        background-image: $main-admin-panel-content-container-color;
+        background-color: #fff;
         border-radius: 10px;
 
         @media only screen and (max-width: $small-screen-width) {
@@ -51,7 +47,9 @@
 
             &__input{
                 width: 50%;
+                padding: 5px 12px;
                 margin-top: 5px;
+                border: 2px solid #800;
             }
         }
 
@@ -61,14 +59,12 @@
 
             &__button{
                 width: 50%;
-                background-image: $main-admin-panel-content-container-color;
-                color: $assistant-color;
-                border: $main-inputs-buttons-border;
+                padding: 5px 12px;
+                background-color: #800;
+                color: #fff;
 
                 &:hover{
-                    background-color: $assistant-color;
-                    background-image: none;
-                    color: $basic-font-color;
+                    background-color: lighten(#800, 10%);
                 }
             }
         }
