@@ -1,9 +1,7 @@
 # README
 KauflandOnRails
 
-1) 
-
-Aby przetestować działanie interfejsu z poziomu zalogowanwego uzytkownika nalezy zalogować się danymi:
+Aby przetestować działanie interfejsu z poziomu zalogowanegi uzytkownika nalezy zalogować się danymi:
 
 login: michsiw439
 hasło: 1234
@@ -13,8 +11,6 @@ lub zalozyc wlasne konto.
 Aby skorzystac z panelu admina nalezy odwiedzic link 
 https://kaufland-on-rails1.herokuapp.com/admin
 oraz zalogowac sie tymi samymi danymi.
-
-2)
 
 Interfejs użytkownika został napisany z użyciem biblioteki React w połączeniu z Typescript.
 Do zarządzania stanem aplikacji używam min Redux (technologia została uzyta głównie w celach edukacyjnych)
