@@ -34,9 +34,6 @@ Jako bazy danych użyłem PostgreSQL, a do stworzenia strony back-endowej framew
 
 
 6) Check if emails work
-7) Style into admin panel
 8) Regex
 11) I'm able to submit order with hollow fields xD
-12) Problem with Window after do order (transmit params to URL)
-13) Better css and html structure for opinions (headerr and button in the same div)
 14) Image doesn't work on production

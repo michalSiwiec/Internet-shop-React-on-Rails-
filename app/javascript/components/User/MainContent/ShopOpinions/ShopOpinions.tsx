@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 
-import Header from './Header/Header'
 import AddOpinionButton from './AddOpinionButton/AddOpinionButton'
 import Opinions from './Opinions/Opinions'
 import AddOpinionWindow from './AddOpinionWindow/AddOpinionWindow'
@@ -21,7 +20,6 @@ const AboutUs = () => {
     return (
         <>
             <div className="about-us-container">
-                <Header />
                 <AddOpinionButton showWindow={showWindow} />
                 <Opinions />
             </div>

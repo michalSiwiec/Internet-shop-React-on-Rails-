@@ -14,11 +14,6 @@ const MainContent = () => {
 
     return(
         <Switch>
-            {/* <Route path="/:info?" exact> */}
-            <Route path={`${path}`} exact>
-                <OrderAreaa />
-            </Route>
-
             <Route path={`${path}Opinions`}>
                 <ShopOpinions />
             </Route>
@@ -37,6 +32,10 @@ const MainContent = () => {
 
             <Route path={`${path}rejestrationForm`}> 
                 <RejestrationForm />
+            </Route>
+
+            <Route path={`${path}:info?`} exact>
+                <OrderAreaa />
             </Route>
 
             <Route>Nie ma takiej podstrony!</Route>

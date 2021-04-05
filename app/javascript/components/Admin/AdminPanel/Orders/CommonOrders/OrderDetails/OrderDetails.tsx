@@ -13,7 +13,7 @@ const OrderDetails:FC<Props> = ({orderDetails, price}) => {
         <div className="order-details-container">
             <Header />
             {orderDetails.map((order_detail: any) => <OrderDetail orderDetail={order_detail} key={`commonOrderContainer${order_detail.product_description}`} />)}
-            <Summary value={`Razem: ${price}`} />
+            <Summary value={`Razem: ${price} zł`} />
         </div>
     )
 }
