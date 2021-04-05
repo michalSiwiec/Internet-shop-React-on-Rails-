@@ -2,7 +2,7 @@ import React, {FC} from 'react'
 
 import {Link} from 'react-router-dom'
 
-interface Props {addOrder: () => void}
+interface Props {addOrder: (e: React.SyntheticEvent<EventTarget>) => void}
 
 const AddOrderButton:FC<Props> = ({addOrder}) => {
     return (

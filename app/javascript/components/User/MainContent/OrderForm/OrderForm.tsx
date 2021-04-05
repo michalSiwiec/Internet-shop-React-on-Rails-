@@ -69,7 +69,7 @@ const OrderForm = () => {
     })
     const [postalCode, setPostalCode] = useState("44 - 119")
 
-    const addOrder = (e: any) => {
+    const addOrder = (e: React.SyntheticEvent<EventTarget>) => {
         const dataToCheck = [
             email.setted,
             phoneNumber.setted,
