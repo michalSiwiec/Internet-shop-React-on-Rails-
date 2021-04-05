@@ -13,7 +13,7 @@ const Password:FC<Props> = ({password, setPassword}) => {
     return (
         <div>
             <div>
-                <input type="text" placeholder="Hasło" onChange={(e) => validatePassword(e.target.value, setPassword, password)} />
+                <input type="password" placeholder="Hasło" onChange={(e) => validatePassword(e.target.value, setPassword, password)} />
             </div>
 
             <div className="mistake-information-container">

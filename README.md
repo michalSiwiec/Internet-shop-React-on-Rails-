@@ -31,9 +31,3 @@ Interfejs użytkownika został napisany z użyciem biblioteki React, w którym z
 Do wystylizowania aplikacji użyto preprocesora Sass, a do uzyskania efektu responsywności media-queries.
 
 Jako bazy danych użyłem PostgreSQL, a do stworzenia strony back-endowej frameworka RubyOnRails. Użytkownik komunikuje się z bazą danych za pomocą zapytań do  API (metoda fetch) które są dopasowywane do odpowiednich akcji w kontrolerach, dzięki temu mamy możliwość pobierania, dodawania, edycji i usuwania odpowiednich danych. 
-
-
-6) Check if emails work
-8) Regex
-11) I'm able to submit order with hollow fields xD
-14) Image doesn't work on production

@@ -121,8 +121,10 @@ const RejestrationForm = () => {
                 })
                 .then((user: {user_id: number}) => dispatch(actions.singInUser(user.user_id)))
             })
-        } else
+        } else{
             e.preventDefault()     
+            alert("Proszę wypełnić wszystkie pola!")
+        }
     }
 
     return (

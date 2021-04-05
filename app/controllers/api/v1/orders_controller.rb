@@ -66,7 +66,7 @@ module Api
 
                 if(user_id != 0)
                     user = User.find(user_id)
-                    # OrderMailer.add_order_confirmation(user).deliver
+                    OrderMailer.add_order_confirmation(user).deliver
                 else
                     email_data = {
                         email: params[:email],
@@ -74,7 +74,7 @@ module Api
                         surname: params[:surname]
                     }
                     
-                    # OrderMailer.add_order_log_out_user_confirmation(email_data).deliver
+                    OrderMailer.add_order_log_out_user_confirmation(email_data).deliver
                 end
             end
 

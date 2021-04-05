@@ -18,18 +18,19 @@
         margin: 40px auto;
 
         & > div{
-            margin: 20px;
             text-align: center;
             margin: 20px auto;
 
             .mistake-information-container{
-                margin-top: 5px;
-                padding-left: 3px;
-                color: #800000;
+                p{
+                    width: 85%;
+                    margin: 5px auto;
+                    text-align: start;
+                    color: #800000;
+                }
             }
 
-            input[type="text"],
-            input[type="number"],
+            input,
             select{
                 width: 85%;
                 padding: 3px 10px;

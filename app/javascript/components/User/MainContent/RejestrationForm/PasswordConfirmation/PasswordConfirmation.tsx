@@ -14,7 +14,7 @@ const PasswordConfirmation: FC<Props> = ({passwordConfirmation, password, setPas
     return (
         <div>
             <div>
-                <input type="text"
+                <input type="password"
                     placeholder="Potwierdz hasło"
                     onChange={(e) => validatePasswordConfirmation(e.target.value, setPasswordConfirmation, passwordConfirmation, password)}
                 />

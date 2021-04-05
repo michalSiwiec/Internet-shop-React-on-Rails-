@@ -69,7 +69,7 @@ const OrderForm = () => {
     })
     const [postalCode, setPostalCode] = useState("44 - 119")
 
-    const addOrder = () => {
+    const addOrder = (e: any) => {
         const dataToCheck = [
             email.setted,
             phoneNumber.setted,
@@ -117,8 +117,10 @@ const OrderForm = () => {
                 body: JSON.stringify(orderData)
             })
             .then(() => dispatch(actions.resetBasket()))
-        } else
+        } else{
             alert('Prosze wypelnic wszystkie pola!')
+            e.preventDefault()
+        }
     }
 
     useEffect(() => {

@@ -6,12 +6,8 @@ interface Props {addOrder: () => void}
 
 const AddOrderButton:FC<Props> = ({addOrder}) => {
     return (
-        // <Link to="/home/Offer/orderCompletted">
-        //     <button onClick={addOrder} className="buttons-container__button">Złóz zamówienie</button>
-        // </Link>
-
         <Link to="/orderCompletted">
-            <button onClick={addOrder} className="buttons-container__button">Złóz zamówienie</button>
+            <button onClick={(e) => addOrder(e)} className="buttons-container__button">Złóz zamówienie</button>
         </Link>
     )
 }
