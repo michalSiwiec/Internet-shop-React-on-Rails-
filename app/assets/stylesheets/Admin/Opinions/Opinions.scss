@@ -3,32 +3,23 @@
 .opinions-container{
     min-height: 100vh;
     padding: 50px 0px;
-    background: $main-admin-panel-bcg-color;
+    background-color: black;
+    color: white;
 
-    .header-container{
-        flex-basis: 100%;
-        min-height: 7vh;
-        display: flex;
-        align-items: center;
-        margin-bottom: 20px;
+    a{
+        padding: 20px;
 
-        a{
-            flex-basis: 10%;
-            padding: 20px;
-
-            button{
-                font-size: 18px;
-                margin: 10px;
-                background-color: #800;
-                color: white;
-                padding: 5px 12px;
-            }
+        button{
+            font-size: 18px;
+            margin: 10px;
+            background-color: #800;
+            color: white;
+            padding: 5px 12px;
         }
-        
-        h2{
-            flex-basis: 90%;
-            text-align: center;
-        }
+    }
+
+    h2{
+        text-align: center;
     }
 
     .opinion-container{
